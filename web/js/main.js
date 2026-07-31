@@ -859,9 +859,35 @@
     }
 
     // ==================== 申购历史 tooltip ====================
+    // 渲染策略：用 `position: fixed` + cell.getBoundingClientRect() 计算坐标，
+    // 避免父容器 overflow / stacking context 截断（之前 absolute 在含 overflow-x:auto 的表格
+    // 内会被裁切，且可能被表头视觉覆盖 — 详见 plan "全球指数基金浮层贴图问题"）。
+    // auto-flip：弹层预估高度 + 间距 > 视口顶部可用空间 → 翻转到下方。
+    // 视口顶部可用空间 = cell.top 与最近的 thead 底部之间的较小值（thead 才是真实遮挡源）。
+    // 弹层用 pointer-events:none 不拦截 hover，移出 cell 即销毁。
+    var TOOLTIP_ESTIMATED_HEIGHT = 130;
+    var TOOLTIP_OFFSET = 8;
     function showBuyTip(el) {
       if (el.querySelector('.buy-hist-tip')) return;
       var tip = document.createElement('div'); tip.className = 'buy-hist-tip';
+      var cellRect = el.getBoundingClientRect();
+      var vh = window.innerHeight;
+      // 计算视口顶部可用空间：取 cell.top 与最近 thead 底部 之间的较小值
+      var spaceAbove = cellRect.top;
+      var thead = el.closest('table')?.querySelector('thead');
+      if (thead) {
+        var theadRect = thead.getBoundingClientRect();
+        spaceAbove = Math.min(spaceAbove, cellRect.top - theadRect.bottom);
+      }
+      var isBelow = spaceAbove < TOOLTIP_ESTIMATED_HEIGHT + TOOLTIP_OFFSET;
+      // 用 fixed 定位：右对齐到 cell 右边
+      tip.style.right = (window.innerWidth - cellRect.right) + 'px';
+      if (isBelow) {
+        tip.style.top = (cellRect.bottom + TOOLTIP_OFFSET) + 'px';
+        tip.classList.add('buy-hist-tip-below');
+      } else {
+        tip.style.bottom = (vh - cellRect.top + TOOLTIP_OFFSET) + 'px';
+      }
       var raw = el.dataset.history;
       var histData = [];
       if (raw) { try { histData = JSON.parse(raw); } catch(_) { histData = []; } }
@@ -881,9 +907,9 @@
         }
         tip.innerHTML = '<div class="tip-header">申购变更 · 最近' + histData.length + '次</div>' + rows;
       }
-      el.style.position = 'relative'; el.appendChild(tip);
+      document.body.appendChild(tip);
     }
-    function hideBuyTip(el) { var tip = el.querySelector('.buy-hist-tip'); if (tip) tip.remove(); el.style.position = ''; }
+    function hideBuyTip(el) { var tip = document.querySelector('.buy-hist-tip'); if (tip) tip.remove(); }
     function initBuyTooltips(container) {
       container.querySelectorAll('.buy-cell').forEach(function(cell) {
         cell.addEventListener('mouseenter', function() { showBuyTip(cell); });

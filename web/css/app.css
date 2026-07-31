@@ -236,12 +236,12 @@
     html.dark #trendModal { background: rgba(0,0,0,0.6); }
 
     /* ===== 申购历史 tooltip（自适应宽度） ===== */
-    .buy-cell { cursor: pointer; position: relative; border-bottom: 1px dotted #94a3b8; }
+    /* position: fixed + JS 计算坐标：避免父容器 overflow / stacking 截断
+       (V3.1.1 修复 — 之前 absolute 在含 overflow-x:auto 的表格内被表头视觉覆盖) */
+    .buy-cell { cursor: pointer; border-bottom: 1px dotted #94a3b8; }
     .buy-cell:hover { filter: brightness(0.95); }
     .buy-hist-tip {
-      position: absolute;
-      right: 0;
-      bottom: calc(100% + 8px);
+      position: fixed;
       background: white;
       border: 1px solid #e5e7eb;
       border-radius: 10px;
@@ -255,6 +255,7 @@
       pointer-events: none;
       line-height: 1.5;
     }
+    /* auto-flip: 弹层朝下时，小箭头指向 cell */
     .buy-hist-tip::after {
       content: '';
       position: absolute;
@@ -264,6 +265,14 @@
       border-right: 1px solid #e5e7eb;
       border-bottom: 1px solid #e5e7eb;
       transform: rotate(45deg);
+    }
+    .buy-hist-tip-below::after {
+      bottom: auto;
+      top: -5px;
+      border-right: none;
+      border-bottom: none;
+      border-top: 1px solid #e5e7eb;
+      border-left: 1px solid #e5e7eb;
     }
     .buy-hist-tip .tip-header {
       font-weight: 700; font-size: 10px; color: #5c3d2e;
