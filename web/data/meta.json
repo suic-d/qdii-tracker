@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-30T23:53:28.483679+08:00",
-  "total_scanned": 27038,
+  "generated_at": "2026-07-31T15:56:42.983835+08:00",
+  "total_scanned": 27387,
   "sp500": {
     "series": 7,
     "funds": 25
@@ -10,8 +10,8 @@
     "funds": 60
   },
   "active": {
-    "series": 24,
-    "funds": 70
+    "series": 25,
+    "funds": 72
   },
   "global_index": {
     "series": 2,
@@ -25,5 +25,5 @@
     "series": 18,
     "funds": 18
   },
-  "excluded_count": 26803
+  "excluded_count": 27150
 }

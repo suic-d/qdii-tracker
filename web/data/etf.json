@@ -38,8 +38,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.516,
-          "etf_change_pct": -1.43,
+          "etf_price": 1.574,
+          "etf_change_pct": 3.83,
           "error": "'data'"
         }
       ],
@@ -81,8 +81,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.479,
-          "etf_change_pct": -1.27,
+          "etf_price": 2.509,
+          "etf_change_pct": 1.21,
           "error": "'data'"
         }
       ],
@@ -132,8 +132,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.041,
-          "etf_change_pct": -1.59,
+          "etf_price": 2.112,
+          "etf_change_pct": 3.48,
           "error": "'data'"
         }
       ],
@@ -176,8 +176,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.486,
-          "etf_change_pct": -1.7,
+          "etf_price": 2.578,
+          "etf_change_pct": 3.7,
           "error": "'data'"
         }
       ],
@@ -219,8 +219,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.921,
-          "etf_change_pct": -1.34,
+          "etf_price": 1.983,
+          "etf_change_pct": 3.23,
           "error": "'data'"
         }
       ],
@@ -262,8 +262,8 @@
           "sale_service_fee": 0.5,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.256,
-          "etf_change_pct": -1.48,
+          "etf_price": 2.339,
+          "etf_change_pct": 3.68,
           "error": "'data'"
         }
       ],
@@ -305,8 +305,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.153,
-          "etf_change_pct": -1.55,
+          "etf_price": 2.235,
+          "etf_change_pct": 3.81,
           "error": "'data'"
         }
       ],
@@ -348,8 +348,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.657,
-          "etf_change_pct": -1.66,
+          "etf_price": 1.72,
+          "etf_change_pct": 3.8,
           "error": "'data'"
         }
       ],
@@ -391,8 +391,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.87,
-          "etf_change_pct": -1.48,
+          "etf_price": 1.897,
+          "etf_change_pct": 1.44,
           "error": "'data'"
         }
       ],
@@ -434,8 +434,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.278,
-          "etf_change_pct": -1.64,
+          "etf_price": 2.364,
+          "etf_change_pct": 3.78,
           "error": "'data'"
         }
       ],
@@ -477,8 +477,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.88,
-          "etf_change_pct": -1.52,
+          "etf_price": 1.944,
+          "etf_change_pct": 3.4,
           "error": "'data'"
         }
       ],
@@ -520,8 +520,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.171,
-          "etf_change_pct": -1.72,
+          "etf_price": 2.253,
+          "etf_change_pct": 3.78,
           "error": "'data'"
         }
       ],
@@ -563,8 +563,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.231,
-          "etf_change_pct": -1.63,
+          "etf_price": 2.315,
+          "etf_change_pct": 3.77,
           "error": "'data'"
         }
       ],
@@ -606,8 +606,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.878,
-          "etf_change_pct": -1.62,
+          "etf_price": 1.903,
+          "etf_change_pct": 1.33,
           "error": "'data'"
         }
       ],
@@ -649,8 +649,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.903,
-          "etf_change_pct": -1.91,
+          "etf_price": 1.977,
+          "etf_change_pct": 3.89,
           "error": "'data'"
         }
       ],
@@ -685,8 +685,8 @@
           "sell_status": "场内交易",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.715,
-          "etf_change_pct": -0.87
+          "etf_price": 1.76,
+          "etf_change_pct": 2.62
         }
       ],
       "series_id": "易方达__美国50ETF易方达__etf",
@@ -727,8 +727,8 @@
           "sell_status": "场内交易",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.533,
-          "etf_change_pct": -0.9
+          "etf_price": 1.574,
+          "etf_change_pct": 2.67
         }
       ],
       "series_id": "汇添富__美国50ETF汇添富__etf",
@@ -783,8 +783,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.944,
-          "etf_change_pct": -1.42,
+          "etf_price": 1.976,
+          "etf_change_pct": 1.65,
           "error": "'data'"
         }
       ],

@@ -2,7 +2,7 @@
   "category": "global_index",
   "label": "板块4 · 全球非美指数（场外·白名单）",
   "series_count": 2,
-  "total_scale": 0,
+  "total_scale": 3.02,
   "series": [
     {
       "series_id": "华安__三菱日联日经225ETF联接__global_index",
@@ -22,7 +22,7 @@
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
           "nav": 1.2862,
-          "nav_cum": 1.4356,
+          "nav_cum": 1.2862,
           "nav_date": "2026-07-30",
           "daily_change": 0.45,
           "chg_1m": -12.34,
@@ -97,7 +97,7 @@
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
           "nav": 1.2784,
-          "nav_cum": 1.427,
+          "nav_cum": 1.2784,
           "nav_date": "2026-07-30",
           "daily_change": 0.45,
           "chg_1m": -12.35,
