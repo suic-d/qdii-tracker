@@ -42,9 +42,10 @@ python3 fundctl.py diagnose --cat {CAT} --json
 - force_include 不跨分类继承
 - 新增后用 check 验证，不过不算完
 
-## 相关知识（详见 knowledge/）
-- 流水线架构：`knowledge/modules/fundctl.md`、`knowledge/architecture.md`
-- 分类规则 SSOT：`config/funds.json`（详见 `knowledge/modules/scan-pipeline.md`）
+## 相关知识
+- 架构全景 + 核心概念速查：`knowledge/INDEX.md`
+- 代码结构追踪：使用 `codegraph_explore` 理解流水线调用链
+- 分类规则 SSOT：`config/funds.json`
 - 常见坑点：`knowledge/gotchas.md`
 
 ## Gotchas

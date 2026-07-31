@@ -32,10 +32,23 @@ Thumbs.db
 .idea/
 *.iml
 
-# Claude Code / Codex / Cursor / CodeBuddy 等 AI 编辑器
+# Claude Code / Codex / Cursor 等 AI 编辑器
 .cursor/
 .windsurf/
-.codebuddy/
+.claude/
+
+# CodeBuddy — skills 和 agents 需要追踪，但会话/计划缓存不追踪
+.codebuddy/plans/
+.codebuddy/sessions/
+
+# V3.1 CodeGraph 本地图谱（二进制产物，不进 git）
+.codegraph/
+
+# V3.1 Loop 运行状态（运行时产物，不进 git）
+.loop/
+
+# V3.1 方案文档软链接（非本机断链）
+plans/QDII*
 
 # 临时文件
 *.swp
@@ -54,3 +67,4 @@ akshare_cache/
 logs/
 
 feedback/.fund_add_state.json
+.codebuddy/teams/

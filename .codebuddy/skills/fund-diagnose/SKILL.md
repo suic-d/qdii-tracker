@@ -25,11 +25,22 @@ cd scripts && python3 fundctl.py diagnose
 - 单次尝试，不重试（避免 CI timeout）
 - 修复后跑 check 验证
 
-## 相关知识（详见 knowledge/）
-- 诊断引擎 4 项检测原理：`knowledge/modules/diagnose-engine.md`
+## 诊断严重度分档理由
+
+| 检测项 | 严重度 | 分档理由 |
+|--------|--------|----------|
+| `nav_stale` | error | 数据 >3 天未更新，前端显示严重过期，用户直接感知 |
+| `missing_nav` | warning | 单只基金净值缺失，可自动修复，不影响整体可用性 |
+| `missing_fee` | warning | 费率数据缺失，不影响核心净值展示，但影响费率 tooltip |
+| `buy_status_no_date` | info | 申购状态日期字段不完整，纯信息性，下次 fill 自动补 |
+
+## 相关知识
 - 数据源异常模式：`knowledge/data-sources.md` 中各 API 的已知限制
+- 代码结构追踪：使用 `codegraph_explore` 理解 diagnose 调用链
+- 常见坑点：`knowledge/gotchas.md`
 
 ## Gotchas
 - 入库 ≤3 天的新基金无净值是正常现象，diagnose 不报
 - auto-fix 只跑一次，不重试
 - nav_stale 不会自己好，需要排查上游 pipeline
+- **Builder 的 diagnose 输出与 Judge 裁决是两轮独立调用**：Builder 跑 `diagnose --json` 生成修复前基线，Judge 在新上下文中独立跑 `diagnose --json` 做修复后验证

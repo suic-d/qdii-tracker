@@ -5,15 +5,19 @@
 🌐 **在线看板**：<https://zhouminghan.github.io/qdii-tracker/>
 📦 **源码仓库**：<https://github.com/zhouminghan/qdii-tracker>
 
-## 🤖 Agent 模式（Claude Code 开箱即用）
+## 🤖 Agent 模式（CodeBuddy 开箱即用）
 
 ```bash
 git clone https://github.com/zhouminghan/qdii-tracker.git
 cd qdii-tracker
-claude          # 启动 Claude Code，自动读 AGENT.md + MEMORY.md + knowledge/ + .claude/skills/
+# 首次初始化
+codegraph install && codegraph init   # 安装 CodeGraph 代码图谱
+pip install -r scripts/requirements.txt
+# 启动 CodeBuddy，自动读 AGENT.md + MEMORY.md + knowledge/ + .codebuddy/skills/
 ```
 
 支持：加基金 / 检查数据 / 改代码 → 自动 check + 更新文档
+支持：本地触发 Builder-Judge-Manager Loop → Agent 自主诊断修复
 
 [![Update](https://github.com/zhouminghan/qdii-tracker/actions/workflows/update-data.yml/badge.svg)](https://github.com/zhouminghan/qdii-tracker/actions/workflows/update-data.yml)
 [![License](https://img.shields.io/github/license/zhouminghan/qdii-tracker?color=orange)](https://github.com/zhouminghan/qdii-tracker/blob/main/LICENSE)
@@ -61,8 +65,7 @@ graph LR
 ```
 qdii-tracker/
 ├── scripts/                  # 数据流水线（Python）
-│   ├── fundctl.py            # 统一入口（add/move/refresh/sync/check）
-│   ├── architecture_lint.py  # 目录纪律强制校验（已接入 fundctl.py check）
+│   ├── fundctl.py            # 统一入口（add/move/refresh/sync/check/diagnose）
 │   ├── core/                 # 共享基础设施
 │   ├── sources/              # 数据源抽象层（akshare/eastmoney/xueqiu）
 │   └── pipeline/             # scan → enrich → fill → holdings + reclassify/codegen 等工具
@@ -75,13 +78,25 @@ qdii-tracker/
 │   └── ui_scenarios/         # 声明式 UI 回归场景（_TEMPLATE.yaml + 5 个真实场景）
 ├── AGENT.md                  # 硬约束规则（长期稳定，改一次管很久）
 ├── MEMORY.md                 # 压缩索引，指向 knowledge/
-├── knowledge/                # AI Agent 知识库（ADR / 模块手册 / gotchas / 代码图谱）
+├── knowledge/                # AI Agent 知识库（ADR / gotchas / 数据源）
+│   ├── INDEX.md              # 总索引 + 架构全景
+│   ├── data-sources.md       # API 端点 + 降级策略
+│   ├── gotchas.md            # 已知坑点 + diagnose 严重度分档
+│   └── adr/                  # 架构决策记录 (6 篇)
+├── .codebuddy/               # Agent Harness (CodeBuddy)
+│   ├── CODEBUDDY.md → (软链接到 ../AGENT.md)
+│   ├── skills/               # fund-add, fund-diagnose
+│   └── agents/               # data_judge (Builder-Judge-Manager Loop)
+├── .codegraph/               # 代码图谱（本地生成，不进 git）
+├── .loop/                    # Loop 运行状态（运行时产物，不进 git）
+├── plans/                    # 方案文档软链接
+│   └── QDII基金追踪.md → (软链接到 brain 方案文档)
 ├── web/                      # 前端（纯静态）
-│   ├── index.html            # 主入口（491 行）
+│   ├── index.html            # 主入口
 │   ├── css/                  # Tailwind + app.css（样式独立文件）
 │   ├── js/                   # 11 个模块（main/config/utils/screenshot/market-indices 等）
-│   └── data/                 # 消费的 JSON（sp500/nasdaq_passive/active/global_index/global_other/etf/meta/holdings）
-└── .github/workflows/        # update-data.yml + deploy-pages.yml
+│   └── data/                 # 消费的 JSON
+└── .github/workflows/        # update-data.yml + kb-smoke.yml + deploy-pages.yml
 ```
 
 ---
@@ -179,10 +194,14 @@ A: 东方财富部分接口对 GitHub Pages 等跨站来源限制访问（本地
 cd scripts
 pip install -r requirements.txt
 
-# 2. 跑一次完整流水线
+# 2. 首次 clone 后初始化（CodeGraph 代码图谱）
+codegraph install    # 安装 CodeGraph CLI
+codegraph init       # 生成 .codegraph/ 本地图谱
+
+# 3. 跑一次完整流水线
 python3 fundctl.py sync
 
-# 3. 启动前端
+# 4. 启动前端
 cd ../web
 python3 -m http.server 8765
 # 浏览器打开 http://localhost:8765/
@@ -193,6 +212,8 @@ cd scripts && python3 fundctl.py refresh   # fill 已包含申购状态+历史�
 # 一致性校验
 cd scripts && python3 fundctl.py check
 ```
+
+> **软链接降级说明**：`plans/QDII基金追踪.md` 是软链接指向作者本机的 brain 方案文档。在非本机上这个链接是断链（dead symlink），不影响项目功能，Agent 启动时会优雅降级到只读 `knowledge/` 而不报错。
 
 ---
 

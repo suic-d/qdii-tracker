@@ -1,28 +1,37 @@
-name: KB 烟雾测试
+name: KB Smoke Test
 on:
   push:
-    paths:
-      - 'scripts/**/*.py'
-      - 'web/js/**/*.js'
+    paths: ['knowledge/**', '.github/workflows/kb-smoke.yml']
   workflow_dispatch:
 
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    continue-on-error: true  # 可选：防遗忘提醒，不阻塞
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: 图谱烟雾测试（代码可被解析）
+      - name: 检查 knowledge/ 必需文件存在
         run: |
-          cd scripts/tools
-          python3 code_graph.py build --dry-run
+          for f in INDEX.md data-sources.md gotchas.md; do
+            [ -f "knowledge/$f" ] || { echo "MISSING: knowledge/$f"; exit 1; }
+          done
+          [ -d "knowledge/adr" ] || { echo "MISSING: knowledge/adr/"; exit 1; }
 
-      - name: 文档腐坏检测
+      - name: 检查 AGENT.md 引用文件是否存在
         run: |
-          cd scripts/tools
-          python3 kb_diagnose.py --check-staleness
+          grep -oP '(?<=`)[^`]*\.(py|md|json|yml|sh)(?=`)' AGENT.md | while read f; do
+            [ -f "$f" ] || [ -d "$f" ] || echo "BROKEN_REF in AGENT.md: $f"
+          done
+
+      - name: 检查 README 引用目录是否存在
+        run: |
+          for d in web/ scripts/ knowledge/ .github/workflows/; do
+            [ -d "$d" ] || echo "BROKEN_DIR in README: $d"
+          done
+
+      - name: 检查无 modules/ 残留引用
+        run: |
+          ! grep -r "knowledge/modules/" knowledge/ --include="*.md" || {
+            echo "STALE_REF: knowledge/ 仍引用已删除的 modules/"
+          }

@@ -29,3 +29,13 @@
 4. **ETF 无申购历史**：`_update_history()` 跳过 `"场内"` 和美元份额
 5. **截图 cloning**：必须挂 `#ss-preview` 下 → `position:absolute` → 截前 `boxShadow='none'` + `classList.remove('dark')`
 6. **指标卡用 border 不用 box-shadow**：7 种风格各自覆盖 `border-color`，`box-shadow` 统一 `none`
+7. **CI 修复白名单**：仅数据刷新（refresh），不扫描/不重试/修复后必验证
+
+## 诊断严重度分档理由
+
+| 检测项 | 严重度 | 分档理由 |
+|--------|--------|----------|
+| `nav_stale` | error | 数据 >3 天未更新，前端显示严重过期，用户直接感知 |
+| `missing_nav` | warning | 单只基金净值缺失，可自动修复（refresh），不影响整体可用性 |
+| `missing_fee` | warning | 费率数据缺失，不影响核心净值展示，但影响费率 tooltip 展示 |
+| `buy_status_no_date` | info | 申购状态日期字段不完整，纯信息性，下次 fill 自动补充 |

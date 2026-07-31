@@ -17,11 +17,10 @@ cd ../web && python3 -m http.server 8765  # 本地开发
 ## 知识库优先
 
 每次接手任务，按此顺序：
-1. **AGENT.md** — 约束基线（必读，<150行）
+1. **AGENT.md** — 约束基线（必读）
 2. **MEMORY.md** — 压缩速查（~40行，指向 knowledge/）
 3. **knowledge/INDEX.md** — 需要深入理解时，由此定位到完整文档
-4. 图谱查询 — 需要追踪调用链/影响分析时，用 CLI 查图谱
-5. 最后打开源码精读
+4. 最后打开源码精读
 
 ## Critical Rules
 
@@ -57,7 +56,14 @@ cd ../web && python3 -m http.server 8765  # 本地开发
 ### 实时轮询
 - **idle-scheduler** 统一调度（隐藏/空闲暂停）；**offshore-live-nav** lsjz→pzd 兜底；**etf-premium** 盘中60s；**market-indices** 盘中60s/盘后5min
 
-## Harness（改 → 测 → 固）
+## 代码理解
+
+**CodeGraph 优先**：理解代码结构时，先 `codegraph_explore "<symbol or concept>"`，而不是 grep → read 循环。
+仅在以下情况回退到 grep/read：
+- 查找纯文本/注释/配置值（非代码结构）
+- codegraph_explore 无结果（符号尚未索引）
+
+## Harness（改 → 测 → 判）
 
 > 三层：**预防**=本文件 | **执行**=`fundctl.py check` | **反馈**=`feedback/`（详见 `feedback/README.md`）
 
@@ -70,7 +76,7 @@ feedback/   # golden_fixtures.json + verify_data.py + scan_scenarios.py + ui_sce
 **② 测** — 数据侧：`fundctl.py check`（含 verify + lint + scan_scenarios）；UI 侧：启 web → Playwright (`test/`，gitignored)；一个手段不行就换一个
 > Agent 执行路径：先跑 `fundctl.py check`（无浏览器依赖，秒级），再 `python3 -m http.server` 启服务 → `node test/self-check.js` 跑全量 UI 回归。
 
-**③ 固** — 提交 → `scan_scenarios.py` 会提示哪些 UI 场景需要重跑 → 自问是否补回归项 → 同步 MEMORY.md
+**③ 判** — 提交后 data_judge subagent 独立裁决（`.codebuddy/agents/data_judge.md`）；自问是否补回归项 → 同步 MEMORY.md
 
 ### 设计约束
 - **数据侧确定性、UI 侧工具无关**：`verify_data.py` 纯 Python；`ui_scenarios/*.yaml` 声明式
@@ -98,45 +104,42 @@ kill $(lsof -t -i :8899)                        # 关服务
 - 回归场景 → `feedback/ui_scenarios/`（复制 `_TEMPLATE.yaml`）
 - 新 JS/CSS 必须在 `index.html` 加 `?v=placeholder`
 
-## 图谱查询
-
-```bash
-python3 scripts/tools/code_graph.py search who-calls <函数名>
-python3 scripts/tools/code_graph.py search trace --from <A> --to <B>
-python3 scripts/tools/code_graph.py search impact <文件路径>
-python3 scripts/tools/code_graph.py search data-flow <json文件名>
-```
-
 ## 本地门禁（commit 前必须全绿）
 
 ```bash
-cd scripts && python3 fundctl.py check                    # 数据侧（已有）
-python3 scripts/tools/code_graph.py --incremental         # 图谱增量（改了 .py/.js 必跑）
-python3 scripts/tools/code_graph.py --verify              # 20 问退化检测
-python3 scripts/tools/kb_diagnose.py                      # 知识腐坏检测
+cd scripts && python3 fundctl.py check    # 数据侧一致性
+codegraph status                           # 图谱健康
 ```
 
 任一条红 → 修复后再 commit。
 
-## Loop（异常自动修复闭环）
+## Builder-Judge-Manager Loop
 
-每次触发数据更新后，自动运行诊断并在能力范围内修复。
+本地触发后按以下流程自动运行（最多3轮）：
 
-**闭环路径**：
-- 诊断 `fundctl.py diagnose` → 输出异常列表
-- 自动修复：`missing_nav` → `refresh --code`；`missing_fee` → `sync`
-- 无法自动修复 → 追加 `feedback/anomalies.md`
-- 修复后重跑（最多 3 轮），再次诊断确认
+1. **Builder**（主Agent）→ 诊断 + 修复 → 输出 `.loop/builder_output.json`
+2. **Judge**（data_judge subagent，独立上下文）→ 对照4项ground truth裁决
+3. **Manager**（硬逻辑）→ PASS停止 / NEEDS_REVISION回Builder / FAIL通知人
+
+状态文件 `.loop/state.json` 支持断点续跑。运行日志在 `.loop/runs/`。
+Judge 必须是subagent：同一上下文里的评审总是同意自己。
+连续2轮无进展 → 直接FAIL（防Agentic Laziness）。
+
+## Skills
+
+```bash
+fund-add       # 新增追踪基金 → .codebuddy/skills/fund-add/
+fund-diagnose  # 数据健康检查 → .codebuddy/skills/fund-diagnose/
+```
 
 ## 自动文档维护
 
-每次改动代码后，检查 knowledge/ 是否需要更新：
+改动代码后，触发 `doc-sync-structure` Skill 检查 knowledge/ 是否需要更新。
 
 ### knowledge/ 更新触发（LLM 维护，人审）
-- 新架构决策 → **起草 knowledge/adr/ 新 ADR**（完整格式）→ MEMORY.md 追一行摘要 → session-log 提示人审
+- 新架构决策 → **起草 knowledge/adr/ 新 ADR**（完整格式）→ MEMORY.md 追一行摘要
 - 新踩坑       → **追加 knowledge/gotchas.md**（含状态/日期）→ MEMORY.md 追一行摘要
-- 模块接口变化 → **更新 knowledge/modules/*.md** 的 updated 字段 + 关键函数表
-- 发现文档腐坏 → 追加 feedback/anomalies.md（kb_diagnose.py 会自动检测）
+- 发现文档腐坏 → 追加 feedback/anomalies.md
 
 ### AGENT.md / MEMORY.md 更新触发（压缩层）
 - AGENT.md 新增 Critical Rule（人审后写入）
@@ -148,20 +151,13 @@ python3 scripts/tools/kb_diagnose.py                      # 知识腐坏检测
 - MEMORY.md 不存完整知识，只存指针 + 最近动态摘要
 - 架构决策和踩坑不再直接写 MEMORY.md → 先写 knowledge/ 完整版 → 再压一行到 MEMORY.md
 
-## Evolve（自进化 / 自动文档）
+## Evolve（自进化）
 
 **触发链路**：
-1. Agent 改代码 → post-edit.sh 自动 check → 通过
-2. Agent 追加 feedback/session-log.md 摘要
-3. 检查是否涉及架构决策 → 是 → **起草 knowledge/adr/ 新 ADR** → MEMORY.md 追一行
-4. 检查是否涉及新踩坑 → **追加 knowledge/gotchas.md** → MEMORY.md 追一行
-5. feedback/anomalies.md 同类异常 ≥3 次 → 提示"是否追加到 AGENT.md？"
-6. AGENT.md gotchas ≥3 次 → 提示迁移到 knowledge/gotchas.md（永久记录）
-
-**knowledge/ 专项检查**（追加）：
-- kb_diagnose.py 检测到 ADR 引用过期 → 追加 feedback/anomalies.md
-- kb_diagnose.py 检测到 blindspots 积压 >10 → 追加 feedback/anomalies.md
-- 月度审查：将 anomalies 中 knowledge/ 相关项批处理 → 补文档 → 标记 superseded
+1. Agent 改代码 → 检查是否涉及架构决策 → 是 → **起草 knowledge/adr/ 新 ADR** → MEMORY.md 追一行
+2. 检查是否涉及新踩坑 → **追加 knowledge/gotchas.md** → MEMORY.md 追一行
+3. feedback/anomalies.md 同类异常 ≥3 次 → 提示"是否追加到 AGENT.md？"
+4. AGENT.md gotchas ≥3 次 → 提示迁移到 knowledge/gotchas.md（永久记录）
 
 **人确认的门**：
 - AGENT.md 新增规则：Agent 提示 → 你确认 → 写入
