@@ -13,6 +13,7 @@ scripts/test_nav_date_display.py
 
 # Playwright 验证脚本临时产物
 test/
+.playwright-cli/
 
 # 虚拟环境
 venv/
