@@ -48,7 +48,7 @@ Thumbs.db
 .loop/
 
 # V3.1 方案文档软链接（非本机断链）
-plans/QDII*
+plans
 
 # 临时文件
 *.swp
