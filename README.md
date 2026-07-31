@@ -75,7 +75,7 @@ qdii-tracker/
 │   ├── golden_fixtures.json  # 数据侧人工标注期望值
 │   ├── verify_data.py        # 确定性校验脚本（已接入 fundctl.py check）
 │   ├── scan_scenarios.py     # 改动↔场景联动扫描（已接入 fundctl.py check）
-│   └── ui_scenarios/         # 声明式 UI 回归场景（_TEMPLATE.yaml + 5 个真实场景）
+│   └── ui_scenarios/         # 声明式 UI 回归场景（_TEMPLATE.yaml + 6 个真实场景）
 ├── AGENT.md                  # 硬约束规则（长期稳定，改一次管很久）
 ├── MEMORY.md                 # 压缩索引，指向 knowledge/
 ├── knowledge/                # AI Agent 知识库（ADR / gotchas / 数据源）
@@ -85,7 +85,7 @@ qdii-tracker/
 │   └── adr/                  # 架构决策记录 (6 篇)
 ├── .codebuddy/               # Agent Harness (CodeBuddy)
 │   ├── CODEBUDDY.md → (软链接到 ../AGENT.md)
-│   ├── skills/               # fund-add, fund-diagnose
+│   ├── skills/               # fund-add, fund-diagnose, doc-sync-structure, doc-sync-evolve
 │   └── agents/               # data_judge (Builder-Judge-Manager Loop)
 ├── .codegraph/               # 代码图谱（本地生成，不进 git）
 ├── .loop/                    # Loop 运行状态（运行时产物，不进 git）

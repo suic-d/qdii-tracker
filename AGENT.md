@@ -18,7 +18,7 @@ cd ../web && python3 -m http.server 8765  # 本地开发
 
 每次接手任务，按此顺序：
 1. **AGENT.md** — 约束基线（必读）
-2. **MEMORY.md** — 压缩速查（~40行，指向 knowledge/）
+2. **MEMORY.md** — 压缩速查（目标 &lt;50行，指向 knowledge/）
 3. **knowledge/INDEX.md** — 需要深入理解时，由此定位到完整文档
 4. 最后打开源码精读
 
@@ -74,7 +74,6 @@ feedback/   # golden_fixtures.json + verify_data.py + scan_scenarios.py + ui_sce
 **① 改** — 检查 `.codebuddy/plans/` 续接 → 读 AGENT/MEMORY → 每步勾计划文件
 
 **② 测** — 数据侧：`fundctl.py check`（含 verify + lint + scan_scenarios）；UI 侧：启 web → Playwright (`test/`，gitignored)；一个手段不行就换一个
-> Agent 执行路径：先跑 `fundctl.py check`（无浏览器依赖，秒级），再 `python3 -m http.server` 启服务 → `node test/self-check.js` 跑全量 UI 回归。
 
 **③ 判** — 提交后 data_judge subagent 独立裁决（`.codebuddy/agents/data_judge.md`）；自问是否补回归项 → 同步 MEMORY.md
 
@@ -87,9 +86,7 @@ feedback/   # golden_fixtures.json + verify_data.py + scan_scenarios.py + ui_sce
 ### 每次修改后
 ```bash
 cd scripts && python3 fundctl.py check          # 数据侧（秒级，无浏览器）
-cd ../web && python3 -m http.server 8899 &      # 启服务
-NODE_PATH=~/.npm/_npx/<cache>/node_modules node test/self-check.js  # UI 全量
-kill $(lsof -t -i :8899)                        # 关服务
+# UI 侧用 Playwright CLI 或 agent-browser Skill 做回归（反馈 → feedback/ui_scenarios/）
 ```
 
 ### 改截图分享额外检查
@@ -127,10 +124,16 @@ Judge 必须是subagent：同一上下文里的评审总是同意自己。
 
 ## Skills
 
+> ⚠️ **基金数据操作强制规则**（yao-meta-skill 修复 2026-07-31）：对基金进行增/删/改操作前，MUST 先检查 `.codebuddy/skills/` 中是否有对应 Skill。**禁止不经 Skill 直接改 `config/funds.json`、跑全量 `fundctl.py sync` 或手动操作数据文件**。根因：Agent 极易凭直觉「改 JSON + 跑脚本」而不加载 Skill。Skill 是对直觉的校准。
+
 ```bash
-fund-add       # 新增追踪基金 → .codebuddy/skills/fund-add/
-fund-diagnose  # 数据健康检查 → .codebuddy/skills/fund-diagnose/
+fund-add            # 新增追踪基金 → .codebuddy/skills/fund-add/
+fund-diagnose       # 数据健康检查 → .codebuddy/skills/fund-diagnose/
+doc-sync-structure  # 文档目录同步 → .codebuddy/skills/doc-sync-structure/
+doc-sync-evolve     # 经验沉淀向导 → .codebuddy/skills/doc-sync-evolve/
 ```
+
+**Skill 加载优先级**：任务开始前 → 识别操作类型 → 检查是否有 Skill 覆盖 → 有则先加载 Skill 再操作。同一目录下的 Skill 彼此互补，需要时并行加载。
 
 ## 自动文档维护
 

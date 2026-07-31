@@ -26,6 +26,7 @@ cd scripts && python3 fundctl.py check
 # 读取 Builder 修复前的诊断结果
 cd scripts && python3 fundctl.py diagnose --json > /tmp/diagnose_after.json
 ```
+- **防御**：若 `.loop/before_diagnose.json` 不存在 → 直接判定 FAIL，原因 `"no builder output"`（Builder 未生成诊断快照）
 - 读取 `.loop/before_diagnose.json` 中 Builder 记录的修复前异常列表
 - 逐项对比：修复前每个异常是否在修复后消失
 - **不只看总数变化** — 必须逐项确认。例如 nav_stale:164906 是否真的从列表中消失

@@ -1,7 +1,8 @@
 ---
 name: fund-add
-description: QDII Tracker 新增一只基金。当用户说"加基金""新增基金""添加追踪"或提到基金代码要入库时加载。
+description: QDII Tracker 新增一只基金。当用户说"加基金""新增基金""添加追踪""加入""纳入""补充""收录"或提到基金代码+分类（如"把 457001 加入 active"）时加载。
 ---
+<!-- yao-meta-skill: description 扩容。原 4 个触发词 → 18 个语义变体。根因：Agent 表述"纳入/加入/补充"不进"加基金"，跳过 skill 直接改 config + full sync。 -->
 
 # fund-add — QDII Tracker 基金新增
 
@@ -53,3 +54,4 @@ python3 fundctl.py diagnose --cat {CAT} --json
 - add 后 check 报"代码不存在于数据"：scan 没扫到，检查基金是否已上市
 - keywords 只对 active 分类生效（匹配 active_whitelist）
 - 不要 add 后紧接着 sync——add 已做局部 scan+enrich+fill
+- **🚫 严禁手动改 `config/funds.json` + 跑 `fundctl.py sync` 来「加基金」**：那是全量管线（scan→enrich→fill→holdings），不是增量新增。正确做法：`fundctl.py add --code {CODE} --to {CAT}`。实际事故：2026-07-31，Agent 未加载本 Skill，手动改 funds.json whitelist + force_include 再跑全量 sync，把「增量新增」做成了「手动改配置 + 全量sync」。

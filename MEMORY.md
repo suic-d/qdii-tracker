@@ -20,7 +20,7 @@
 - `STATE.data[cat]` 是前端唯一数据源。轮询直接原地写 STATE
 - Python 间 → `scripts/core/utils.py`；Python→前端 → JSON
 - `web/js/config.js` = 纯常量；`utils.js` = 纯函数
-- 详见 `knowledge/` 各模块手册
+- 具体技术细节 → `knowledge/gotchas.md` 和 `knowledge/adr/`；调用链 → `codegraph_explore`
 
 ## 最近关键变更（append-only）
 <!-- Agent 自动追加，仅存最近 5 条 -->
