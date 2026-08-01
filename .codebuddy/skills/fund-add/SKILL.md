@@ -34,8 +34,7 @@ python3 fundctl.py check
 python3 fundctl.py diagnose --cat {CAT} --json
 ```
 输出完整诊断报告（已尝试修复 + 失败原因）
-标记：需人工介入
-在 feedback/anomalies.md 追加一条异常记录
+标记：需人工介入 → 追加到 `knowledge/gotchas.md`
 
 ## 约束（来自 AGENT.md Critical Rules）
 - scan 后必须接 enrich + fill

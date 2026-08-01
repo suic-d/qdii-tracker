@@ -77,6 +77,10 @@ def update_config_whitelist(series: dict, keyword: str, to_cat: str):
         code = sh.get("code")
         if code:
             force_include[code] = to_cat
+            # 自动清理 force_exclude 中的僵尸条目
+            if code in cfg.get("classify", {}).get("force_exclude", []):
+                cfg["classify"]["force_exclude"].remove(code)
+                print(f"  🧹 已从 force_exclude 移除 {code}")
 
     if to_cat == "active":
         wl = classify.setdefault("active_whitelist", [])

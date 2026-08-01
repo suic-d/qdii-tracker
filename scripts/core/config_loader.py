@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from core.constants import CONFIG_DIR
+from core.utils import write_json
 
 _CONFIG = None
 
@@ -30,9 +31,7 @@ def save_config(cfg: dict):
     """写回 config/funds.json（fundctl add/move 时使用）"""
     global _CONFIG
     _CONFIG = cfg
-    with open(_config_path(), "w", encoding="utf-8") as f:
-        json.dump(cfg, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+    write_json(_config_path(), cfg)
 
 
 

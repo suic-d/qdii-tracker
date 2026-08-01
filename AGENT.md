@@ -1,170 +1,121 @@
 # QDII Tracker
 
-> 约束 + 踩坑速查。架构 + 功能 + 命令见 [README](./README.md)。决策细节见 `knowledge/adr/`。
+> Agent 规则入口。架构+功能见 [README](./README.md)。解释记忆见 `knowledge/`。结构记忆见 `.codegraph/`。
+
+## 任务路由（防幻觉：每个任务必须按此流程）
+
+收到用户任务后，按类型选择对应流程，**不跳步、不自行发挥**。
+
+### 基金操作类（加/删/改/查基金）
+
+```
+用户说"加基金/新增基金/纳入追踪" 
+  → ❶ 加载 fund-add Skill（MUST，禁止直接改 config/funds.json）
+  → ❷ Skill 内步骤：fundctl.py add → scan → enrich → fill → holdings
+  → ❸ fundctl.py check（全绿才算完）
+```
+
+```
+用户说"检查数据/诊断/异常" 
+  → ❶ 加载 fund-diagnose Skill
+  → ❷ fundctl.py diagnose → 解读输出 → auto-fix → check
+```
+
+### 代码修改类（改 scripts/ 核心逻辑）
+
+```
+用户说"改代码/重构/优化/修复" 
+  → ❶ 加载 code-change Skill
+  → ❷ 改前预检：blast radius（codegraph_explore）→ pipeline-contracts → 确认影响
+  → ❸ 改后验证：fundctl.py check → codegraph status
+  → ❹ 加载 doc-maintain Skill（如果新增/删除/改名文件）
+```
+
+### 截图/UI 类
+
+```
+用户说"截图/分享" 或 修改 screenshot.js/app.css/index.html
+  → ❶ 加载 screenshot-check Skill
+  → ❷ 按 Skill checklist 逐项检查
+```
+
+### 信息查询类（无代码改动）
+
+```
+用户问"XX 在哪里/XX 怎么实现的/XX 是什么逻辑"
+  → ❶ codegraph_explore 查结构记忆（代码符号/调用链）
+  → ❷ 无结果 → knowledge/INDEX.md 查解释记忆（ADR/gotchas/数据源）
+  → ❸ 仍无结果 → grep/read 源码（最后手段）
+```
+
+### 文档/经验沉淀类
+
+```
+用户说"记下来/更新文档/这个教训记住"
+  → ❶ 加载 doc-maintain Skill
+  → ❷ 判断写哪里：架构决策→adr/ | 踩坑→gotchas.md | 规则→AGENT.md（人审）
+```
+
+## 关键边界（不可协商）
+
+### 知识获取优先级
+```
+codegraph_explore（结构）
+  → knowledge/INDEX.md（解释）
+  → 源码 grep/read（最后手段）
+```
+**禁止跳过 codegraph_explore 直接 grep 源码**。
+
+### 数据安全
+- `fundctl.py check` 必须全绿才算任务完成
+- nav_date 永不回退（lsjz 失败保留旧值，禁用 `datetime.now()` 推算）
+- 写盘前 normalize：`normalize_share_keys()` / `normalize_holdings_keys()`
+- scan 后必须接 enrich + fill，否则覆盖丢失已有数据
+
+### 部署
+- 禁止 CI 内嵌部署：仅 commit+push → `gh workflow run deploy-pages.yml --ref main`
+- 不改既有 UI：红涨绿跌、主动基红色警告
+- 新 JS/CSS 在 `index.html` 加 `?v=placeholder`
 
 ## Commands
 
 ```bash
-cd scripts && python3 fundctl.py sync    # scan→enrich→fill→holdings
-cd scripts && python3 fundctl.py refresh  # fill 增量
-cd scripts && python3 fundctl.py add --code 008888 --to active --keyword "基金名"
-cd scripts && python3 fundctl.py diagnose  # 数据诊断（--cat X --json --auto-fix）
-cd scripts && python3 fundctl.py check    # 一致性校验（含 golden fixtures）
-python3 feedback/verify_data.py           # 单独跑数据验收
-cd ../web && python3 -m http.server 8765  # 本地开发
+cd scripts && python3 fundctl.py sync                      # scan→enrich→fill→holdings
+cd scripts && python3 fundctl.py refresh                    # fill 增量
+cd scripts && python3 fundctl.py add --code 008888 --to active 
+cd scripts && python3 fundctl.py diagnose --cat X --json --auto-fix
+cd scripts && python3 fundctl.py check                      # 门禁（必须全绿，7层校验）
+cd ../web && python3 -m http.server 8765                    # 本地开发
 ```
 
-## 知识库优先
-
-每次接手任务，按此顺序：
-1. **AGENT.md** — 约束基线（必读）
-2. **MEMORY.md** — 压缩速查（目标 &lt;50行，指向 knowledge/）
-3. **knowledge/INDEX.md** — 需要深入理解时，由此定位到完整文档
-4. 最后打开源码精读
-
-## Critical Rules
-
-### 数据流水线
-- **scan 后必须接 enrich + fill**，否则覆盖丢失已有数据
-- **数据文件不写时间戳**：仅 `meta.json` 保留 `generated_at`
-- **写盘前 normalize**：`{cat}.json` → `normalize_share_keys()`
-- **nav_date 永不回退**：lsjz 失败保留旧值，禁用 `datetime.now()` 推算
-- **force_include 不继承子类**：A/C/美元逐一加入；跨分类挪动：(a) 全量子类加 → (b) scan 检查残留 → (c) enrich+fill
-- **LOF chg_ytd 兜底**：取同系列兄弟份额（A/C 差异 <1%）
-- **ETF 无申购历史**：`_update_history()` 跳过 `"场内"`
-
-### 部署
-- **禁止 CI 内嵌部署**：仅 commit+push → `gh workflow run deploy-pages.yml --ref main`
-- **不改既有 UI**：红涨绿跌、主动基红色警告
-- **版本戳**：`deploy-pages.yml` 自动 bump，新 JS/CSS 写 `?v=placeholder`
-- **目录纪律**：`web/` 仅 `data/*.json` / `js/*.js` / `css/*.css` / `.nojekyll`
-
-### 截图分享（全部约束）
-- **screenshot.js**：IIFE，`html-to-image` CDN 懒加载；CSS 独立 `app.css`
-- **卡片结构**：外层 `.ss-phone-wrap`（唯一带边框）+ 内层 `.ss-inner` × 2（无边框）→ 不改结构
-- **宽度自适应**：wrap `fit-content` + dialog `rAF` 同步 `style.width`
-- **窄屏**：`.ss-chip-group`/`.ss-col-grid` `min-width:0`；`.ss-tbl-wrap { overflow-x: auto }`
-- **净值列**：日期内联 `<span>·MM-DD</span>`，不换行
-- **列筛选**：`locked:true` 不显示面板；`sortable:true` 可排序
-- **表头对齐**：申购居中 / 数字右对齐 / 其余左对齐
-- **iPhone**：截前在克隆体上移除 `backdrop-filter`，`navigator.share()` 存相册
-- **玻璃态 UI**：Chip/Tab/分享按钮激活态中性渐变跟随主题（亮=深底白字，暗=浅底深字）；市场卡/弹窗 `backdrop-filter:blur`；`-webkit-` 前缀必配
-- **申购历史**：`_update_history()` → `buy_status_history[]`；状态+额度都没变则保持原日期；任一变化追加新条目
-- **指标卡**：轮廓用 `border`，不用 `box-shadow`；7 风格覆盖 `border-color`，`box-shadow:none`
-- **`snapPng()`**：`cloneNode` 离屏渲染 → 不改可见 DOM；克隆体 `position:absolute` + `#ss-preview{position:relative}`（必须挂 preview 下）；截前 `clone.style.boxShadow='none'` 去外框阴影 + `classList.remove('dark')` 强制亮色 → 截后恢复暗色。详见 `knowledge/adr/002-clonenode-off-screen-render.md`
-
-### 实时轮询
-- **idle-scheduler** 统一调度（隐藏/空闲暂停）；**offshore-live-nav** lsjz→pzd 兜底；**etf-premium** 盘中60s；**market-indices** 盘中60s/盘后5min
-
-## 代码理解
-
-**CodeGraph 优先**：理解代码结构时，先 `codegraph_explore "<symbol or concept>"`，而不是 grep → read 循环。
-仅在以下情况回退到 grep/read：
-- 查找纯文本/注释/配置值（非代码结构）
-- codegraph_explore 无结果（符号尚未索引）
-
-## Harness（改 → 测 → 判）
-
-> 三层：**预防**=本文件 | **执行**=`fundctl.py check` | **反馈**=`feedback/`（详见 `feedback/README.md`）
-
-```
-feedback/   # golden_fixtures.json + verify_data.py + scan_scenarios.py + ui_scenarios/ (5场景)
-```
-
-**① 改** — 检查 `.codebuddy/plans/` 续接 → 读 AGENT/MEMORY → 每步勾计划文件
-
-**② 测** — 数据侧：`fundctl.py check`（含 verify + lint + scan_scenarios）；UI 侧：启 web → Playwright (`test/`，gitignored)；一个手段不行就换一个
-
-**③ 判** — 提交后 data_judge subagent 独立裁决（`.codebuddy/agents/data_judge.md`）；自问是否补回归项 → 同步 MEMORY.md
-
-### 设计约束
-- **数据侧确定性、UI 侧工具无关**：`verify_data.py` 纯 Python；`ui_scenarios/*.yaml` 声明式
-- **空 fixtures/无场景 = 通过**；**只固化验证通过的结果**
-
-## 可执行清单（Agent 照做）
-
-### 每次修改后
-```bash
-cd scripts && python3 fundctl.py check          # 数据侧（秒级，无浏览器）
-# UI 侧用 Playwright CLI 或 agent-browser Skill 做回归（反馈 → feedback/ui_scenarios/）
-```
-
-### 改截图分享额外检查
-- 保存 PNG 无外框阴影 → `snapPng()` 截前 `clone.style.boxShadow = 'none'`
-- 克隆体 `position:absolute` + 挂 `#ss-preview` → 不丢 CSS 上下文
-- 指标卡 border + no box-shadow → 7 风格全覆盖
-- 手机端表格 → `.ss-tbl-wrap { overflow-x: auto }`
-
-### 新增文件放哪
-- JS → `web/js/`；CSS → `web/css/`；测试 → `test/`（gitignored）
-- Python → `scripts/pipeline/` 或 `scripts/core/`
-- 回归场景 → `feedback/ui_scenarios/`（复制 `_TEMPLATE.yaml`）
-- 新 JS/CSS 必须在 `index.html` 加 `?v=placeholder`
-
-## 本地门禁（commit 前必须全绿）
+## 门禁（commit 前）
 
 ```bash
-cd scripts && python3 fundctl.py check    # 数据侧一致性
+cd scripts && python3 fundctl.py check    # Layer 0-7: nav_date→配置→lint→fixtures→一致性→文档→交叉验证
 codegraph status                           # 图谱健康
 ```
 
 任一条红 → 修复后再 commit。
 
-## Builder-Judge-Manager Loop
-
-本地触发后按以下流程自动运行（最多3轮）：
-
-1. **Builder**（主Agent）→ 诊断 + 修复 → 输出 `.loop/builder_output.json`
-2. **Judge**（data_judge subagent，独立上下文）→ 对照4项ground truth裁决
-3. **Manager**（硬逻辑）→ PASS停止 / NEEDS_REVISION回Builder / FAIL通知人
-
-状态文件 `.loop/state.json` 支持断点续跑。运行日志在 `.loop/runs/`。
-Judge 必须是subagent：同一上下文里的评审总是同意自己。
-连续2轮无进展 → 直接FAIL（防Agentic Laziness）。
+> Standing Spec：任务完成 = `fundctl.py check` 全绿 + 零残留引用（feedback/、MEMORY.md 等不存在路径）。
 
 ## Skills
 
-> ⚠️ **基金数据操作强制规则**（yao-meta-skill 修复 2026-07-31）：对基金进行增/删/改操作前，MUST 先检查 `.codebuddy/skills/` 中是否有对应 Skill。**禁止不经 Skill 直接改 `config/funds.json`、跑全量 `fundctl.py sync` 或手动操作数据文件**。根因：Agent 极易凭直觉「改 JSON + 跑脚本」而不加载 Skill。Skill 是对直觉的校准。
+> 基金增/删/改前 MUST 先加载对应 Skill。**禁止直接改 config/funds.json 或跑全量 sync**。
+> 改 scripts/ 核心逻辑前 MUST 加载 code-change Skill。**禁止跳过 blast radius 检查**。
 
 ```bash
-fund-add            # 新增追踪基金 → .codebuddy/skills/fund-add/
-fund-diagnose       # 数据健康检查 → .codebuddy/skills/fund-diagnose/
-doc-sync-structure  # 文档目录同步 → .codebuddy/skills/doc-sync-structure/
-doc-sync-evolve     # 经验沉淀向导 → .codebuddy/skills/doc-sync-evolve/
+fund-add            # 新增基金
+fund-diagnose       # 数据诊断
+doc-maintain        # 文档维护（结构同步 + 经验沉淀）
+screenshot-check    # 截图分享约束检查
+code-change         # 改核心逻辑安全检查（改前预检 + 改后验证）
 ```
 
-**Skill 加载优先级**：任务开始前 → 识别操作类型 → 检查是否有 Skill 覆盖 → 有则先加载 Skill 再操作。同一目录下的 Skill 彼此互补，需要时并行加载。
+## Evolve
 
-## 自动文档维护
+1. 新架构决策 → 起草 `knowledge/adr/` 新 ADR
+2. 新踩坑 → 追加 `knowledge/gotchas.md`
+3. 同类异常 ≥3 次 → 提示"追加到 AGENT.md？"
 
-改动代码后，触发 `doc-sync-structure` Skill 检查 knowledge/ 是否需要更新。
-
-### knowledge/ 更新触发（LLM 维护，人审）
-- 新架构决策 → **起草 knowledge/adr/ 新 ADR**（完整格式）→ MEMORY.md 追一行摘要
-- 新踩坑       → **追加 knowledge/gotchas.md**（含状态/日期）→ MEMORY.md 追一行摘要
-- 发现文档腐坏 → 追加 feedback/anomalies.md
-
-### AGENT.md / MEMORY.md 更新触发（压缩层）
-- AGENT.md 新增 Critical Rule（人审后写入）
-- MEMORY.md 追一行「最近关键变更」（Agent append-only）
-- 不确定是否该加 → session-log 写一条待确认
-
-### 更新原则
-- knowledge/ = 唯一权威知识源（Thin AGENT.md/MEMORY.md, Fat knowledge/）
-- MEMORY.md 不存完整知识，只存指针 + 最近动态摘要
-- 架构决策和踩坑不再直接写 MEMORY.md → 先写 knowledge/ 完整版 → 再压一行到 MEMORY.md
-
-## Evolve（自进化）
-
-**触发链路**：
-1. Agent 改代码 → 检查是否涉及架构决策 → 是 → **起草 knowledge/adr/ 新 ADR** → MEMORY.md 追一行
-2. 检查是否涉及新踩坑 → **追加 knowledge/gotchas.md** → MEMORY.md 追一行
-3. feedback/anomalies.md 同类异常 ≥3 次 → 提示"是否追加到 AGENT.md？"
-4. AGENT.md gotchas ≥3 次 → 提示迁移到 knowledge/gotchas.md（永久记录）
-
-**人确认的门**：
-- AGENT.md 新增规则：Agent 提示 → 你确认 → 写入
-- knowledge/adr/ 新增 ADR / knowledge/gotchas.md：Agent 起草 → 你审 → 写入
-- MEMORY.md 追一行：Agent 直接写（append-only，不覆盖）
-- session-log.md：Agent 直接写（纯记录）
-- 每季度检查一次：以上条目是否还有效？已过时的规则/模型直接删除
+人审门：AGENT.md 新增规则 → 提示后写入；knowledge/ → 起草后审。

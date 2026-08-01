@@ -7,11 +7,9 @@ import os
 import subprocess
 import sys
 from datetime import datetime
-from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = PROJECT_ROOT / "web" / "data"
-SCRIPTS_DIR = PROJECT_ROOT / "scripts"
+from core.constants import ROOT_DIR, DATA_DIR
+SCRIPTS_DIR = ROOT_DIR / "scripts"
 
 
 def diagnose_all():
@@ -130,7 +128,7 @@ def _check_fee_anomalies():
         cat_name = data.get("meta", {}).get("name", os.path.basename(path))
         for series in data.get("series", []):
             for share in series.get("shares", []):
-                mgmt_fee = share.get("fee_mgmt", 0)
+                mgmt_fee = share.get("mgmt_fee", 0)
                 if mgmt_fee == 0:
                     issues.append({
                         "severity": "warning",

@@ -8,7 +8,7 @@ from datetime import datetime
 
 import requests
 
-from core.constants import HEADERS_EASTMONEY, HEADERS_FUND
+from core.constants import HEADERS_EASTMONEY, HEADERS_FUND, HTTP_TIMEOUT
 from core.utils import to_float, BEIJING_TZ
 
 
@@ -26,7 +26,7 @@ def fetch_lsjz(code: str):
         f"?callback=jQuery&fundCode={code}&pageIndex=1&pageSize=1"
     )
     try:
-        r = requests.get(url, headers=HEADERS_EASTMONEY, timeout=8)
+        r = requests.get(url, headers=HEADERS_EASTMONEY, timeout=HTTP_TIMEOUT)
     except Exception:
         return None
     if r.status_code != 200:
@@ -71,7 +71,7 @@ def fetch_pzd(code: str):
     """
     url = f"https://fund.eastmoney.com/pingzhongdata/{code}.js"
     try:
-        r = requests.get(url, headers=HEADERS_FUND, timeout=8)
+        r = requests.get(url, headers=HEADERS_FUND, timeout=HTTP_TIMEOUT)
     except Exception:
         return None
     if r.status_code != 200:
@@ -126,7 +126,7 @@ def fetch_f10(code: str):
     """
     url = f"https://fundf10.eastmoney.com/jbgk_{code}.html"
     try:
-        r = requests.get(url, headers=HEADERS_EASTMONEY, timeout=8)
+        r = requests.get(url, headers=HEADERS_EASTMONEY, timeout=HTTP_TIMEOUT)
     except Exception:
         return None
     if r.status_code != 200:
@@ -159,7 +159,7 @@ def fetch_f10(code: str):
     # 从费率页抓取管理费/托管费/销售服务费/首档买入费率
     try:
         fee_url = f"https://fundf10.eastmoney.com/jjfl_{code}.html"
-        fr = requests.get(fee_url, headers=HEADERS_EASTMONEY, timeout=8)
+        fr = requests.get(fee_url, headers=HEADERS_EASTMONEY, timeout=HTTP_TIMEOUT)
         if fr.status_code == 200:
             fr.encoding = "utf-8"
             fee_text = fr.text
@@ -193,7 +193,7 @@ def fetch_fee_rules(code: str):
     """
     fee_url = f"https://fundf10.eastmoney.com/jjfl_{code}.html"
     try:
-        fr = requests.get(fee_url, headers=HEADERS_EASTMONEY, timeout=8)
+        fr = requests.get(fee_url, headers=HEADERS_EASTMONEY, timeout=HTTP_TIMEOUT)
         if fr.status_code != 200:
             return None
         fr.encoding = "utf-8"

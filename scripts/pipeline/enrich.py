@@ -5,7 +5,7 @@
 import json
 import time
 
-from core.constants import CATEGORIES, DATA_DIR, CURRENCY_RANK, SHARE_CLASS_RANK
+from core.constants import CATEGORIES, DATA_DIR, CURRENCY_RANK, SHARE_CLASS_RANK, RATE_LIMIT_DELAY
 from core.utils import read_json, write_json, bump_generated_at, normalize_share_keys, calc_series_scale
 from sources.akshare_source import fetch_rank_data, fetch_purchase_data, fetch_etf_data
 from sources.eastmoney_source import fetch_lsjz
@@ -69,7 +69,7 @@ def main():
             free_days = fd.get('free_hold_days')
             buy_rate = fd.get('first_buy_rate')
             print(f"  进度: {i}/{total}  最新: {code} 规模={basic.get('scale_raw', '--')} 首档买入={buy_rate} 免费持有={free_days}天")
-        time.sleep(0.2)
+        time.sleep(RATE_LIMIT_DELAY)
 
     # Step 4: 合并所有数据到 series 里
     print("\n🔀 合并数据并计算默认份额（按规模最大）...")
@@ -112,7 +112,7 @@ def main():
                         nd = new_nav_date["nav_date"]
                         if not cur_nav_date or nd >= cur_nav_date:
                             share["nav_date"] = nd
-                    time.sleep(0.15)
+                    time.sleep(RATE_LIMIT_DELAY)
 
             # 份额排序
             series["shares"].sort(key=share_sort_key)
@@ -126,14 +126,15 @@ def main():
         data["total_scale"] = round(total_scale, 2)
 
         normalize_share_keys(data)
-        with open(data_dir / f"{cat}.json", "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        write_json(data_dir / f"{cat}.json", data)
         print(f"  💾 {cat}.json  系列数={len(data['series'])}  总规模={data['total_scale']}亿")
 
     # 更新 meta
     bump_generated_at()
 
     print("\n✅ 全量丰富完成！")
+    from core.observability import log_step
+    log_step("enrich", result="ok")
 
 
 if __name__ == "__main__":

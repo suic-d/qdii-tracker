@@ -4,13 +4,18 @@ AKShare 数据源：全量批量接口 + 逐只接口。
 """
 import akshare as ak
 
-from core.utils import to_float
+from core.constants import AKSHARE_TIMEOUT
+from core.utils import to_float, call_ak
+
+
+def _call_ak(func, *args, **kwargs):
+    return call_ak(func, AKSHARE_TIMEOUT, *args, **kwargs)
 
 
 def fetch_rank_data():
     """全量涨跌幅数据（原 enrich_data.py + refresh_purchase.py 各调一次）"""
     print("🔍 拉取全量涨跌幅排名...")
-    df = ak.fund_open_fund_rank_em(symbol="全部")
+    df = _call_ak(ak.fund_open_fund_rank_em, symbol="全部")
     print(f"  ✅ {len(df)} 条")
     rank_map = {}
     for _, row in df.iterrows():
@@ -36,7 +41,7 @@ def fetch_rank_data():
 def fetch_purchase_data():
     """全量申购限额数据（原 enrich_data.py + refresh_purchase.py 各调一次）"""
     print("🔍 拉取全量申购状态/限额...")
-    df = ak.fund_purchase_em()
+    df = _call_ak(ak.fund_purchase_em)
     print(f"  ✅ {len(df)} 条")
     purchase_map = {}
     for _, row in df.iterrows():
@@ -56,7 +61,7 @@ def fetch_etf_data():
     """ETF 场内数据（规模/价格，原 enrich_data.py）"""
     print("🔍 拉取全量 ETF 现货数据（含规模）...")
     try:
-        df = ak.fund_etf_spot_em()
+        df = ak.fund_etf_spot_em()  # signal-based timeout not applicable in try/except context
         print(f"  ✅ {len(df)} 条")
     except Exception as e:
         print(f"  ❌ {e}")
@@ -87,7 +92,7 @@ def fetch_ytd(code: str):
         return None
     try:
         from core.utils import beijing_year_start
-        df = ak.fund_open_fund_info_em(symbol=code, indicator="累计收益率走势")
+        df = _call_ak(ak.fund_open_fund_info_em, symbol=code, indicator="累计收益率走势")
         if df is None or len(df) == 0:
             return None
         # 兼容列名差异
@@ -115,7 +120,7 @@ def fetch_inception_return(code: str):
     返回 float 百分比，或 None。
     """
     try:
-        df = ak.fund_open_fund_info_em(symbol=code, indicator="累计收益率走势")
+        df = _call_ak(ak.fund_open_fund_info_em, symbol=code, indicator="累计收益率走势")
         if df is not None and len(df) > 0:
             last_val = df.iloc[-1]["累计收益率"]
             if last_val is not None:
@@ -128,7 +133,7 @@ def fetch_inception_return(code: str):
 def fetch_fund_names():
     """全量基金名称表（原 scan_funds.py）"""
     print("🔍 从 AKShare 获取全量基金名称表...")
-    df = ak.fund_name_em()
+    df = _call_ak(ak.fund_name_em)
     print(f"✅ 全部基金: {len(df)} 只")
     return df
 
@@ -142,7 +147,7 @@ def fetch_holdings(code: str, year: str = None):
     if year is None:
         year = str(beijing_year())
     try:
-        df = ak.fund_portfolio_hold_em(symbol=code, date=year)
+        df = _call_ak(ak.fund_portfolio_hold_em, symbol=code, date=year)
         if len(df) == 0:
             return None
         # 按季度分组（最新季度排前面）

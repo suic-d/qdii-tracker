@@ -34,15 +34,23 @@ cd scripts && python3 fundctl.py diagnose --json > /tmp/diagnose_after.json
 
 ### 3. Golden Fixtures 回归
 ```bash
-python3 feedback/verify_data.py
+cd scripts && python3 pipeline/verify_data.py
 ```
 - 通过标准：已知基金/日期的数据值匹配
 - 此检查是回归防止，任何 fixture 不匹配都判定 FAIL
+- verify_data.py 从 `knowledge/golden-fixtures.md` 解析内嵌 JSON，与 `web/data/*.json` 逐条比对
+- 注意：`fundctl.py check` 也包含此检查（第 4 步），可替代独立调用
 
-### 4. 跨源交叉验证
-- 对同一基金，检查 ≥2 数据源的净值偏差
-- 偏差 < 0.5% 视为通过
+### 4. 跨源交叉验证（`python3 scripts/pipeline/cross_validate.py`）
+- 对比 lsjz（天天基金）和 pzd（pingzhongdata）的净值，偏差 > 0.5% 标记异常
 - 此检查防止 Goodhart's Law — 单纯通过前 3 项不代表数据正确
+
+### 硬停止条件
+
+以下任一触发，直接返回 FAIL 并说明原因：
+- **连续 2 轮裁决无进展**：round N 和 round N+1 的 diff 完全一致
+- **超过最大轮数**：max_rounds=3（可配置）
+- **Builder 重复输出相同错误**：同一错误修复 2 次仍失败
 
 ## 裁决输出格式
 
@@ -67,9 +75,9 @@ python3 feedback/verify_data.py
 ## 允许的命令
 
 仅允许只读命令：
-- `fundctl.py check`
+- `fundctl.py check`（含 golden fixtures + architecture lint）
 - `fundctl.py diagnose --json`
-- `verify_data.py`
+- `pipeline/verify_data.py`（独立 golden fixtures 校验）
 - `diff`（对比 before/after diagnose）
 - 读取 `.loop/` 中的 JSON 文件
 

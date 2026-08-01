@@ -6,13 +6,18 @@ import re
 
 import akshare as ak
 
-from core.utils import to_float, parse_scale
+from core.constants import XUEQIU_TIMEOUT
+from core.utils import to_float, parse_scale, call_ak
+
+
+def _call_ak(func, *args, **kwargs):
+    return call_ak(func, XUEQIU_TIMEOUT, *args, **kwargs)
 
 
 def fetch_basic_info(code: str):
     """逐只获取规模、基金经理、成立时间（雪球接口）。原逻辑来自 enrich_data.py。"""
     try:
-        df = ak.fund_individual_basic_info_xq(symbol=code)
+        df = _call_ak(ak.fund_individual_basic_info_xq, symbol=code)
         info = dict(zip(df["item"], df["value"]))
         return {
             "scale": parse_scale(info.get("最新规模")),
@@ -30,7 +35,7 @@ def fetch_basic_info(code: str):
 def fetch_fee_detail(code: str):
     """逐只获取费率详情（买入规则/卖出规则/免费持有天数）。原逻辑来自 enrich_data.py。"""
     try:
-        df = ak.fund_individual_detail_info_xq(symbol=code)
+        df = _call_ak(ak.fund_individual_detail_info_xq, symbol=code)
         buy_rules = []
         sell_rules = []
         mgmt_fee = None

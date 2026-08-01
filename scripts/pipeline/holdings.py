@@ -5,7 +5,7 @@
 import json
 import time
 
-from core.constants import CATEGORIES, DATA_DIR, HOLDINGS_DIR, HOLDINGS_CATEGORIES
+from core.constants import CATEGORIES, DATA_DIR, HOLDINGS_DIR, HOLDINGS_CATEGORIES, HOLDINGS_RATE_LIMIT
 from core.utils import write_json, normalize_holdings_keys, fetch_and_save_holdings
 from core.config_loader import get_config
 from sources.akshare_source import fetch_holdings
@@ -62,10 +62,12 @@ def main():
             success += 1
         else:
             fail += 1
-        time.sleep(0.3)
+        time.sleep(HOLDINGS_RATE_LIMIT)
 
     print()
     print(f"✅ 完成：成功 {success} 失败 {fail}")
+    from core.observability import log_step
+    log_step("holdings", result="ok", detail=f"success={success}, fail={fail}")
 
 
 if __name__ == "__main__":

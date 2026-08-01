@@ -18,7 +18,7 @@ scripts/architecture_lint.py — 目录纪律强制校验
     web/css/   仅允许 *.css
 
 设计原则：
-    - 只做「结构」校验，不做内容语义校验（内容校验交给 feedback/verify_data.py）
+    - 只做「结构」校验，不做内容语义校验（内容校验交给 scripts/pipeline/verify_data.py）
     - 白名单机制：未列入允许列表的顶层文件/目录一律报错，防止"忘了加规则"导致漏检
     - 可独立运行，也可被 fundctl.py check 调用
 
@@ -27,10 +27,8 @@ scripts/architecture_lint.py — 目录纪律强制校验
     from architecture_lint import run_lint         # 被 fundctl.py check 调用
 """
 import sys
-from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).parent
-ROOT_DIR = SCRIPT_DIR.parent
+from core.constants import ROOT_DIR
 WEB_DIR = ROOT_DIR / "web"
 
 # web/ 顶层允许的文件名（精确匹配）

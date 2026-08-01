@@ -1,34 +1,29 @@
 #!/usr/bin/env python3
 """
-feedback/verify_data.py — 数据侧黄金样例校验（Harness 反馈层组件之一）
+scripts/pipeline/verify_data.py — 数据侧黄金样例校验
 
-用途：
-    比对 feedback/golden_fixtures.json 里人工标注的「应该长什么样」，
-    与 web/data/*.json 实际内容逐条核对，防止分类规则/pipeline 改动
-    误伤基金数据（误分类、字段抓取失败变 null、涨跌幅跳变异常等）。
-
-设计原则（对应 Harness Engineering「反馈层：绿灯不等于任务完成」）：
-    - fixtures 为空时视为通过（骨架阶段允许空跑，不阻塞现有流程）
-    - 每条 fixture 的检查值必须来自「已验证通过」的真实场景，不接受凭空编造
-    - 校验失败时列出全部 diff，不因为第一条失败就退出（一次性看清所有问题）
+从 knowledge/golden-fixtures.md 解析内嵌的 JSON 数据块，
+与 web/data/*.json 逐条核对。
 
 用法：
-    python3 feedback/verify_data.py          # 独立运行
-    from feedback.verify_data import run_verification  # 被 fundctl.py check 调用
+    python3 scripts/pipeline/verify_data.py          # 独立运行
+    from pipeline.verify_data import run_verification  # 被 fundctl.py check 调用
 """
 import json
+import re
 import sys
-from pathlib import Path
 
-FEEDBACK_DIR = Path(__file__).parent
-ROOT_DIR = FEEDBACK_DIR.parent
-DATA_DIR = ROOT_DIR / "web" / "data"
-FIXTURES_PATH = FEEDBACK_DIR / "golden_fixtures.json"
+from core.constants import ROOT_DIR, DATA_DIR
+FIXTURES_MD = ROOT_DIR / "knowledge" / "golden-fixtures.md"
 
 
 def _load_fixtures() -> list:
-    with open(FIXTURES_PATH, encoding="utf-8") as f:
-        doc = json.load(f)
+    """从 knowledge/golden-fixtures.md 提取最后一个 ```json 代码块的 fixtures 数据。"""
+    text = FIXTURES_MD.read_text(encoding="utf-8")
+    blocks = re.findall(r"```json\n(.*?)\n```", text, re.DOTALL)
+    if not blocks:
+        return []
+    doc = json.loads(blocks[-1])
     return doc.get("fixtures", [])
 
 

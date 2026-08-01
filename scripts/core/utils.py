@@ -3,7 +3,9 @@
 所有脚本统一从此模块导入，消除重复实现。
 """
 import json
+import os
 import re
+import signal
 from pathlib import Path
 from datetime import datetime
 
@@ -78,10 +80,29 @@ def read_json(path: Path) -> dict:
 
 
 def write_json(path: Path, data: dict):
-    """统一 JSON 写入（ensure_ascii=False, indent=2, 末尾换行）"""
-    with open(path, "w", encoding="utf-8") as f:
+    """原子写入：先写临时文件，fsync 后 rename，防止半写文件。"""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
+        f.flush()
+        os.fsync(f.fileno())
+    tmp.replace(path)  # 原子 rename (POSIX)
+
+
+def call_ak(func, timeout, *args, **kwargs):
+    """给 akshare/雪球调用加超时（仅主线程安全，子线程中 signal 不可用）。
+    提取自 akshare_source.py 和 xueqiu_source.py 的两份重复实现。
+    """
+    def handler(signum, frame):
+        raise TimeoutError(f"akshare.{func.__name__} 超时 ({timeout}s)")
+    old = signal.signal(signal.SIGALRM, handler)
+    signal.alarm(timeout)
+    try:
+        return func(*args, **kwargs)
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old)
 
 
 def bump_generated_at(meta_fp: Path = None, data_dir: Path = None, now_str: str = None):

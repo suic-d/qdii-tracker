@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-feedback/scan_scenarios.py — 改动 ↔ 回归场景联动扫描（Harness 反馈层的自动提示机制）
+scripts/pipeline/scan_scenarios.py — 改动 ↔ 回归场景联动扫描
 
 用途（解决的真实缺口）：
     ui_scenarios/*.yaml 是"工具无关声明式"契约，本身不能被这个脚本自动执行
@@ -28,17 +28,16 @@ feedback/scan_scenarios.py — 改动 ↔ 回归场景联动扫描（Harness 反
       （场景文件格式简单，没必要为此引入 PyYAML 依赖）
 
 用法：
-    python3 feedback/scan_scenarios.py                # 独立运行，打印当前改动的关联场景
-    from feedback.scan_scenarios import find_related_scenarios  # 被 fundctl.py check 调用
+    python3 scripts/pipeline/scan_scenarios.py                # 独立运行，打印当前改动的关联场景
+    from pipeline.scan_scenarios import find_related_scenarios  # 被 fundctl.py check 调用
 """
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-FEEDBACK_DIR = Path(__file__).parent
-ROOT_DIR = FEEDBACK_DIR.parent
-SCENARIOS_DIR = FEEDBACK_DIR / "ui_scenarios"
+from core.constants import ROOT_DIR
+SCENARIOS_DIR = ROOT_DIR / "test" / "ui_scenarios"
 
 _FIXED_IN_RE = re.compile(
     r'fixed_in:\s*["\']?(.+?)(?=\n\S|\Z)', re.DOTALL

@@ -5,9 +5,8 @@
 import json
 import re
 
-import akshare as ak
-from core.constants import CATEGORIES, DATA_DIR, CATEGORY_LABELS
-from core.utils import normalize_share_keys, beijing_now_iso
+from core.constants import CATEGORIES, DATA_DIR, CATEGORY_LABELS, ETF_CODE_PREFIXES
+from core.utils import normalize_share_keys, beijing_now_iso, write_json
 from core.config_loader import get_config
 from sources.akshare_source import fetch_fund_names
 
@@ -37,7 +36,7 @@ def is_qdii(name: str, fund_type: str) -> bool:
 
 def is_etf(code: str, name: str) -> bool:
     """判断是否为场内 ETF（交易所交易基金）"""
-    if code.startswith("159") or code.startswith("513") or code.startswith("510"):
+    if code.startswith(ETF_CODE_PREFIXES):
         return True
     if "ETF联接" in name or "ETF 联接" in name:
         return False
@@ -291,7 +290,7 @@ def main():
     data_dir.mkdir(parents=True, exist_ok=True)
 
     print("🔍 从 AKShare 获取全量基金名称表...")
-    df_all = ak.fund_name_em()
+    df_all = fetch_fund_names()
     print(f"✅ 全部基金: {len(df_all)} 只")
 
     print("\n🔀 开始分类...")
@@ -392,9 +391,7 @@ def main():
         out["series_count"] = len(merged)
         out["series"] = merged
         normalize_share_keys(out)
-        with open(fp, "w", encoding="utf-8") as f:
-            json.dump(out, f, ensure_ascii=False, indent=2)
-            f.write("\n")
+        write_json(fp, out)
 
     meta = {
         "generated_at": now,
@@ -407,10 +404,11 @@ def main():
         "etf": {"series": len(by_category["etf"]), "funds": len(classified["etf"])},
         "excluded_count": len(classified["exclude"]),
     }
-    with open(data_dir / "meta.json", "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=2)
+    write_json(data_dir / "meta.json", meta)
 
     print("\n✅ 扫描完成！")
+    from core.observability import log_step
+    log_step("scan", result="ok", detail=f"categories={len(by_category)}")
 
 
 if __name__ == "__main__":

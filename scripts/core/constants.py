@@ -102,3 +102,24 @@ STANDARD_HOLDINGS_KEY_ORDER = [
 STANDARD_HOLDING_ITEM_KEY_ORDER = [
     "rank", "stock_code", "stock_name", "weight", "shares", "market_value",
 ]
+
+# ============================================================
+# 网络与限速常量（收拢散落各处的硬编码）
+# ============================================================
+HTTP_TIMEOUT = 8          # eastmoney 请求超时（秒）
+AKSHARE_TIMEOUT = 30      # akshare 数据源超时（秒）
+XUEQIU_TIMEOUT = 15       # 雪球数据源超时（秒）
+
+# 限速（秒）
+RATE_LIMIT_DELAY = 0.2    # enrich / fill 逐只调用间隔
+HOLDINGS_RATE_LIMIT = 0.3 # holdings 逐只调用间隔
+
+# ETF 代码前缀（深交所/上交所）
+ETF_CODE_PREFIXES = ("159", "513", "510")
+
+# 业务阈值
+HEAVY_WEIGHT_THRESHOLD = 5    # 重仓股占比阈值 %
+SALES_FEE_THRESHOLD = 0.05    # 销售服务费阈值
+NEW_FUND_DAYS = 3             # 新基金容忍天数
+STALE_DATA_DAYS = 3           # 数据过期天数
+ERROR_MSG_LENGTH = 200        # 错误信息截断长度

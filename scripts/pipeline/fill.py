@@ -141,6 +141,8 @@ def main():
 
     print()
     print(f"📊 总结：Pass1(净值) {s1[0]} / {s1[1]} / {s1[2]} | Pass2(基础) {s2} | Pass3(YTD) {s3}/{f3} | Pass4(成立来) {s4}/{f4}")
+    from core.observability import log_step
+    log_step("fill", result="ok", detail=f"p1={s1[0]}/{s1[2]} p2={s2} p3={s3}/{f3} p4={s4}/{f4}")
 
 
 def _load_categories(data_dir):
@@ -232,7 +234,7 @@ def _fill_basic_info(loaded_data, only_codes):
             if info:
                 changed = []
                 for key in ["scale","scale_raw","established","manager","sale_service_fee","mgmt_fee","custody_fee","first_buy_rate"]:
-                    if info.get(key) is not None and sh.get(key) in (None, "", 0):
+                    if info.get(key) is not None and sh.get(key) in (None, ""):
                         if key == "sale_service_fee" and sh.get("share_class") in ("A", "默认", "A(后端)") and info[key] > 0.05: continue
                         sh[key] = info[key]; changed.append(key)
                 if changed: success2 += 1; _safe_print(f"  [{i}/{total2}] ✅ {code} 补上 {changed}")
@@ -311,7 +313,7 @@ def _write_back(data_dir, loaded_data):
             elif not s.get("series_scale"): s["series_scale"] = next((sh.get("scale") for sh in s["shares"] if sh.get("scale")), 0)
         fp = data_dir / f"{cat}.json"
         normalize_share_keys(d)
-        with open(fp, "w", encoding="utf-8") as f: json.dump(d, f, ensure_ascii=False, indent=2)
+        write_json(fp, d)
         print(f"  ✅ {cat}.json")
     bump_generated_at()
 
