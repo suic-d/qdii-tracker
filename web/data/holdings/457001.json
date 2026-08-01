@@ -1,97 +1,89 @@
 {
   "code": "457001",
-  "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
-  "total_weight": 41.92,
+  "latest_quarter": "2026年2季度股票投资明细",
+  "holdings_count": 10,
+  "total_weight": 41.68,
   "heavy_count": 3,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "2330",
-      "stock_name": "台积电",
-      "weight": 5.48,
-      "shares": 26.8,
-      "market_value": 10181.06
-    },
-    {
-      "rank": 2,
-      "stock_code": "005930",
-      "stock_name": "三星电子",
-      "weight": 5.28,
-      "shares": 12.89,
-      "market_value": 9800.41
-    },
-    {
-      "rank": 3,
-      "stock_code": "09988",
-      "stock_name": "阿里巴巴-W",
-      "weight": 5.03,
-      "shares": 88.88,
-      "market_value": 9338.71
-    },
-    {
-      "rank": 4,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 4.89,
-      "shares": 3.88,
-      "market_value": 9073.04
-    },
-    {
-      "rank": 5,
+      "rank": 11,
       "stock_code": "000660",
       "stock_name": "SK海力士",
-      "weight": 4.32,
-      "shares": 2.18,
-      "market_value": 8030.23
+      "weight": 7.95,
+      "shares": 2.38,
+      "market_value": 27677.56
     },
     {
-      "rank": 6,
-      "stock_code": "JOYY",
-      "stock_name": "欢聚",
-      "weight": 3.0,
-      "shares": 13.8,
-      "market_value": 5575.53
+      "rank": 12,
+      "stock_code": "005930",
+      "stock_name": "三星电子",
+      "weight": 6.47,
+      "shares": 15.39,
+      "market_value": 22533.7
     },
     {
-      "rank": 7,
-      "stock_code": "2454",
-      "stock_name": "联发科",
-      "weight": 2.94,
-      "shares": 17.0,
-      "market_value": 5467.4
+      "rank": 13,
+      "stock_code": "2330",
+      "stock_name": "台积电",
+      "weight": 5.3,
+      "shares": 35.8,
+      "market_value": 18449.95
     },
     {
-      "rank": 8,
+      "rank": 14,
+      "stock_code": "TSM",
+      "stock_name": "台积电",
+      "weight": 3.63,
+      "shares": 3.88,
+      "market_value": 12620.4
+    },
+    {
+      "rank": 15,
+      "stock_code": "ASML",
+      "stock_name": "阿斯麦",
+      "weight": 3.43,
+      "shares": 0.88,
+      "market_value": 11923.89
+    },
+    {
+      "rank": 16,
       "stock_code": "2308",
       "stock_name": "台达电",
-      "weight": 2.86,
-      "shares": 17.8,
-      "market_value": 5302.06
+      "weight": 3.35,
+      "shares": 28.0,
+      "market_value": 11675.83
     },
     {
-      "rank": 9,
-      "stock_code": "2345",
-      "stock_name": "智邦",
-      "weight": 2.79,
-      "shares": 15.9,
-      "market_value": 5182.27
+      "rank": 17,
+      "stock_code": "2454",
+      "stock_name": "联发科",
+      "weight": 3.08,
+      "shares": 11.8,
+      "market_value": 10711.61
     },
     {
-      "rank": 10,
-      "stock_code": "4062JP",
-      "stock_name": "揖斐电株式会社",
-      "weight": 2.73,
-      "shares": 15.88,
-      "market_value": 5068.55
+      "rank": 18,
+      "stock_code": "6981",
+      "stock_name": "村田制作所",
+      "weight": 3.0,
+      "shares": 21.8,
+      "market_value": 10444.44
     },
     {
-      "rank": 11,
-      "stock_code": "373220KS",
-      "stock_name": "LG新能源",
-      "weight": 2.6,
-      "shares": 2.68,
-      "market_value": 4835.72
+      "rank": 19,
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 2.75,
+      "shares": 118.8,
+      "market_value": 9580.61
+    },
+    {
+      "rank": 20,
+      "stock_code": "009150",
+      "stock_name": "Samsung Electro-Mechanics",
+      "weight": 2.72,
+      "shares": 0.98,
+      "market_value": 9473.44
     }
   ],
   "all_quarters": {
@@ -170,21 +162,95 @@
       },
       {
         "rank": 10,
-        "stock_code": "4062JP",
-        "stock_name": "揖斐电株式会社",
+        "stock_code": "4062",
+        "stock_name": "Ibiden Co Ltd",
         "weight": 2.73,
         "shares": 15.88,
         "market_value": 5068.55
-      },
+      }
+    ],
+    "2026年2季度股票投资明细": [
       {
         "rank": 11,
-        "stock_code": "373220KS",
-        "stock_name": "LG新能源",
-        "weight": 2.6,
-        "shares": 2.68,
-        "market_value": 4835.72
+        "stock_code": "000660",
+        "stock_name": "SK海力士",
+        "weight": 7.95,
+        "shares": 2.38,
+        "market_value": 27677.56
+      },
+      {
+        "rank": 12,
+        "stock_code": "005930",
+        "stock_name": "三星电子",
+        "weight": 6.47,
+        "shares": 15.39,
+        "market_value": 22533.7
+      },
+      {
+        "rank": 13,
+        "stock_code": "2330",
+        "stock_name": "台积电",
+        "weight": 5.3,
+        "shares": 35.8,
+        "market_value": 18449.95
+      },
+      {
+        "rank": 14,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.63,
+        "shares": 3.88,
+        "market_value": 12620.4
+      },
+      {
+        "rank": 15,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 3.43,
+        "shares": 0.88,
+        "market_value": 11923.89
+      },
+      {
+        "rank": 16,
+        "stock_code": "2308",
+        "stock_name": "台达电",
+        "weight": 3.35,
+        "shares": 28.0,
+        "market_value": 11675.83
+      },
+      {
+        "rank": 17,
+        "stock_code": "2454",
+        "stock_name": "联发科",
+        "weight": 3.08,
+        "shares": 11.8,
+        "market_value": 10711.61
+      },
+      {
+        "rank": 18,
+        "stock_code": "6981",
+        "stock_name": "村田制作所",
+        "weight": 3.0,
+        "shares": 21.8,
+        "market_value": 10444.44
+      },
+      {
+        "rank": 19,
+        "stock_code": "09988",
+        "stock_name": "阿里巴巴-W",
+        "weight": 2.75,
+        "shares": 118.8,
+        "market_value": 9580.61
+      },
+      {
+        "rank": 20,
+        "stock_code": "009150",
+        "stock_name": "Samsung Electro-Mechanics",
+        "weight": 2.72,
+        "shares": 0.98,
+        "market_value": 9473.44
       }
     ]
   },
-  "fetched_at": "2026-05-08T01:58:35.993737"
+  "fetched_at": "2026-08-02T03:15:49.826047+08:00"
 }

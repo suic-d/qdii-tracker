@@ -1,89 +1,89 @@
 {
   "code": "100055",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 64.96,
-  "heavy_count": 6,
+  "total_weight": 47.46,
+  "heavy_count": 3,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 10.06,
-      "shares": 9.0,
-      "market_value": 21045.7
-    },
-    {
-      "rank": 2,
-      "stock_code": "NVDA",
-      "stock_name": "英伟达",
-      "weight": 9.8,
-      "shares": 17.0,
-      "market_value": 20514.64
-    },
-    {
-      "rank": 3,
-      "stock_code": "GOOGL",
-      "stock_name": "谷歌-A",
-      "weight": 8.56,
-      "shares": 9.0,
-      "market_value": 17907.68
-    },
-    {
-      "rank": 4,
-      "stock_code": "09899",
-      "stock_name": "网易云音乐",
-      "weight": 8.17,
-      "shares": 150.0,
-      "market_value": 17085.08
-    },
-    {
-      "rank": 5,
-      "stock_code": "AMD",
-      "stock_name": "超威半导体",
-      "weight": 7.4,
-      "shares": 11.0,
-      "market_value": 15483.75
-    },
-    {
-      "rank": 6,
+      "rank": 11,
       "stock_code": "00522",
       "stock_name": "ASMPT",
-      "weight": 6.29,
-      "shares": 150.0,
-      "market_value": 13151.54
+      "weight": 5.62,
+      "shares": 500.0,
+      "market_value": 103704.87
     },
     {
-      "rank": 7,
+      "rank": 12,
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.51,
+      "shares": 124.62,
+      "market_value": 101565.3
+    },
+    {
+      "rank": 13,
+      "stock_code": "SNDK",
+      "stock_name": "闪迪",
+      "weight": 5.04,
+      "shares": 6.0,
+      "market_value": 92916.89
+    },
+    {
+      "rank": 14,
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 4.7,
+      "shares": 500.07,
+      "market_value": 86712.88
+    },
+    {
+      "rank": 15,
       "stock_code": "000660",
       "stock_name": "SK海力士",
-      "weight": 4.11,
-      "shares": 2.35,
-      "market_value": 8598.86
+      "weight": 4.62,
+      "shares": 7.3,
+      "market_value": 85098.86
     },
     {
-      "rank": 8,
-      "stock_code": "INTC",
-      "stock_name": "英特尔",
-      "weight": 3.66,
-      "shares": 25.1,
-      "market_value": 7664.36
-    },
-    {
-      "rank": 9,
-      "stock_code": "ASML",
-      "stock_name": "阿斯麦",
-      "weight": 3.58,
-      "shares": 0.82,
-      "market_value": 7494.27
-    },
-    {
-      "rank": 10,
+      "rank": 16,
       "stock_code": "005930",
       "stock_name": "三星电子",
-      "weight": 3.33,
-      "shares": 9.2,
-      "market_value": 6974.67
+      "weight": 4.58,
+      "shares": 57.5,
+      "market_value": 84483.0
+    },
+    {
+      "rank": 17,
+      "stock_code": "285A",
+      "stock_name": "KIOXIA",
+      "weight": 4.58,
+      "shares": 22.4,
+      "market_value": 84461.34
+    },
+    {
+      "rank": 18,
+      "stock_code": "MU",
+      "stock_name": "美光科技",
+      "weight": 4.31,
+      "shares": 10.1,
+      "market_value": 79403.71
+    },
+    {
+      "rank": 19,
+      "stock_code": "STX",
+      "stock_name": "希捷科技",
+      "weight": 4.28,
+      "shares": 12.0,
+      "market_value": 78870.22
+    },
+    {
+      "rank": 20,
+      "stock_code": "WDC",
+      "stock_name": "西部数据",
+      "weight": 4.22,
+      "shares": 17.9,
+      "market_value": 77869.62
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 9.2,
         "market_value": 6974.67
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "00522",
+        "stock_name": "ASMPT",
+        "weight": 5.62,
+        "shares": 500.0,
+        "market_value": 103704.87
+      },
+      {
+        "rank": 12,
+        "stock_code": "603986",
+        "stock_name": "兆易创新",
+        "weight": 5.51,
+        "shares": 124.62,
+        "market_value": 101565.3
+      },
+      {
+        "rank": 13,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 5.04,
+        "shares": 6.0,
+        "market_value": 92916.89
+      },
+      {
+        "rank": 14,
+        "stock_code": "600183",
+        "stock_name": "生益科技",
+        "weight": 4.7,
+        "shares": 500.07,
+        "market_value": 86712.88
+      },
+      {
+        "rank": 15,
+        "stock_code": "000660",
+        "stock_name": "SK海力士",
+        "weight": 4.62,
+        "shares": 7.3,
+        "market_value": 85098.86
+      },
+      {
+        "rank": 16,
+        "stock_code": "005930",
+        "stock_name": "三星电子",
+        "weight": 4.58,
+        "shares": 57.5,
+        "market_value": 84483.0
+      },
+      {
+        "rank": 17,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 4.58,
+        "shares": 22.4,
+        "market_value": 84461.34
+      },
+      {
+        "rank": 18,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 4.31,
+        "shares": 10.1,
+        "market_value": 79403.71
+      },
+      {
+        "rank": 19,
+        "stock_code": "STX",
+        "stock_name": "希捷科技",
+        "weight": 4.28,
+        "shares": 12.0,
+        "market_value": 78870.22
+      },
+      {
+        "rank": 20,
+        "stock_code": "WDC",
+        "stock_name": "西部数据",
+        "weight": 4.22,
+        "shares": 17.9,
+        "market_value": 77869.62
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:44.339899+08:00"
+  "fetched_at": "2026-08-02T03:15:26.512195+08:00"
 }

@@ -1,89 +1,89 @@
 {
   "code": "160140",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 54.07,
+  "total_weight": 49.59,
   "heavy_count": 3,
   "holdings": [
     {
-      "rank": 1,
+      "rank": 11,
       "stock_code": "WELL",
       "stock_name": "Welltower Inc",
-      "weight": 11.22,
-      "shares": 3.43,
-      "market_value": 4694.68
+      "weight": 10.89,
+      "shares": 3.17,
+      "market_value": 4905.05
     },
     {
-      "rank": 2,
+      "rank": 12,
       "stock_code": "PLD",
       "stock_name": "安博",
-      "weight": 9.99,
-      "shares": 4.57,
-      "market_value": 4181.4
+      "weight": 8.59,
+      "shares": 4.19,
+      "market_value": 3866.64
     },
     {
-      "rank": 3,
+      "rank": 13,
       "stock_code": "EQIX",
       "stock_name": "易昆尼克斯",
-      "weight": 7.84,
-      "shares": 0.48,
-      "market_value": 3278.07
+      "weight": 6.99,
+      "shares": 0.44,
+      "market_value": 3147.26
     },
     {
-      "rank": 4,
+      "rank": 14,
       "stock_code": "SPG",
       "stock_name": "西蒙地产",
       "weight": 4.93,
-      "shares": 1.6,
-      "market_value": 2064.31
+      "shares": 1.46,
+      "market_value": 2220.3
     },
     {
-      "rank": 5,
+      "rank": 15,
       "stock_code": "DLR",
       "stock_name": "数字房地产信托",
-      "weight": 4.73,
-      "shares": 1.59,
-      "market_value": 1980.52
+      "weight": 4.03,
+      "shares": 1.48,
+      "market_value": 1815.94
     },
     {
-      "rank": 6,
+      "rank": 16,
       "stock_code": "O",
       "stock_name": "Realty Income Corp",
-      "weight": 4.58,
-      "shares": 4.53,
-      "market_value": 1916.2
+      "weight": 3.93,
+      "shares": 4.19,
+      "market_value": 1769.16
     },
     {
-      "rank": 7,
+      "rank": 17,
       "stock_code": "PSA",
       "stock_name": "大众仓储",
-      "weight": 3.48,
-      "shares": 0.78,
-      "market_value": 1456.16
+      "weight": 3.42,
+      "shares": 0.71,
+      "market_value": 1539.48
     },
     {
-      "rank": 8,
+      "rank": 18,
       "stock_code": "VTR",
       "stock_name": "芬塔公司",
-      "weight": 3.16,
-      "shares": 2.34,
-      "market_value": 1322.72
+      "weight": 2.94,
+      "shares": 2.19,
+      "market_value": 1321.99
     },
     {
-      "rank": 9,
+      "rank": 19,
       "stock_code": "EXR",
       "stock_name": "Extra Space Storage Inc",
-      "weight": 2.26,
-      "shares": 1.04,
-      "market_value": 947.08
+      "weight": 2.09,
+      "shares": 0.95,
+      "market_value": 939.85
     },
     {
-      "rank": 10,
+      "rank": 20,
       "stock_code": "AVB",
       "stock_name": "艾芙隆海湾社区",
-      "weight": 1.88,
-      "shares": 0.7,
-      "market_value": 788.03
+      "weight": 1.78,
+      "shares": 0.62,
+      "market_value": 802.7
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 0.7,
         "market_value": 788.03
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "WELL",
+        "stock_name": "Welltower Inc",
+        "weight": 10.89,
+        "shares": 3.17,
+        "market_value": 4905.05
+      },
+      {
+        "rank": 12,
+        "stock_code": "PLD",
+        "stock_name": "安博",
+        "weight": 8.59,
+        "shares": 4.19,
+        "market_value": 3866.64
+      },
+      {
+        "rank": 13,
+        "stock_code": "EQIX",
+        "stock_name": "易昆尼克斯",
+        "weight": 6.99,
+        "shares": 0.44,
+        "market_value": 3147.26
+      },
+      {
+        "rank": 14,
+        "stock_code": "SPG",
+        "stock_name": "西蒙地产",
+        "weight": 4.93,
+        "shares": 1.46,
+        "market_value": 2220.3
+      },
+      {
+        "rank": 15,
+        "stock_code": "DLR",
+        "stock_name": "数字房地产信托",
+        "weight": 4.03,
+        "shares": 1.48,
+        "market_value": 1815.94
+      },
+      {
+        "rank": 16,
+        "stock_code": "O",
+        "stock_name": "Realty Income Corp",
+        "weight": 3.93,
+        "shares": 4.19,
+        "market_value": 1769.16
+      },
+      {
+        "rank": 17,
+        "stock_code": "PSA",
+        "stock_name": "大众仓储",
+        "weight": 3.42,
+        "shares": 0.71,
+        "market_value": 1539.48
+      },
+      {
+        "rank": 18,
+        "stock_code": "VTR",
+        "stock_name": "芬塔公司",
+        "weight": 2.94,
+        "shares": 2.19,
+        "market_value": 1321.99
+      },
+      {
+        "rank": 19,
+        "stock_code": "EXR",
+        "stock_name": "Extra Space Storage Inc",
+        "weight": 2.09,
+        "shares": 0.95,
+        "market_value": 939.85
+      },
+      {
+        "rank": 20,
+        "stock_code": "AVB",
+        "stock_name": "艾芙隆海湾社区",
+        "weight": 1.78,
+        "shares": 0.62,
+        "market_value": 802.7
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:57.245407+08:00"
+  "fetched_at": "2026-08-02T03:16:17.497759+08:00"
 }

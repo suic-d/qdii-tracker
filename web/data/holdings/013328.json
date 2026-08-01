@@ -1,97 +1,89 @@
 {
   "code": "013328",
-  "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
-  "total_weight": 20.88,
-  "heavy_count": 0,
+  "latest_quarter": "2026年2季度股票投资明细",
+  "holdings_count": 10,
+  "total_weight": 24.62,
+  "heavy_count": 1,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "NVDA",
-      "stock_name": "英伟达",
-      "weight": 4.59,
-      "shares": 0.65,
-      "market_value": 782.69
-    },
-    {
-      "rank": 2,
-      "stock_code": "GOOGL",
-      "stock_name": "谷歌-A",
-      "weight": 3.04,
-      "shares": 0.26,
-      "market_value": 517.13
-    },
-    {
-      "rank": 3,
-      "stock_code": "AAPL",
-      "stock_name": "苹果",
-      "weight": 2.69,
-      "shares": 0.26,
-      "market_value": 459.04
-    },
-    {
-      "rank": 4,
+      "rank": 11,
       "stock_code": "TSM",
       "stock_name": "台积电",
-      "weight": 2.18,
-      "shares": 0.16,
-      "market_value": 372.04
+      "weight": 5.48,
+      "shares": 0.37,
+      "market_value": 1188.2
     },
     {
-      "rank": 5,
-      "stock_code": "MSFT",
-      "stock_name": "微软",
-      "weight": 1.45,
-      "shares": 0.1,
-      "market_value": 247.17
+      "rank": 12,
+      "stock_code": "NVDA",
+      "stock_name": "英伟达",
+      "weight": 3.99,
+      "shares": 0.63,
+      "market_value": 864.83
     },
     {
-      "rank": 6,
-      "stock_code": "GEV",
-      "stock_name": "GE Vernova Inc",
-      "weight": 1.44,
-      "shares": 0.04,
-      "market_value": 245.83
+      "rank": 13,
+      "stock_code": "GOOGL",
+      "stock_name": "谷歌-A",
+      "weight": 2.92,
+      "shares": 0.26,
+      "market_value": 632.6
     },
     {
-      "rank": 7,
+      "rank": 14,
+      "stock_code": "AAPL",
+      "stock_name": "苹果",
+      "weight": 2.6,
+      "shares": 0.29,
+      "market_value": 562.86
+    },
+    {
+      "rank": 15,
+      "stock_code": "MU",
+      "stock_name": "美光科技",
+      "weight": 2.41,
+      "shares": 0.07,
+      "market_value": 523.59
+    },
+    {
+      "rank": 16,
+      "stock_code": "HY9HGF",
+      "stock_name": "SK海力士株式会社",
+      "weight": 1.96,
+      "shares": 0.03,
+      "market_value": 425.58
+    },
+    {
+      "rank": 17,
       "stock_code": "WDC",
       "stock_name": "西部数据",
-      "weight": 1.24,
-      "shares": 0.11,
-      "market_value": 212.06
-    },
-    {
-      "rank": 8,
-      "stock_code": "AVGO",
-      "stock_name": "博通",
-      "weight": 1.21,
-      "shares": 0.1,
-      "market_value": 206.02
-    },
-    {
-      "rank": 9,
-      "stock_code": "GE",
-      "stock_name": "GE航空航天",
-      "weight": 1.05,
-      "shares": 0.09,
-      "market_value": 178.68
-    },
-    {
-      "rank": 10,
-      "stock_code": "RR.",
-      "stock_name": "劳斯莱斯",
-      "weight": 1.02,
-      "shares": 1.68,
-      "market_value": 173.36
-    },
-    {
-      "rank": 11,
-      "stock_code": "GOOG",
-      "stock_name": "谷歌-C",
-      "weight": 0.97,
+      "weight": 1.61,
       "shares": 0.08,
-      "market_value": 165.94
+      "market_value": 348.46
+    },
+    {
+      "rank": 18,
+      "stock_code": "600941",
+      "stock_name": "中国移动",
+      "weight": 1.4,
+      "shares": 3.52,
+      "market_value": 303.18
+    },
+    {
+      "rank": 19,
+      "stock_code": "SMSN",
+      "stock_name": "SAMSUNG ELECTRONICS CO LTD (ATT) GDR (EACH REP 25 COM STK KRW100)(REG S)",
+      "weight": 1.29,
+      "shares": 0.01,
+      "market_value": 279.0
+    },
+    {
+      "rank": 20,
+      "stock_code": "03661",
+      "stock_name": "圣邦股份",
+      "weight": 0.96,
+      "shares": 2.06,
+      "market_value": 208.98
     }
   ],
   "all_quarters": {
@@ -175,16 +167,90 @@
         "weight": 1.02,
         "shares": 1.68,
         "market_value": 173.36
-      },
+      }
+    ],
+    "2026年2季度股票投资明细": [
       {
         "rank": 11,
-        "stock_code": "GOOG",
-        "stock_name": "谷歌-C",
-        "weight": 0.97,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 5.48,
+        "shares": 0.37,
+        "market_value": 1188.2
+      },
+      {
+        "rank": 12,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 3.99,
+        "shares": 0.63,
+        "market_value": 864.83
+      },
+      {
+        "rank": 13,
+        "stock_code": "GOOGL",
+        "stock_name": "谷歌-A",
+        "weight": 2.92,
+        "shares": 0.26,
+        "market_value": 632.6
+      },
+      {
+        "rank": 14,
+        "stock_code": "AAPL",
+        "stock_name": "苹果",
+        "weight": 2.6,
+        "shares": 0.29,
+        "market_value": 562.86
+      },
+      {
+        "rank": 15,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 2.41,
+        "shares": 0.07,
+        "market_value": 523.59
+      },
+      {
+        "rank": 16,
+        "stock_code": "HY9HGF",
+        "stock_name": "SK海力士株式会社",
+        "weight": 1.96,
+        "shares": 0.03,
+        "market_value": 425.58
+      },
+      {
+        "rank": 17,
+        "stock_code": "WDC",
+        "stock_name": "西部数据",
+        "weight": 1.61,
         "shares": 0.08,
-        "market_value": 165.94
+        "market_value": 348.46
+      },
+      {
+        "rank": 18,
+        "stock_code": "600941",
+        "stock_name": "中国移动",
+        "weight": 1.4,
+        "shares": 3.52,
+        "market_value": 303.18
+      },
+      {
+        "rank": 19,
+        "stock_code": "SMSN",
+        "stock_name": "SAMSUNG ELECTRONICS CO LTD (ATT) GDR (EACH REP 25 COM STK KRW100)(REG S)",
+        "weight": 1.29,
+        "shares": 0.01,
+        "market_value": 279.0
+      },
+      {
+        "rank": 20,
+        "stock_code": "03661",
+        "stock_name": "圣邦股份",
+        "weight": 0.96,
+        "shares": 2.06,
+        "market_value": 208.98
       }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:59.549383+08:00"
+  "fetched_at": "2026-08-02T03:16:22.455844+08:00"
 }

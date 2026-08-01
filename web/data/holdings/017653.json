@@ -1,89 +1,89 @@
 {
   "code": "017653",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 43.15,
-  "heavy_count": 1,
+  "total_weight": 24.85,
+  "heavy_count": 0,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "00981",
-      "stock_name": "中芯国际",
-      "weight": 6.68,
-      "shares": 42.0,
-      "market_value": 1880.15
+      "rank": 11,
+      "stock_code": "MU",
+      "stock_name": "美光科技",
+      "weight": 4.81,
+      "shares": 1.09,
+      "market_value": 8555.16
     },
     {
-      "rank": 2,
-      "stock_code": "01347",
-      "stock_name": "华虹半导体",
-      "weight": 4.87,
-      "shares": 20.0,
-      "market_value": 1371.22
+      "rank": 12,
+      "stock_code": "AMD",
+      "stock_name": "超威半导体",
+      "weight": 3.14,
+      "shares": 1.41,
+      "market_value": 5588.58
     },
     {
-      "rank": 3,
-      "stock_code": "ASML",
-      "stock_name": "阿斯麦",
-      "weight": 4.87,
-      "shares": 0.15,
-      "market_value": 1370.9
-    },
-    {
-      "rank": 4,
-      "stock_code": "TXN",
-      "stock_name": "德州仪器",
-      "weight": 4.44,
-      "shares": 0.93,
-      "market_value": 1249.3
-    },
-    {
-      "rank": 5,
-      "stock_code": "GOOG",
-      "stock_name": "谷歌-C",
-      "weight": 4.38,
-      "shares": 0.62,
-      "market_value": 1233.64
-    },
-    {
-      "rank": 6,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 4.07,
-      "shares": 0.49,
-      "market_value": 1145.82
-    },
-    {
-      "rank": 7,
+      "rank": 13,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
-      "weight": 4.03,
-      "shares": 0.48,
-      "market_value": 1135.19
+      "weight": 2.85,
+      "shares": 1.03,
+      "market_value": 5072.01
     },
     {
-      "rank": 8,
-      "stock_code": "09988",
-      "stock_name": "阿里巴巴-W",
-      "weight": 3.73,
-      "shares": 10.0,
-      "market_value": 1050.71
+      "rank": 14,
+      "stock_code": "MRVL",
+      "stock_name": "迈威尔科技",
+      "weight": 2.68,
+      "shares": 2.35,
+      "market_value": 4768.32
     },
     {
-      "rank": 9,
-      "stock_code": "LITE",
-      "stock_name": "Lumentum Holdings Inc",
-      "weight": 3.45,
-      "shares": 0.2,
-      "market_value": 972.54
+      "rank": 15,
+      "stock_code": "AVGO",
+      "stock_name": "博通",
+      "weight": 2.52,
+      "shares": 1.75,
+      "market_value": 4491.37
     },
     {
-      "rank": 10,
+      "rank": 16,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
-      "weight": 2.63,
-      "shares": 0.5,
-      "market_value": 739.2
+      "weight": 2.08,
+      "shares": 1.26,
+      "market_value": 3708.39
+    },
+    {
+      "rank": 17,
+      "stock_code": "INTC",
+      "stock_name": "英特尔",
+      "weight": 1.9,
+      "shares": 3.56,
+      "market_value": 3382.25
+    },
+    {
+      "rank": 18,
+      "stock_code": "KLAC",
+      "stock_name": "科磊",
+      "weight": 1.81,
+      "shares": 1.57,
+      "market_value": 3218.0
+    },
+    {
+      "rank": 19,
+      "stock_code": "ASML",
+      "stock_name": "阿斯麦",
+      "weight": 1.61,
+      "shares": 0.21,
+      "market_value": 2872.57
+    },
+    {
+      "rank": 20,
+      "stock_code": "TER",
+      "stock_name": "泰瑞达",
+      "weight": 1.45,
+      "shares": 0.78,
+      "market_value": 2579.63
     }
   ],
   "all_quarters": {
@@ -99,7 +99,7 @@
       {
         "rank": 2,
         "stock_code": "01347",
-        "stock_name": "华虹半导体",
+        "stock_name": "华虹宏力",
         "weight": 4.87,
         "shares": 20.0,
         "market_value": 1371.22
@@ -122,8 +122,8 @@
       },
       {
         "rank": 5,
-        "stock_code": "GOOG",
-        "stock_name": "谷歌-C",
+        "stock_code": "GOOGL",
+        "stock_name": "谷歌-A",
         "weight": 4.38,
         "shares": 0.62,
         "market_value": 1233.64
@@ -168,7 +168,89 @@
         "shares": 0.5,
         "market_value": 739.2
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 4.81,
+        "shares": 1.09,
+        "market_value": 8555.16
+      },
+      {
+        "rank": 12,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 3.14,
+        "shares": 1.41,
+        "market_value": 5588.58
+      },
+      {
+        "rank": 13,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 2.85,
+        "shares": 1.03,
+        "market_value": 5072.01
+      },
+      {
+        "rank": 14,
+        "stock_code": "MRVL",
+        "stock_name": "迈威尔科技",
+        "weight": 2.68,
+        "shares": 2.35,
+        "market_value": 4768.32
+      },
+      {
+        "rank": 15,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 2.52,
+        "shares": 1.75,
+        "market_value": 4491.37
+      },
+      {
+        "rank": 16,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 2.08,
+        "shares": 1.26,
+        "market_value": 3708.39
+      },
+      {
+        "rank": 17,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 1.9,
+        "shares": 3.56,
+        "market_value": 3382.25
+      },
+      {
+        "rank": 18,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 1.81,
+        "shares": 1.57,
+        "market_value": 3218.0
+      },
+      {
+        "rank": 19,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 1.61,
+        "shares": 0.21,
+        "market_value": 2872.57
+      },
+      {
+        "rank": 20,
+        "stock_code": "TER",
+        "stock_name": "泰瑞达",
+        "weight": 1.45,
+        "shares": 0.78,
+        "market_value": 2579.63
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:13:01.536910+08:00"
+  "fetched_at": "2026-08-02T03:16:20.458701+08:00"
 }

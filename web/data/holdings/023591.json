@@ -1,33 +1,41 @@
 {
   "code": "023591",
-  "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 3,
-  "total_weight": 2.51,
+  "latest_quarter": "2026年2季度股票投资明细",
+  "holdings_count": 4,
+  "total_weight": 3.49,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 1,
+      "rank": 4,
       "stock_code": "06082",
       "stock_name": "壁仞科技",
-      "weight": 1.13,
+      "weight": 2.27,
       "shares": 106.92,
-      "market_value": 2720.75
+      "market_value": 5683.36
     },
     {
-      "rank": 2,
-      "stock_code": "00517",
-      "stock_name": "中远海运国际",
-      "weight": 0.79,
-      "shares": 341.6,
-      "market_value": 1891.13
+      "rank": 5,
+      "stock_code": "09888",
+      "stock_name": "百度集团-SW",
+      "weight": 1.17,
+      "shares": 30.62,
+      "market_value": 2914.34
     },
     {
-      "rank": 3,
-      "stock_code": "02245",
-      "stock_name": "力勤资源",
-      "weight": 0.59,
-      "shares": 85.4,
-      "market_value": 1429.66
+      "rank": 6,
+      "stock_code": "00668",
+      "stock_name": "安克创新",
+      "weight": 0.04,
+      "shares": 1.25,
+      "market_value": 107.83
+    },
+    {
+      "rank": 7,
+      "stock_code": "09630",
+      "stock_name": "芯碁微装",
+      "weight": 0.01,
+      "shares": 0.08,
+      "market_value": 36.13
     }
   ],
   "all_quarters": {
@@ -56,7 +64,41 @@
         "shares": 85.4,
         "market_value": 1429.66
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 4,
+        "stock_code": "06082",
+        "stock_name": "壁仞科技",
+        "weight": 2.27,
+        "shares": 106.92,
+        "market_value": 5683.36
+      },
+      {
+        "rank": 5,
+        "stock_code": "09888",
+        "stock_name": "百度集团-SW",
+        "weight": 1.17,
+        "shares": 30.62,
+        "market_value": 2914.34
+      },
+      {
+        "rank": 6,
+        "stock_code": "00668",
+        "stock_name": "安克创新",
+        "weight": 0.04,
+        "shares": 1.25,
+        "market_value": 107.83
+      },
+      {
+        "rank": 7,
+        "stock_code": "09630",
+        "stock_name": "芯碁微装",
+        "weight": 0.01,
+        "shares": 0.08,
+        "market_value": 36.13
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:56.677724+08:00"
+  "fetched_at": "2026-08-02T03:16:16.041986+08:00"
 }

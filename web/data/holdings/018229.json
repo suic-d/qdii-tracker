@@ -1,89 +1,89 @@
 {
   "code": "018229",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 41.77,
-  "heavy_count": 3,
+  "total_weight": 27.15,
+  "heavy_count": 0,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "00100",
-      "stock_name": "MINIMAX-W",
-      "weight": 6.85,
-      "shares": 29.47,
-      "market_value": 22546.5
+      "rank": 11,
+      "stock_code": "285A",
+      "stock_name": "KIOXIA",
+      "weight": 3.12,
+      "shares": 7.96,
+      "market_value": 30013.94
     },
     {
-      "rank": 2,
-      "stock_code": "06869",
-      "stock_name": "长飞光纤光缆",
-      "weight": 6.31,
-      "shares": 128.6,
-      "market_value": 20779.17
+      "rank": 12,
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 3.07,
+      "shares": 68.7,
+      "market_value": 29540.74
     },
     {
-      "rank": 3,
-      "stock_code": "688519",
-      "stock_name": "南亚新材",
-      "weight": 5.5,
-      "shares": 139.67,
-      "market_value": 18126.44
+      "rank": 13,
+      "stock_code": "AMAT",
+      "stock_name": "应用材料",
+      "weight": 2.9,
+      "shares": 5.67,
+      "market_value": 27914.27
     },
     {
-      "rank": 4,
+      "rank": 14,
+      "stock_code": "LRCX",
+      "stock_name": "拉姆研究",
+      "weight": 2.85,
+      "shares": 9.3,
+      "market_value": 27450.67
+    },
+    {
+      "rank": 15,
+      "stock_code": "000660",
+      "stock_name": "SK海力士",
+      "weight": 2.72,
+      "shares": 2.24,
+      "market_value": 26173.3
+    },
+    {
+      "rank": 16,
+      "stock_code": "INTC",
+      "stock_name": "英特尔",
+      "weight": 2.61,
+      "shares": 26.36,
+      "market_value": 25066.81
+    },
+    {
+      "rank": 17,
+      "stock_code": "AMD",
+      "stock_name": "超威半导体",
+      "weight": 2.56,
+      "shares": 6.22,
+      "market_value": 24590.96
+    },
+    {
+      "rank": 18,
+      "stock_code": "005930",
+      "stock_name": "三星电子",
+      "weight": 2.49,
+      "shares": 16.29,
+      "market_value": 23954.26
+    },
+    {
+      "rank": 19,
       "stock_code": "GLW",
       "stock_name": "康宁",
-      "weight": 4.46,
-      "shares": 15.6,
-      "market_value": 14681.19
+      "weight": 2.49,
+      "shares": 13.76,
+      "market_value": 23942.39
     },
     {
-      "rank": 5,
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 3.69,
-      "shares": 27.47,
-      "market_value": 12165.04
-    },
-    {
-      "rank": 6,
-      "stock_code": "LITE",
-      "stock_name": "Lumentum Holdings Inc",
-      "weight": 3.58,
-      "shares": 2.43,
-      "market_value": 11801.72
-    },
-    {
-      "rank": 7,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 3.18,
-      "shares": 4.48,
-      "market_value": 10468.13
-    },
-    {
-      "rank": 8,
-      "stock_code": "GOOG",
-      "stock_name": "谷歌-C",
-      "weight": 3.02,
-      "shares": 5.0,
-      "market_value": 9934.22
-    },
-    {
-      "rank": 9,
-      "stock_code": "002384",
-      "stock_name": "东山精密",
-      "weight": 2.94,
-      "shares": 93.63,
-      "market_value": 9671.98
-    },
-    {
-      "rank": 10,
-      "stock_code": "NVDA",
-      "stock_name": "英伟达",
-      "weight": 2.24,
-      "shares": 6.11,
-      "market_value": 7375.25
+      "rank": 20,
+      "stock_code": "ASML",
+      "stock_name": "阿斯麦",
+      "weight": 2.34,
+      "shares": 1.66,
+      "market_value": 22509.06
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 6.11,
         "market_value": 7375.25
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 3.12,
+        "shares": 7.96,
+        "market_value": 30013.94
+      },
+      {
+        "rank": 12,
+        "stock_code": "688361",
+        "stock_name": "中科飞测",
+        "weight": 3.07,
+        "shares": 68.7,
+        "market_value": 29540.74
+      },
+      {
+        "rank": 13,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 2.9,
+        "shares": 5.67,
+        "market_value": 27914.27
+      },
+      {
+        "rank": 14,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 2.85,
+        "shares": 9.3,
+        "market_value": 27450.67
+      },
+      {
+        "rank": 15,
+        "stock_code": "000660",
+        "stock_name": "SK海力士",
+        "weight": 2.72,
+        "shares": 2.24,
+        "market_value": 26173.3
+      },
+      {
+        "rank": 16,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 2.61,
+        "shares": 26.36,
+        "market_value": 25066.81
+      },
+      {
+        "rank": 17,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 2.56,
+        "shares": 6.22,
+        "market_value": 24590.96
+      },
+      {
+        "rank": 18,
+        "stock_code": "005930",
+        "stock_name": "三星电子",
+        "weight": 2.49,
+        "shares": 16.29,
+        "market_value": 23954.26
+      },
+      {
+        "rank": 19,
+        "stock_code": "GLW",
+        "stock_name": "康宁",
+        "weight": 2.49,
+        "shares": 13.76,
+        "market_value": 23942.39
+      },
+      {
+        "rank": 20,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 2.34,
+        "shares": 1.66,
+        "market_value": 22509.06
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:51.872005+08:00"
+  "fetched_at": "2026-08-02T03:15:32.405275+08:00"
 }

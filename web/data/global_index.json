@@ -2,7 +2,7 @@
   "category": "global_index",
   "label": "板块4 · 全球非美指数（场外·白名单）",
   "series_count": 2,
-  "total_scale": 3.02,
+  "total_scale": 2.87,
   "series": [
     {
       "series_id": "华安__三菱日联日经225ETF联接__global_index",
@@ -13,7 +13,7 @@
       "category": "global_index",
       "etf_target": null,
       "default_share_code": "020712",
-      "series_scale": 2.22,
+      "series_scale": 2.87,
       "shares": [
         {
           "code": "020712",
@@ -22,20 +22,23 @@
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
           "nav": 1.3562,
-          "nav_cum": 1.2862,
+          "nav_cum": 1.3562,
           "nav_date": "2026-07-31",
           "daily_change": 5.44,
-          "chg_1m": -12.34,
-          "chg_3m": 0.99,
-          "chg_6m": 6.36,
-          "chg_ytd": 13.79,
-          "chg_1y": 29.75,
-          "chg_2y": 36.68,
-          "chg_since_inception": 28.62,
-          "scale": 2.22,
-          "scale_raw": "2.22亿",
+          "chg_1m": -7.57,
+          "chg_3m": 6.49,
+          "chg_6m": 12.15,
+          "chg_ytd": 19.99,
+          "chg_1y": 35.96,
+          "chg_2y": 40.96,
+          "chg_since_inception": 35.62,
+          "scale": 2.87,
+          "scale_raw": "2.87亿",
           "established": "2024-02-07",
           "manager": "倪斌",
+          "fund_company": "华安基金管理有限公司",
+          "fund_type_xq": "QDII-股票",
+          "full_name": "华安三菱日联日经225交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "限大额",
           "daily_limit": 10.0,
           "buy_status_history": [
@@ -57,37 +60,38 @@
           ],
           "buy_rules": [
             {
-              "condition": "0.0万<买入金额<50万",
+              "condition": "0.0万<买入金额<50.0万",
               "rate": 0.6
             },
             {
-              "condition": "50万<=买入金额<100万",
+              "condition": "50.0万<=买入金额<100.0万",
               "rate": 0.3
             },
             {
-              "condition": "100万<=买入金额",
+              "condition": "100.0万<=买入金额",
               "rate": 1000.0
             }
           ],
           "sell_rules": [
             {
-              "condition": "0.0天<持有期限<7天",
+              "condition": "0.0天<持有期限<7.0天",
               "rate": 1.5
             },
             {
-              "condition": "7天<=持有期限",
+              "condition": "7.0天<=持有期限",
               "rate": 0.0
             }
           ],
           "mgmt_fee": 0.2,
           "custody_fee": 0.05,
           "fee": "0.06",
-          "first_buy_rate": 1.5,
+          "first_buy_rate": 0.6,
           "sale_service_fee": 0.0,
           "sell_status": "开放赎回",
           "buy_min": 10.0,
-          "chg_1w": -6.62,
+          "chg_1w": 1.14,
           "free_hold_days": 7,
+          "max_sell_rate": 1.5,
           "error": "'data'"
         },
         {
@@ -97,20 +101,23 @@
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
           "nav": 1.3479,
-          "nav_cum": 1.2784,
+          "nav_cum": 1.3479,
           "nav_date": "2026-07-31",
           "daily_change": 5.44,
-          "chg_1m": -12.35,
-          "chg_3m": 0.93,
-          "chg_6m": 6.23,
-          "chg_ytd": 13.63,
-          "chg_1y": 29.42,
-          "chg_2y": 36.01,
-          "chg_since_inception": 27.84,
-          "scale": 1.26,
-          "scale_raw": "1.26亿",
+          "chg_1m": -7.59,
+          "chg_3m": 6.42,
+          "chg_6m": 12.01,
+          "chg_ytd": 19.8,
+          "chg_1y": 35.62,
+          "chg_2y": 40.26,
+          "chg_since_inception": 34.79,
+          "scale": 1.6,
+          "scale_raw": "1.60亿",
           "established": "2024-02-07",
           "manager": "倪斌",
+          "fund_company": "华安基金管理有限公司",
+          "fund_type_xq": "QDII-股票",
+          "full_name": "华安三菱日联日经225交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "限大额",
           "daily_limit": 10.0,
           "buy_status_history": [
@@ -132,17 +139,17 @@
           ],
           "buy_rules": [
             {
-              "condition": "---",
+              "condition": "0.0万<买入金额",
               "rate": 0.0
             }
           ],
           "sell_rules": [
             {
-              "condition": "0.0天<持有期限<7天",
+              "condition": "0.0天<持有期限<7.0天",
               "rate": 1.5
             },
             {
-              "condition": "7天<=持有期限",
+              "condition": "7.0天<=持有期限",
               "rate": 0.0
             }
           ],
@@ -153,8 +160,9 @@
           "sale_service_fee": 0.25,
           "sell_status": "开放赎回",
           "buy_min": 10.0,
-          "chg_1w": -6.62,
+          "chg_1w": 1.13,
           "free_hold_days": 7,
+          "max_sell_rate": 1.5,
           "error": "'data'"
         }
       ]
@@ -168,7 +176,7 @@
       "category": "global_index",
       "etf_target": null,
       "default_share_code": "019454",
-      "series_scale": 0.8,
+      "series_scale": 1.42,
       "shares": [
         {
           "code": "019454",
@@ -185,8 +193,8 @@
           "chg_ytd": 80.33,
           "chg_1y": 210.17,
           "chg_since_inception": 293.74,
-          "scale": 0.8,
-          "scale_raw": "0.8亿",
+          "scale": 1.42,
+          "scale_raw": "1.42亿",
           "established": "2023-09-22",
           "manager": "李沐阳",
           "buy_status": "暂停申购",
@@ -251,8 +259,8 @@
           "chg_ytd": 80.15,
           "chg_1y": 209.39,
           "chg_since_inception": 291.17,
-          "scale": 1.4,
-          "scale_raw": "1.4亿",
+          "scale": 2.36,
+          "scale_raw": "2.36亿",
           "established": "2023-09-22",
           "manager": "李沐阳",
           "buy_status": "暂停申购",
@@ -305,8 +313,8 @@
           "chg_ytd": 80.26,
           "chg_1y": 209.87,
           "chg_since_inception": 237.1,
-          "scale": 0.03,
-          "scale_raw": "0.03亿",
+          "scale": 0.05,
+          "scale_raw": "0.05亿",
           "established": "2024-11-26",
           "manager": "李沐阳",
           "buy_status": "暂停申购",

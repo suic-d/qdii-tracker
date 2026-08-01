@@ -1,89 +1,89 @@
 {
   "code": "016664",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 26.13,
+  "total_weight": 23.2,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 1,
-      "stock_code": "NVDA",
-      "stock_name": "英伟达",
-      "weight": 3.65,
+      "rank": 11,
+      "stock_code": "JP3236330001",
+      "stock_name": "铠侠控股株式会社",
+      "weight": 3.88,
       "shares": 6.0,
-      "market_value": 7240.46
+      "market_value": 22623.57
     },
     {
-      "rank": 2,
-      "stock_code": "AVGO",
-      "stock_name": "博通",
-      "weight": 3.07,
-      "shares": 2.85,
-      "market_value": 6103.63
+      "rank": 12,
+      "stock_code": "02476",
+      "stock_name": "胜宏科技",
+      "weight": 3.33,
+      "shares": 69.08,
+      "market_value": 19374.42
     },
     {
-      "rank": 3,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 2.77,
-      "shares": 2.35,
-      "market_value": 5495.27
-    },
-    {
-      "rank": 4,
-      "stock_code": "TSEM",
-      "stock_name": "Tower半导体",
-      "weight": 2.75,
-      "shares": 4.5,
-      "market_value": 5463.97
-    },
-    {
-      "rank": 5,
-      "stock_code": "LITE",
-      "stock_name": "Lumentum Holdings Inc",
-      "weight": 2.69,
-      "shares": 1.1,
-      "market_value": 5348.95
-    },
-    {
-      "rank": 6,
+      "rank": 13,
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 2.44,
-      "shares": 8.5,
-      "market_value": 4839.99
-    },
-    {
-      "rank": 7,
-      "stock_code": "COHR",
-      "stock_name": "Coherent Corp",
-      "weight": 2.28,
-      "shares": 2.75,
-      "market_value": 4532.74
-    },
-    {
-      "rank": 8,
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 2.23,
+      "weight": 2.18,
       "shares": 10.0,
-      "market_value": 4428.4
+      "market_value": 12700.0
     },
     {
-      "rank": 9,
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 2.21,
-      "shares": 17.5,
-      "market_value": 4392.5
+      "rank": 14,
+      "stock_code": "NVDA",
+      "stock_name": "英伟达",
+      "weight": 2.16,
+      "shares": 9.25,
+      "market_value": 12605.84
     },
     {
-      "rank": 10,
+      "rank": 15,
+      "stock_code": "TSM",
+      "stock_name": "台积电",
+      "weight": 2.09,
+      "shares": 3.75,
+      "market_value": 12197.56
+    },
+    {
+      "rank": 16,
+      "stock_code": "01347",
+      "stock_name": "华虹宏力",
+      "weight": 2.09,
+      "shares": 65.0,
+      "market_value": 12149.28
+    },
+    {
+      "rank": 17,
+      "stock_code": "GLW",
+      "stock_name": "康宁",
+      "weight": 2.02,
+      "shares": 6.75,
+      "market_value": 11743.03
+    },
+    {
+      "rank": 18,
       "stock_code": "JP3684400009",
-      "stock_name": "Nitto Boseki Co Ltd",
-      "weight": 2.04,
-      "shares": 5.0,
-      "market_value": 4056.84
+      "stock_name": "日东纺织",
+      "weight": 1.87,
+      "shares": 60.0,
+      "market_value": 10885.45
+    },
+    {
+      "rank": 19,
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 1.8,
+      "shares": 40.0,
+      "market_value": 10494.0
+    },
+    {
+      "rank": 20,
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 1.78,
+      "shares": 5.5,
+      "market_value": 10373.0
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 5.0,
         "market_value": 4056.84
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "JP3236330001",
+        "stock_name": "铠侠控股株式会社",
+        "weight": 3.88,
+        "shares": 6.0,
+        "market_value": 22623.57
+      },
+      {
+        "rank": 12,
+        "stock_code": "02476",
+        "stock_name": "胜宏科技",
+        "weight": 3.33,
+        "shares": 69.08,
+        "market_value": 19374.42
+      },
+      {
+        "rank": 13,
+        "stock_code": "300308",
+        "stock_name": "中际旭创",
+        "weight": 2.18,
+        "shares": 10.0,
+        "market_value": 12700.0
+      },
+      {
+        "rank": 14,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 2.16,
+        "shares": 9.25,
+        "market_value": 12605.84
+      },
+      {
+        "rank": 15,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 2.09,
+        "shares": 3.75,
+        "market_value": 12197.56
+      },
+      {
+        "rank": 16,
+        "stock_code": "01347",
+        "stock_name": "华虹宏力",
+        "weight": 2.09,
+        "shares": 65.0,
+        "market_value": 12149.28
+      },
+      {
+        "rank": 17,
+        "stock_code": "GLW",
+        "stock_name": "康宁",
+        "weight": 2.02,
+        "shares": 6.75,
+        "market_value": 11743.03
+      },
+      {
+        "rank": 18,
+        "stock_code": "JP3684400009",
+        "stock_name": "日东纺织",
+        "weight": 1.87,
+        "shares": 60.0,
+        "market_value": 10885.45
+      },
+      {
+        "rank": 19,
+        "stock_code": "002384",
+        "stock_name": "东山精密",
+        "weight": 1.8,
+        "shares": 40.0,
+        "market_value": 10494.0
+      },
+      {
+        "rank": 20,
+        "stock_code": "688498",
+        "stock_name": "源杰科技",
+        "weight": 1.78,
+        "shares": 5.5,
+        "market_value": 10373.0
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:48.605102+08:00"
+  "fetched_at": "2026-08-02T03:15:46.973254+08:00"
 }

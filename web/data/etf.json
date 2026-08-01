@@ -24,8 +24,8 @@
           "chg_6m": 13.4,
           "chg_ytd": 11.15,
           "chg_1y": 32.97,
-          "scale": 380.47483211,
-          "scale_raw": "380.47亿",
+          "scale": 354.34533516,
+          "scale_raw": "354.35亿",
           "established": "2015-06-10",
           "manager": "刘杰",
           "buy_status": "场内交易",
@@ -44,7 +44,7 @@
         }
       ],
       "default_share_code": "159941",
-      "series_scale": 380.47483211
+      "series_scale": 354.34533516
     },
     {
       "series_id": "博时__标普500ETF博时__etf",
@@ -67,10 +67,10 @@
           "chg_6m": 6.6,
           "chg_ytd": 6.02,
           "chg_1y": 22.51,
-          "scale": 254.64721186,
-          "scale_raw": "254.65亿",
-          "established": "2013-12-05",
-          "manager": "万琼",
+          "scale": 253.34975388,
+          "scale_raw": "253.35亿",
+          "established": "",
+          "manager": "",
           "buy_status": "场内交易",
           "daily_limit": 0.0,
           "buy_rules": [],
@@ -87,7 +87,7 @@
         }
       ],
       "default_share_code": "513500",
-      "series_scale": 254.64721186,
+      "series_scale": 253.34975388,
       "starred": true
     },
     {
@@ -111,8 +111,8 @@
           "chg_6m": 13.55,
           "chg_ytd": 12.42,
           "chg_1y": 33.44,
-          "scale": 214.50206892,
-          "scale_raw": "214.50亿",
+          "scale": 199.90313435,
+          "scale_raw": "199.90亿",
           "established": "2013-04-25",
           "manager": "艾小军",
           "buy_status": "暂停申购",
@@ -138,7 +138,7 @@
         }
       ],
       "default_share_code": "513100",
-      "series_scale": 214.50206892,
+      "series_scale": 199.90313435,
       "starred": true
     },
     {
@@ -162,8 +162,8 @@
           "chg_6m": 12.49,
           "chg_ytd": 11.08,
           "chg_1y": 32.62,
-          "scale": 142.72342966,
-          "scale_raw": "142.72亿",
+          "scale": 135.36230106,
+          "scale_raw": "135.36亿",
           "established": "2020-10-22",
           "manager": "赵宗庭",
           "buy_status": "场内交易",
@@ -182,7 +182,7 @@
         }
       ],
       "default_share_code": "513300",
-      "series_scale": 142.72342966
+      "series_scale": 135.36230106
     },
     {
       "series_id": "嘉实__纳斯达克ETF嘉实__etf",
@@ -205,8 +205,8 @@
           "chg_6m": 13.64,
           "chg_ytd": 12.89,
           "chg_1y": 33.62,
-          "scale": 134.23836385,
-          "scale_raw": "134.24亿",
+          "scale": 131.57178222,
+          "scale_raw": "131.57亿",
           "established": "2023-05-31",
           "manager": "张钟玉",
           "buy_status": "场内交易",
@@ -225,7 +225,7 @@
         }
       ],
       "default_share_code": "159501",
-      "series_scale": 134.23836385
+      "series_scale": 131.57178222
     },
     {
       "series_id": "华安__纳斯达克ETF华安__etf",
@@ -248,8 +248,8 @@
           "chg_6m": 13.47,
           "chg_ytd": 13.67,
           "chg_1y": 33.41,
-          "scale": 120.81632641,
-          "scale_raw": "120.82亿",
+          "scale": 114.58107876,
+          "scale_raw": "114.58亿",
           "established": "2022-07-21",
           "manager": "倪斌",
           "buy_status": "场内交易",
@@ -268,7 +268,7 @@
         }
       ],
       "default_share_code": "159632",
-      "series_scale": 120.81632641
+      "series_scale": 114.58107876
     },
     {
       "series_id": "招商__纳斯达克100ETF招商__etf",
@@ -291,8 +291,8 @@
           "chg_6m": 13.58,
           "chg_ytd": 14.7,
           "chg_1y": 33.53,
-          "scale": 103.33155337,
-          "scale_raw": "103.33亿",
+          "scale": 100.97158126,
+          "scale_raw": "100.97亿",
           "established": "2023-04-12",
           "manager": "刘重杰",
           "buy_status": "场内交易",
@@ -311,50 +311,7 @@
         }
       ],
       "default_share_code": "159659",
-      "series_scale": 103.33155337
-    },
-    {
-      "series_id": "大成__纳斯达克100ETF大成__etf",
-      "company": "大成",
-      "company_display": "大成",
-      "series_name": "纳斯达克100ETF大成",
-      "display_name": "纳斯达克100ETF大成",
-      "category": "etf",
-      "etf_target": "nasdaq100",
-      "shares": [
-        {
-          "code": "159513",
-          "name": "纳斯达克100ETF大成",
-          "share_class": "默认",
-          "currency": "人民币",
-          "fund_type": "指数型-海外股票",
-          "nav_date": "2026-07-30",
-          "chg_1m": 7.14,
-          "chg_3m": 14.31,
-          "chg_6m": 13.38,
-          "chg_ytd": 12.57,
-          "chg_1y": 32.84,
-          "scale": 78.76027137,
-          "scale_raw": "78.76亿",
-          "established": "2023-07-12",
-          "manager": "冉凌浩",
-          "buy_status": "场内交易",
-          "daily_limit": 0.0,
-          "buy_rules": [],
-          "sell_rules": [],
-          "mgmt_fee": 0.8,
-          "custody_fee": 0.2,
-          "fee": "nan",
-          "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
-          "buy_min": 0.0,
-          "etf_price": 1.72,
-          "etf_change_pct": 3.8,
-          "error": "'data'"
-        }
-      ],
-      "default_share_code": "159513",
-      "series_scale": 78.76027137
+      "series_scale": 100.97158126
     },
     {
       "series_id": "南方__标普500ETF南方__etf",
@@ -377,8 +334,8 @@
           "chg_6m": 6.6,
           "chg_ytd": 4.79,
           "chg_1y": 22.51,
-          "scale": 78.07028472,
-          "scale_raw": "78.07亿",
+          "scale": 81.94535428,
+          "scale_raw": "81.95亿",
           "established": "2023-03-23",
           "manager": "张其思",
           "buy_status": "场内交易",
@@ -397,33 +354,33 @@
         }
       ],
       "default_share_code": "513650",
-      "series_scale": 78.07028472
+      "series_scale": 81.94535428
     },
     {
-      "series_id": "华泰柏瑞__纳斯达克ETF华泰柏瑞__etf",
-      "company": "华泰柏瑞",
-      "company_display": "华泰柏瑞",
-      "series_name": "纳斯达克ETF华泰柏瑞",
-      "display_name": "纳斯达克ETF华泰柏瑞",
+      "series_id": "大成__纳斯达克100ETF大成__etf",
+      "company": "大成",
+      "company_display": "大成",
+      "series_name": "纳斯达克100ETF大成",
+      "display_name": "纳斯达克100ETF大成",
       "category": "etf",
       "etf_target": "nasdaq100",
       "shares": [
         {
-          "code": "513110",
-          "name": "纳指ETF华泰柏瑞",
+          "code": "159513",
+          "name": "纳斯达克100ETF大成",
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
           "nav_date": "2026-07-30",
-          "chg_1m": 7.36,
-          "chg_3m": 14.53,
-          "chg_6m": 13.24,
-          "chg_ytd": 11.64,
-          "chg_1y": 32.9,
-          "scale": 54.40220005,
-          "scale_raw": "54.40亿",
-          "established": "2023-03-01",
-          "manager": "柳军",
+          "chg_1m": 7.14,
+          "chg_3m": 14.31,
+          "chg_6m": 13.38,
+          "chg_ytd": 12.57,
+          "chg_1y": 32.84,
+          "scale": 76.08504596,
+          "scale_raw": "76.09亿",
+          "established": "2023-07-12",
+          "manager": "冉凌浩",
           "buy_status": "场内交易",
           "daily_limit": 0.0,
           "buy_rules": [],
@@ -434,13 +391,13 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.364,
-          "etf_change_pct": 3.78,
+          "etf_price": 1.72,
+          "etf_change_pct": 3.8,
           "error": "'data'"
         }
       ],
-      "default_share_code": "513110",
-      "series_scale": 54.40220005
+      "default_share_code": "159513",
+      "series_scale": 76.08504596
     },
     {
       "series_id": "易方达__纳斯达克ETF易方达__etf",
@@ -463,8 +420,8 @@
           "chg_6m": 13.71,
           "chg_ytd": 13.89,
           "chg_1y": 33.88,
-          "scale": 53.46328338,
-          "scale_raw": "53.46亿",
+          "scale": 52.93169918,
+          "scale_raw": "52.93亿",
           "established": "2023-08-17",
           "manager": "林伟斌",
           "buy_status": "场内交易",
@@ -483,7 +440,50 @@
         }
       ],
       "default_share_code": "159696",
-      "series_scale": 53.46328338
+      "series_scale": 52.93169918
+    },
+    {
+      "series_id": "华泰柏瑞__纳斯达克ETF华泰柏瑞__etf",
+      "company": "华泰柏瑞",
+      "company_display": "华泰柏瑞",
+      "series_name": "纳斯达克ETF华泰柏瑞",
+      "display_name": "纳斯达克ETF华泰柏瑞",
+      "category": "etf",
+      "etf_target": "nasdaq100",
+      "shares": [
+        {
+          "code": "513110",
+          "name": "纳指ETF华泰柏瑞",
+          "share_class": "默认",
+          "currency": "人民币",
+          "fund_type": "指数型-海外股票",
+          "nav_date": "2026-07-30",
+          "chg_1m": 7.36,
+          "chg_3m": 14.53,
+          "chg_6m": 13.24,
+          "chg_ytd": 11.64,
+          "chg_1y": 32.9,
+          "scale": 51.52184359,
+          "scale_raw": "51.52亿",
+          "established": "2023-03-01",
+          "manager": "柳军",
+          "buy_status": "场内交易",
+          "daily_limit": 0.0,
+          "buy_rules": [],
+          "sell_rules": [],
+          "mgmt_fee": 0.8,
+          "custody_fee": 0.2,
+          "fee": "nan",
+          "sale_service_fee": 0.8,
+          "sell_status": "场内交易",
+          "buy_min": 0.0,
+          "etf_price": 2.364,
+          "etf_change_pct": 3.78,
+          "error": "'data'"
+        }
+      ],
+      "default_share_code": "513110",
+      "series_scale": 51.52184359
     },
     {
       "series_id": "汇添富__纳斯达克ETF汇添富__etf",
@@ -506,8 +506,8 @@
           "chg_6m": 13.58,
           "chg_ytd": 13.71,
           "chg_1y": 33.6,
-          "scale": 51.39817805,
-          "scale_raw": "51.40亿",
+          "scale": 50.69591014,
+          "scale_raw": "50.70亿",
           "established": "2023-03-30",
           "manager": "过蓓蓓",
           "buy_status": "场内交易",
@@ -526,7 +526,7 @@
         }
       ],
       "default_share_code": "159660",
-      "series_scale": 51.39817805
+      "series_scale": 50.69591014
     },
     {
       "series_id": "博时__纳斯达克100ETF博时__etf",
@@ -549,8 +549,8 @@
           "chg_6m": 13.52,
           "chg_ytd": 14.74,
           "chg_1y": 33.54,
-          "scale": 46.0594776,
-          "scale_raw": "46.06亿",
+          "scale": 47.88297626,
+          "scale_raw": "47.88亿",
           "established": "2023-04-19",
           "manager": "万琼",
           "buy_status": "场内交易",
@@ -569,7 +569,7 @@
         }
       ],
       "default_share_code": "513390",
-      "series_scale": 46.0594776
+      "series_scale": 47.88297626
     },
     {
       "series_id": "华夏__标普500ETF华夏__etf",
@@ -592,8 +592,8 @@
           "chg_6m": 5.81,
           "chg_ytd": 5.44,
           "chg_1y": 21.92,
-          "scale": 40.56646208,
-          "scale_raw": "40.57亿",
+          "scale": 40.84110205,
+          "scale_raw": "40.84亿",
           "established": "2022-10-12",
           "manager": "赵宗庭",
           "buy_status": "场内交易",
@@ -612,7 +612,7 @@
         }
       ],
       "default_share_code": "159655",
-      "series_scale": 40.56646208
+      "series_scale": 40.84110205
     },
     {
       "series_id": "富国__纳斯达克ETF富国__etf",
@@ -635,8 +635,8 @@
           "chg_6m": 13.67,
           "chg_ytd": 13.86,
           "chg_1y": 33.78,
-          "scale": 26.15727879,
-          "scale_raw": "26.16亿",
+          "scale": 26.78184583,
+          "scale_raw": "26.78亿",
           "established": "2023-10-25",
           "manager": "葛俊阳",
           "buy_status": "场内交易",
@@ -655,7 +655,7 @@
         }
       ],
       "default_share_code": "513870",
-      "series_scale": 26.15727879
+      "series_scale": 26.78184583
     },
     {
       "shares": [
@@ -671,8 +671,8 @@
           "chg_6m": 7.81,
           "chg_ytd": 8.38,
           "chg_1y": 29.26,
-          "scale": 21.01306668,
-          "scale_raw": "21.01亿",
+          "scale": 21.5053099,
+          "scale_raw": "21.51亿",
           "established": "2023-11-06",
           "manager": "林伟斌",
           "buy_status": "场内交易",
@@ -697,7 +697,7 @@
       "category": "etf",
       "company_display": "易方达",
       "default_share_code": "513850",
-      "series_scale": 21.01306668
+      "series_scale": 21.5053099
     },
     {
       "shares": [
@@ -713,8 +713,8 @@
           "chg_6m": 8.2,
           "chg_ytd": 9.09,
           "chg_1y": 29.48,
-          "scale": 10.44250949,
-          "scale_raw": "10.44亿",
+          "scale": 12.49229957,
+          "scale_raw": "12.49亿",
           "established": "2024-02-05",
           "manager": "乐无穹",
           "buy_status": "场内交易",
@@ -739,7 +739,7 @@
       "category": "etf",
       "company_display": "汇添富",
       "default_share_code": "159577",
-      "series_scale": 10.44250949
+      "series_scale": 12.49229957
     },
     {
       "series_id": "国泰__标普500ETF国泰__etf",
@@ -762,8 +762,8 @@
           "chg_6m": 6.69,
           "chg_ytd": 5.25,
           "chg_1y": 22.46,
-          "scale": 8.84903427,
-          "scale_raw": "8.85亿",
+          "scale": 8.79119744,
+          "scale_raw": "8.79亿",
           "established": "2022-05-09",
           "manager": "艾小军",
           "buy_status": "暂停申购",
@@ -789,8 +789,8 @@
         }
       ],
       "default_share_code": "159612",
-      "series_scale": 8.84903427
+      "series_scale": 8.79119744
     }
   ],
-  "total_scale": 1819.92
+  "total_scale": 1761.56
 }

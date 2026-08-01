@@ -1,89 +1,89 @@
 {
   "code": "378546",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 33.81,
-  "heavy_count": 1,
+  "total_weight": 35.97,
+  "heavy_count": 0,
   "holdings": [
     {
-      "rank": 1,
+      "rank": 11,
       "stock_code": "XOM",
       "stock_name": "埃克森美孚",
-      "weight": 5.63,
-      "shares": 4.16,
-      "market_value": 4888.43
+      "weight": 4.98,
+      "shares": 2.91,
+      "market_value": 2709.94
     },
     {
-      "rank": 2,
+      "rank": 12,
       "stock_code": "NEM",
       "stock_name": "纽蒙特",
-      "weight": 3.82,
-      "shares": 4.43,
-      "market_value": 3317.81
+      "weight": 4.35,
+      "shares": 3.72,
+      "market_value": 2367.64
     },
     {
-      "rank": 3,
+      "rank": 13,
       "stock_code": "SHEL",
       "stock_name": "壳牌",
-      "weight": 3.82,
-      "shares": 10.14,
-      "market_value": 3312.38
+      "weight": 4.17,
+      "shares": 8.57,
+      "market_value": 2266.9
     },
     {
-      "rank": 4,
+      "rank": 14,
+      "stock_code": "RIO",
+      "stock_name": "力拓(UK)",
+      "weight": 3.56,
+      "shares": 3.01,
+      "market_value": 1934.96
+    },
+    {
+      "rank": 15,
       "stock_code": "VLO",
       "stock_name": "瓦莱罗能源",
-      "weight": 3.65,
-      "shares": 1.85,
-      "market_value": 3167.46
+      "weight": 3.52,
+      "shares": 1.08,
+      "market_value": 1912.54
     },
     {
-      "rank": 5,
-      "stock_code": "CNQ",
-      "stock_name": "加拿大自然资源有限公司",
-      "weight": 3.44,
-      "shares": 8.87,
-      "market_value": 2983.28
+      "rank": 16,
+      "stock_code": "FCX",
+      "stock_name": "自由港麦克莫兰",
+      "weight": 3.4,
+      "shares": 4.32,
+      "market_value": 1848.45
     },
     {
-      "rank": 6,
-      "stock_code": "TTE",
-      "stock_name": "TotalEnergies SE",
-      "weight": 3.04,
-      "shares": 4.19,
-      "market_value": 2634.89
+      "rank": 17,
+      "stock_code": "BHP",
+      "stock_name": "BHP GROUP LTD",
+      "weight": 3.38,
+      "shares": 6.56,
+      "market_value": 1839.31
     },
     {
-      "rank": 7,
+      "rank": 18,
       "stock_code": "MPC",
       "stock_name": "马拉松原油",
+      "weight": 3.03,
+      "shares": 0.95,
+      "market_value": 1646.96
+    },
+    {
+      "rank": 19,
+      "stock_code": "CNQ",
+      "stock_name": "CANADIAN NATURAL RESOURCES",
+      "weight": 2.95,
+      "shares": 5.97,
+      "market_value": 1607.63
+    },
+    {
+      "rank": 20,
+      "stock_code": "TTE",
+      "stock_name": "TotalEnergies SE",
       "weight": 2.63,
-      "shares": 1.35,
-      "market_value": 2278.4
-    },
-    {
-      "rank": 8,
-      "stock_code": "PBR",
-      "stock_name": "巴西石油",
-      "weight": 2.62,
-      "shares": 15.84,
-      "market_value": 2274.51
-    },
-    {
-      "rank": 9,
-      "stock_code": "AEM",
-      "stock_name": "阿哥尼可老鹰矿场有限公司",
-      "weight": 2.6,
-      "shares": 1.61,
-      "market_value": 2258.27
-    },
-    {
-      "rank": 10,
-      "stock_code": "KGC",
-      "stock_name": "金罗斯黄金",
-      "weight": 2.56,
-      "shares": 10.53,
-      "market_value": 2223.39
+      "shares": 2.7,
+      "market_value": 1432.29
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 10.53,
         "market_value": 2223.39
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "XOM",
+        "stock_name": "埃克森美孚",
+        "weight": 4.98,
+        "shares": 2.91,
+        "market_value": 2709.94
+      },
+      {
+        "rank": 12,
+        "stock_code": "NEM",
+        "stock_name": "纽蒙特",
+        "weight": 4.35,
+        "shares": 3.72,
+        "market_value": 2367.64
+      },
+      {
+        "rank": 13,
+        "stock_code": "SHEL",
+        "stock_name": "壳牌",
+        "weight": 4.17,
+        "shares": 8.57,
+        "market_value": 2266.9
+      },
+      {
+        "rank": 14,
+        "stock_code": "RIO",
+        "stock_name": "力拓(UK)",
+        "weight": 3.56,
+        "shares": 3.01,
+        "market_value": 1934.96
+      },
+      {
+        "rank": 15,
+        "stock_code": "VLO",
+        "stock_name": "瓦莱罗能源",
+        "weight": 3.52,
+        "shares": 1.08,
+        "market_value": 1912.54
+      },
+      {
+        "rank": 16,
+        "stock_code": "FCX",
+        "stock_name": "自由港麦克莫兰",
+        "weight": 3.4,
+        "shares": 4.32,
+        "market_value": 1848.45
+      },
+      {
+        "rank": 17,
+        "stock_code": "BHP",
+        "stock_name": "BHP GROUP LTD",
+        "weight": 3.38,
+        "shares": 6.56,
+        "market_value": 1839.31
+      },
+      {
+        "rank": 18,
+        "stock_code": "MPC",
+        "stock_name": "马拉松原油",
+        "weight": 3.03,
+        "shares": 0.95,
+        "market_value": 1646.96
+      },
+      {
+        "rank": 19,
+        "stock_code": "CNQ",
+        "stock_name": "CANADIAN NATURAL RESOURCES",
+        "weight": 2.95,
+        "shares": 5.97,
+        "market_value": 1607.63
+      },
+      {
+        "rank": 20,
+        "stock_code": "TTE",
+        "stock_name": "TotalEnergies SE",
+        "weight": 2.63,
+        "shares": 2.7,
+        "market_value": 1432.29
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:56.205190+08:00"
+  "fetched_at": "2026-08-02T03:16:19.050022+08:00"
 }

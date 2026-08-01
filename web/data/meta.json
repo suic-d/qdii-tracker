@@ -1,6 +1,5 @@
 {
-  "generated_at": "2026-08-01T00:03:57.940943+08:00",
-  "total_scanned": 27387,
+  "generated_at": "2026-08-02T03:14:21.415756+08:00",
   "sp500": {
     "series": 7,
     "funds": 25
@@ -24,6 +23,5 @@
   "etf": {
     "series": 18,
     "funds": 18
-  },
-  "excluded_count": 27150
+  }
 }

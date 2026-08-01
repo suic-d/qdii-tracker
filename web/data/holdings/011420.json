@@ -1,89 +1,89 @@
 {
   "code": "011420",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 54.69,
+  "total_weight": 62.8,
   "heavy_count": 6,
   "holdings": [
     {
-      "rank": 1,
+      "rank": 11,
       "stock_code": "TSM",
       "stock_name": "台积电",
-      "weight": 9.1,
-      "shares": 3.3,
-      "market_value": 7716.76
+      "weight": 9.62,
+      "shares": 2.4,
+      "market_value": 7806.44
     },
     {
-      "rank": 2,
+      "rank": 12,
       "stock_code": "GOOG",
       "stock_name": "谷歌-C",
-      "weight": 7.49,
-      "shares": 3.2,
-      "market_value": 6351.68
+      "weight": 8.89,
+      "shares": 3.0,
+      "market_value": 7219.49
     },
     {
-      "rank": 3,
+      "rank": 13,
       "stock_code": "BKNG",
       "stock_name": "Booking Holdings",
-      "weight": 6.19,
-      "shares": 0.18,
-      "market_value": 5243.92
+      "weight": 7.48,
+      "shares": 5.0,
+      "market_value": 6069.87
     },
     {
-      "rank": 4,
-      "stock_code": "META",
-      "stock_name": "Meta Platforms Inc-A",
-      "weight": 6.07,
-      "shares": 1.3,
-      "market_value": 5146.44
-    },
-    {
-      "rank": 5,
+      "rank": 14,
       "stock_code": "UBER",
       "stock_name": "优步",
-      "weight": 5.87,
-      "shares": 10.0,
-      "market_value": 4977.12
+      "weight": 7.14,
+      "shares": 11.8,
+      "market_value": 5799.4
     },
     {
-      "rank": 6,
-      "stock_code": "PDD",
-      "stock_name": "拼多多",
-      "weight": 5.01,
-      "shares": 6.0,
-      "market_value": 4242.15
+      "rank": 15,
+      "stock_code": "META",
+      "stock_name": "Meta Platforms Inc-A",
+      "weight": 6.14,
+      "shares": 1.3,
+      "market_value": 4987.47
     },
     {
-      "rank": 7,
-      "stock_code": "00700",
-      "stock_name": "腾讯控股",
-      "weight": 4.03,
-      "shares": 8.0,
-      "market_value": 3418.78
-    },
-    {
-      "rank": 8,
-      "stock_code": "ADYENNA",
-      "stock_name": "Adyen公众有限公司",
-      "weight": 3.98,
-      "shares": 0.5,
-      "market_value": 3372.71
-    },
-    {
-      "rank": 9,
-      "stock_code": "09999",
-      "stock_name": "网易-S",
-      "weight": 3.55,
-      "shares": 20.0,
-      "market_value": 3010.86
-    },
-    {
-      "rank": 10,
+      "rank": 16,
       "stock_code": "AMZN",
       "stock_name": "亚马逊",
-      "weight": 3.4,
-      "shares": 2.0,
-      "market_value": 2882.21
+      "weight": 6.0,
+      "shares": 3.0,
+      "market_value": 4869.93
+    },
+    {
+      "rank": 17,
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 4.67,
+      "shares": 4.65,
+      "market_value": 3789.75
+    },
+    {
+      "rank": 18,
+      "stock_code": "ASMLNA",
+      "stock_name": "阿斯麦控股公司",
+      "weight": 4.61,
+      "shares": 0.28,
+      "market_value": 3743.68
+    },
+    {
+      "rank": 19,
+      "stock_code": "09999",
+      "stock_name": "网易",
+      "weight": 4.33,
+      "shares": 20.0,
+      "market_value": 3515.89
+    },
+    {
+      "rank": 20,
+      "stock_code": "ADYENNA",
+      "stock_name": "Adyen公众有限公司",
+      "weight": 3.92,
+      "shares": 0.5,
+      "market_value": 3186.06
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 2.0,
         "market_value": 2882.21
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 9.62,
+        "shares": 2.4,
+        "market_value": 7806.44
+      },
+      {
+        "rank": 12,
+        "stock_code": "GOOG",
+        "stock_name": "谷歌-C",
+        "weight": 8.89,
+        "shares": 3.0,
+        "market_value": 7219.49
+      },
+      {
+        "rank": 13,
+        "stock_code": "BKNG",
+        "stock_name": "Booking Holdings",
+        "weight": 7.48,
+        "shares": 5.0,
+        "market_value": 6069.87
+      },
+      {
+        "rank": 14,
+        "stock_code": "UBER",
+        "stock_name": "优步",
+        "weight": 7.14,
+        "shares": 11.8,
+        "market_value": 5799.4
+      },
+      {
+        "rank": 15,
+        "stock_code": "META",
+        "stock_name": "Meta Platforms Inc-A",
+        "weight": 6.14,
+        "shares": 1.3,
+        "market_value": 4987.47
+      },
+      {
+        "rank": 16,
+        "stock_code": "AMZN",
+        "stock_name": "亚马逊",
+        "weight": 6.0,
+        "shares": 3.0,
+        "market_value": 4869.93
+      },
+      {
+        "rank": 17,
+        "stock_code": "603986",
+        "stock_name": "兆易创新",
+        "weight": 4.67,
+        "shares": 4.65,
+        "market_value": 3789.75
+      },
+      {
+        "rank": 18,
+        "stock_code": "ASMLNA",
+        "stock_name": "阿斯麦控股公司",
+        "weight": 4.61,
+        "shares": 0.28,
+        "market_value": 3743.68
+      },
+      {
+        "rank": 19,
+        "stock_code": "09999",
+        "stock_name": "网易",
+        "weight": 4.33,
+        "shares": 20.0,
+        "market_value": 3515.89
+      },
+      {
+        "rank": 20,
+        "stock_code": "ADYENNA",
+        "stock_name": "Adyen公众有限公司",
+        "weight": 3.92,
+        "shares": 0.5,
+        "market_value": 3186.06
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:53.626747+08:00"
+  "fetched_at": "2026-08-02T03:16:10.250511+08:00"
 }

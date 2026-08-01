@@ -1,89 +1,89 @@
 {
   "code": "008763",
-  "latest_quarter": "2026年1季度股票投资明细",
+  "latest_quarter": "2026年2季度股票投资明细",
   "holdings_count": 10,
-  "total_weight": 62.24,
-  "heavy_count": 7,
+  "total_weight": 61.8,
+  "heavy_count": 8,
   "holdings": [
     {
-      "rank": 1,
+      "rank": 11,
       "stock_code": "VN000000HPG4",
       "stock_name": "和发集团",
-      "weight": 8.91,
-      "shares": 5593.1,
-      "market_value": 39523.65
+      "weight": 8.65,
+      "shares": 5749.21,
+      "market_value": 34678.96
     },
     {
-      "rank": 2,
-      "stock_code": "VN000000MBB5",
-      "stock_name": "军队股份制商业银行",
-      "weight": 7.65,
-      "shares": 4883.79,
-      "market_value": 33933.93
-    },
-    {
-      "rank": 3,
-      "stock_code": "VN000000MWG0",
-      "stock_name": "移动世界投资公司",
-      "weight": 7.5,
-      "shares": 1547.5,
-      "market_value": 33253.38
-    },
-    {
-      "rank": 4,
-      "stock_code": "VN000000FPT1",
-      "stock_name": "FPT公司",
-      "weight": 6.99,
-      "shares": 1580.14,
-      "market_value": 31007.56
-    },
-    {
-      "rank": 5,
-      "stock_code": "VN000000VPB6",
-      "stock_name": "越南繁荣银行",
-      "weight": 6.46,
-      "shares": 4084.02,
-      "market_value": 28645.16
-    },
-    {
-      "rank": 6,
-      "stock_code": "VN000000STB4",
-      "stock_name": "西贡商信贸易股份银行",
-      "weight": 5.83,
-      "shares": 1581.51,
-      "market_value": 25841.29
-    },
-    {
-      "rank": 7,
-      "stock_code": "VN000000MSN4",
-      "stock_name": "Masan Group Corp",
-      "weight": 5.03,
-      "shares": 1124.0,
-      "market_value": 22292.82
-    },
-    {
-      "rank": 8,
-      "stock_code": "VN000000CTG7",
-      "stock_name": "越南工商股份制商业银行",
-      "weight": 4.64,
-      "shares": 2263.14,
-      "market_value": 20570.23
-    },
-    {
-      "rank": 9,
-      "stock_code": "VN000000TCB8",
-      "stock_name": "越南科技商业银行",
-      "weight": 4.63,
-      "shares": 2547.2,
-      "market_value": 20542.5
-    },
-    {
-      "rank": 10,
+      "rank": 12,
       "stock_code": "VN000000VIC9",
       "stock_name": "Vingroup JSC",
-      "weight": 4.6,
-      "shares": 575.3,
-      "market_value": 20402.34
+      "weight": 7.81,
+      "shares": 549.92,
+      "market_value": 31320.2
+    },
+    {
+      "rank": 13,
+      "stock_code": "VN000000MWG0",
+      "stock_name": "移动世界投资公司",
+      "weight": 6.44,
+      "shares": 1277.5,
+      "market_value": 25829.4
+    },
+    {
+      "rank": 14,
+      "stock_code": "VN000000FPT1",
+      "stock_name": "FPT公司",
+      "weight": 6.39,
+      "shares": 1410.14,
+      "market_value": 25627.2
+    },
+    {
+      "rank": 15,
+      "stock_code": "VN000000STB4",
+      "stock_name": "西贡商信贸易股份银行",
+      "weight": 6.37,
+      "shares": 1336.63,
+      "market_value": 25537.0
+    },
+    {
+      "rank": 16,
+      "stock_code": "VN000000MBB5",
+      "stock_name": "军队股份制商业银行",
+      "weight": 5.99,
+      "shares": 3682.01,
+      "market_value": 24020.8
+    },
+    {
+      "rank": 17,
+      "stock_code": "VN000000VHM0",
+      "stock_name": "Vinhomes JSC",
+      "weight": 5.55,
+      "shares": 566.06,
+      "market_value": 22245.22
+    },
+    {
+      "rank": 18,
+      "stock_code": "VN000000TCB8",
+      "stock_name": "越南科技商业银行",
+      "weight": 5.51,
+      "shares": 2547.2,
+      "market_value": 22090.74
+    },
+    {
+      "rank": 19,
+      "stock_code": "VN000000VPB6",
+      "stock_name": "越南繁荣银行",
+      "weight": 4.74,
+      "shares": 2720.45,
+      "market_value": 19015.49
+    },
+    {
+      "rank": 20,
+      "stock_code": "VN000000MSN4",
+      "stock_name": "Masan Group Corp",
+      "weight": 4.35,
+      "shares": 934.0,
+      "market_value": 17433.5
     }
   ],
   "all_quarters": {
@@ -168,7 +168,89 @@
         "shares": 575.3,
         "market_value": 20402.34
       }
+    ],
+    "2026年2季度股票投资明细": [
+      {
+        "rank": 11,
+        "stock_code": "VN000000HPG4",
+        "stock_name": "和发集团",
+        "weight": 8.65,
+        "shares": 5749.21,
+        "market_value": 34678.96
+      },
+      {
+        "rank": 12,
+        "stock_code": "VN000000VIC9",
+        "stock_name": "Vingroup JSC",
+        "weight": 7.81,
+        "shares": 549.92,
+        "market_value": 31320.2
+      },
+      {
+        "rank": 13,
+        "stock_code": "VN000000MWG0",
+        "stock_name": "移动世界投资公司",
+        "weight": 6.44,
+        "shares": 1277.5,
+        "market_value": 25829.4
+      },
+      {
+        "rank": 14,
+        "stock_code": "VN000000FPT1",
+        "stock_name": "FPT公司",
+        "weight": 6.39,
+        "shares": 1410.14,
+        "market_value": 25627.2
+      },
+      {
+        "rank": 15,
+        "stock_code": "VN000000STB4",
+        "stock_name": "西贡商信贸易股份银行",
+        "weight": 6.37,
+        "shares": 1336.63,
+        "market_value": 25537.0
+      },
+      {
+        "rank": 16,
+        "stock_code": "VN000000MBB5",
+        "stock_name": "军队股份制商业银行",
+        "weight": 5.99,
+        "shares": 3682.01,
+        "market_value": 24020.8
+      },
+      {
+        "rank": 17,
+        "stock_code": "VN000000VHM0",
+        "stock_name": "Vinhomes JSC",
+        "weight": 5.55,
+        "shares": 566.06,
+        "market_value": 22245.22
+      },
+      {
+        "rank": 18,
+        "stock_code": "VN000000TCB8",
+        "stock_name": "越南科技商业银行",
+        "weight": 5.51,
+        "shares": 2547.2,
+        "market_value": 22090.74
+      },
+      {
+        "rank": 19,
+        "stock_code": "VN000000VPB6",
+        "stock_name": "越南繁荣银行",
+        "weight": 4.74,
+        "shares": 2720.45,
+        "market_value": 19015.49
+      },
+      {
+        "rank": 20,
+        "stock_code": "VN000000MSN4",
+        "stock_name": "Masan Group Corp",
+        "weight": 4.35,
+        "shares": 934.0,
+        "market_value": 17433.5
+      }
     ]
   },
-  "fetched_at": "2026-06-08T19:12:50.158206+08:00"
+  "fetched_at": "2026-08-02T03:16:00.192849+08:00"
 }
