@@ -87,9 +87,53 @@
 
 ## 前端数据源（实时行情 — JSONP）
 
-| 模块 | 端点（腾讯行情） | 数据 | 调用方式 |
-|------|-----------------|------|----------|
-| `market-indices.js` | `qt.gtimg.cn/q=usINDU,usSPX,usIXIC,usNDX,usUSDCNY` | 道琼斯/标普500/纳指综合/纳指100/美元汇率 | `jsonpFetch(url, {usesCallback:false})` |
-| `etf-premium.js` | `qt.gtimg.cn/q=shXXXXXX,szXXXXXX` | ETF 场内价/IOPV/涨跌 | `jsonpFetch(url, {usesCallback:false})` |
-| `market-trend.js` | `push2his.eastmoney.com/api/qt/stock/kline/get` (→ push2 兜底) | 日K线数据 | `jsonpFetch(cbName=>url, {usesCallback:true})` |
-| `offshore-live-nav.js` | `api.fund.eastmoney.com/f10/lsjz` (→ pzd 兜底) | 场外最新净值 | `jsonpFetch(cbName=>url, {usesCallback:true})` |
+| 模块 | 端点 | 数据 | 调用方式 |
+|------|------|------|----------|
+| `market-indices.js` | `qt.gtimg.cn/q=usINDU,usSPX,usIXIC,usNDX,usUSDCNY` | 道琼斯/标普500/纳指综合/纳指100/美元汇率 | `jsonpFetch(url)` |
+| `etf-premium.js` | `qt.gtimg.cn/q=shXXXXXX,szXXXXXX` | ETF 场内价/IOPV/涨跌 | `jsonpFetch(url)` |
+| `market-trend.js` | `push2his.eastmoney.com` (→ push2 兜底) | 日K线数据 | `jsonpFetch(cb=>url)` |
+| `offshore-live-nav.js` | `api.fund.eastmoney.com/f10/lsjz` (→ pzd 兜底) | 场外最新净值 | `jsonpFetch(cb=>url)` |
+
+---
+
+## 降级决策树
+
+> 每条数据的主→备→兜底链路汇总。
+
+### 净值（nav）
+
+| 优先级 | 源 | 降级条件 |
+|--------|-----|----------|
+| 1 (主) | 天天基金 lsjz | — |
+| 2 (备) | pingzhongdata pzd | lsjz 超时/空 |
+| 兜底 | 保留旧值 | **nav_date 永不回退** |
+
+### 基金信息（scale/manager/fee）
+
+| 优先级 | 源 | 降级条件 |
+|--------|-----|----------|
+| 1 (主) | 天天基金 F10 | — |
+| 2 (备) | 雪球 | 天天返回空/字段缺失 |
+| 兜底 | null / 保留旧值 | 双源均失败 |
+
+### 申购状态
+
+| 优先级 | 源 | 降级条件 |
+|--------|-----|----------|
+| 1 (主) | 天天基金实时 | — |
+| 兜底 | buy_status_history 最后一条 | — |
+
+### 涨跌幅（chg_ytd）
+
+| 优先级 | 源 | 降级条件 |
+|--------|-----|----------|
+| 1 (主) | AKShare fund_rank | — |
+| 2 (备) | LOF 同系列兄弟份额 | A/C 差异<1% |
+| 兜底 | null | — |
+
+### 故障处理原则
+
+1. **静默降级**：单只失败不阻塞整批
+2. **nav_date 不回退**：无论什么原因
+3. **标记不删除**：缺失标记为 null，不删已有值
+4. **force_include 兜底**：白名单基金跳过自动搜索

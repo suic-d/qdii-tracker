@@ -395,20 +395,16 @@ def main():
 
     meta = {
         "generated_at": now,
-        "total_scanned": len(df_all),
         "sp500": {"series": len(by_category["sp500"]), "funds": len(classified["sp500"])},
         "nasdaq_passive": {"series": len(by_category["nasdaq_passive"]), "funds": len(classified["nasdaq_passive"])},
         "active": {"series": len(by_category["active"]), "funds": len(classified["active"])},
         "global_index": {"series": len(by_category["global_index"]), "funds": len(classified["global_index"])},
         "global_other": {"series": len(by_category["global_other"]), "funds": len(classified["global_other"])},
         "etf": {"series": len(by_category["etf"]), "funds": len(classified["etf"])},
-        "excluded_count": len(classified["exclude"]),
     }
     write_json(data_dir / "meta.json", meta)
 
     print("\n✅ 扫描完成！")
-    from core.observability import log_step
-    log_step("scan", result="ok", detail=f"categories={len(by_category)}")
 
 
 if __name__ == "__main__":

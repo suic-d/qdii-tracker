@@ -1,7 +1,7 @@
 # Golden Fixtures — 数据侧黄金样例
 
 > 人工标注「这只基金应该长什么样」，用于防止分类规则/pipeline 改动误伤数据。
-> `scripts/pipeline/verify_data.py` 读取本文档内嵌的 JSON 数据块，逐条比对 `web/data/*.json`。
+> `scripts/checks/verify_data.py` 读取本文档内嵌的 JSON 数据块，逐条比对 `web/data/*.json`。
 
 ## Fixture 格式
 

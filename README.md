@@ -23,7 +23,7 @@
 ```mermaid
 graph LR
     A["📡 公开数据源<br/>天天基金 · 雪球"]
-    B["🐍 数据流水线<br/>scan → enrich → fill → holdings"]
+    B["🐍 数据流水线<br/>pipeline/ 生产 + checks/ 校验"]
     C["📁 数据层<br/>web/data/"]
     D["🌐 前端<br/>Vanilla JS · Tailwind CSS"]
 
@@ -39,21 +39,27 @@ graph LR
 ```
 qdii-tracker/
 ├── scripts/          # 数据流水线（Python）
-│   ├── fundctl.py    # 统一入口（add/move/refresh/sync/check/diagnose）
-│   ├── pipeline/     # scan/enrich/fill/holdings/cross_validate/verify 等
+│   ├── fundctl.py    # 统一入口（add/remove/move/refresh/sync/check/diagnose）
+│   ├── pipeline/     # 数据生产（scan/enrich/fill/holdings/reclassify/codegen）
+│   ├── checks/       # 质量门禁（verify_data/cross_validate/diagnose/architecture_lint）
 │   ├── sources/      # 数据源（akshare/eastmoney/xueqiu）
-│   └── core/         # 共享基础设施（constants/utils/observability）
+│   └── core/         # 共享基础设施（constants/utils/config_loader）
 ├── config/
 │   └── funds.json    # 基金分类 SSOT 配置
-├── web/              # 前端（纯静态：11 JS + 2 CSS + index.html）
+├── web/              # 前端（纯静态）
+│   ├── index.html
+│   ├── css/          # app.css + tailwind.css
+│   └── js/           # config / utils / render-trend / main / screenshot
 ├── knowledge/        # 解释记忆 — Agent 知识库
 │   ├── INDEX.md      # 总索引 + 架构全景
-│   ├── adr/          # 架构决策记录 (6 篇)
-│   ├── gotchas.md    # 踩坑记录
-│   └── golden-fixtures.md  # 黄金样例（4 条边界校验）
-├── .codebuddy/       # Agent Harness（AGENT.md + Skills + Agents）
+│   ├── gotchas.md    # 踩坑记录 + 生命周期
+│   ├── pipeline-contracts.md  # 模块输入/输出契约
+│   ├── data-sources.md        # 数据源 + API端点 + 降级策略
+│   ├── data-schema.md         # JSON 字段定义
+│   └── golden-fixtures.md     # 黄金样例
+├── .codebuddy/       # Agent Harness（AGENT.md + Skills）
 ├── .codegraph/       # 代码图谱（结构记忆，自动维护）
-└── test/             # 单元测试 + UI 回归场景
+└── test/             # 本地测试（gitignored）
 ```
 
 Agent 规则详见 [AGENT.md](./AGENT.md)。
@@ -71,10 +77,14 @@ Agent 规则详见 [AGENT.md](./AGENT.md)。
 
 ```bash
 cd scripts && pip install -r requirements.txt
-codegraph install && codegraph init
 python3 fundctl.py sync
+python3 fundctl.py check          # 门禁（必须全绿）
 cd ../web && python3 -m http.server 8765
-# 日常增量：python3 fundctl.py refresh
+# 日常维护：
+python3 fundctl.py add --code X --to Y       # 新增
+python3 fundctl.py remove --code X            # 删除
+python3 fundctl.py move --keyword X --from A --to B  # 调分类
+python3 fundctl.py refresh                    # 增量刷新
 ```
 
 ## 📜 License

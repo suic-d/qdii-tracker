@@ -133,8 +133,6 @@ def main():
     bump_generated_at()
 
     print("\n✅ 全量丰富完成！")
-    from core.observability import log_step
-    log_step("enrich", result="ok")
 
 
 if __name__ == "__main__":

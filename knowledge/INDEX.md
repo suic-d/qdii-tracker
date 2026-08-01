@@ -16,7 +16,7 @@
 | 前端 | Vanilla JS + Tailwind CSS + html-to-image CDN | `web/` |
 | 配置 SSOT | JSON (`config/funds.json`) | `config/` |
 | CI/CD | GitHub Actions | `.github/workflows/` |
-| Agent 治理 | AGENT.md + .codebuddy/skills/ (5 Skills) + .loop/ | 根目录 |
+| Agent 治理 | AGENT.md + .codebuddy/skills/ (2 Skills: fund-ops, code-change) | 根目录 |
 
 ## ASCII 架构全景图
 
@@ -76,9 +76,9 @@
 
 | 你在找什么 | 去这里 |
 |-----------|--------|
-| 为什么做这个架构决策 | → `adr/` (6 篇 ADR) |
+| 为什么做这个架构决策 | → 见 `gotchas.md`（关键决策沉淀为 gotcha 条目） |
 | 踩过的坑 / 已知限制 | → `gotchas.md` |
-| 数据从哪来 / API 降级策略 | → `data-sources.md` / `api-degradation.md` |
+| 数据从哪来 / API 降级策略 | → `data-sources.md` |
 | 模块读写哪些文件 | → `pipeline-contracts.md` |
 | web/data JSON 字段含义 | → `data-schema.md` |
 | 黄金样例校验格式 | → `golden-fixtures.md` |
@@ -86,4 +86,4 @@
 | Agent 行为约束 | → `AGENT.md` (根目录) |
 | 完整功能描述 | → `README.md` (根目录) |
 
-**代码知识库双层架构**：`.codegraph/` = 结构记忆（自动维护，save→sync），`knowledge/` = 解释记忆（ADR + gotchas + data-sources，人+AI 协作维护）。Agent 启动 → `AGENT.md` → `knowledge/INDEX.md` → `codegraph_explore`。
+**代码知识库双层架构**：`.codegraph/` = 结构记忆（自动维护，save→sync），`knowledge/` = 解释记忆（gotchas + data-sources + pipeline-contracts，人+AI 协作维护）。Agent 启动 → `AGENT.md` → `knowledge/INDEX.md` → `codegraph_explore`。

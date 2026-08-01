@@ -4,10 +4,8 @@
 Pass 1 API 调用使用 ThreadPoolExecutor 并行化（I/O 密集瓶颈）。
 含申购状态刷新 + buy_status_history 数组追踪（原 refresh.py 逻辑已并入）。
 """
-import json
 import re
 import threading
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from core.constants import CATEGORIES, DATA_DIR, ETF_SKIP_FIELDS, ALWAYS_OVERWRITE_FIELDS
@@ -141,8 +139,6 @@ def main():
 
     print()
     print(f"📊 总结：Pass1(净值) {s1[0]} / {s1[1]} / {s1[2]} | Pass2(基础) {s2} | Pass3(YTD) {s3}/{f3} | Pass4(成立来) {s4}/{f4}")
-    from core.observability import log_step
-    log_step("fill", result="ok", detail=f"p1={s1[0]}/{s1[2]} p2={s2} p3={s3}/{f3} p4={s4}/{f4}")
 
 
 def _load_categories(data_dir):

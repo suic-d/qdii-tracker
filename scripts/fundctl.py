@@ -2,13 +2,14 @@
 """
 统一入口：
 - add: 新增/强制纳入一只基金（配置 + 局部后处理）
+- remove: 移除一只基金（配置 + 数据清理）
 - move: 增量移动分类（复用 pipeline.reclassify）
-- refresh: 日常增量（默认 fill + refresh）
+- refresh: 日常增量（默认 fill）
 - sync: 全量流水线
 - check: 一致性校验
+- diagnose: 诊断数据异常
 """
 import argparse
-import fcntl
 import json
 import os
 import sys
@@ -18,31 +19,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from core.constants import CATEGORIES, DATA_DIR, HOLDINGS_CATEGORIES, ROOT_DIR
 from core.config_loader import get_config, save_config
-from core.observability import log_check_pass, log_check_fail, log_sync_start, log_sync_done
-
-LOCK_FILE = ROOT_DIR / ".loop" / "fundctl.lock"
-
-
-def _acquire_lock() -> bool:
-    """获取进程互斥锁，防止多个 fundctl.py 写操作同时运行。"""
-    LOCK_FILE.parent.mkdir(parents=True, exist_ok=True)
-    lock_fp = open(LOCK_FILE, "w")
-    try:
-        fcntl.flock(lock_fp.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-        lock_fp.write(str(os.getpid()))
-        lock_fp.flush()
-        return True
-    except (IOError, OSError):
-        return False
 
 # 直接 import pipeline 模块（替代 subprocess 调用）
 from pipeline import scan, enrich, fill, holdings, reclassify, codegen
 
-from pipeline.verify_data import run_verification
-from pipeline.scan_scenarios import find_related_scenarios
-from pipeline.cross_validate import run_cross_validation
-from architecture_lint import run_lint as run_architecture_lint
-from pipeline.diagnose import diagnose_all
+from checks.verify_data import run_verification
+from checks.scan_scenarios import find_related_scenarios
+from checks.cross_validate import run_cross_validation
+from checks.architecture_lint import run_lint as run_architecture_lint
+from checks.diagnose import diagnose_all
 
 
 def _run(main_fn, *argv_extra):
@@ -56,9 +41,6 @@ def _run(main_fn, *argv_extra):
 
 
 def cmd_add(args):
-    if not _acquire_lock():
-        print("❌ 已有 fundctl.py 写操作正在运行，请稍后重试")
-        raise SystemExit(1)
     code = args.code.strip()
     to_cat = args.to
 
@@ -85,9 +67,6 @@ def cmd_add(args):
 
 
 def cmd_move(args):
-    if not _acquire_lock():
-        print("❌ 已有 fundctl.py 写操作正在运行，请稍后重试")
-        raise SystemExit(1)
     extra = []
     if args.no_holdings:
         extra.append("--no-holdings")
@@ -98,11 +77,64 @@ def cmd_move(args):
     _run(codegen.main)
 
 
+def cmd_remove(args):
+    """从配置和数据中移除一只基金的所有份额。"""
+    code = args.code.strip()
+
+    # 1. 从 config force_include 移除
+    cfg = get_config()
+    force_inc = cfg.get("classify", {}).get("force_include", {})
+    if code in force_inc:
+        removed_cat = force_inc.pop(code)
+        save_config(cfg)
+        print(f"✅ 已从 config force_include 移除: {code} (原分类: {removed_cat})")
+    else:
+        print(f"⚠ {code} 不在 force_include 中，跳过配置移除")
+
+    # 2. 从所有分类 JSON 中移除该基金
+    found_any = False
+    for cat in CATEGORIES:
+        fp = DATA_DIR / f"{cat}.json"
+        if not fp.exists():
+            continue
+        data = json.loads(fp.read_text(encoding="utf-8"))
+        new_series = []
+        for s in data.get("series", []):
+            shares = s.get("shares", [])
+            if any(sh.get("code") == code for sh in shares):
+                found_any = True
+                print(f"✅ 已从 {cat} 移除: {s.get('display_name', code)}")
+                continue
+            new_series.append(s)
+        if len(new_series) != len(data.get("series", [])):
+            data["series"] = new_series
+            fp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    if not found_any:
+        print(f"⚠ 未在任何分类中找到基金代码: {code}")
+        return
+
+    # 3. 清理 holdings 文件
+    holdings_fp = DATA_DIR / "holdings" / f"{code}.json"
+    if holdings_fp.exists():
+        holdings_fp.unlink()
+        print(f"✅ 已清理 holdings: {code}.json")
+
+    # 4. 更新 meta.json
+    meta_fp = DATA_DIR / "meta.json"
+    if meta_fp.exists():
+        import datetime
+        meta = json.loads(meta_fp.read_text(encoding="utf-8"))
+        meta["generated_at"] = datetime.datetime.now().isoformat()
+        meta_fp.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # 5. 重新生成前端配置
+    _run(codegen.main)
+    print(f"🎉 remove 完成: {code}")
+
+
 def cmd_refresh(args):
     """增量刷新（fill 已包含净值 + 申购状态 + 历史追踪）"""
-    if not _acquire_lock():
-        print("❌ 已有 fundctl.py 写操作正在运行，请稍后重试")
-        raise SystemExit(1)
     if args.codes:
         _run(fill.main, "--codes", args.codes)
     else:
@@ -110,16 +142,11 @@ def cmd_refresh(args):
 
 
 def cmd_sync(_args):
-    if not _acquire_lock():
-        print("❌ 已有 fundctl.py 写操作正在运行，请稍后重试")
-        raise SystemExit(1)
-    log_sync_start()
     _run(scan.main)
     _run(enrich.main)
     _run(fill.main)
     _run(holdings.main)
     _run(codegen.main)
-    log_sync_done([])
 
 
 def _all_share_codes() -> set:
@@ -220,7 +247,6 @@ def cmd_check(_args):
     config_fp = ROOT_DIR / "config" / "funds.json"
     if not config_fp.exists():
         print(f"❌ 配置文件不存在: {config_fp}")
-        log_check_fail(1, f"配置文件不存在: {config_fp}")
         raise SystemExit(1)
     print("  ✅ config/funds.json 存在")
 
@@ -231,7 +257,6 @@ def cmd_check(_args):
         print("❌ 目录纪律校验失败：")
         for e in lint_errors:
             print(" -", e)
-        log_check_fail(2, f"目录纪律校验失败: {lint_errors[0]}")
         raise SystemExit(1)
     print("  ✅ 目录纪律校验通过")
 
@@ -242,7 +267,6 @@ def cmd_check(_args):
         print("❌ Golden fixtures 校验失败：")
         for e in golden_errors:
             print(" -", e)
-        log_check_fail(3, f"Golden fixtures 校验失败: {golden_errors[0]}")
         raise SystemExit(1)
     print("  ✅ Golden fixtures 校验通过")
 
@@ -279,7 +303,6 @@ def cmd_check(_args):
         print("❌ 类内一致性校验失败：")
         for e in errors:
             print(" -", e)
-        log_check_fail(4, f"类内一致性校验失败: {errors[0]}")
         raise SystemExit(1)
     print("  ✅ 类内一致性校验通过")
 
@@ -306,8 +329,12 @@ def cmd_check(_args):
     except Exception as e:
         print(f"⚠ 跳过: {e}")
 
+    # ---- Layer 7: Agent 规则机器验证（可选，--agent-rules） ----
+    if getattr(_args, 'agent_rules', False):
+        from checks.check_agent_rules import check_agent_rules
+        check_agent_rules()
+
     print("\n✅ 全部分层校验通过")
-    log_check_pass(7)
 
     # 联动提示（non-blocking）：本次改动是否有匹配的 UI 回归场景该重跑
     related = find_related_scenarios()
@@ -321,7 +348,7 @@ def cmd_check(_args):
 
 def cmd_diagnose(args):
     """诊断数据异常并给出修复建议"""
-    from pipeline.diagnose import diagnose_all, auto_fix as _auto_fix
+    from checks.diagnose import diagnose_all, auto_fix as _auto_fix
     issues = diagnose_all()
     if args.cat:
         issues = [i for i in issues if i["cat"] == args.cat]
@@ -357,6 +384,10 @@ def main():
     p_move.add_argument("--no-whitelist", action="store_true")
     p_move.set_defaults(func=cmd_move)
 
+    p_remove = sub.add_parser("remove", help="删除一只基金（从配置和数据中移除）")
+    p_remove.add_argument("--code", required=True)
+    p_remove.set_defaults(func=cmd_remove)
+
     p_refresh = sub.add_parser("refresh", help="增量刷新")
     p_refresh.add_argument("--codes", help="逗号分隔，仅刷新这些代码")
     p_refresh.set_defaults(func=cmd_refresh)
@@ -371,6 +402,7 @@ def main():
     p_diagnose.set_defaults(func=cmd_diagnose)
 
     p_check = sub.add_parser("check", help="一致性校验")
+    p_check.add_argument("--agent-rules", action="store_true", help="额外运行 Agent 规则机器验证")
     p_check.set_defaults(func=cmd_check)
 
     args = p.parse_args()

@@ -1,8 +1,10 @@
 # 模块边界契约
 
-> 每个 pipeline 模块的输入/输出文件、兄弟依赖关系。用于理解数据流和控制流。
+> 每个模块的输入/输出文件、依赖关系。`pipeline/` = 数据生产链路，`checks/` = 质量门禁+诊断+辅助。
 
-## 1. scan.py — 扫描分类
+## pipeline/ — 数据生产链路
+
+### 1. scan.py — 扫描分类
 
 | 属性 | 内容 |
 |------|------|
@@ -12,7 +14,7 @@
 | **读已有 JSON** | 增量合并：读取已有 `{cat}.json` 保留 enrich/fill 填充的字段 |
 | **依赖** | `core.constants`、`core.utils`、`core.config_loader`、`sources.akshare_source` |
 
-## 2. enrich.py — 批量丰富
+### 2. enrich.py — 批量丰富
 
 | 属性 | 内容 |
 |------|------|
@@ -21,7 +23,7 @@
 | **输出文件** | 同文件覆写 |
 | **依赖** | `core.constants`、`core.utils`、`sources.akshare_source`、`sources.eastmoney_source`、`sources.xueqiu_source` |
 
-## 3. fill.py — 补全缺失
+### 3. fill.py — 补全缺失
 
 | 属性 | 内容 |
 |------|------|
@@ -30,7 +32,7 @@
 | **输出文件** | 同文件覆写 + `web/data/meta.json`（bump_generated_at） |
 | **依赖** | `core.constants`、`core.utils`、`sources.eastmoney_source`、`sources.akshare_source` |
 
-## 4. holdings.py — 持仓抓取
+### 4. holdings.py — 持仓抓取
 
 | 属性 | 内容 |
 |------|------|
@@ -39,34 +41,7 @@
 | **输出文件** | `web/data/holdings/{code}.json`（每只一个文件） |
 | **依赖** | `core.constants`、`core.utils`、`core.config_loader`、`sources.akshare_source` |
 
-## 5. diagnose.py — 诊断引擎
-
-| 属性 | 内容 |
-|------|------|
-| **职责** | 检查 missing_nav / buy_status_anomaly / nav_regression / fee_anomalies，支持 --auto-fix |
-| **输入文件** | `web/data/*.json`（除 meta.json / holdings.json） |
-| **输出文件** | 无（只输出诊断报告；--auto-fix 时调 `fundctl.py refresh` 修复） |
-| **依赖** | 无兄弟模块依赖（独立模块，通过 subprocess 调 CLI） |
-
-## 6. verify_data.py — 黄金样例校验
-
-| 属性 | 内容 |
-|------|------|
-| **职责** | 解析 `knowledge/golden-fixtures.md` 中的 JSON fixtures，与 `web/data/*.json` 逐条核对 |
-| **输入文件** | `knowledge/golden-fixtures.md`、`web/data/*.json` |
-| **输出文件** | 无（返回错误列表） |
-| **依赖** | 无兄弟模块依赖 |
-
-## 7. scan_scenarios.py — 改动↔场景联动
-
-| 属性 | 内容 |
-|------|------|
-| **职责** | git diff 获取改动文件 → 匹配 ui_scenarios/*.yaml 的 fixed_in 字段 → 提示关联场景 |
-| **输入文件** | git diff (HEAD)、`test/ui_scenarios/*.yaml` |
-| **输出文件** | 无（返回映射字典，non-blocking 提示） |
-| **依赖** | 无兄弟模块依赖 |
-
-## 8. reclassify.py — 增量重分类
+### 5. reclassify.py — 增量重分类
 
 | 属性 | 内容 |
 |------|------|
@@ -75,7 +50,7 @@
 | **输出文件** | 同上文件覆写 + `web/data/meta.json` + `config/funds.json`（白名单更新） |
 | **依赖** | `core.constants`、`core.utils`、`core.config_loader`、`sources.akshare_source` |
 
-## 9. codegen.py — 前端配置生成
+### 6. codegen.py — 前端配置生成
 
 | 属性 | 内容 |
 |------|------|
@@ -84,7 +59,56 @@
 | **输出文件** | `web/js/config.js`（替换 AUTO-GENERATED CONFIG 块） |
 | **依赖** | `core.constants` |
 
-## 10. stamp_asset_version.py — 版本戳
+---
+
+## checks/ — 质量门禁 + 诊断 + 辅助
+
+### 7. verify_data.py — 黄金样例校验
+
+| 属性 | 内容 |
+|------|------|
+| **职责** | 解析 `knowledge/golden-fixtures.md` 中的 JSON fixtures，与 `web/data/*.json` 逐条核对 |
+| **输入文件** | `knowledge/golden-fixtures.md`、`web/data/*.json` |
+| **输出文件** | 无（返回错误列表） |
+| **依赖** | 无兄弟模块依赖 |
+
+### 8. cross_validate.py — 跨源交叉验证
+
+| 属性 | 内容 |
+|------|------|
+| **职责** | 对比 lsjz（天天基金）和 pzd（pingzhongdata）的净值，偏差 > 0.5% 标记异常 |
+| **输入文件** | `web/data/*.json` |
+| **输出文件** | 无（返回异常列表） |
+| **依赖** | 无兄弟模块依赖 |
+
+### 9. diagnose.py — 诊断引擎
+
+| 属性 | 内容 |
+|------|------|
+| **职责** | 检查 missing_nav / buy_status_anomaly / nav_regression / fee_anomalies，支持 --auto-fix |
+| **输入文件** | `web/data/*.json`（除 meta.json） |
+| **输出文件** | 无（只输出诊断报告；--auto-fix 时调 `fundctl.py refresh` 修复） |
+| **依赖** | 无兄弟模块依赖 |
+
+### 10. architecture_lint.py — 目录纪律校验
+
+| 属性 | 内容 |
+|------|------|
+| **职责** | 校验 `web/` 目录结构符合白名单规则 |
+| **输入文件** | `web/` 目录 |
+| **输出文件** | 无（返回错误列表） |
+| **依赖** | 无兄弟模块依赖 |
+
+### 11. scan_scenarios.py — 改动↔场景联动
+
+| 属性 | 内容 |
+|------|------|
+| **职责** | git diff 获取改动文件 → 匹配 ui_scenarios/*.yaml 的 fixed_in 字段 → 提示关联场景 |
+| **输入文件** | git diff (HEAD)、`test/ui_scenarios/*.yaml` |
+| **输出文件** | 无（返回映射字典，non-blocking 提示） |
+| **依赖** | 无兄弟模块依赖 |
+
+### 12. stamp_asset_version.py — 版本戳
 
 | 属性 | 内容 |
 |------|------|
@@ -93,19 +117,30 @@
 | **输出文件** | 同文件覆写 |
 | **依赖** | `core.constants` |
 
-## 兄弟模块依赖关系图
+---
+
+## 依赖关系图
+
+### pipeline/ （数据生产）
 
 ```
 scan.py ────────► core.constants, core.utils, core.config_loader, sources.akshare_source
 enrich.py ──────► core.constants, core.utils, sources.akshare_source, sources.eastmoney_source, sources.xueqiu_source
 fill.py ────────► core.constants, core.utils, sources.eastmoney_source, sources.akshare_source
 holdings.py ────► core.constants, core.utils, core.config_loader, sources.akshare_source
-diagnose.py ────► (独立，无兄弟依赖)
-verify_data.py ─► (独立，无兄弟依赖)
-scan_scenarios.py► (独立，无兄弟依赖)
 reclassify.py ──► core.constants, core.utils, core.config_loader, sources.akshare_source
 codegen.py ─────► core.constants
+```
+
+### checks/ （质量门禁）
+
+```
+verify_data.py ──────► (独立)
+cross_validate.py ───► (独立)
+diagnose.py ─────────► (独立)
+architecture_lint.py ─► (独立)
+scan_scenarios.py ───► (独立)
 stamp_asset_version.py ► core.constants
 ```
 
-> 注：所有模块共享 `core.constants` 和 `core.utils`，但只有 scan/enrich/fill/holdings/reclassify 直接依赖 `sources/` 数据源层。
+> 注：`checks/` 模块通过 `fundctl.py` 统一调用，无兄弟模块依赖，各自独立。

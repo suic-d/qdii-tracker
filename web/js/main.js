@@ -17,8 +17,6 @@
       offshore: { key: 'series_scale', dir: 'desc' },
       etf:      { key: 'series_scale', dir: 'desc' },
     };
-    let DETAIL_REFRESH_TIMER = null;  // 持仓弹窗自动刷新定时器
-    let LAST_FOCUS = null;            // 打开弹窗前的焦点元素
 
     // 以下工具函数已抽到 web/js/utils.js（普通 script，全局作用域）：
     //   shareSort / buyStatusRank / getOffshoreDisplayValues / getSeriesDisplayNavDate / getSortValue / sortSeries
@@ -328,6 +326,7 @@
               <th class="text-left py-3 px-3 font-medium w-8"></th>
               <th class="text-left py-3 px-3 font-medium">基金系列</th>
               ${sortableTh('series_scale', '规模', 'right')}
+              ${isEtf ? '' : '<th class="text-right py-3 px-3 font-medium" title="每日定投金额">每日</th>'}
               ${estimateHeaderHtml}
               ${priceHeaderHtml}
               ${premiumHeaderHtml}
@@ -396,6 +395,10 @@
         }
         window.openScreenshotModal(tab, allSeries, groups);
       };
+      // 分享按钮视觉隔离：插入 flex spacer 推到最右
+      var spacer = document.createElement('span');
+      spacer.style.flex = '1';
+      bar.appendChild(spacer);
       bar.appendChild(btn);
     }
 
@@ -510,6 +513,20 @@
         amber: { bg: 'bg-amber-50/70 dark:bg-stone-900/50', border: 'border-amber-200 dark:border-stone-700', text: 'text-amber-900 dark:text-stone-300', icon: '⚠️' },
         rose:  { bg: 'bg-rose-50/70 dark:bg-stone-900/50',  border: 'border-rose-200 dark:border-stone-700',  text: 'text-rose-900 dark:text-stone-300',  icon: '🚨' },
       }[cfg.tone] || { bg: 'bg-stone-50 dark:bg-stone-900/50', border: 'border-stone-200 dark:border-stone-700', text: 'text-stone-700 dark:text-stone-300', icon: '📌' };
+      // 计算每日定投汇总（所有场外分组）
+      let purchaseSummary = '';
+      if (tab === 'offshore') {
+        const src = STATE.data[filter];
+        if (src?.series) {
+          let totalPurchase = 0;
+          for (const s of src.series) {
+            for (const sh of s.shares) {
+              if (sh.daily_purchase != null && sh.daily_purchase > 0) totalPurchase += sh.daily_purchase;
+            }
+          }
+          if (totalPurchase > 0) purchaseSummary = `当前每日可购买 <b class="text-indigo-600 dark:text-indigo-400">¥${totalPurchase}</b>`;
+        }
+      }
       // 计算日限额汇总（仅场外被动分组：sp500 / nasdaq_passive / global_index）
       let limitSummary = '';
       if (tab === 'offshore' && ['sp500', 'nasdaq_passive', 'global_index'].includes(filter)) {
@@ -524,19 +541,23 @@
             else if (def.buy_status.includes('开放') && !def.daily_limit) { openCount++; }
           }
           const parts = [];
-          if (totalLimit > 0) parts.push(`当前每日可购买 <b class="text-red-600 dark:text-red-400">¥${formatLimit(totalLimit)}</b>`);
+          if (totalLimit > 0) parts.push(`当前每日可购买 <b class="text-indigo-600 dark:text-indigo-400">¥${totalLimit}</b>`);
           if (openCount > 0) parts.push(`${openCount} 只开放申购`);
           if (parts.length) limitSummary = parts.join(' + ');
         }
       }
       el.classList.remove('hidden');
+      const purchaseLi = purchaseSummary
+        ? `<li class="flex gap-2"><span class="flex-shrink-0">💰</span><span>${purchaseSummary}</span></li>`
+        : '';
       const limitLi = limitSummary
-        ? `<li class="flex gap-2"><span class="flex-shrink-0">💰</span><span><b>${limitSummary}</b></span></li>`
+        ? `<li class="flex gap-2"><span class="flex-shrink-0">💰</span><span>${limitSummary}</span></li>`
         : '';
       el.innerHTML = `
         <div class="${palette.bg} border ${palette.border} rounded-xl px-4 py-3 text-xs ${palette.text}">
           <ul class="space-y-1.5 leading-relaxed">
             ${cfg.items.map(it => `<li class="flex gap-2"><span class="flex-shrink-0">${palette.icon}</span><span>${it}</span></li>`).join('')}
+            ${purchaseLi}
             ${limitLi}
           </ul>
         </div>
@@ -592,8 +613,8 @@
         holdingsTd = '<td class="py-3 px-3 text-center text-stone-300 dark:text-stone-600">—</td>';
       }
 
-      // 展开后的子表格 colspan（ETF=9，场外=12）
-      const expandColspan = isEtf ? 10 : 13;
+      // 展开后的子表格 colspan（ETF=10，场外=14）
+      const expandColspan = isEtf ? 10 : 14;
 
       return `
         <tr class="series-row border-b border-stone-100 dark:border-stone-700/50 ${isEtf ? '' : 'hover:bg-stone-50 dark:hover:bg-stone-700/30 cursor-pointer'} transition" data-series-id="${series.series_id}" data-is-etf="${isEtf ? '1' : '0'}"${grpAttr}>
@@ -616,6 +637,7 @@
             </div>
           </td>
           <td class="py-3 px-3 text-right num font-medium">${seriesScale}</td>
+          ${isEtf ? '' : `<td class="py-3 px-3 text-right num text-sm">${def.daily_purchase > 0 ? '<span class="up font-bold">¥' + def.daily_purchase + '</span>' : '<span class="text-stone-300 dark:text-stone-600">—</span>'}</td>`}
           <td class="py-3 px-3 text-right num">
             <div class="font-medium">${price}</div>
             <div class="text-xs ${dailyChange > 0 ? 'up' : dailyChange < 0 ? 'down' : 'text-stone-400'}">${dailyChange == null ? '--' : (dailyChange > 0 ? '+' : '') + dailyChange.toFixed(2) + '%'}</div>
@@ -949,708 +971,7 @@
               </button>`;
     }
 
-    async function openDetail(code, evt) {
-      if (evt) evt.stopPropagation();
-
-      // 找到这只基金所在的系列
-      // 扩大到全部场外分类：除主动/全球其他外，sp500/nasdaq_passive/global_index 也可能含 Smart Beta
-      // 等"分类被动但实为主动管理"的基金（例如 096001 大成标普500等权重），它们也走真实持仓按钮
-      let series = null, share = null;
-      for (const cat of ['active', 'global_other', 'sp500', 'nasdaq_passive', 'global_index']) {
-        const d = STATE.data[cat];
-        if (!d) continue;
-        for (const s of d.series) {
-          const sh = s.shares.find(x => x.code === code);
-          if (sh) { series = s; share = sh; break; }
-        }
-        if (series) break;
-      }
-      if (!series) {
-        alert('未找到基金数据');
-        return;
-      }
-
-      // 打开 Modal
-      LAST_FOCUS = openModal('detailModal', { closeBtnId: 'detail-close' });
-
-      // 先填基础信息（来自列表数据）
-      renderDetailBasic(series, share);
-
-      // 持仓加载 + 自动刷新
-      const _detailCode = code;
-      const _detailSeries = series;
-      const _detailShare = share;
-
-      async function loadHoldings() {
-        try {
-          const res = await fetch(`./data/holdings/${_detailCode}.json`);
-          if (!res.ok) throw new Error('持仓数据未抓取');
-          const holdings = await res.json();
-
-          // 🟢 动态刷新 Top10 股票"当日涨跌"——按各股票所在市场分别拉腾讯行情
-          try {
-            const codes = (holdings.holdings || [])
-              .map(h => h.stock_code)
-              .filter(Boolean);
-            if (codes.length) {
-              const live = await fetchStocksLive(codes);
-              for (const [c, r] of Object.entries(live)) {
-                const existing = STATE.stocks[c] || {};
-                STATE.stocks[c] = {
-                  ...existing,
-                  code: c,
-                  market: r.market || existing.market,
-                  price: r.price != null ? r.price : existing.price,
-                  change_pct: r.change_pct != null ? r.change_pct : existing.change_pct,
-                };
-              }
-              // 行情已更新 → 详情页持仓 Top10 的「当日涨跌」会在下次 renderDetailHoldings 时使用
-            }
-          } catch (_) { /* 静默降级 */ }
-
-          renderDetailHoldings(holdings, _detailCode);
-        } catch (e) {
-          document.getElementById('detail-holdings').innerHTML =
-            `<div class="text-center py-12 text-stone-400 dark:text-stone-500 text-sm">暂无持仓数据（可能是新基金或季报未披露）</div>`;
-        }
-      }
-
-      await loadHoldings();
-
-      // 自动刷新：盘中时每 5 分钟刷新持仓行情
-      if (DETAIL_REFRESH_TIMER) clearInterval(DETAIL_REFRESH_TIMER);
-      DETAIL_REFRESH_TIMER = setInterval(() => {
-        // Modal 已关闭 → 停止刷新
-        if (document.getElementById('detailModal').classList.contains('hidden')) {
-          clearInterval(DETAIL_REFRESH_TIMER);
-          DETAIL_REFRESH_TIMER = null;
-          return;
-        }
-        // 非交易日或页面不可见 → 跳过本轮
-        if (!isTradingDay() || document.hidden) return;
-        loadHoldings();
-      }, 5 * 60 * 1000);
-    }
-
-    function closeDetail() {
-      closeModal('detailModal', LAST_FOCUS);
-      // 停止持仓自动刷新
-      if (DETAIL_REFRESH_TIMER) {
-        clearInterval(DETAIL_REFRESH_TIMER);
-        DETAIL_REFRESH_TIMER = null;
-      }
-    }
-
-    // ==================== 历史净值走势 ====================
-    // 数据来源：fund.eastmoney.com/pingzhongdata/{code}.js（JSONP）
-    //   · Data_netWorthTrend: [{x: ts_ms, y: 单位净值, equityReturn: 日涨跌%}, ...]
-    //   · 数据从基金成立日起算（多则 10+ 年），可支持 1 月 ~ 全部 各档区间筛选
-    // TREND_RANGES 已移到 web/js/config.js
-    const TREND_STATE = { code: null, fullSeries: null, range: '3m', expanded: false };
-
-    async function fetchPzdHistory(code) {
-      // 重用 pingzhongdata 接口；返回 [{date, nav, change}, ...] 升序
-      return jsonpFetch(`https://fund.eastmoney.com/pingzhongdata/${code}.js?rt=${Date.now()}`, {
-        timeoutMs: 8000,
-        failValue: null,
-        beforeLoad: () => {
-          // 清掉旧全局变量，避免上一次成功的数据污染本次请求（尤其本次失败时）
-          try { delete window.Data_netWorthTrend; } catch (_) { window.Data_netWorthTrend = undefined; }
-          try { delete window.fS_code; } catch (_) { window.fS_code = undefined; }
-        },
-        onData: () => {
-          // 校验 fS_code 与请求 code 一致，防止缓存/CDN 返回错误基金的数据
-          if (window.fS_code && String(window.fS_code) !== String(code)) return null;
-          // pingzhongdata 是脚本直接给全局变量赋值，读 window.Data_netWorthTrend
-          const arr = window.Data_netWorthTrend;
-          if (!Array.isArray(arr) || !arr.length) return null;
-          const out = arr.map(p => ({
-            date: new Date(p.x),
-            nav: parseFloat(p.y),
-            change: p.equityReturn != null ? parseFloat(p.equityReturn) : null,
-          })).filter(p => Number.isFinite(p.nav));
-          return out;
-        },
-      });
-    }
-
-    function filterTrendRange(series, rangeKey) {
-      if (!series?.length) return [];
-      if (rangeKey === 'all') return series;
-      const last = series[series.length - 1].date;
-      let start;
-      if (rangeKey === 'ytd') {
-        start = new Date(last.getFullYear(), 0, 1);
-      } else {
-        const r = TREND_RANGES.find(x => x.key === rangeKey);
-        if (!r || !r.days) return series;
-        start = new Date(last.getTime() - r.days * 86400 * 1000);
-      }
-      return series.filter(p => p.date >= start);
-    }
-
-    function renderTrendChart(trendDisplay) {
-      if (!trendDisplay) trendDisplay = { yMode: TREND_STATE.yMode, digits: TREND_STATE.digits, navLabel: TREND_STATE.navLabel };
-      // 每次重渲染图表（首次/区间切换）都把列表收回为 5 条预览
-      TREND_STATE.expanded = false;
-      const wrap = document.getElementById('trend-chart');
-      const recent = document.getElementById('trend-recent');
-      const data = filterTrendRange(TREND_STATE.fullSeries, TREND_STATE.range);
-      if (!data.length) {
-        wrap.innerHTML = '<div class="text-center py-12 text-stone-400 dark:text-stone-500 text-sm">所选区间无数据</div>';
-        recent.innerHTML = '';
-        return;
-      }
-
-      // ===== Y 轴模式（基金 vs 指数）=====
-      // 'pct'   : 基金（默认）—— Y 轴是相对区间起点的累计涨跌幅 %，多档对比尺度一致
-      // 'value' : 指数 / 汇率 —— Y 轴是绝对值（点位 51000.0 / 汇率 6.7662），符合行情看盘直觉
-      // why 不让指数也走 pct：道琼斯/汇率有公认的"绝对值阅读习惯"（例如汇率 6.7 vs 7.2），
-      //   折成 % 反而失去了"实际位置"信息；基金净值则是另一回事——每只基金净值起点不同，
-      //   用 % 才能横向对比。所以这里是有意分两条路。
-      const yMode = trendDisplay.yMode === 'value' ? 'value' : 'pct';
-      const digits = Number.isInteger(trendDisplay.digits) ? trendDisplay.digits : 4;
-      const navLabel = trendDisplay.navLabel || '净值';
-
-      const baseNav = data[0].nav;
-      const pts = data.map(p => ({
-        date: p.date,
-        nav: p.nav,
-        change: p.change,                        // 当日涨跌（来自 pzd / 日 K）
-        ret: (p.nav / baseNav - 1) * 100,        // 累计涨跌 %（两种模式都计算，hover 时仍展示）
-      }));
-
-      // SVG 尺寸（PAD_L 改为动态：根据 Y 轴最长标签估算所需宽度）
-      // why 不固定 50：基金 "+1.5%" 短，50 够；但指数 "51,032.46" 9 字符 ×6px ≈ 54px 已溢出 PAD_L
-      //   导致首位字符（如"5"）被 SVG viewBox 左侧裁掉。这里按实际标签长度倒算 PAD_L。
-      const W = 720, H = 260, PAD_R = 16, PAD_T = 16, PAD_B = 28;
-      // value 模式直接用 nav 作 Y；pct 模式用 ret
-      const ys = yMode === 'value' ? pts.map(p => p.nav) : pts.map(p => p.ret);
-      const minY = Math.min(...ys), maxY = Math.max(...ys);
-      const padY = (maxY - minY) * 0.08 || (yMode === 'value' ? Math.max(minY * 0.001, 0.01) : 0.5);
-      const lo = minY - padY, hi = maxY + padY;
-
-      // Y 轴标签格式化：pct 模式 "+1.5%"；value 模式千分位 + digits 位小数
-      const fmtAxis = (v) => {
-        if (yMode === 'value') {
-          return v.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
-        }
-        return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
-      };
-      // 动态 PAD_L：取 5 道刻度中最长标签的字符数，按 10px font-size 下 ≈ 6.2px/char 估算
-      // 再加 12px 余量（标签到坐标轴的 6px gap + 缓冲），并夹在 [44, 88] 之间避免极端值
-      let maxLabelLen = 0;
-      for (let i = 0; i <= 4; i++) {
-        const v = lo + (hi - lo) * (i / 4);
-        maxLabelLen = Math.max(maxLabelLen, fmtAxis(v).length);
-      }
-      const PAD_L = Math.min(88, Math.max(44, Math.ceil(maxLabelLen * 6.2) + 12));
-
-      const xOf = (i) => PAD_L + (W - PAD_L - PAD_R) * (i / Math.max(1, pts.length - 1));
-      const yOf = (v) => PAD_T + (H - PAD_T - PAD_B) * (1 - (v - lo) / (hi - lo));
-
-      const totalChg = pts[pts.length - 1].ret;  // 区间累计涨跌幅 %（两种模式都用它判断颜色）
-      // A 股口径：红涨 / 绿跌（与表格 .up/.down 类一致）
-      const upColor = '#dc2626';   // red-600
-      const downColor = '#16a34a'; // green-600
-      const lineColor = totalChg >= 0 ? upColor : downColor;
-
-      // 折线 path：value 模式用 nav，pct 模式用 ret
-      const yField = yMode === 'value' ? 'nav' : 'ret';
-      const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${xOf(i).toFixed(1)},${yOf(p[yField]).toFixed(1)}`).join(' ');
-      const area = `${path} L${xOf(pts.length - 1).toFixed(1)},${yOf(lo).toFixed(1)} L${xOf(0).toFixed(1)},${yOf(lo).toFixed(1)} Z`;
-
-      // 0% 基准线：仅 pct 模式有意义（"涨跌平衡线"）；value 模式不画，因为 0 通常不在 lo~hi 区间
-      const zeroY = (yMode === 'pct' && 0 >= lo && 0 <= hi) ? yOf(0) : null;
-
-      // 5 道横向网格（fmtAxis 已在前面定义，用于 PAD_L 计算 + 此处渲染）
-      const gridLines = [];
-      const gridLabels = [];
-      for (let i = 0; i <= 4; i++) {
-        const v = lo + (hi - lo) * (i / 4);
-        const y = yOf(v);
-        gridLines.push(`<line class="trend-grid-line" x1="${PAD_L}" y1="${y.toFixed(1)}" x2="${W - PAD_R}" y2="${y.toFixed(1)}" stroke="#e7e5e4" stroke-dasharray="2 3"/>`);
-        gridLabels.push(`<text class="trend-grid-text" x="${PAD_L - 6}" y="${(y + 3).toFixed(1)}" font-size="10" fill="#a8a29e" text-anchor="end">${fmtAxis(v)}</text>`);
-      }
-
-      const fmtD = (d) => `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      const fmtFullD = (d) => `${d.getFullYear()}-${fmtD(d)}`;
-      // X 轴标签格式：根据区间跨度决定日期粒度（模仿苹果股票 App）
-      //   ≤1年  → M月D日（如 5月7日）
-      //   1~3年 → YYYY年M月（如 2025年7月）
-      //   >3年  → YYYY   （如 2022）
-      const spanDays = (pts[pts.length - 1].date - pts[0].date) / 864e5;
-      let fmtXLabel;
-      if (spanDays > 365 * 3) {
-        fmtXLabel = (d) => `${d.getFullYear()}`;
-      } else if (spanDays > 365) {
-        fmtXLabel = (d) => `${d.getFullYear()}年${d.getMonth() + 1}月`;
-      } else {
-        fmtXLabel = (d) => `${d.getMonth() + 1}月${d.getDate()}日`;
-      }
-      // X 轴刻度数量（苹果风格：所有区间都放足够多的刻度）
-      //   ≤30天  → 5 个（1月）
-      //   30~180天 → 5 个（3月/6月）
-      //   180天~3年 → 5~6 个（1年/2年）
-      //   >3年   → 6 个（5年/10年/全部）
-      const xTickCount = spanDays > 365 * 3 ? 6 : 5;
-      const xLabels = [];
-      for (let t = 0; t < xTickCount; t++) {
-        const i = t === 0 ? 0 : t === xTickCount - 1 ? pts.length - 1 : Math.round(pts.length * t / (xTickCount - 1));
-        xLabels.push({ i, label: fmtXLabel(pts[i].date) });
-      }
-
-      // 区间累计涨跌：A 股口径（红涨绿跌），与全站 .up/.down 一致
-      const totalChgCls = totalChg > 0 ? 'up' : totalChg < 0 ? 'down' : 'text-stone-400';
-      const totalChgStr = `${totalChg >= 0 ? '+' : ''}${totalChg.toFixed(2)}%`;
-      // value 模式额外展示"首末值"，让用户一眼看出"6.7662 → 6.7245"这种绝对变化
-      const fmtVal = (v) => v.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits });
-      const headExtra = yMode === 'value'
-        ? `<span class="text-xs text-stone-500 dark:text-stone-400 ml-2 num">${fmtVal(pts[0].nav)} → <span class="text-stone-700 dark:text-stone-300 font-medium">${fmtVal(pts[pts.length - 1].nav)}</span></span>`
-        : '';
-
-      wrap.innerHTML = `
-        <div class="flex items-baseline justify-between flex-wrap gap-2 mb-2">
-          <div class="text-sm text-stone-500 dark:text-stone-400">区间累计 <span class="font-bold ${totalChgCls} num text-base ml-1">${totalChgStr}</span>${headExtra}</div>
-          <div class="text-xs text-stone-400 dark:text-stone-500 num">${fmtFullD(pts[0].date)} ~ ${fmtFullD(pts[pts.length - 1].date)} · ${pts.length} 个交易日</div>
-        </div>
-        <div class="relative" id="trend-chart-inner">
-          <svg viewBox="0 0 ${W} ${H}" class="w-full" style="height:auto; display:block;" id="trend-svg">
-            <defs>
-              <linearGradient id="trend-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="${lineColor}" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="${lineColor}" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            ${gridLines.join('')}
-            ${gridLabels.join('')}
-            ${zeroY != null ? `<line class="trend-zero-line" x1="${PAD_L}" y1="${zeroY.toFixed(1)}" x2="${W - PAD_R}" y2="${zeroY.toFixed(1)}" stroke="#a8a29e" stroke-width="0.6" stroke-dasharray="3 3"/>` : ''}
-            <path d="${area}" fill="url(#trend-grad)" />
-            <path d="${path}" fill="none" stroke="${lineColor}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
-            ${xLabels.map(l => `<text class="trend-grid-text" x="${xOf(l.i).toFixed(1)}" y="${H - 8}" font-size="10" fill="#a8a29e" text-anchor="middle">${l.label}</text>`).join('')}
-            <!-- crosshair（默认隐藏，hover 时显示） -->
-            <g id="trend-cursor" style="display:none;">
-              <line id="trend-cursor-line" y1="${PAD_T}" y2="${H - PAD_B}" stroke="#525252" stroke-width="0.8" stroke-dasharray="2 2"/>
-              <circle id="trend-cursor-dot" r="3.5" fill="${lineColor}" stroke="${document.documentElement.classList.contains('dark') ? '#292524' : '#fff'}" stroke-width="1.5"/>
-            </g>
-          </svg>
-          <!-- tooltip：浅色卡片，文字直接用全站 .up/.down（红涨绿跌）保持一致 -->
-          <div id="trend-tooltip" class="absolute pointer-events-none hidden bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-3 py-2 shadow-md text-xs whitespace-nowrap" style="transition:opacity .12s; min-width:160px;"></div>
-        </div>
-      `;
-
-      // 最近净值列表：默认 5 条预览，点「加载更多」展开为完整列表（带滚动）
-      // 切换区间时强制收回，因为基准点变了，区间累计也跟着变
-      renderTrendList(pts, trendDisplay);
-
-      // ===== Hover 交互 =====
-      const svg = document.getElementById('trend-svg');
-      const wrapInner = document.getElementById('trend-chart-inner');
-      const cursor = document.getElementById('trend-cursor');
-      const cursorLine = document.getElementById('trend-cursor-line');
-      const cursorDot = document.getElementById('trend-cursor-dot');
-      const tooltip = document.getElementById('trend-tooltip');
-
-      function findIndex(viewX) {
-        // viewX 是 SVG viewBox 坐标系下的 x；二分查最接近的 i
-        let lo = 0, hi = pts.length - 1;
-        while (lo < hi) {
-          const mid = (lo + hi) >> 1;
-          if (xOf(mid) < viewX) lo = mid + 1;
-          else hi = mid;
-        }
-        // 在 lo 和 lo-1 之间选更近的
-        if (lo > 0 && Math.abs(xOf(lo - 1) - viewX) < Math.abs(xOf(lo) - viewX)) return lo - 1;
-        return lo;
-      }
-
-      function onMove(e) {
-        const rect = svg.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        // 屏幕像素 → viewBox 坐标
-        const viewX = (clientX - rect.left) * (W / rect.width);
-        if (viewX < PAD_L || viewX > W - PAD_R) {
-          cursor.style.display = 'none';
-          tooltip.classList.add('hidden');
-          return;
-        }
-        const i = findIndex(viewX);
-        const p = pts[i];
-        const cx = xOf(i), cy = yOf(p[yField]);
-        cursor.style.display = '';
-        cursorLine.setAttribute('x1', cx.toFixed(1));
-        cursorLine.setAttribute('x2', cx.toFixed(1));
-        cursorDot.setAttribute('cx', cx.toFixed(1));
-        cursorDot.setAttribute('cy', cy.toFixed(1));
-
-        // tooltip 显示（浅色卡片 + .up/.down 保持站点统一红涨绿跌口径）
-        const chgTxt = p.change == null ? '--' : `${p.change > 0 ? '+' : ''}${p.change.toFixed(2)}%`;
-        const chgCls = p.change == null ? 'text-stone-400' : p.change > 0 ? 'up' : p.change < 0 ? 'down' : 'text-stone-400';
-        const retCls = p.ret > 0 ? 'up' : p.ret < 0 ? 'down' : 'text-stone-400';
-        const retTxt = `${p.ret >= 0 ? '+' : ''}${p.ret.toFixed(2)}%`;
-        // value 模式 nav 用 千分位+digits；pct 模式（基金）继续用 4 位定点
-        const navTxt = yMode === 'value' ? fmtVal(p.nav) : p.nav.toFixed(4);
-        tooltip.innerHTML = `
-          <div class="font-semibold text-stone-900 dark:text-stone-100 num">${fmtFullD(p.date)}</div>
-          <div class="mt-1.5 flex justify-between gap-4"><span class="text-stone-500 dark:text-stone-400">${navLabel}</span><span class="num font-medium text-stone-900 dark:text-stone-100">${navTxt}</span></div>
-          <div class="mt-0.5 flex justify-between gap-4"><span class="text-stone-500 dark:text-stone-400">日涨跌</span><span class="num font-medium ${chgCls}">${chgTxt}</span></div>
-          <div class="mt-0.5 flex justify-between gap-4 pt-1 border-t border-stone-100 dark:border-stone-700"><span class="text-stone-500 dark:text-stone-400">区间累计</span><span class="num font-bold ${retCls}">${retTxt}</span></div>
-        `;
-        tooltip.classList.remove('hidden');
-        // tooltip 定位（基于内层 wrap 的相对坐标）
-        const wrapRect = wrapInner.getBoundingClientRect();
-        // 屏幕坐标转 wrap 内坐标
-        const localX = (cx / W) * rect.width;
-        const localY = (cy / H) * rect.height;
-        // 默认放在数据点右侧；超出右边界时切到左侧
-        const ttW = tooltip.offsetWidth || 160;
-        const ttH = tooltip.offsetHeight || 80;
-        let tx = localX + 12;
-        if (tx + ttW > rect.width) tx = localX - ttW - 12;
-        let ty = localY - ttH / 2;
-        if (ty < 0) ty = 4;
-        if (ty + ttH > rect.height) ty = rect.height - ttH - 4;
-        tooltip.style.left = tx + 'px';
-        tooltip.style.top = ty + 'px';
-      }
-      function onLeave() {
-        cursor.style.display = 'none';
-        tooltip.classList.add('hidden');
-      }
-      svg.addEventListener('mousemove', onMove);
-      svg.addEventListener('mouseleave', onLeave);
-      svg.addEventListener('touchstart', onMove, { passive: true });
-      svg.addEventListener('touchmove', onMove, { passive: true });
-      svg.addEventListener('touchend', onLeave);
-    }
-
-    // 渲染走势 modal 底部的「最近净值」列表
-    //   · 默认显示 5 条预览 + 「加载更多」按钮
-    //   · 点击「加载更多」展开为完整历史（按日期降序，最新在最上），带 max-height 滚动
-    //   · 数据来自当前区间已计算好的 pts（含 ret 字段），无需再请求接口
-    function renderTrendList(pts, trendDisplay) {
-      if (!trendDisplay) trendDisplay = { yMode: TREND_STATE.yMode, digits: TREND_STATE.digits, navLabel: TREND_STATE.navLabel };
-      const recent = document.getElementById('trend-recent');
-      if (!recent) return;
-      const expanded = TREND_STATE.expanded;
-      const all = pts.slice().reverse();
-      const view = expanded ? all : all.slice(0, 5);
-      const fmtFullD = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-
-      const yMode = trendDisplay.yMode === 'value' ? 'value' : 'pct';
-      const digits = Number.isInteger(trendDisplay.digits) ? trendDisplay.digits : 4;
-      const navLabel = trendDisplay.navLabel || '单位净值';
-      const fmtNav = (v) => yMode === 'value'
-        ? v.toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits })
-        : v.toFixed(4);
-
-      const rows = view.map(p => {
-        const chgCls = p.change == null ? 'text-stone-400' : p.change > 0 ? 'up' : p.change < 0 ? 'down' : '';
-        const chgTxt = p.change == null ? '--' : `${p.change > 0 ? '+' : ''}${p.change.toFixed(2)}%`;
-        const retCls = p.ret > 0 ? 'up' : p.ret < 0 ? 'down' : 'text-stone-400';
-        const retTxt = `${p.ret > 0 ? '+' : ''}${p.ret.toFixed(2)}%`;
-        return `<tr class="border-t border-stone-100 dark:border-stone-700/50">
-          <td class="py-2 px-3 num">${fmtFullD(p.date)}</td>
-          <td class="py-2 px-3 text-right num font-medium">${fmtNav(p.nav)}</td>
-          <td class="py-2 px-3 text-right num ${chgCls}">${chgTxt}</td>
-          <td class="py-2 px-3 text-right num ${retCls}">${retTxt}</td>
-        </tr>`;
-      }).join('');
-
-      const tableHtml = `
-        <table class="w-full">
-          <thead class="bg-stone-50 dark:bg-stone-900 text-stone-500 dark:text-stone-400 ${expanded ? 'sticky top-0 z-10' : ''}">
-            <tr>
-              <th class="text-left py-2 px-3 font-medium">日期</th>
-              <th class="text-right py-2 px-3 font-medium">${navLabel}</th>
-              <th class="text-right py-2 px-3 font-medium">日涨跌</th>
-              <th class="text-right py-2 px-3 font-medium">区间累计</th>
-            </tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      `;
-
-      // 加载更多/收起按钮（仅当总条数 > 5 才显示）
-      const showToggle = all.length > 5;
-      let toggleHtml = '';
-      if (showToggle) {
-        if (!expanded) {
-          toggleHtml = `
-            <button id="trend-list-more"
-                    class="w-full py-2.5 text-xs text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-50 dark:hover:bg-stone-700/50 transition border-t border-stone-100 dark:border-stone-700/50 flex items-center justify-center gap-1">
-              <span>加载全部历史净值（共 ${all.length} 条）</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>`;
-        } else {
-          toggleHtml = `
-            <button id="trend-list-more"
-                    class="w-full py-2.5 text-xs text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-50 dark:hover:bg-stone-700/50 transition border-t border-stone-100 dark:border-stone-700/50 sticky bottom-0 bg-white dark:bg-stone-800 flex items-center justify-center gap-1">
-              <span>收起（仅看最近 5 条）</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
-              </svg>
-            </button>`;
-        }
-      }
-
-      // 展开模式下加最大高度 + 滚动
-      if (expanded) {
-        recent.innerHTML = `
-          <div class="max-h-[420px] overflow-y-auto text-xs">${tableHtml}</div>
-          ${toggleHtml}
-        `;
-      } else {
-        recent.innerHTML = `${tableHtml}${toggleHtml}`;
-      }
-
-      const btn = document.getElementById('trend-list-more');
-      if (btn) {
-        btn.addEventListener('click', () => {
-          TREND_STATE.expanded = !TREND_STATE.expanded;
-          renderTrendList(pts, trendDisplay);
-        });
-      }
-    }
-
-    function renderTrendRanges(trendDisplay) {
-      if (!trendDisplay) trendDisplay = { yMode: TREND_STATE.yMode, digits: TREND_STATE.digits, navLabel: TREND_STATE.navLabel };
-      const box = document.getElementById('trend-ranges');
-      box.innerHTML = TREND_RANGES.map(r => `
-        <button data-range="${r.key}" class="px-3 py-1.5 rounded-md text-xs border dark:border-stone-700 transition ${TREND_STATE.range === r.key ? 'bg-stone-900 dark:bg-stone-700 text-white dark:text-stone-200 border-transparent dark:border-stone-600' : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'}">
-          ${r.label}
-        </button>
-      `).join('');
-      box.querySelectorAll('button[data-range]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          TREND_STATE.range = btn.dataset.range;
-          renderTrendRanges(trendDisplay);
-          renderTrendChart(trendDisplay);
-        });
-      });
-    }
-
-    async function openTrend(code, evt) {
-      if (evt) evt.stopPropagation();
-      // 找基金信息（场外 5 个 cat + ETF）
-      let series = null, share = null;
-      for (const cat of ['sp500', 'nasdaq_passive', 'active', 'global_index', 'global_other', 'etf']) {
-        const d = STATE.data[cat];
-        if (!d) continue;
-        for (const s of d.series) {
-          const sh = s.shares.find(x => x.code === code);
-          if (sh) { series = s; share = sh; break; }
-        }
-        if (series) break;
-      }
-      LAST_FOCUS = openModal('trendModal', { closeBtnId: 'trend-close' });
-      document.getElementById('trend-title').textContent = series?.display_name || share?.name || `基金 ${code}`;
-      document.getElementById('trend-subtitle').innerHTML = `
-        <span class="num">${code}</span>
-        ${share?.share_class ? ` · ${share.share_class}` : ''}
-        ${share?.nav != null ? ` · 当前净值 <span class="font-medium num text-stone-700 dark:text-stone-300">${share.nav.toFixed(4)}</span>` : ''}
-        ${share?.nav_date ? ` <span class="text-stone-400">(${share.nav_date})</span>` : ''}
-      `;
-      document.getElementById('trend-chart').innerHTML = '<div class="text-center py-12 text-stone-400 dark:text-stone-500 text-sm">⏳ 拉取历史净值中...</div>';
-      document.getElementById('trend-recent').innerHTML = '';
-      TREND_STATE.code = code;
-      TREND_STATE.fullSeries = null;
-      TREND_STATE.range = '3m';
-      TREND_STATE.expanded = false;
-      const trendDisplay = { yMode: 'pct', digits: 4, navLabel: '单位净值' };
-      renderTrendRanges(trendDisplay);
-
-      const data = await fetchPzdHistory(code);
-      if (!data || !data.length) {
-        document.getElementById('trend-chart').innerHTML = '<div class="text-center py-12 text-stone-400 dark:text-stone-500 text-sm">无法拉取历史净值（数据源临时不可用）</div>';
-        return;
-      }
-      TREND_STATE.fullSeries = data;
-      renderTrendChart(trendDisplay);
-    }
-
-    function closeTrend() {
-      closeModal('trendModal', LAST_FOCUS);
-    }
-    // 点 trendModal 背景关闭
-    // why 双层判断：trendModal 内部还套了一层全屏 .modal-overlay div（见 HTML 行 452），
-    //   用户点击空白区域时，e.target 实际命中的是 .modal-overlay 而不是 trendModal 本身。
-    //   仅判 e.target === m 永远 false → 此前外部点击关不掉 modal。
-    //   与下方 detailModal 的关闭逻辑（行 ~2355）保持同款实现：modalRoot 或 .modal-overlay 都触发关闭。
-    document.addEventListener('click', (e) => {
-      const m = document.getElementById('trendModal');
-      if (!m || m.classList.contains('hidden')) return;
-      if (e.target.id === 'trendModal' || e.target.classList.contains('modal-overlay')) {
-        closeTrend();
-      }
-    });
-
-    function renderDetailBasic(series, share) {
-      // 标题
-      document.getElementById('detail-title').textContent = series.display_name;
-      document.getElementById('detail-subtitle').innerHTML = `
-        <span class="num">${share.code}</span> · ${share.share_class}${share.currency === '美元' ? ' · 美元' : ''}
-        <span class="badge badge-qdii ml-1">QDII</span>
-        ${share.manager ? `<span class="text-stone-500 dark:text-stone-400 ml-2">基金经理 <span class="text-stone-900 dark:text-stone-200 font-medium">${share.manager}</span></span>` : ''}
-      `;
-
-      // 顶部信息卡片
-      const infoCards = [
-        { label: '基金规模', value: share.scale_raw || '--', sub: series.company },
-        { label: '成立时间', value: share.established || '--', sub: '至今' },
-        { label: '单位净值', value: share.nav?.toFixed(4) ?? '--', sub: share.nav_date || '' },
-        { label: '日涨跌', value: fmtPct(share.daily_change), sub: '当日', isChange: true, chgVal: share.daily_change },
-        { label: '成立来收益', value: fmtPct(share.chg_since_inception), sub: '累计', isChange: true, chgVal: share.chg_since_inception },
-        { label: '日买入限额', value: share.purchase_state === '暂停申购' ? '—' : fmtMoney(share.daily_limit), sub: share.purchase_state || '' },
-      ];
-      document.getElementById('detail-info').innerHTML = infoCards.map(c => `
-        <div class="bg-white dark:bg-stone-800 rounded-xl border border-stone-200 dark:border-stone-700 p-4">
-          <div class="text-xs text-stone-500 dark:text-stone-400">${c.label}</div>
-          <div class="text-xl font-bold mt-1 ${c.isChange ? (c.chgVal > 0 ? 'up' : c.chgVal < 0 ? 'down' : '') : ''} num">${c.value}</div>
-          <div class="text-xs text-stone-400 dark:text-stone-500 mt-1">${c.sub}</div>
-        </div>
-      `).join('');
-
-      // 业绩表现
-      const perfItems = [
-        { label: '近1月', value: share.chg_1m },
-        { label: '近3月', value: share.chg_3m },
-        { label: '近6月', value: share.chg_6m },
-        { label: '今年来', value: share.chg_ytd },
-        { label: '近1年', value: share.chg_1y },
-        { label: '近3年', value: share.chg_3y },
-        { label: '近5年', value: share.chg_5y },
-        { label: '成立来', value: share.chg_since_inception },
-      ];
-      document.getElementById('detail-perf').innerHTML = perfItems.map(p => `
-        <div class="text-center p-3 rounded-lg bg-stone-50 dark:bg-stone-800">
-          <div class="text-xs text-stone-500 dark:text-stone-400 mb-1">${p.label}</div>
-          <div class="font-bold num ${p.value > 0 ? 'up' : p.value < 0 ? 'down' : ''}">${fmtPct(p.value)}</div>
-        </div>
-      `).join('');
-
-      // 费率结构
-      const feeItems = [];
-      if (share.first_buy_rate != null) {
-        feeItems.push({ label: '首档买入费', value: share.first_buy_rate === 0 ? '免费' : `${share.first_buy_rate}%` });
-      }
-      if (share.free_hold_days != null) {
-        feeItems.push({ label: '免赎回费持有天数', value: `${share.free_hold_days} 天`, highlight: true });
-      }
-      if (share.mgmt_fee != null) {
-        feeItems.push({ label: '管理费（年）', value: `${share.mgmt_fee}%` });
-      }
-      if (share.custody_fee != null) {
-        feeItems.push({ label: '托管费（年）', value: `${share.custody_fee}%` });
-      }
-      document.getElementById('detail-fee').innerHTML = feeItems.map(f => `
-        <div class="flex justify-between py-2 border-b border-stone-100 dark:border-stone-700/50 last:border-0">
-          <span class="text-sm text-stone-500 dark:text-stone-400">${f.label}</span>
-          <span class="text-sm font-medium num ${f.highlight ? 'text-indigo-600 dark:text-indigo-400' : ''}">${f.value}</span>
-        </div>
-      `).join('') || '<div class="text-sm text-stone-400 dark:text-stone-500 text-center py-4">暂无费率数据</div>';
-
-      // 估值信息已整合到持仓汇总条中
-    }
-
-    function renderDetailHoldings(data, fundCode) {
-      const container = document.getElementById('detail-holdings');
-      if (!data.holdings || data.holdings.length === 0) {
-        container.innerHTML = '<div class="text-center py-12 text-stone-400 dark:text-stone-500 text-sm">暂无持仓数据</div>';
-        return;
-      }
-
-      // 持仓头部汇总条
-      const summaryHtml = `
-        <div class="grid grid-cols-3 gap-2 mb-4">
-          <div class="bg-indigo-50 dark:bg-stone-900/50 rounded-lg p-3 text-center">
-            <div class="text-xs text-indigo-600 dark:text-stone-400">持仓只数</div>
-            <div class="text-xl font-bold text-indigo-900 dark:text-stone-200 num mt-1">${data.holdings_count} 只</div>
-          </div>
-          <div class="bg-emerald-50 dark:bg-stone-900/50 rounded-lg p-3 text-center">
-            <div class="text-xs text-emerald-600 dark:text-stone-400">Top10 总占比</div>
-            <div class="text-xl font-bold text-emerald-900 dark:text-stone-200 num mt-1">${data.total_weight}%</div>
-          </div>
-          <div class="bg-amber-50 dark:bg-stone-900/50 rounded-lg p-3 text-center">
-            <div class="text-xs text-amber-600 dark:text-stone-400">重仓股（>5%）</div>
-            <div class="text-xl font-bold text-amber-900 dark:text-stone-200 num mt-1">${data.heavy_count} 只</div>
-          </div>
-        </div>
-      `;
-
-      // 最大权重用于做条形图
-      const maxW = Math.max(...data.holdings.map(h => h.weight || 0));
-
-      // 持仓行的「市场状态点」逻辑
-      const listHtml = `
-        <div class="text-xs text-stone-500 dark:text-stone-400 mb-2 flex justify-between flex-wrap gap-2">
-          <span>${data.latest_quarter || '最新季报'} · 当日涨跌按持仓股票所属市场分别取实时行情</span>
-          <span class="text-stone-400 dark:text-stone-500">
-            <span class="mkt-dot open"></span>盘中实时
-            <span class="ml-2"><span class="mkt-dot closed"></span>已收盘</span>
-            <span class="ml-2 text-stone-300 dark:text-stone-600">·</span>
-            <span class="ml-2">持仓截至 ${(data.fetched_at || '').slice(0, 10)}</span>
-          </span>
-        </div>
-        <table class="w-full text-sm">
-          <thead class="text-xs text-stone-500 dark:text-stone-400 border-b border-stone-200 dark:border-stone-700">
-            <tr>
-              <th class="text-left py-2 font-medium w-8">#</th>
-              <th class="text-left py-2 font-medium">股票名称</th>
-              <th class="text-left py-2 font-medium">代码</th>
-              <th class="text-right py-2 font-medium">占净值比</th>
-              <th class="text-right py-2 font-medium">当日涨跌</th>
-              <th class="text-right py-2 font-medium">持仓市值</th>
-              <th class="w-32"></th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data.holdings.map((h, i) => {
-              const stock = STATE.stocks?.[h.stock_code];
-              const chg = stock?.change_pct;
-              const market = stock?.market || (/^\d{5}$/.test(h.stock_code) ? 'HK' : /^\d{6}$/.test(h.stock_code) ? 'A' : 'US');
-              const sess = getMarketSession(market);
-              const dotTitle = sess === 'open' ? `${market} 市场盘中实时` : `${market} 市场已收盘 · 显示最近成交`;
-              const dot = `<span class="mkt-dot ${sess}" title="${dotTitle}"></span>`;
-              const chgInner = chg == null
-                ? '<span class="text-stone-300 dark:text-stone-600">--</span>'
-                : `<span class="${chg > 0 ? 'up' : chg < 0 ? 'down' : ''}">${chg > 0 ? '+' : ''}${chg.toFixed(2)}%</span>`;
-              const chgCell = `${dot}${chgInner}`;
-
-              return `
-                <tr class="border-b border-stone-50 dark:border-stone-700/50 hover:bg-stone-50/50 dark:hover:bg-stone-700/30">
-                  <td class="py-2.5 text-stone-400 dark:text-stone-500 num">${h.rank || (i + 1)}</td>
-                  <td class="py-2.5">
-                    <span class="font-medium">${h.stock_name}</span>
-                    ${stock ? `<span class="badge ml-1 ${stock.market === 'US' ? 'badge-qdii' : stock.market === 'HK' ? 'badge-usd' : 'badge-cny'}" style="font-size:9px;">${stock.market}</span>` : ''}
-                  </td>
-                  <td class="py-2.5 text-xs text-stone-500 dark:text-stone-400 num">${h.stock_code}</td>
-                  <td class="py-2.5 text-right num font-bold">${h.weight?.toFixed(2)}%</td>
-                  <td class="py-2.5 text-right num text-sm">${chgCell}</td>
-                  <td class="py-2.5 text-right num text-stone-500 dark:text-stone-400 text-xs">${fmtMV(h.market_value)}</td>
-                  <td class="py-2.5 pl-3">
-                    <div class="h-2 bg-stone-100 dark:bg-stone-700 rounded-full overflow-hidden">
-                      <div class="h-full bg-gradient-to-r from-indigo-400 to-indigo-600" style="width: ${((h.weight || 0) / maxW * 100)}%"></div>
-                    </div>
-                  </td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
-      `;
-
-      container.innerHTML = summaryHtml + listHtml;
-    }
-
-    // 工具：格式化
-    // fmtPct / fmtMoney / fmtMV 已移到 web/js/utils.js
-
-    // ESC 关闭：trendModal 优先（可能从 detailModal 中嵌套打开），关闭最上层 modal
-    // why 不一次关两个：用户期望"按一次 ESC 关一层"，与 macOS/iOS 弹层堆栈惯例一致
+    // ESC 关闭：嵌套 modal 栈（trendModal 优先），按一次关一层
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape') return;
       const trendM = document.getElementById('trendModal');
@@ -1712,14 +1033,9 @@
 
     loadData();
 
-    // 暴露给外部 ES module（market-indices.js / etf-premium.js / market-trend.js 通过 window 访问）
-    // why：<script type="module"> 有独立作用域，无法直接访问本块内的 const STATE 等
+    // 暴露给外部 ES module + 独立脚本（render-trend.js / render-modal.js 通过 window 访问）
     window.STATE = STATE;
     window.renderCategory = renderCategory;
+    window.fetchStocksLive = fetchStocksLive;
     window.loadData = loadData;
-    // 走势 modal 内部状态机 + 渲染函数 —— 让 market-trend.js 复用同一套图表/列表/区间 chips
-    // why 不复制一份到 market-trend：DOM 是单例（trendModal 全局只有一个），
-    //     状态机也只有一份，复用反而比重复实现更安全（避免两侧渲染逻辑漂移）
-    window.TREND_STATE = TREND_STATE;
-    window.renderTrendChart = renderTrendChart;
-    window.renderTrendRanges = renderTrendRanges;
+    window.loadData = loadData;

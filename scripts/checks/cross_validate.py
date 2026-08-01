@@ -14,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from core.constants import ROOT_DIR, DATA_DIR
+from core.constants import DATA_DIR
 from core.utils import read_json
 from sources.eastmoney_source import fetch_lsjz, fetch_pzd
 

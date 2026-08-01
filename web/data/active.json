@@ -91,7 +91,8 @@
           "buy_min": 10.0,
           "chg_1w": -11.39,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "021277",
@@ -155,7 +156,8 @@
           "buy_min": 10.0,
           "chg_1w": -11.4,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "023402",
@@ -213,7 +215,8 @@
           "sell_status": "开放赎回",
           "buy_min": 500.0,
           "free_hold_days": 30,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "000906",
@@ -279,7 +282,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 730,
-          "error": "'declare_rate_table'"
+          "error": "'declare_rate_table'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "270023",
@@ -373,7 +377,8 @@
           "buy_min": 10.0,
           "chg_1w": -6.06,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "000044",
@@ -443,7 +448,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 730,
-          "error": "'declare_rate_table'"
+          "error": "'declare_rate_table'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "000043",
@@ -533,7 +539,8 @@
           "buy_min": 10.0,
           "chg_1w": -2.22,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017437",
@@ -598,7 +605,8 @@
           "buy_min": 10.0,
           "chg_1w": -2.23,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "017436",
@@ -692,7 +700,8 @@
           "buy_min": 10.0,
           "chg_1w": 6.54,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "012922",
@@ -757,7 +766,8 @@
           "buy_min": 10.0,
           "chg_1w": 6.54,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "012921",
@@ -820,7 +830,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 730,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "012923",
@@ -871,7 +882,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 30,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "012920",
@@ -961,7 +973,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "012868",
@@ -1018,7 +1031,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 7,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "003721",
@@ -1083,7 +1097,8 @@
           "sale_service_fee": 0.0,
           "sell_status": "开放赎回",
           "buy_min": 10.0,
-          "error": "'declare_rate_table'"
+          "error": "'declare_rate_table'",
+          "daily_purchase": 100
         },
         {
           "code": "012869",
@@ -1130,7 +1145,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 7,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "161128",
@@ -1229,7 +1245,8 @@
           "buy_min": 10.0,
           "chg_1w": -13.97,
           "free_hold_days": 365,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "024239",
@@ -1297,7 +1314,8 @@
           "buy_min": 10.0,
           "chg_1w": -13.98,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "019447",
@@ -1360,7 +1378,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 365,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "019448",
@@ -1423,7 +1442,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 365,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "005698",
@@ -1515,7 +1535,8 @@
           "buy_min": 10.0,
           "chg_1w": -15.28,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "021842",
@@ -1584,7 +1605,8 @@
           "buy_min": 10.0,
           "chg_1w": -15.29,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "006374",
@@ -1647,7 +1669,8 @@
           "sell_status": "开放赎回",
           "buy_min": 0.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "021843",
@@ -1698,7 +1721,8 @@
           "sell_status": "开放赎回",
           "buy_min": 0.0,
           "free_hold_days": 30,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "display_name": "国富全球科技互联混合",
@@ -1795,7 +1819,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017093",
@@ -1860,7 +1885,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "019118",
@@ -1917,7 +1943,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 7,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017092",
@@ -1980,7 +2007,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "017091",
@@ -2062,7 +2090,8 @@
           "buy_min": 10.0,
           "chg_1w": -5.77,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "018230",
@@ -2126,7 +2155,8 @@
           "buy_min": 10.0,
           "chg_1w": -5.77,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "018231",
@@ -2185,7 +2215,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "018232",
@@ -2236,7 +2267,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 30,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "display_name": "易方达全球优质企业混合",
@@ -2337,7 +2369,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.57,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "015202",
@@ -2402,7 +2435,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.58,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "015203",
@@ -2463,7 +2497,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "006426",
@@ -2526,7 +2561,8 @@
           "sell_status": "暂停赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "001668",
@@ -2613,7 +2649,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.26,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "022184",
@@ -2676,7 +2713,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.27,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "026228",
@@ -2745,7 +2783,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "000157",
@@ -2797,7 +2836,8 @@
           "custody_fee": 0.2,
           "first_buy_rate": 1.5,
           "sale_service_fee": 0.0,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "category": "active",
@@ -2891,7 +2931,8 @@
           "buy_min": 10.0,
           "chg_1w": -10.82,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "021662",
@@ -2954,7 +2995,8 @@
           "buy_min": 10.0,
           "chg_1w": -10.83,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "company_display": "其他",
@@ -3047,7 +3089,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.69,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "016702",
@@ -3112,7 +3155,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.71,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "016701",
@@ -3207,7 +3251,8 @@
           "buy_min": 10.0,
           "chg_1w": -18.95,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "018147",
@@ -3277,7 +3322,8 @@
           "buy_min": 10.0,
           "chg_1w": -19.0,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "539002",
@@ -3371,7 +3417,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "014002",
@@ -3432,7 +3479,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "006555",
@@ -3531,7 +3579,8 @@
           "buy_min": 10.0,
           "chg_1w": -11.96,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017731",
@@ -3601,7 +3650,8 @@
           "buy_min": 10.0,
           "chg_1w": -11.98,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "017730",
@@ -3691,7 +3741,8 @@
           "buy_min": 10.0,
           "chg_1w": -6.46,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017204",
@@ -3752,7 +3803,8 @@
           "buy_min": 10.0,
           "chg_1w": -6.47,
           "free_hold_days": 7,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "501312",
@@ -3856,7 +3908,8 @@
           "buy_min": 10.0,
           "chg_1w": -20.17,
           "free_hold_days": 365,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "002892",
@@ -3922,7 +3975,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 365,
-          "error": "'declare_rate_table'"
+          "error": "'declare_rate_table'",
+          "daily_purchase": 100
         },
         {
           "code": "002893",
@@ -3988,7 +4042,8 @@
           "sell_status": "开放赎回",
           "buy_min": 1.0,
           "free_hold_days": 365,
-          "error": "'declare_rate_table'"
+          "error": "'declare_rate_table'",
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "002891",
@@ -4096,7 +4151,8 @@
           "buy_min": 10.0,
           "chg_1w": -12.31,
           "free_hold_days": 365,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "018036",
@@ -4171,7 +4227,8 @@
           "buy_min": 10.0,
           "chg_1w": -12.32,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "501226",
@@ -4269,7 +4326,8 @@
           "buy_min": 10.0,
           "chg_1w": -16.75,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "016665",
@@ -4334,7 +4392,8 @@
           "buy_min": 10.0,
           "chg_1w": -16.76,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "016664",
@@ -4417,7 +4476,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "016668",
@@ -4478,7 +4538,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "016667",
@@ -4541,7 +4602,8 @@
           "sell_status": "开放赎回",
           "buy_min": 200.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "display_name": "景顺长城全球半导体芯片股票",
@@ -4630,7 +4692,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.68,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "019156",
@@ -4694,7 +4757,8 @@
           "buy_min": 10.0,
           "chg_1w": -9.69,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "019157",
@@ -4753,7 +4817,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 180,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         },
         {
           "code": "019158",
@@ -4804,7 +4869,8 @@
           "sell_status": "开放赎回",
           "buy_min": 10.0,
           "free_hold_days": 30,
-          "error": "'data'"
+          "error": "'data'",
+          "daily_purchase": 100
         }
       ],
       "display_name": "易方达全球配置混合",
@@ -4914,7 +4980,8 @@
           "buy_min": 10.0,
           "chg_1w": -8.27,
           "free_hold_days": null,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "008254",
@@ -4984,7 +5051,8 @@
           "buy_min": 10.0,
           "chg_1w": -8.28,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "008253",
@@ -5074,7 +5142,8 @@
           "buy_min": 10.0,
           "chg_1w": -7.41,
           "free_hold_days": 180,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "017145",
@@ -5139,7 +5208,8 @@
           "buy_min": 10.0,
           "chg_1w": -7.42,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "default_share_code": "017144",
@@ -5222,7 +5292,8 @@
           "buy_min": 10.0,
           "chg_1w": -16.19,
           "free_hold_days": 365,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         },
         {
           "code": "016823",
@@ -5287,7 +5358,8 @@
           "buy_min": 10.0,
           "chg_1w": -16.2,
           "free_hold_days": 30,
-          "max_sell_rate": 1.5
+          "max_sell_rate": 1.5,
+          "daily_purchase": 100
         }
       ],
       "display_name": "天弘全球新能源汽车股票",
