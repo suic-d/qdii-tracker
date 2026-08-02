@@ -44,7 +44,7 @@ jobs:
 
       - name: 🏷️ Stamp frontend asset versions
         run: |
-          python3 scripts/pipeline/stamp_asset_version.py --version "${GITHUB_SHA::12}"
+          python3 scripts/checks/stamp_asset_version.py --version "${GITHUB_SHA::12}"
 
       - name: 📦 Upload web/ as artifact
         uses: actions/upload-pages-artifact@v5
