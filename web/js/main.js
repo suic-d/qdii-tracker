@@ -326,7 +326,6 @@
               <th class="text-left py-3 px-3 font-medium w-8"></th>
               <th class="text-left py-3 px-3 font-medium">基金系列</th>
               ${sortableTh('series_scale', '规模', 'right')}
-              ${isEtf ? '' : '<th class="text-right py-3 px-3 font-medium" title="每日定投金额">每日</th>'}
               ${estimateHeaderHtml}
               ${priceHeaderHtml}
               ${premiumHeaderHtml}
@@ -637,7 +636,6 @@
             </div>
           </td>
           <td class="py-3 px-3 text-right num font-medium">${seriesScale}</td>
-          ${isEtf ? '' : `<td class="py-3 px-3 text-right num text-sm">${def.daily_purchase > 0 ? '<span class="up font-bold">¥' + def.daily_purchase + '</span>' : '<span class="text-stone-300 dark:text-stone-600">—</span>'}</td>`}
           <td class="py-3 px-3 text-right num">
             <div class="font-medium">${price}</div>
             <div class="text-xs ${dailyChange > 0 ? 'up' : dailyChange < 0 ? 'down' : 'text-stone-400'}">${dailyChange == null ? '--' : (dailyChange > 0 ? '+' : '') + dailyChange.toFixed(2) + '%'}</div>
