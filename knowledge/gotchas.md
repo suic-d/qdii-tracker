@@ -14,6 +14,10 @@
 | G008 | scan 后不接 enrich+fill | scan 覆盖现有 JSON → 丢失 enrich 填充的规模和费率数据 | `scripts/fundctl.py::cmd_sync()` | ✅已修复 | — | — |
 | G009 | LOF chg_ytd 为空 | LOF 场内份额不暴露场外收益字段 | `scripts/pipeline/fill.py:_fill_ytd()` → 取同系列兄弟份额兜底 | ✅已修复 | — | — |
 | G010 | 份额 key 顺序不一致 | 多脚本写盘时 dict key 顺序依赖插入顺序 → diff 噪音 | `scripts/core/utils.py::normalize_share_keys()` | ✅已修复 | — | — |
+| G011 | 主动基金「每日可购买」显示错误恒定值 ¥7200 | `renderGroupNotice()` 使用 `daily_purchase` 字段求和，但该字段从未被 pipeline 更新，72 个份额全是死值 100 | `web/js/main.js:renderGroupNotice()` → 改用 `daily_limit`（AKShare 真实数据） | ✅已修复 | 2026-08-05 | 2026-08-05 |
+| G012 | 详情 Modal「日买入限额」始终不显示「暂停」 | `render-modal.js:103` 用了不存在的字段 `share.purchase_state`，实际字段是 `share.buy_status` | `web/js/render-modal.js:103` | ✅已修复 | 2026-08-05 | 2026-08-05 |
+| G013 | 截图弹窗 + 申购浮层在亮色模式下完全无样式 | `.ss-*` 和 `.buy-hist-tip` 只有暗色覆盖（`html.dark`），亮色基础 CSS 全部缺失 | `web/css/app.css` → 补全 ~420 行亮色样式 | ✅已修复 | 2026-08-05 | 2026-08-05 |
+| G014 | 版本戳 `?v=` 漏打 ES module 单引号路径 | `stamp_asset_version.py` 正则只匹配双引号 `"`，5 处 `import from '...'` 从不更新 | `scripts/checks/stamp_asset_version.py` → 正则兼容双引号+单引号 | ✅已修复 | 2026-08-05 | 2026-08-05 |
 
 ## Gotchas 生命周期规则
 - 已修复 → 保留条目，标记 `✅已修复`（不删——后人要知道坑存在过）

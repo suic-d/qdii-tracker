@@ -112,7 +112,7 @@
 
 | 属性 | 内容 |
 |------|------|
-| **职责** | 统一改写 `web/index.html` 中本地 JS/CSS 资源的 `?v=` 版本戳 |
+| **职责** | 统一改写 `web/index.html` 中本地 JS/CSS 资源的 `?v=` 版本戳。现已兼容双引号（`<script src="...">`）和单引号（`import from '...'` ES module）两种引用格式。 |
 | **输入文件** | `web/index.html` |
 | **输出文件** | 同文件覆写 |
 | **依赖** | `core.constants` |

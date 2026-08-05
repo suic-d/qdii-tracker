@@ -187,10 +187,7 @@ function renderCard(item, parsed) {
   const colorCls = flat ? 'text-stone-500' : (up ? 'text-rose-600' : 'text-emerald-600');
   const arrow = flat ? '—' : (up ? '↑' : '↓');
   const sign = up ? '+' : '';
-  const priceStr = price.toLocaleString('en-US', {
-    minimumFractionDigits: item.digits,
-    maximumFractionDigits: item.digits,
-  });
+  const priceStr = price.toFixed(item.digits);
   const pctStr = `${sign}${changePct.toFixed(2)}%`;
   const changeStr = `${sign}${change.toFixed(item.digits === 4 ? 4 : 2)}`;
   card.dataset.lastPrice = priceStr;  // 缓存上次成功值，下次失败可降级展示

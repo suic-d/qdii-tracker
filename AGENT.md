@@ -46,7 +46,7 @@
 - scan 后必须接 enrich + fill
 - 禁止直接改 `config/funds.json`（通过 fund-ops Skill + fundctl.py）
 - 部署：commit+push → `gh workflow run deploy-pages.yml --ref main`
-- 新 JS/CSS：`index.html` 加 `?v=` 版本戳
+- 版本戳：本地 `?v=dev`（占位），部署时 `deploy-pages.yml` 自动 `stamp_asset_version.py --version ${GITHUB_SHA::12}` 替换为 commit SHA，无需手动改
 
 ### 自动联动（knowledge ↔ Agent ↔ README）
 

@@ -512,23 +512,9 @@
         amber: { bg: 'bg-amber-50/70 dark:bg-stone-900/50', border: 'border-amber-200 dark:border-stone-700', text: 'text-amber-900 dark:text-stone-300', icon: '⚠️' },
         rose:  { bg: 'bg-rose-50/70 dark:bg-stone-900/50',  border: 'border-rose-200 dark:border-stone-700',  text: 'text-rose-900 dark:text-stone-300',  icon: '🚨' },
       }[cfg.tone] || { bg: 'bg-stone-50 dark:bg-stone-900/50', border: 'border-stone-200 dark:border-stone-700', text: 'text-stone-700 dark:text-stone-300', icon: '📌' };
-      // 计算每日定投汇总（所有场外分组）
-      let purchaseSummary = '';
-      if (tab === 'offshore') {
-        const src = STATE.data[filter];
-        if (src?.series) {
-          let totalPurchase = 0;
-          for (const s of src.series) {
-            for (const sh of s.shares) {
-              if (sh.daily_purchase != null && sh.daily_purchase > 0) totalPurchase += sh.daily_purchase;
-            }
-          }
-          if (totalPurchase > 0) purchaseSummary = `当前每日可购买 <b class="text-indigo-600 dark:text-indigo-400">¥${totalPurchase}</b>`;
-        }
-      }
-      // 计算日限额汇总（仅场外被动分组：sp500 / nasdaq_passive / global_index）
+      // 计算日限额汇总（所有场外分组：只统计默认份额、跳过暂停的基金）
       let limitSummary = '';
-      if (tab === 'offshore' && ['sp500', 'nasdaq_passive', 'global_index'].includes(filter)) {
+      if (tab === 'offshore') {
         const src = STATE.data[filter];
         if (src?.series) {
           let totalLimit = 0, openCount = 0;
@@ -540,15 +526,12 @@
             else if (def.buy_status.includes('开放') && !def.daily_limit) { openCount++; }
           }
           const parts = [];
-          if (totalLimit > 0) parts.push(`当前每日可购买 <b class="text-indigo-600 dark:text-indigo-400">¥${totalLimit}</b>`);
+          if (totalLimit > 0) parts.push(`当前每日可购买 <b class="text-indigo-600 dark:text-indigo-400">¥${formatLimit(totalLimit)}</b>`);
           if (openCount > 0) parts.push(`${openCount} 只开放申购`);
           if (parts.length) limitSummary = parts.join(' + ');
         }
       }
       el.classList.remove('hidden');
-      const purchaseLi = purchaseSummary
-        ? `<li class="flex gap-2"><span class="flex-shrink-0">💰</span><span>${purchaseSummary}</span></li>`
-        : '';
       const limitLi = limitSummary
         ? `<li class="flex gap-2"><span class="flex-shrink-0">💰</span><span>${limitSummary}</span></li>`
         : '';
@@ -556,7 +539,6 @@
         <div class="${palette.bg} border ${palette.border} rounded-xl px-4 py-3 text-xs ${palette.text}">
           <ul class="space-y-1.5 leading-relaxed">
             ${cfg.items.map(it => `<li class="flex gap-2"><span class="flex-shrink-0">${palette.icon}</span><span>${it}</span></li>`).join('')}
-            ${purchaseLi}
             ${limitLi}
           </ul>
         </div>

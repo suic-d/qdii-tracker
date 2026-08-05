@@ -100,7 +100,7 @@
       { label: '单位净值', value: share.nav ? share.nav.toFixed(4) : '--', sub: share.nav_date || '' },
       { label: '日涨跌', value: fmtPct(share.daily_change), sub: '当日', isChange: true, chgVal: share.daily_change },
       { label: '成立来收益', value: fmtPct(share.chg_since_inception), sub: '累计', isChange: true, chgVal: share.chg_since_inception },
-      { label: '日买入限额', value: share.purchase_state === '暂停申购' ? '—' : fmtMoney(share.daily_limit), sub: share.purchase_state || '' },
+      { label: '日买入限额', value: (share.buy_status && share.buy_status.includes('暂停')) ? '—' : fmtMoney(share.daily_limit), sub: share.buy_status || '' },
     ];
     document.getElementById('detail-info').innerHTML = infoCards.map(function (c) {
       var cls = c.isChange ? (c.chgVal > 0 ? 'up' : c.chgVal < 0 ? 'down' : '') : '';

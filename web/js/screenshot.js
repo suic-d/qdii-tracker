@@ -33,8 +33,8 @@
 
   // 默认选中列 + 排序（手机端精简）
   const DEFAULTS = {
-    offshore: { cols: ['name','buy_status'], sort: 'buy_status', dir: 'desc' },
-    etf:      { cols: ['name','buy_status'], sort: 'buy_status', dir: 'desc' },
+    offshore: { cols: ['name','buy_status','nav','chg_1m','chg_ytd','chg_1y'], sort: 'buy_status', dir: 'desc' },
+    etf:      { cols: ['name','buy_status','etf_premium','nav','chg_1m','chg_ytd'], sort: 'buy_status', dir: 'desc' },
   };
 
   // 分类清单：key 对应 ssState 字段名 / chip data-val / 下载文件名
@@ -153,11 +153,14 @@
 
   function onColToggle(e) {
     var key = e.target.dataset.key;
+    var label = e.target.closest('.ss-col-item');
     if (e.target.checked) {
       if (ssState.activeCols.indexOf(key) === -1) ssState.activeCols.push(key);
+      if (label) label.classList.add('checked');
     } else {
       var idx = ssState.activeCols.indexOf(key);
       if (idx !== -1) ssState.activeCols.splice(idx, 1);
+      if (label) label.classList.remove('checked');
     }
     renderTemplate();
   }
@@ -239,7 +242,7 @@
       var cls = flat ? '' : (up ? 'up' : 'down');
       var arrow = flat ? '—' : (up ? '↑' : '↓');
       var sign = up ? '+' : '';
-      var priceStr = p.toLocaleString('en-US', { minimumFractionDigits: sym.digits, maximumFractionDigits: sym.digits });
+      var priceStr = p.toFixed(sym.digits);
       return '<div class="ss-mkt-card">' +
         '<div class="ss-mkt-label">' + sym.label + '</div>' +
         '<div class="ss-mkt-price">' + priceStr + '</div>' +
