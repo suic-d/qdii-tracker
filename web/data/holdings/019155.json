@@ -1,12 +1,12 @@
 {
   "code": "019155",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 36.75,
   "heavy_count": 1,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 6.39,
@@ -14,7 +14,7 @@
       "market_value": 5361.72
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "GLW",
       "stock_name": "康宁",
       "weight": 4.95,
@@ -22,7 +22,7 @@
       "market_value": 4156.16
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "LITE",
       "stock_name": "Lumentum Holdings Inc",
       "weight": 4.54,
@@ -30,7 +30,7 @@
       "market_value": 3810.39
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "06869",
       "stock_name": "长飞光纤光缆",
       "weight": 4.32,
@@ -38,7 +38,7 @@
       "market_value": 3626.88
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 3.69,
@@ -46,7 +46,7 @@
       "market_value": 3097.23
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "TSEM",
       "stock_name": "Tower半导体",
       "weight": 3.15,
@@ -54,7 +54,7 @@
       "market_value": 2645.57
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "AXTI",
       "stock_name": "AXT Inc",
       "weight": 2.7,
@@ -62,7 +62,7 @@
       "market_value": 2266.67
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 2.66,
@@ -70,7 +70,7 @@
       "market_value": 2228.02
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "300433",
       "stock_name": "蓝思科技",
       "weight": 2.28,
@@ -78,7 +78,7 @@
       "market_value": 1915.13
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "300502",
       "stock_name": "新易盛",
       "weight": 2.07,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 6.39,
+        "shares": 0.68,
+        "market_value": 5361.72
+      },
+      {
+        "rank": 2,
+        "stock_code": "GLW",
+        "stock_name": "康宁",
+        "weight": 4.95,
+        "shares": 2.39,
+        "market_value": 4156.16
+      },
+      {
+        "rank": 3,
+        "stock_code": "LITE",
+        "stock_name": "Lumentum Holdings Inc",
+        "weight": 4.54,
+        "shares": 0.65,
+        "market_value": 3810.39
+      },
+      {
+        "rank": 4,
+        "stock_code": "06869",
+        "stock_name": "长飞光纤光缆",
+        "weight": 4.32,
+        "shares": 16.35,
+        "market_value": 3626.88
+      },
+      {
+        "rank": 5,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 3.69,
+        "shares": 0.2,
+        "market_value": 3097.23
+      },
+      {
+        "rank": 6,
+        "stock_code": "TSEM",
+        "stock_name": "Tower半导体",
+        "weight": 3.15,
+        "shares": 1.49,
+        "market_value": 2645.57
+      },
+      {
+        "rank": 7,
+        "stock_code": "AXTI",
+        "stock_name": "AXT Inc",
+        "weight": 2.7,
+        "shares": 4.62,
+        "market_value": 2266.67
+      },
+      {
+        "rank": 8,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 2.66,
+        "shares": 2.34,
+        "market_value": 2228.02
+      },
+      {
+        "rank": 9,
+        "stock_code": "300433",
+        "stock_name": "蓝思科技",
+        "weight": 2.28,
+        "shares": 35.69,
+        "market_value": 1915.13
+      },
+      {
+        "rank": 10,
+        "stock_code": "300502",
+        "stock_name": "新易盛",
+        "weight": 2.07,
+        "shares": 2.86,
+        "market_value": 1733.59
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "00100",
@@ -168,89 +250,7 @@
         "shares": 0.7,
         "market_value": 1389.04
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 6.39,
-        "shares": 0.68,
-        "market_value": 5361.72
-      },
-      {
-        "rank": 12,
-        "stock_code": "GLW",
-        "stock_name": "康宁",
-        "weight": 4.95,
-        "shares": 2.39,
-        "market_value": 4156.16
-      },
-      {
-        "rank": 13,
-        "stock_code": "LITE",
-        "stock_name": "Lumentum Holdings Inc",
-        "weight": 4.54,
-        "shares": 0.65,
-        "market_value": 3810.39
-      },
-      {
-        "rank": 14,
-        "stock_code": "06869",
-        "stock_name": "长飞光纤光缆",
-        "weight": 4.32,
-        "shares": 16.35,
-        "market_value": 3626.88
-      },
-      {
-        "rank": 15,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 3.69,
-        "shares": 0.2,
-        "market_value": 3097.23
-      },
-      {
-        "rank": 16,
-        "stock_code": "TSEM",
-        "stock_name": "Tower半导体",
-        "weight": 3.15,
-        "shares": 1.49,
-        "market_value": 2645.57
-      },
-      {
-        "rank": 17,
-        "stock_code": "AXTI",
-        "stock_name": "AXT Inc",
-        "weight": 2.7,
-        "shares": 4.62,
-        "market_value": 2266.67
-      },
-      {
-        "rank": 18,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 2.66,
-        "shares": 2.34,
-        "market_value": 2228.02
-      },
-      {
-        "rank": 19,
-        "stock_code": "300433",
-        "stock_name": "蓝思科技",
-        "weight": 2.28,
-        "shares": 35.69,
-        "market_value": 1915.13
-      },
-      {
-        "rank": 20,
-        "stock_code": "300502",
-        "stock_name": "新易盛",
-        "weight": 2.07,
-        "shares": 2.86,
-        "market_value": 1733.59
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:55.715039+08:00"
+  "fetched_at": "2026-08-07T11:50:40.226262+08:00"
 }

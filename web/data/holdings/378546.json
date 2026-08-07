@@ -1,12 +1,12 @@
 {
   "code": "378546",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 35.97,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "XOM",
       "stock_name": "埃克森美孚",
       "weight": 4.98,
@@ -14,7 +14,7 @@
       "market_value": 2709.94
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "NEM",
       "stock_name": "纽蒙特",
       "weight": 4.35,
@@ -22,7 +22,7 @@
       "market_value": 2367.64
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "SHEL",
       "stock_name": "壳牌",
       "weight": 4.17,
@@ -30,7 +30,7 @@
       "market_value": 2266.9
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "RIO",
       "stock_name": "力拓(UK)",
       "weight": 3.56,
@@ -38,7 +38,7 @@
       "market_value": 1934.96
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "VLO",
       "stock_name": "瓦莱罗能源",
       "weight": 3.52,
@@ -46,7 +46,7 @@
       "market_value": 1912.54
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "FCX",
       "stock_name": "自由港麦克莫兰",
       "weight": 3.4,
@@ -54,7 +54,7 @@
       "market_value": 1848.45
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "BHP",
       "stock_name": "BHP GROUP LTD",
       "weight": 3.38,
@@ -62,7 +62,7 @@
       "market_value": 1839.31
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "MPC",
       "stock_name": "马拉松原油",
       "weight": 3.03,
@@ -70,7 +70,7 @@
       "market_value": 1646.96
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "CNQ",
       "stock_name": "CANADIAN NATURAL RESOURCES",
       "weight": 2.95,
@@ -78,7 +78,7 @@
       "market_value": 1607.63
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "TTE",
       "stock_name": "TotalEnergies SE",
       "weight": 2.63,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "XOM",
+        "stock_name": "埃克森美孚",
+        "weight": 4.98,
+        "shares": 2.91,
+        "market_value": 2709.94
+      },
+      {
+        "rank": 2,
+        "stock_code": "NEM",
+        "stock_name": "纽蒙特",
+        "weight": 4.35,
+        "shares": 3.72,
+        "market_value": 2367.64
+      },
+      {
+        "rank": 3,
+        "stock_code": "SHEL",
+        "stock_name": "壳牌",
+        "weight": 4.17,
+        "shares": 8.57,
+        "market_value": 2266.9
+      },
+      {
+        "rank": 4,
+        "stock_code": "RIO",
+        "stock_name": "力拓(UK)",
+        "weight": 3.56,
+        "shares": 3.01,
+        "market_value": 1934.96
+      },
+      {
+        "rank": 5,
+        "stock_code": "VLO",
+        "stock_name": "瓦莱罗能源",
+        "weight": 3.52,
+        "shares": 1.08,
+        "market_value": 1912.54
+      },
+      {
+        "rank": 6,
+        "stock_code": "FCX",
+        "stock_name": "自由港麦克莫兰",
+        "weight": 3.4,
+        "shares": 4.32,
+        "market_value": 1848.45
+      },
+      {
+        "rank": 7,
+        "stock_code": "BHP",
+        "stock_name": "BHP GROUP LTD",
+        "weight": 3.38,
+        "shares": 6.56,
+        "market_value": 1839.31
+      },
+      {
+        "rank": 8,
+        "stock_code": "MPC",
+        "stock_name": "马拉松原油",
+        "weight": 3.03,
+        "shares": 0.95,
+        "market_value": 1646.96
+      },
+      {
+        "rank": 9,
+        "stock_code": "CNQ",
+        "stock_name": "CANADIAN NATURAL RESOURCES",
+        "weight": 2.95,
+        "shares": 5.97,
+        "market_value": 1607.63
+      },
+      {
+        "rank": 10,
+        "stock_code": "TTE",
+        "stock_name": "TotalEnergies SE",
+        "weight": 2.63,
+        "shares": 2.7,
+        "market_value": 1432.29
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "XOM",
@@ -168,89 +250,7 @@
         "shares": 10.53,
         "market_value": 2223.39
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "XOM",
-        "stock_name": "埃克森美孚",
-        "weight": 4.98,
-        "shares": 2.91,
-        "market_value": 2709.94
-      },
-      {
-        "rank": 12,
-        "stock_code": "NEM",
-        "stock_name": "纽蒙特",
-        "weight": 4.35,
-        "shares": 3.72,
-        "market_value": 2367.64
-      },
-      {
-        "rank": 13,
-        "stock_code": "SHEL",
-        "stock_name": "壳牌",
-        "weight": 4.17,
-        "shares": 8.57,
-        "market_value": 2266.9
-      },
-      {
-        "rank": 14,
-        "stock_code": "RIO",
-        "stock_name": "力拓(UK)",
-        "weight": 3.56,
-        "shares": 3.01,
-        "market_value": 1934.96
-      },
-      {
-        "rank": 15,
-        "stock_code": "VLO",
-        "stock_name": "瓦莱罗能源",
-        "weight": 3.52,
-        "shares": 1.08,
-        "market_value": 1912.54
-      },
-      {
-        "rank": 16,
-        "stock_code": "FCX",
-        "stock_name": "自由港麦克莫兰",
-        "weight": 3.4,
-        "shares": 4.32,
-        "market_value": 1848.45
-      },
-      {
-        "rank": 17,
-        "stock_code": "BHP",
-        "stock_name": "BHP GROUP LTD",
-        "weight": 3.38,
-        "shares": 6.56,
-        "market_value": 1839.31
-      },
-      {
-        "rank": 18,
-        "stock_code": "MPC",
-        "stock_name": "马拉松原油",
-        "weight": 3.03,
-        "shares": 0.95,
-        "market_value": 1646.96
-      },
-      {
-        "rank": 19,
-        "stock_code": "CNQ",
-        "stock_name": "CANADIAN NATURAL RESOURCES",
-        "weight": 2.95,
-        "shares": 5.97,
-        "market_value": 1607.63
-      },
-      {
-        "rank": 20,
-        "stock_code": "TTE",
-        "stock_name": "TotalEnergies SE",
-        "weight": 2.63,
-        "shares": 2.7,
-        "market_value": 1432.29
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:19.050022+08:00"
+  "fetched_at": "2026-08-07T11:50:48.750940+08:00"
 }

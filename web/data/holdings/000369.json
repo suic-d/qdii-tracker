@@ -1,7 +1,7 @@
 {
   "code": "000369",
   "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
+  "holdings_count": 10,
   "total_weight": 42.66,
   "heavy_count": 2,
   "holdings": [
@@ -84,14 +84,6 @@
       "weight": 2.3,
       "shares": 1.01,
       "market_value": 3443.95
-    },
-    {
-      "rank": 11,
-      "stock_code": "ROSW",
-      "stock_name": "罗氏控股股份公司",
-      "weight": 0.15,
-      "shares": 0.08,
-      "market_value": 223.33
     }
   ],
   "all_quarters": {

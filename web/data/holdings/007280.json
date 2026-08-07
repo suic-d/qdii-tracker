@@ -1,12 +1,12 @@
 {
   "code": "007280",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 34.37,
   "heavy_count": 1,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "8035",
       "stock_name": "东京电子",
       "weight": 5.29,
@@ -14,7 +14,7 @@
       "market_value": 18554.37
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "6981",
       "stock_name": "村田制作所",
       "weight": 4.17,
@@ -22,7 +22,7 @@
       "market_value": 14622.22
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "285A",
       "stock_name": "KIOXIA",
       "weight": 3.91,
@@ -30,7 +30,7 @@
       "market_value": 13724.97
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "6098",
       "stock_name": "瑞可利控股",
       "weight": 3.85,
@@ -38,7 +38,7 @@
       "market_value": 13495.56
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "8306",
       "stock_name": "三菱日联金融集团",
       "weight": 3.1,
@@ -46,7 +46,7 @@
       "market_value": 10869.32
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "6758",
       "stock_name": "索尼",
       "weight": 3.0,
@@ -54,7 +54,7 @@
       "market_value": 10536.14
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "8316",
       "stock_name": "三井住友金融集团",
       "weight": 2.98,
@@ -62,7 +62,7 @@
       "market_value": 10456.58
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "8411",
       "stock_name": "瑞穗金融集团",
       "weight": 2.94,
@@ -70,7 +70,7 @@
       "market_value": 10323.33
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "6503",
       "stock_name": "三菱电机",
       "weight": 2.75,
@@ -78,7 +78,7 @@
       "market_value": 9637.67
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "6501",
       "stock_name": "日立公司",
       "weight": 2.38,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "8035",
+        "stock_name": "东京电子",
+        "weight": 5.29,
+        "shares": 5.72,
+        "market_value": 18554.37
+      },
+      {
+        "rank": 2,
+        "stock_code": "6981",
+        "stock_name": "村田制作所",
+        "weight": 4.17,
+        "shares": 30.52,
+        "market_value": 14622.22
+      },
+      {
+        "rank": 3,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 3.91,
+        "shares": 3.64,
+        "market_value": 13724.97
+      },
+      {
+        "rank": 4,
+        "stock_code": "6098",
+        "stock_name": "瑞可利控股",
+        "weight": 3.85,
+        "shares": 28.33,
+        "market_value": 13495.56
+      },
+      {
+        "rank": 5,
+        "stock_code": "8306",
+        "stock_name": "三菱日联金融集团",
+        "weight": 3.1,
+        "shares": 80.61,
+        "market_value": 10869.32
+      },
+      {
+        "rank": 6,
+        "stock_code": "6758",
+        "stock_name": "索尼",
+        "weight": 3.0,
+        "shares": 76.4,
+        "market_value": 10536.14
+      },
+      {
+        "rank": 7,
+        "stock_code": "8316",
+        "stock_name": "三井住友金融集团",
+        "weight": 2.98,
+        "shares": 39.19,
+        "market_value": 10456.58
+      },
+      {
+        "rank": 8,
+        "stock_code": "8411",
+        "stock_name": "瑞穗金融集团",
+        "weight": 2.94,
+        "shares": 31.71,
+        "market_value": 10323.33
+      },
+      {
+        "rank": 9,
+        "stock_code": "6503",
+        "stock_name": "三菱电机",
+        "weight": 2.75,
+        "shares": 39.01,
+        "market_value": 9637.67
+      },
+      {
+        "rank": 10,
+        "stock_code": "6501",
+        "stock_name": "日立公司",
+        "weight": 2.38,
+        "shares": 44.49,
+        "market_value": 8363.37
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "6758",
@@ -168,89 +250,7 @@
         "shares": 21.48,
         "market_value": 7793.38
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "8035",
-        "stock_name": "东京电子",
-        "weight": 5.29,
-        "shares": 5.72,
-        "market_value": 18554.37
-      },
-      {
-        "rank": 12,
-        "stock_code": "6981",
-        "stock_name": "村田制作所",
-        "weight": 4.17,
-        "shares": 30.52,
-        "market_value": 14622.22
-      },
-      {
-        "rank": 13,
-        "stock_code": "285A",
-        "stock_name": "KIOXIA",
-        "weight": 3.91,
-        "shares": 3.64,
-        "market_value": 13724.97
-      },
-      {
-        "rank": 14,
-        "stock_code": "6098",
-        "stock_name": "瑞可利控股",
-        "weight": 3.85,
-        "shares": 28.33,
-        "market_value": 13495.56
-      },
-      {
-        "rank": 15,
-        "stock_code": "8306",
-        "stock_name": "三菱日联金融集团",
-        "weight": 3.1,
-        "shares": 80.61,
-        "market_value": 10869.32
-      },
-      {
-        "rank": 16,
-        "stock_code": "6758",
-        "stock_name": "索尼",
-        "weight": 3.0,
-        "shares": 76.4,
-        "market_value": 10536.14
-      },
-      {
-        "rank": 17,
-        "stock_code": "8316",
-        "stock_name": "三井住友金融集团",
-        "weight": 2.98,
-        "shares": 39.19,
-        "market_value": 10456.58
-      },
-      {
-        "rank": 18,
-        "stock_code": "8411",
-        "stock_name": "瑞穗金融集团",
-        "weight": 2.94,
-        "shares": 31.71,
-        "market_value": 10323.33
-      },
-      {
-        "rank": 19,
-        "stock_code": "6503",
-        "stock_name": "三菱电机",
-        "weight": 2.75,
-        "shares": 39.01,
-        "market_value": 9637.67
-      },
-      {
-        "rank": 20,
-        "stock_code": "6501",
-        "stock_name": "日立公司",
-        "weight": 2.38,
-        "shares": 44.49,
-        "market_value": 8363.37
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:01.647163+08:00"
+  "fetched_at": "2026-08-07T11:50:42.305198+08:00"
 }

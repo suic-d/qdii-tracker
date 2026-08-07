@@ -1,12 +1,12 @@
 {
   "code": "002891",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 51.55,
   "heavy_count": 4,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 8.16,
@@ -14,7 +14,7 @@
       "market_value": 33223.77
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 6.53,
@@ -22,7 +22,7 @@
       "market_value": 26578.88
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "ONTO",
       "stock_name": "Onto Innovation Inc",
       "weight": 5.55,
@@ -30,7 +30,7 @@
       "market_value": 22596.14
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 5.3,
@@ -38,7 +38,7 @@
       "market_value": 21584.0
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 4.94,
@@ -46,7 +46,7 @@
       "market_value": 20085.53
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "285A",
       "stock_name": "KIOXIA",
       "weight": 4.59,
@@ -54,7 +54,7 @@
       "market_value": 18664.45
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "LITE",
       "stock_name": "Lumentum Holdings Inc",
       "weight": 4.43,
@@ -62,7 +62,7 @@
       "market_value": 18042.09
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 4.3,
@@ -70,7 +70,7 @@
       "market_value": 17507.88
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "STM",
       "stock_name": "意法半导体",
       "weight": 4.28,
@@ -78,7 +78,7 @@
       "market_value": 17408.89
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "ALAB",
       "stock_name": "Astera Labs Inc",
       "weight": 3.47,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 8.16,
+        "shares": 4.23,
+        "market_value": 33223.77
+      },
+      {
+        "rank": 2,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 6.53,
+        "shares": 1.72,
+        "market_value": 26578.88
+      },
+      {
+        "rank": 3,
+        "stock_code": "ONTO",
+        "stock_name": "Onto Innovation Inc",
+        "weight": 5.55,
+        "shares": 8.77,
+        "market_value": 22596.14
+      },
+      {
+        "rank": 4,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 5.3,
+        "shares": 5.46,
+        "market_value": 21584.0
+      },
+      {
+        "rank": 5,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 4.94,
+        "shares": 21.12,
+        "market_value": 20085.53
+      },
+      {
+        "rank": 6,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 4.59,
+        "shares": 4.95,
+        "market_value": 18664.45
+      },
+      {
+        "rank": 7,
+        "stock_code": "LITE",
+        "stock_name": "Lumentum Holdings Inc",
+        "weight": 4.43,
+        "shares": 3.09,
+        "market_value": 18042.09
+      },
+      {
+        "rank": 8,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 4.3,
+        "shares": 5.38,
+        "market_value": 17507.88
+      },
+      {
+        "rank": 9,
+        "stock_code": "STM",
+        "stock_name": "意法半导体",
+        "weight": 4.28,
+        "shares": 34.13,
+        "market_value": 17408.89
+      },
+      {
+        "rank": 10,
+        "stock_code": "ALAB",
+        "stock_name": "Astera Labs Inc",
+        "weight": 3.47,
+        "shares": 4.29,
+        "market_value": 14115.22
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "COHR",
@@ -168,89 +250,7 @@
         "shares": 3.45,
         "market_value": 2018.57
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 8.16,
-        "shares": 4.23,
-        "market_value": 33223.77
-      },
-      {
-        "rank": 12,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 6.53,
-        "shares": 1.72,
-        "market_value": 26578.88
-      },
-      {
-        "rank": 13,
-        "stock_code": "ONTO",
-        "stock_name": "Onto Innovation Inc",
-        "weight": 5.55,
-        "shares": 8.77,
-        "market_value": 22596.14
-      },
-      {
-        "rank": 14,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 5.3,
-        "shares": 5.46,
-        "market_value": 21584.0
-      },
-      {
-        "rank": 15,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 4.94,
-        "shares": 21.12,
-        "market_value": 20085.53
-      },
-      {
-        "rank": 16,
-        "stock_code": "285A",
-        "stock_name": "KIOXIA",
-        "weight": 4.59,
-        "shares": 4.95,
-        "market_value": 18664.45
-      },
-      {
-        "rank": 17,
-        "stock_code": "LITE",
-        "stock_name": "Lumentum Holdings Inc",
-        "weight": 4.43,
-        "shares": 3.09,
-        "market_value": 18042.09
-      },
-      {
-        "rank": 18,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 4.3,
-        "shares": 5.38,
-        "market_value": 17507.88
-      },
-      {
-        "rank": 19,
-        "stock_code": "STM",
-        "stock_name": "意法半导体",
-        "weight": 4.28,
-        "shares": 34.13,
-        "market_value": 17408.89
-      },
-      {
-        "rank": 20,
-        "stock_code": "ALAB",
-        "stock_name": "Astera Labs Inc",
-        "weight": 3.47,
-        "shares": 4.29,
-        "market_value": 14115.22
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:35.292160+08:00"
+  "fetched_at": "2026-08-07T11:50:32.357596+08:00"
 }

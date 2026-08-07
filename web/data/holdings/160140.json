@@ -1,12 +1,12 @@
 {
   "code": "160140",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 49.59,
   "heavy_count": 3,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "WELL",
       "stock_name": "Welltower Inc",
       "weight": 10.89,
@@ -14,7 +14,7 @@
       "market_value": 4905.05
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "PLD",
       "stock_name": "安博",
       "weight": 8.59,
@@ -22,7 +22,7 @@
       "market_value": 3866.64
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "EQIX",
       "stock_name": "易昆尼克斯",
       "weight": 6.99,
@@ -30,7 +30,7 @@
       "market_value": 3147.26
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "SPG",
       "stock_name": "西蒙地产",
       "weight": 4.93,
@@ -38,7 +38,7 @@
       "market_value": 2220.3
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "DLR",
       "stock_name": "数字房地产信托",
       "weight": 4.03,
@@ -46,7 +46,7 @@
       "market_value": 1815.94
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "O",
       "stock_name": "Realty Income Corp",
       "weight": 3.93,
@@ -54,7 +54,7 @@
       "market_value": 1769.16
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "PSA",
       "stock_name": "大众仓储",
       "weight": 3.42,
@@ -62,7 +62,7 @@
       "market_value": 1539.48
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "VTR",
       "stock_name": "芬塔公司",
       "weight": 2.94,
@@ -70,7 +70,7 @@
       "market_value": 1321.99
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "EXR",
       "stock_name": "Extra Space Storage Inc",
       "weight": 2.09,
@@ -78,7 +78,7 @@
       "market_value": 939.85
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "AVB",
       "stock_name": "艾芙隆海湾社区",
       "weight": 1.78,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "WELL",
+        "stock_name": "Welltower Inc",
+        "weight": 10.89,
+        "shares": 3.17,
+        "market_value": 4905.05
+      },
+      {
+        "rank": 2,
+        "stock_code": "PLD",
+        "stock_name": "安博",
+        "weight": 8.59,
+        "shares": 4.19,
+        "market_value": 3866.64
+      },
+      {
+        "rank": 3,
+        "stock_code": "EQIX",
+        "stock_name": "易昆尼克斯",
+        "weight": 6.99,
+        "shares": 0.44,
+        "market_value": 3147.26
+      },
+      {
+        "rank": 4,
+        "stock_code": "SPG",
+        "stock_name": "西蒙地产",
+        "weight": 4.93,
+        "shares": 1.46,
+        "market_value": 2220.3
+      },
+      {
+        "rank": 5,
+        "stock_code": "DLR",
+        "stock_name": "数字房地产信托",
+        "weight": 4.03,
+        "shares": 1.48,
+        "market_value": 1815.94
+      },
+      {
+        "rank": 6,
+        "stock_code": "O",
+        "stock_name": "Realty Income Corp",
+        "weight": 3.93,
+        "shares": 4.19,
+        "market_value": 1769.16
+      },
+      {
+        "rank": 7,
+        "stock_code": "PSA",
+        "stock_name": "大众仓储",
+        "weight": 3.42,
+        "shares": 0.71,
+        "market_value": 1539.48
+      },
+      {
+        "rank": 8,
+        "stock_code": "VTR",
+        "stock_name": "芬塔公司",
+        "weight": 2.94,
+        "shares": 2.19,
+        "market_value": 1321.99
+      },
+      {
+        "rank": 9,
+        "stock_code": "EXR",
+        "stock_name": "Extra Space Storage Inc",
+        "weight": 2.09,
+        "shares": 0.95,
+        "market_value": 939.85
+      },
+      {
+        "rank": 10,
+        "stock_code": "AVB",
+        "stock_name": "艾芙隆海湾社区",
+        "weight": 1.78,
+        "shares": 0.62,
+        "market_value": 802.7
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "WELL",
@@ -168,89 +250,7 @@
         "shares": 0.7,
         "market_value": 788.03
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "WELL",
-        "stock_name": "Welltower Inc",
-        "weight": 10.89,
-        "shares": 3.17,
-        "market_value": 4905.05
-      },
-      {
-        "rank": 12,
-        "stock_code": "PLD",
-        "stock_name": "安博",
-        "weight": 8.59,
-        "shares": 4.19,
-        "market_value": 3866.64
-      },
-      {
-        "rank": 13,
-        "stock_code": "EQIX",
-        "stock_name": "易昆尼克斯",
-        "weight": 6.99,
-        "shares": 0.44,
-        "market_value": 3147.26
-      },
-      {
-        "rank": 14,
-        "stock_code": "SPG",
-        "stock_name": "西蒙地产",
-        "weight": 4.93,
-        "shares": 1.46,
-        "market_value": 2220.3
-      },
-      {
-        "rank": 15,
-        "stock_code": "DLR",
-        "stock_name": "数字房地产信托",
-        "weight": 4.03,
-        "shares": 1.48,
-        "market_value": 1815.94
-      },
-      {
-        "rank": 16,
-        "stock_code": "O",
-        "stock_name": "Realty Income Corp",
-        "weight": 3.93,
-        "shares": 4.19,
-        "market_value": 1769.16
-      },
-      {
-        "rank": 17,
-        "stock_code": "PSA",
-        "stock_name": "大众仓储",
-        "weight": 3.42,
-        "shares": 0.71,
-        "market_value": 1539.48
-      },
-      {
-        "rank": 18,
-        "stock_code": "VTR",
-        "stock_name": "芬塔公司",
-        "weight": 2.94,
-        "shares": 2.19,
-        "market_value": 1321.99
-      },
-      {
-        "rank": 19,
-        "stock_code": "EXR",
-        "stock_name": "Extra Space Storage Inc",
-        "weight": 2.09,
-        "shares": 0.95,
-        "market_value": 939.85
-      },
-      {
-        "rank": 20,
-        "stock_code": "AVB",
-        "stock_name": "艾芙隆海湾社区",
-        "weight": 1.78,
-        "shares": 0.62,
-        "market_value": 802.7
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:17.497759+08:00"
+  "fetched_at": "2026-08-07T11:50:48.235335+08:00"
 }

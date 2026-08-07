@@ -1,7 +1,7 @@
 {
   "code": "000044",
   "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
+  "holdings_count": 10,
   "total_weight": 53.99,
   "heavy_count": 4,
   "holdings": [
@@ -84,14 +84,6 @@
       "weight": 2.34,
       "shares": 1.63,
       "market_value": 10380.1
-    },
-    {
-      "rank": 11,
-      "stock_code": "TSM",
-      "stock_name": "台积电",
-      "weight": 1.82,
-      "shares": 3.46,
-      "market_value": 8100.49
     }
   ],
   "all_quarters": {

@@ -1,12 +1,12 @@
 {
   "code": "019075",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 32.64,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "688019",
       "stock_name": "安集科技",
       "weight": 4.35,
@@ -14,7 +14,7 @@
       "market_value": 154.42
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 4.0,
@@ -22,7 +22,7 @@
       "market_value": 142.3
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 3.9,
@@ -30,7 +30,7 @@
       "market_value": 138.56
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "KLAC",
       "stock_name": "科磊",
       "weight": 3.64,
@@ -38,7 +38,7 @@
       "market_value": 129.46
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "300308",
       "stock_name": "中际旭创",
       "weight": 3.57,
@@ -46,7 +46,7 @@
       "market_value": 127.0
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "00941",
       "stock_name": "中国移动",
       "weight": 3.26,
@@ -54,7 +54,7 @@
       "market_value": 115.75
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "688630",
       "stock_name": "芯碁微装",
       "weight": 2.96,
@@ -62,7 +62,7 @@
       "market_value": 105.1
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "600176",
       "stock_name": "中国巨石",
       "weight": 2.46,
@@ -70,7 +70,7 @@
       "market_value": 87.46
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "300408",
       "stock_name": "三环集团",
       "weight": 2.44,
@@ -78,7 +78,7 @@
       "market_value": 86.79
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "01088",
       "stock_name": "中国神华",
       "weight": 2.06,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "688019",
+        "stock_name": "安集科技",
+        "weight": 4.35,
+        "shares": 0.45,
+        "market_value": 154.42
+      },
+      {
+        "rank": 2,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 4.0,
+        "shares": 0.02,
+        "market_value": 142.3
+      },
+      {
+        "rank": 3,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.9,
+        "shares": 0.04,
+        "market_value": 138.56
+      },
+      {
+        "rank": 4,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 3.64,
+        "shares": 0.06,
+        "market_value": 129.46
+      },
+      {
+        "rank": 5,
+        "stock_code": "300308",
+        "stock_name": "中际旭创",
+        "weight": 3.57,
+        "shares": 0.1,
+        "market_value": 127.0
+      },
+      {
+        "rank": 6,
+        "stock_code": "00941",
+        "stock_name": "中国移动",
+        "weight": 3.26,
+        "shares": 1.75,
+        "market_value": 115.75
+      },
+      {
+        "rank": 7,
+        "stock_code": "688630",
+        "stock_name": "芯碁微装",
+        "weight": 2.96,
+        "shares": 0.19,
+        "market_value": 105.1
+      },
+      {
+        "rank": 8,
+        "stock_code": "600176",
+        "stock_name": "中国巨石",
+        "weight": 2.46,
+        "shares": 1.2,
+        "market_value": 87.46
+      },
+      {
+        "rank": 9,
+        "stock_code": "300408",
+        "stock_name": "三环集团",
+        "weight": 2.44,
+        "shares": 0.52,
+        "market_value": 86.79
+      },
+      {
+        "rank": 10,
+        "stock_code": "01088",
+        "stock_name": "中国神华",
+        "weight": 2.06,
+        "shares": 2.1,
+        "market_value": 73.18
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "002594",
@@ -168,89 +250,7 @@
         "shares": 1.35,
         "market_value": 60.43
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "688019",
-        "stock_name": "安集科技",
-        "weight": 4.35,
-        "shares": 0.45,
-        "market_value": 154.42
-      },
-      {
-        "rank": 12,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 4.0,
-        "shares": 0.02,
-        "market_value": 142.3
-      },
-      {
-        "rank": 13,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 3.9,
-        "shares": 0.04,
-        "market_value": 138.56
-      },
-      {
-        "rank": 14,
-        "stock_code": "KLAC",
-        "stock_name": "科磊",
-        "weight": 3.64,
-        "shares": 0.06,
-        "market_value": 129.46
-      },
-      {
-        "rank": 15,
-        "stock_code": "300308",
-        "stock_name": "中际旭创",
-        "weight": 3.57,
-        "shares": 0.1,
-        "market_value": 127.0
-      },
-      {
-        "rank": 16,
-        "stock_code": "00941",
-        "stock_name": "中国移动",
-        "weight": 3.26,
-        "shares": 1.75,
-        "market_value": 115.75
-      },
-      {
-        "rank": 17,
-        "stock_code": "688630",
-        "stock_name": "芯碁微装",
-        "weight": 2.96,
-        "shares": 0.19,
-        "market_value": 105.1
-      },
-      {
-        "rank": 18,
-        "stock_code": "600176",
-        "stock_name": "中国巨石",
-        "weight": 2.46,
-        "shares": 1.2,
-        "market_value": 87.46
-      },
-      {
-        "rank": 19,
-        "stock_code": "300408",
-        "stock_name": "三环集团",
-        "weight": 2.44,
-        "shares": 0.52,
-        "market_value": 86.79
-      },
-      {
-        "rank": 20,
-        "stock_code": "01088",
-        "stock_name": "中国神华",
-        "weight": 2.06,
-        "shares": 2.1,
-        "market_value": 73.18
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:26.754748+08:00"
+  "fetched_at": "2026-08-07T11:50:51.571444+08:00"
 }

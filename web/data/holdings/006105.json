@@ -1,12 +1,12 @@
 {
   "code": "006105",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 39.83,
   "heavy_count": 1,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "ICICIBC",
       "stock_name": "爱西爱西爱银行有限公司",
       "weight": 8.11,
@@ -14,7 +14,7 @@
       "market_value": 14184.63
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "HDFCB",
       "stock_name": "印度住房开发金融银行",
       "weight": 4.72,
@@ -22,7 +22,7 @@
       "market_value": 8255.77
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "RELIANCE",
       "stock_name": "信实工业有限公司",
       "weight": 4.5,
@@ -30,7 +30,7 @@
       "market_value": 7862.88
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "BHARTI",
       "stock_name": "巴帝电信有限公司",
       "weight": 3.83,
@@ -38,7 +38,7 @@
       "market_value": 6703.78
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "SBIN",
       "stock_name": "印度国家银行有限公司",
       "weight": 3.62,
@@ -46,7 +46,7 @@
       "market_value": 6324.62
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "MM",
       "stock_name": "马亨德拉有限公司",
       "weight": 3.61,
@@ -54,7 +54,7 @@
       "market_value": 6317.03
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "AXSB",
       "stock_name": "Axis银行有限公司",
       "weight": 3.17,
@@ -62,7 +62,7 @@
       "market_value": 5545.52
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "LT",
       "stock_name": "Larsen&Toubro有限公司",
       "weight": 2.85,
@@ -70,7 +70,7 @@
       "market_value": 4985.8
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "BHE",
       "stock_name": "巴拉特电子有限公司",
       "weight": 2.75,
@@ -78,7 +78,7 @@
       "market_value": 4799.07
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "APHS",
       "stock_name": "阿波罗医院企业有限公司",
       "weight": 2.67,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "ICICIBC",
+        "stock_name": "爱西爱西爱银行有限公司",
+        "weight": 8.11,
+        "shares": 143.36,
+        "market_value": 14184.63
+      },
+      {
+        "rank": 2,
+        "stock_code": "HDFCB",
+        "stock_name": "印度住房开发金融银行",
+        "weight": 4.72,
+        "shares": 143.8,
+        "market_value": 8255.77
+      },
+      {
+        "rank": 3,
+        "stock_code": "RELIANCE",
+        "stock_name": "信实工业有限公司",
+        "weight": 4.5,
+        "shares": 84.46,
+        "market_value": 7862.88
+      },
+      {
+        "rank": 4,
+        "stock_code": "BHARTI",
+        "stock_name": "巴帝电信有限公司",
+        "weight": 3.83,
+        "shares": 50.31,
+        "market_value": 6703.78
+      },
+      {
+        "rank": 5,
+        "stock_code": "SBIN",
+        "stock_name": "印度国家银行有限公司",
+        "weight": 3.62,
+        "shares": 85.6,
+        "market_value": 6324.62
+      },
+      {
+        "rank": 6,
+        "stock_code": "MM",
+        "stock_name": "马亨德拉有限公司",
+        "weight": 3.61,
+        "shares": 28.61,
+        "market_value": 6317.03
+      },
+      {
+        "rank": 7,
+        "stock_code": "AXSB",
+        "stock_name": "Axis银行有限公司",
+        "weight": 3.17,
+        "shares": 57.27,
+        "market_value": 5545.52
+      },
+      {
+        "rank": 8,
+        "stock_code": "LT",
+        "stock_name": "Larsen&Toubro有限公司",
+        "weight": 2.85,
+        "shares": 16.72,
+        "market_value": 4985.8
+      },
+      {
+        "rank": 9,
+        "stock_code": "BHE",
+        "stock_name": "巴拉特电子有限公司",
+        "weight": 2.75,
+        "shares": 161.97,
+        "market_value": 4799.07
+      },
+      {
+        "rank": 10,
+        "stock_code": "APHS",
+        "stock_name": "阿波罗医院企业有限公司",
+        "weight": 2.67,
+        "shares": 7.48,
+        "market_value": 4674.18
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "ICICIBC",
@@ -168,89 +250,7 @@
         "shares": 56.97,
         "market_value": 3624.88
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "ICICIBC",
-        "stock_name": "爱西爱西爱银行有限公司",
-        "weight": 8.11,
-        "shares": 143.36,
-        "market_value": 14184.63
-      },
-      {
-        "rank": 12,
-        "stock_code": "HDFCB",
-        "stock_name": "印度住房开发金融银行",
-        "weight": 4.72,
-        "shares": 143.8,
-        "market_value": 8255.77
-      },
-      {
-        "rank": 13,
-        "stock_code": "RELIANCE",
-        "stock_name": "信实工业有限公司",
-        "weight": 4.5,
-        "shares": 84.46,
-        "market_value": 7862.88
-      },
-      {
-        "rank": 14,
-        "stock_code": "BHARTI",
-        "stock_name": "巴帝电信有限公司",
-        "weight": 3.83,
-        "shares": 50.31,
-        "market_value": 6703.78
-      },
-      {
-        "rank": 15,
-        "stock_code": "SBIN",
-        "stock_name": "印度国家银行有限公司",
-        "weight": 3.62,
-        "shares": 85.6,
-        "market_value": 6324.62
-      },
-      {
-        "rank": 16,
-        "stock_code": "MM",
-        "stock_name": "马亨德拉有限公司",
-        "weight": 3.61,
-        "shares": 28.61,
-        "market_value": 6317.03
-      },
-      {
-        "rank": 17,
-        "stock_code": "AXSB",
-        "stock_name": "Axis银行有限公司",
-        "weight": 3.17,
-        "shares": 57.27,
-        "market_value": 5545.52
-      },
-      {
-        "rank": 18,
-        "stock_code": "LT",
-        "stock_name": "Larsen&Toubro有限公司",
-        "weight": 2.85,
-        "shares": 16.72,
-        "market_value": 4985.8
-      },
-      {
-        "rank": 19,
-        "stock_code": "BHE",
-        "stock_name": "巴拉特电子有限公司",
-        "weight": 2.75,
-        "shares": 161.97,
-        "market_value": 4799.07
-      },
-      {
-        "rank": 20,
-        "stock_code": "APHS",
-        "stock_name": "阿波罗医院企业有限公司",
-        "weight": 2.67,
-        "shares": 7.48,
-        "market_value": 4674.18
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:04.513216+08:00"
+  "fetched_at": "2026-08-07T11:50:43.293946+08:00"
 }

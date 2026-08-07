@@ -1,12 +1,12 @@
 {
   "code": "006555",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 65.26,
   "heavy_count": 6,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 9.52,
@@ -14,7 +14,7 @@
       "market_value": 47325.67
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "285A",
       "stock_name": "KIOXIA",
       "weight": 8.81,
@@ -22,7 +22,7 @@
       "market_value": 43776.61
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 8.5,
@@ -30,7 +30,7 @@
       "market_value": 42256.93
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 7.82,
@@ -38,7 +38,7 @@
       "market_value": 38848.59
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "WDC",
       "stock_name": "西部数据",
       "weight": 7.58,
@@ -46,7 +46,7 @@
       "market_value": 37673.23
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 7.53,
@@ -54,7 +54,7 @@
       "market_value": 37412.46
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "COHR",
       "stock_name": "Coherent Corp",
       "weight": 3.95,
@@ -62,7 +62,7 @@
       "market_value": 19612.88
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "TER",
       "stock_name": "泰瑞达",
       "weight": 3.95,
@@ -70,7 +70,7 @@
       "market_value": 19607.55
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "005930",
       "stock_name": "三星电子",
       "weight": 3.83,
@@ -78,7 +78,7 @@
       "market_value": 19016.42
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "000660",
       "stock_name": "SK海力士",
       "weight": 3.77,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 9.52,
+        "shares": 3.06,
+        "market_value": 47325.67
+      },
+      {
+        "rank": 2,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 8.81,
+        "shares": 11.61,
+        "market_value": 43776.61
+      },
+      {
+        "rank": 3,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 8.5,
+        "shares": 5.38,
+        "market_value": 42256.93
+      },
+      {
+        "rank": 4,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 7.82,
+        "shares": 40.85,
+        "market_value": 38848.59
+      },
+      {
+        "rank": 5,
+        "stock_code": "WDC",
+        "stock_name": "西部数据",
+        "weight": 7.58,
+        "shares": 8.66,
+        "market_value": 37673.23
+      },
+      {
+        "rank": 6,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 7.53,
+        "shares": 9.46,
+        "market_value": 37412.46
+      },
+      {
+        "rank": 7,
+        "stock_code": "COHR",
+        "stock_name": "Coherent Corp",
+        "weight": 3.95,
+        "shares": 7.3,
+        "market_value": 19612.88
+      },
+      {
+        "rank": 8,
+        "stock_code": "TER",
+        "stock_name": "泰瑞达",
+        "weight": 3.95,
+        "shares": 5.95,
+        "market_value": 19607.55
+      },
+      {
+        "rank": 9,
+        "stock_code": "005930",
+        "stock_name": "三星电子",
+        "weight": 3.83,
+        "shares": 12.97,
+        "market_value": 19016.42
+      },
+      {
+        "rank": 10,
+        "stock_code": "000660",
+        "stock_name": "SK海力士",
+        "weight": 3.77,
+        "shares": 1.61,
+        "market_value": 18714.34
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "LITE",
@@ -168,89 +250,7 @@
         "shares": 1.07,
         "market_value": 9779.11
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 9.52,
-        "shares": 3.06,
-        "market_value": 47325.67
-      },
-      {
-        "rank": 12,
-        "stock_code": "285A",
-        "stock_name": "KIOXIA",
-        "weight": 8.81,
-        "shares": 11.61,
-        "market_value": 43776.61
-      },
-      {
-        "rank": 13,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 8.5,
-        "shares": 5.38,
-        "market_value": 42256.93
-      },
-      {
-        "rank": 14,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 7.82,
-        "shares": 40.85,
-        "market_value": 38848.59
-      },
-      {
-        "rank": 15,
-        "stock_code": "WDC",
-        "stock_name": "西部数据",
-        "weight": 7.58,
-        "shares": 8.66,
-        "market_value": 37673.23
-      },
-      {
-        "rank": 16,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 7.53,
-        "shares": 9.46,
-        "market_value": 37412.46
-      },
-      {
-        "rank": 17,
-        "stock_code": "COHR",
-        "stock_name": "Coherent Corp",
-        "weight": 3.95,
-        "shares": 7.3,
-        "market_value": 19612.88
-      },
-      {
-        "rank": 18,
-        "stock_code": "TER",
-        "stock_name": "泰瑞达",
-        "weight": 3.95,
-        "shares": 5.95,
-        "market_value": 19607.55
-      },
-      {
-        "rank": 19,
-        "stock_code": "005930",
-        "stock_name": "三星电子",
-        "weight": 3.83,
-        "shares": 12.97,
-        "market_value": 19016.42
-      },
-      {
-        "rank": 20,
-        "stock_code": "000660",
-        "stock_name": "SK海力士",
-        "weight": 3.77,
-        "shares": 1.61,
-        "market_value": 18714.34
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:45.472101+08:00"
+  "fetched_at": "2026-08-07T11:50:36.570286+08:00"
 }

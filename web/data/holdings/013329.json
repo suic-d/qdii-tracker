@@ -1,7 +1,7 @@
 {
   "code": "013329",
   "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
+  "holdings_count": 10,
   "total_weight": 20.88,
   "heavy_count": 0,
   "holdings": [
@@ -84,14 +84,6 @@
       "weight": 1.02,
       "shares": 1.68,
       "market_value": 173.36
-    },
-    {
-      "rank": 11,
-      "stock_code": "GOOG",
-      "stock_name": "谷歌-C",
-      "weight": 0.97,
-      "shares": 0.08,
-      "market_value": 165.94
     }
   ],
   "all_quarters": {

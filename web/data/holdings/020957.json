@@ -1,12 +1,12 @@
 {
   "code": "020957",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 11.49,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 2.37,
@@ -14,7 +14,7 @@
       "market_value": 2358.53
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 2.33,
@@ -22,7 +22,7 @@
       "market_value": 2322.92
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
       "weight": 1.24,
@@ -30,7 +30,7 @@
       "market_value": 1231.07
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 0.95,
@@ -38,7 +38,7 @@
       "market_value": 951.01
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "GLW",
       "stock_name": "康宁",
       "weight": 0.87,
@@ -46,7 +46,7 @@
       "market_value": 869.85
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 0.79,
@@ -54,7 +54,7 @@
       "market_value": 791.3
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "WDC",
       "stock_name": "西部数据",
       "weight": 0.79,
@@ -62,7 +62,7 @@
       "market_value": 783.05
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 0.74,
@@ -70,7 +70,7 @@
       "market_value": 737.84
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "ARM",
       "stock_name": "Arm Holdings plc ADR",
       "weight": 0.73,
@@ -78,7 +78,7 @@
       "market_value": 724.48
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 0.68,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 2.37,
+        "shares": 0.3,
+        "market_value": 2358.53
+      },
+      {
+        "rank": 2,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 2.33,
+        "shares": 0.15,
+        "market_value": 2322.92
+      },
+      {
+        "rank": 3,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 1.24,
+        "shares": 0.25,
+        "market_value": 1231.07
+      },
+      {
+        "rank": 4,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 0.95,
+        "shares": 1.0,
+        "market_value": 951.01
+      },
+      {
+        "rank": 5,
+        "stock_code": "GLW",
+        "stock_name": "康宁",
+        "weight": 0.87,
+        "shares": 0.5,
+        "market_value": 869.85
+      },
+      {
+        "rank": 6,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 0.79,
+        "shares": 0.2,
+        "market_value": 791.3
+      },
+      {
+        "rank": 7,
+        "stock_code": "WDC",
+        "stock_name": "西部数据",
+        "weight": 0.79,
+        "shares": 0.18,
+        "market_value": 783.05
+      },
+      {
+        "rank": 8,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 0.74,
+        "shares": 0.25,
+        "market_value": 737.84
+      },
+      {
+        "rank": 9,
+        "stock_code": "ARM",
+        "stock_name": "Arm Holdings plc ADR",
+        "weight": 0.73,
+        "shares": 0.3,
+        "market_value": 724.48
+      },
+      {
+        "rank": 10,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 0.68,
+        "shares": 0.05,
+        "market_value": 677.49
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "BRK_B",
@@ -168,89 +250,7 @@
         "shares": 0.05,
         "market_value": 93.58
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 2.37,
-        "shares": 0.3,
-        "market_value": 2358.53
-      },
-      {
-        "rank": 12,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 2.33,
-        "shares": 0.15,
-        "market_value": 2322.92
-      },
-      {
-        "rank": 13,
-        "stock_code": "AMAT",
-        "stock_name": "应用材料",
-        "weight": 1.24,
-        "shares": 0.25,
-        "market_value": 1231.07
-      },
-      {
-        "rank": 14,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 0.95,
-        "shares": 1.0,
-        "market_value": 951.01
-      },
-      {
-        "rank": 15,
-        "stock_code": "GLW",
-        "stock_name": "康宁",
-        "weight": 0.87,
-        "shares": 0.5,
-        "market_value": 869.85
-      },
-      {
-        "rank": 16,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 0.79,
-        "shares": 0.2,
-        "market_value": 791.3
-      },
-      {
-        "rank": 17,
-        "stock_code": "WDC",
-        "stock_name": "西部数据",
-        "weight": 0.79,
-        "shares": 0.18,
-        "market_value": 783.05
-      },
-      {
-        "rank": 18,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 0.74,
-        "shares": 0.25,
-        "market_value": 737.84
-      },
-      {
-        "rank": 19,
-        "stock_code": "ARM",
-        "stock_name": "Arm Holdings plc ADR",
-        "weight": 0.73,
-        "shares": 0.3,
-        "market_value": 724.48
-      },
-      {
-        "rank": 20,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 0.68,
-        "shares": 0.05,
-        "market_value": 677.49
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:13.170294+08:00"
+  "fetched_at": "2026-08-07T11:50:46.734091+08:00"
 }

@@ -1,12 +1,12 @@
 {
   "code": "017653",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 24.85,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 4.81,
@@ -14,7 +14,7 @@
       "market_value": 8555.16
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 3.14,
@@ -22,7 +22,7 @@
       "market_value": 5588.58
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
       "weight": 2.85,
@@ -30,7 +30,7 @@
       "market_value": 5072.01
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "MRVL",
       "stock_name": "迈威尔科技",
       "weight": 2.68,
@@ -38,7 +38,7 @@
       "market_value": 4768.32
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "AVGO",
       "stock_name": "博通",
       "weight": 2.52,
@@ -46,7 +46,7 @@
       "market_value": 4491.37
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 2.08,
@@ -54,7 +54,7 @@
       "market_value": 3708.39
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 1.9,
@@ -62,7 +62,7 @@
       "market_value": 3382.25
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "KLAC",
       "stock_name": "科磊",
       "weight": 1.81,
@@ -70,7 +70,7 @@
       "market_value": 3218.0
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 1.61,
@@ -78,7 +78,7 @@
       "market_value": 2872.57
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "TER",
       "stock_name": "泰瑞达",
       "weight": 1.45,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 4.81,
+        "shares": 1.09,
+        "market_value": 8555.16
+      },
+      {
+        "rank": 2,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 3.14,
+        "shares": 1.41,
+        "market_value": 5588.58
+      },
+      {
+        "rank": 3,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 2.85,
+        "shares": 1.03,
+        "market_value": 5072.01
+      },
+      {
+        "rank": 4,
+        "stock_code": "MRVL",
+        "stock_name": "迈威尔科技",
+        "weight": 2.68,
+        "shares": 2.35,
+        "market_value": 4768.32
+      },
+      {
+        "rank": 5,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 2.52,
+        "shares": 1.75,
+        "market_value": 4491.37
+      },
+      {
+        "rank": 6,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 2.08,
+        "shares": 1.26,
+        "market_value": 3708.39
+      },
+      {
+        "rank": 7,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 1.9,
+        "shares": 3.56,
+        "market_value": 3382.25
+      },
+      {
+        "rank": 8,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 1.81,
+        "shares": 1.57,
+        "market_value": 3218.0
+      },
+      {
+        "rank": 9,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 1.61,
+        "shares": 0.21,
+        "market_value": 2872.57
+      },
+      {
+        "rank": 10,
+        "stock_code": "TER",
+        "stock_name": "泰瑞达",
+        "weight": 1.45,
+        "shares": 0.78,
+        "market_value": 2579.63
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "00981",
@@ -168,89 +250,7 @@
         "shares": 0.5,
         "market_value": 739.2
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 4.81,
-        "shares": 1.09,
-        "market_value": 8555.16
-      },
-      {
-        "rank": 12,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 3.14,
-        "shares": 1.41,
-        "market_value": 5588.58
-      },
-      {
-        "rank": 13,
-        "stock_code": "AMAT",
-        "stock_name": "应用材料",
-        "weight": 2.85,
-        "shares": 1.03,
-        "market_value": 5072.01
-      },
-      {
-        "rank": 14,
-        "stock_code": "MRVL",
-        "stock_name": "迈威尔科技",
-        "weight": 2.68,
-        "shares": 2.35,
-        "market_value": 4768.32
-      },
-      {
-        "rank": 15,
-        "stock_code": "AVGO",
-        "stock_name": "博通",
-        "weight": 2.52,
-        "shares": 1.75,
-        "market_value": 4491.37
-      },
-      {
-        "rank": 16,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 2.08,
-        "shares": 1.26,
-        "market_value": 3708.39
-      },
-      {
-        "rank": 17,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 1.9,
-        "shares": 3.56,
-        "market_value": 3382.25
-      },
-      {
-        "rank": 18,
-        "stock_code": "KLAC",
-        "stock_name": "科磊",
-        "weight": 1.81,
-        "shares": 1.57,
-        "market_value": 3218.0
-      },
-      {
-        "rank": 19,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 1.61,
-        "shares": 0.21,
-        "market_value": 2872.57
-      },
-      {
-        "rank": 20,
-        "stock_code": "TER",
-        "stock_name": "泰瑞达",
-        "weight": 1.45,
-        "shares": 0.78,
-        "market_value": 2579.63
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:20.458701+08:00"
+  "fetched_at": "2026-08-07T11:50:49.244286+08:00"
 }

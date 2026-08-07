@@ -1,12 +1,12 @@
 {
   "code": "017436",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 62.62,
   "heavy_count": 9,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 8.14,
@@ -14,7 +14,7 @@
       "market_value": 84085.28
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MRVL",
       "stock_name": "迈威尔科技",
       "weight": 7.98,
@@ -22,7 +22,7 @@
       "market_value": 82385.07
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AAPL",
       "stock_name": "苹果",
       "weight": 6.73,
@@ -30,7 +30,7 @@
       "market_value": 69442.59
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "MSFT",
       "stock_name": "微软",
       "weight": 6.35,
@@ -38,7 +38,7 @@
       "market_value": 65535.84
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "NFLX",
       "stock_name": "奈飞",
       "weight": 6.12,
@@ -46,7 +46,7 @@
       "market_value": 63213.33
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "AVGO",
       "stock_name": "博通",
       "weight": 5.89,
@@ -54,7 +54,7 @@
       "market_value": 60816.26
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "TSLA",
       "stock_name": "特斯拉",
       "weight": 5.63,
@@ -62,7 +62,7 @@
       "market_value": 58083.65
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "META",
       "stock_name": "Meta Platforms Inc-A",
       "weight": 5.55,
@@ -70,7 +70,7 @@
       "market_value": 57344.34
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "AMZN",
       "stock_name": "亚马逊",
       "weight": 5.29,
@@ -78,7 +78,7 @@
       "market_value": 54578.6
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "SMCI",
       "stock_name": "超微电脑",
       "weight": 4.94,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 8.14,
+        "shares": 61.7,
+        "market_value": 84085.28
+      },
+      {
+        "rank": 2,
+        "stock_code": "MRVL",
+        "stock_name": "迈威尔科技",
+        "weight": 7.98,
+        "shares": 40.61,
+        "market_value": 82385.07
+      },
+      {
+        "rank": 3,
+        "stock_code": "AAPL",
+        "stock_name": "苹果",
+        "weight": 6.73,
+        "shares": 35.24,
+        "market_value": 69442.59
+      },
+      {
+        "rank": 4,
+        "stock_code": "MSFT",
+        "stock_name": "微软",
+        "weight": 6.35,
+        "shares": 25.8,
+        "market_value": 65535.84
+      },
+      {
+        "rank": 5,
+        "stock_code": "NFLX",
+        "stock_name": "奈飞",
+        "weight": 6.12,
+        "shares": 129.99,
+        "market_value": 63213.33
+      },
+      {
+        "rank": 6,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 5.89,
+        "shares": 23.64,
+        "market_value": 60816.26
+      },
+      {
+        "rank": 7,
+        "stock_code": "TSLA",
+        "stock_name": "特斯拉",
+        "weight": 5.63,
+        "shares": 20.28,
+        "market_value": 58083.65
+      },
+      {
+        "rank": 8,
+        "stock_code": "META",
+        "stock_name": "Meta Platforms Inc-A",
+        "weight": 5.55,
+        "shares": 14.95,
+        "market_value": 57344.34
+      },
+      {
+        "rank": 9,
+        "stock_code": "AMZN",
+        "stock_name": "亚马逊",
+        "weight": 5.29,
+        "shares": 33.62,
+        "market_value": 54578.6
+      },
+      {
+        "rank": 10,
+        "stock_code": "SMCI",
+        "stock_name": "超微电脑",
+        "weight": 4.94,
+        "shares": 255.59,
+        "market_value": 51057.18
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "NFLX",
@@ -168,89 +250,7 @@
         "shares": 65.98,
         "market_value": 45222.54
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 8.14,
-        "shares": 61.7,
-        "market_value": 84085.28
-      },
-      {
-        "rank": 12,
-        "stock_code": "MRVL",
-        "stock_name": "迈威尔科技",
-        "weight": 7.98,
-        "shares": 40.61,
-        "market_value": 82385.07
-      },
-      {
-        "rank": 13,
-        "stock_code": "AAPL",
-        "stock_name": "苹果",
-        "weight": 6.73,
-        "shares": 35.24,
-        "market_value": 69442.59
-      },
-      {
-        "rank": 14,
-        "stock_code": "MSFT",
-        "stock_name": "微软",
-        "weight": 6.35,
-        "shares": 25.8,
-        "market_value": 65535.84
-      },
-      {
-        "rank": 15,
-        "stock_code": "NFLX",
-        "stock_name": "奈飞",
-        "weight": 6.12,
-        "shares": 129.99,
-        "market_value": 63213.33
-      },
-      {
-        "rank": 16,
-        "stock_code": "AVGO",
-        "stock_name": "博通",
-        "weight": 5.89,
-        "shares": 23.64,
-        "market_value": 60816.26
-      },
-      {
-        "rank": 17,
-        "stock_code": "TSLA",
-        "stock_name": "特斯拉",
-        "weight": 5.63,
-        "shares": 20.28,
-        "market_value": 58083.65
-      },
-      {
-        "rank": 18,
-        "stock_code": "META",
-        "stock_name": "Meta Platforms Inc-A",
-        "weight": 5.55,
-        "shares": 14.95,
-        "market_value": 57344.34
-      },
-      {
-        "rank": 19,
-        "stock_code": "AMZN",
-        "stock_name": "亚马逊",
-        "weight": 5.29,
-        "shares": 33.62,
-        "market_value": 54578.6
-      },
-      {
-        "rank": 20,
-        "stock_code": "SMCI",
-        "stock_name": "超微电脑",
-        "weight": 4.94,
-        "shares": 255.59,
-        "market_value": 51057.18
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:30.889402+08:00"
+  "fetched_at": "2026-08-07T11:50:30.830014+08:00"
 }

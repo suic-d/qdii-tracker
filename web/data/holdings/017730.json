@@ -1,12 +1,12 @@
 {
   "code": "017730",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 30.38,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 3.54,
@@ -14,7 +14,7 @@
       "market_value": 24530.42
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 3.4,
@@ -22,7 +22,7 @@
       "market_value": 23585.26
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "KLAC",
       "stock_name": "科磊",
       "weight": 3.2,
@@ -30,7 +30,7 @@
       "market_value": 22193.1
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "688498",
       "stock_name": "源杰科技",
       "weight": 3.16,
@@ -38,7 +38,7 @@
       "market_value": 21916.64
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "MPWR",
       "stock_name": "Monolithic Power Systems Inc",
       "weight": 3.14,
@@ -46,7 +46,7 @@
       "market_value": 21786.58
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 3.05,
@@ -54,7 +54,7 @@
       "market_value": 21142.43
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "688361",
       "stock_name": "中科飞测",
       "weight": 3.04,
@@ -62,7 +62,7 @@
       "market_value": 21112.48
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "688256",
       "stock_name": "寒武纪",
       "weight": 2.93,
@@ -70,7 +70,7 @@
       "market_value": 20332.25
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "AVGO",
       "stock_name": "博通",
       "weight": 2.93,
@@ -78,7 +78,7 @@
       "market_value": 20325.26
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "03986",
       "stock_name": "兆易创新",
       "weight": 1.99,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 3.54,
+        "shares": 6.2,
+        "market_value": 24530.42
+      },
+      {
+        "rank": 2,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 3.4,
+        "shares": 3.0,
+        "market_value": 23585.26
+      },
+      {
+        "rank": 3,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 3.2,
+        "shares": 10.8,
+        "market_value": 22193.1
+      },
+      {
+        "rank": 4,
+        "stock_code": "688498",
+        "stock_name": "源杰科技",
+        "weight": 3.16,
+        "shares": 11.62,
+        "market_value": 21916.64
+      },
+      {
+        "rank": 5,
+        "stock_code": "MPWR",
+        "stock_name": "Monolithic Power Systems Inc",
+        "weight": 3.14,
+        "shares": 2.31,
+        "market_value": 21786.58
+      },
+      {
+        "rank": 6,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.05,
+        "shares": 6.5,
+        "market_value": 21142.43
+      },
+      {
+        "rank": 7,
+        "stock_code": "688361",
+        "stock_name": "中科飞测",
+        "weight": 3.04,
+        "shares": 49.1,
+        "market_value": 21112.48
+      },
+      {
+        "rank": 8,
+        "stock_code": "688256",
+        "stock_name": "寒武纪",
+        "weight": 2.93,
+        "shares": 12.74,
+        "market_value": 20332.25
+      },
+      {
+        "rank": 9,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 2.93,
+        "shares": 7.9,
+        "market_value": 20325.26
+      },
+      {
+        "rank": 10,
+        "stock_code": "03986",
+        "stock_name": "兆易创新",
+        "weight": 1.99,
+        "shares": 13.39,
+        "market_value": 13813.52
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "AVGO",
@@ -168,89 +250,7 @@
         "shares": 4.9,
         "market_value": 6897.31
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 3.54,
-        "shares": 6.2,
-        "market_value": 24530.42
-      },
-      {
-        "rank": 12,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 3.4,
-        "shares": 3.0,
-        "market_value": 23585.26
-      },
-      {
-        "rank": 13,
-        "stock_code": "KLAC",
-        "stock_name": "科磊",
-        "weight": 3.2,
-        "shares": 10.8,
-        "market_value": 22193.1
-      },
-      {
-        "rank": 14,
-        "stock_code": "688498",
-        "stock_name": "源杰科技",
-        "weight": 3.16,
-        "shares": 11.62,
-        "market_value": 21916.64
-      },
-      {
-        "rank": 15,
-        "stock_code": "MPWR",
-        "stock_name": "Monolithic Power Systems Inc",
-        "weight": 3.14,
-        "shares": 2.31,
-        "market_value": 21786.58
-      },
-      {
-        "rank": 16,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 3.05,
-        "shares": 6.5,
-        "market_value": 21142.43
-      },
-      {
-        "rank": 17,
-        "stock_code": "688361",
-        "stock_name": "中科飞测",
-        "weight": 3.04,
-        "shares": 49.1,
-        "market_value": 21112.48
-      },
-      {
-        "rank": 18,
-        "stock_code": "688256",
-        "stock_name": "寒武纪",
-        "weight": 2.93,
-        "shares": 12.74,
-        "market_value": 20332.25
-      },
-      {
-        "rank": 19,
-        "stock_code": "AVGO",
-        "stock_name": "博通",
-        "weight": 2.93,
-        "shares": 7.9,
-        "market_value": 20325.26
-      },
-      {
-        "rank": 20,
-        "stock_code": "03986",
-        "stock_name": "兆易创新",
-        "weight": 1.99,
-        "shares": 13.39,
-        "market_value": 13813.52
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:36.705836+08:00"
+  "fetched_at": "2026-08-07T11:50:32.830814+08:00"
 }

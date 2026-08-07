@@ -1,12 +1,12 @@
 {
   "code": "270023",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 45.69,
   "heavy_count": 2,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "02513",
       "stock_name": "智谱",
       "weight": 9.01,
@@ -14,7 +14,7 @@
       "market_value": 240831.03
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 6.16,
@@ -22,7 +22,7 @@
       "market_value": 164581.88
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 4.5,
@@ -30,7 +30,7 @@
       "market_value": 120190.89
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 4.35,
@@ -38,7 +38,7 @@
       "market_value": 116161.74
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "285A",
       "stock_name": "KIOXIA",
       "weight": 4.07,
@@ -46,7 +46,7 @@
       "market_value": 108781.68
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 3.89,
@@ -54,7 +54,7 @@
       "market_value": 103864.04
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 3.74,
@@ -62,7 +62,7 @@
       "market_value": 100098.77
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
       "weight": 3.5,
@@ -70,7 +70,7 @@
       "market_value": 93441.18
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "GOOG",
       "stock_name": "谷歌-C",
       "weight": 3.37,
@@ -78,7 +78,7 @@
       "market_value": 90119.16
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "300408",
       "stock_name": "三环集团",
       "weight": 3.1,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "02513",
+        "stock_name": "智谱",
+        "weight": 9.01,
+        "shares": 133.92,
+        "market_value": 240831.03
+      },
+      {
+        "rank": 2,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 6.16,
+        "shares": 20.93,
+        "market_value": 164581.88
+      },
+      {
+        "rank": 3,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 4.5,
+        "shares": 40.72,
+        "market_value": 120190.89
+      },
+      {
+        "rank": 4,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 4.35,
+        "shares": 8.57,
+        "market_value": 116161.74
+      },
+      {
+        "rank": 5,
+        "stock_code": "285A",
+        "stock_name": "KIOXIA",
+        "weight": 4.07,
+        "shares": 28.85,
+        "market_value": 108781.68
+      },
+      {
+        "rank": 6,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 3.89,
+        "shares": 6.71,
+        "market_value": 103864.04
+      },
+      {
+        "rank": 7,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 3.74,
+        "shares": 25.3,
+        "market_value": 100098.77
+      },
+      {
+        "rank": 8,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 3.5,
+        "shares": 18.98,
+        "market_value": 93441.18
+      },
+      {
+        "rank": 9,
+        "stock_code": "GOOG",
+        "stock_name": "谷歌-C",
+        "weight": 3.37,
+        "shares": 37.45,
+        "market_value": 90119.16
+      },
+      {
+        "rank": 10,
+        "stock_code": "300408",
+        "stock_name": "三环集团",
+        "weight": 3.1,
+        "shares": 496.55,
+        "market_value": 82873.84
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "ASML",
@@ -168,89 +250,7 @@
         "shares": 20.93,
         "market_value": 48937.54
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "02513",
-        "stock_name": "智谱",
-        "weight": 9.01,
-        "shares": 133.92,
-        "market_value": 240831.03
-      },
-      {
-        "rank": 12,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 6.16,
-        "shares": 20.93,
-        "market_value": 164581.88
-      },
-      {
-        "rank": 13,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 4.5,
-        "shares": 40.72,
-        "market_value": 120190.89
-      },
-      {
-        "rank": 14,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 4.35,
-        "shares": 8.57,
-        "market_value": 116161.74
-      },
-      {
-        "rank": 15,
-        "stock_code": "285A",
-        "stock_name": "KIOXIA",
-        "weight": 4.07,
-        "shares": 28.85,
-        "market_value": 108781.68
-      },
-      {
-        "rank": 16,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 3.89,
-        "shares": 6.71,
-        "market_value": 103864.04
-      },
-      {
-        "rank": 17,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 3.74,
-        "shares": 25.3,
-        "market_value": 100098.77
-      },
-      {
-        "rank": 18,
-        "stock_code": "AMAT",
-        "stock_name": "应用材料",
-        "weight": 3.5,
-        "shares": 18.98,
-        "market_value": 93441.18
-      },
-      {
-        "rank": 19,
-        "stock_code": "GOOG",
-        "stock_name": "谷歌-C",
-        "weight": 3.37,
-        "shares": 37.45,
-        "market_value": 90119.16
-      },
-      {
-        "rank": 20,
-        "stock_code": "300408",
-        "stock_name": "三环集团",
-        "weight": 3.1,
-        "shares": 496.55,
-        "market_value": 82873.84
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:22.040816+08:00"
+  "fetched_at": "2026-08-07T11:50:27.642001+08:00"
 }

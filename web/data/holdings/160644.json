@@ -1,12 +1,12 @@
 {
   "code": "160644",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 78.18,
   "heavy_count": 9,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 10.64,
@@ -14,7 +14,7 @@
       "market_value": 24921.76
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 10.54,
@@ -22,7 +22,7 @@
       "market_value": 24705.05
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "01888",
       "stock_name": "建滔积层板",
       "weight": 10.4,
@@ -30,7 +30,7 @@
       "market_value": 24371.04
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "00992",
       "stock_name": "联想集团",
       "weight": 9.35,
@@ -38,7 +38,7 @@
       "market_value": 21913.45
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "00148",
       "stock_name": "建滔集团",
       "weight": 8.92,
@@ -46,7 +46,7 @@
       "market_value": 20890.02
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "03690",
       "stock_name": "美团-W",
       "weight": 7.23,
@@ -54,7 +54,7 @@
       "market_value": 16940.8
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "09988",
       "stock_name": "阿里巴巴-W",
       "weight": 6.87,
@@ -62,7 +62,7 @@
       "market_value": 16107.2
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 5.69,
@@ -70,7 +70,7 @@
       "market_value": 13327.43
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 5.01,
@@ -78,7 +78,7 @@
       "market_value": 11744.13
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 3.53,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 10.64,
+        "shares": 3.17,
+        "market_value": 24921.76
+      },
+      {
+        "rank": 2,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 10.54,
+        "shares": 1.6,
+        "market_value": 24705.05
+      },
+      {
+        "rank": 3,
+        "stock_code": "01888",
+        "stock_name": "建滔积层板",
+        "weight": 10.4,
+        "shares": 283.0,
+        "market_value": 24371.04
+      },
+      {
+        "rank": 4,
+        "stock_code": "00992",
+        "stock_name": "联想集团",
+        "weight": 9.35,
+        "shares": 1096.0,
+        "market_value": 21913.45
+      },
+      {
+        "rank": 5,
+        "stock_code": "00148",
+        "stock_name": "建滔集团",
+        "weight": 8.92,
+        "shares": 204.0,
+        "market_value": 20890.02
+      },
+      {
+        "rank": 6,
+        "stock_code": "03690",
+        "stock_name": "美团-W",
+        "weight": 7.23,
+        "shares": 284.74,
+        "market_value": 16940.8
+      },
+      {
+        "rank": 7,
+        "stock_code": "09988",
+        "stock_name": "阿里巴巴-W",
+        "weight": 6.87,
+        "shares": 199.73,
+        "market_value": 16107.2
+      },
+      {
+        "rank": 8,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 5.69,
+        "shares": 9.78,
+        "market_value": 13327.43
+      },
+      {
+        "rank": 9,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 5.01,
+        "shares": 3.61,
+        "market_value": 11744.13
+      },
+      {
+        "rank": 10,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 3.53,
+        "shares": 2.09,
+        "market_value": 8277.04
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "TSM",
@@ -168,89 +250,7 @@
         "shares": 0.09,
         "market_value": 809.75
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 10.64,
-        "shares": 3.17,
-        "market_value": 24921.76
-      },
-      {
-        "rank": 12,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 10.54,
-        "shares": 1.6,
-        "market_value": 24705.05
-      },
-      {
-        "rank": 13,
-        "stock_code": "01888",
-        "stock_name": "建滔积层板",
-        "weight": 10.4,
-        "shares": 283.0,
-        "market_value": 24371.04
-      },
-      {
-        "rank": 14,
-        "stock_code": "00992",
-        "stock_name": "联想集团",
-        "weight": 9.35,
-        "shares": 1096.0,
-        "market_value": 21913.45
-      },
-      {
-        "rank": 15,
-        "stock_code": "00148",
-        "stock_name": "建滔集团",
-        "weight": 8.92,
-        "shares": 204.0,
-        "market_value": 20890.02
-      },
-      {
-        "rank": 16,
-        "stock_code": "03690",
-        "stock_name": "美团-W",
-        "weight": 7.23,
-        "shares": 284.74,
-        "market_value": 16940.8
-      },
-      {
-        "rank": 17,
-        "stock_code": "09988",
-        "stock_name": "阿里巴巴-W",
-        "weight": 6.87,
-        "shares": 199.73,
-        "market_value": 16107.2
-      },
-      {
-        "rank": 18,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 5.69,
-        "shares": 9.78,
-        "market_value": 13327.43
-      },
-      {
-        "rank": 19,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 5.01,
-        "shares": 3.61,
-        "market_value": 11744.13
-      },
-      {
-        "rank": 20,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 3.53,
-        "shares": 2.09,
-        "market_value": 8277.04
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:03.041413+08:00"
+  "fetched_at": "2026-08-07T11:50:42.802729+08:00"
 }

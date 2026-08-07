@@ -1,12 +1,12 @@
 {
   "code": "017429",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 51.61,
   "heavy_count": 4,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "300750",
       "stock_name": "宁德时代",
       "weight": 7.82,
@@ -14,7 +14,7 @@
       "market_value": 655.54
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "TSLA",
       "stock_name": "特斯拉",
       "weight": 7.39,
@@ -22,7 +22,7 @@
       "market_value": 619.34
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "IFXGY",
       "stock_name": "英飞凌科技有限公司",
       "weight": 6.05,
@@ -30,7 +30,7 @@
       "market_value": 507.47
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "00981",
       "stock_name": "中芯国际",
       "weight": 5.28,
@@ -38,7 +38,7 @@
       "market_value": 442.6
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "002497",
       "stock_name": "雅化集团",
       "weight": 4.83,
@@ -46,7 +46,7 @@
       "market_value": 405.16
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 4.65,
@@ -54,7 +54,7 @@
       "market_value": 390.32
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 3.98,
@@ -62,7 +62,7 @@
       "market_value": 333.88
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "002466",
       "stock_name": "天齐锂业",
       "weight": 3.93,
@@ -70,7 +70,7 @@
       "market_value": 329.9
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "JNJ",
       "stock_name": "强生",
       "weight": 3.92,
@@ -78,7 +78,7 @@
       "market_value": 328.66
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "MRK",
       "stock_name": "默沙东",
       "weight": 3.76,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "300750",
+        "stock_name": "宁德时代",
+        "weight": 7.82,
+        "shares": 1.67,
+        "market_value": 655.54
+      },
+      {
+        "rank": 2,
+        "stock_code": "TSLA",
+        "stock_name": "特斯拉",
+        "weight": 7.39,
+        "shares": 0.22,
+        "market_value": 619.34
+      },
+      {
+        "rank": 3,
+        "stock_code": "IFXGY",
+        "stock_name": "英飞凌科技有限公司",
+        "weight": 6.05,
+        "shares": 0.8,
+        "market_value": 507.47
+      },
+      {
+        "rank": 4,
+        "stock_code": "00981",
+        "stock_name": "中芯国际",
+        "weight": 5.28,
+        "shares": 5.7,
+        "market_value": 442.6
+      },
+      {
+        "rank": 5,
+        "stock_code": "002497",
+        "stock_name": "雅化集团",
+        "weight": 4.83,
+        "shares": 19.89,
+        "market_value": 405.16
+      },
+      {
+        "rank": 6,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 4.65,
+        "shares": 0.12,
+        "market_value": 390.32
+      },
+      {
+        "rank": 7,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 3.98,
+        "shares": 0.25,
+        "market_value": 333.88
+      },
+      {
+        "rank": 8,
+        "stock_code": "002466",
+        "stock_name": "天齐锂业",
+        "weight": 3.93,
+        "shares": 5.38,
+        "market_value": 329.9
+      },
+      {
+        "rank": 9,
+        "stock_code": "JNJ",
+        "stock_name": "强生",
+        "weight": 3.92,
+        "shares": 0.19,
+        "market_value": 328.66
+      },
+      {
+        "rank": 10,
+        "stock_code": "MRK",
+        "stock_name": "默沙东",
+        "weight": 3.76,
+        "shares": 0.36,
+        "market_value": 315.07
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "300750",
@@ -168,89 +250,7 @@
         "shares": 0.19,
         "market_value": 321.36
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "300750",
-        "stock_name": "宁德时代",
-        "weight": 7.82,
-        "shares": 1.67,
-        "market_value": 655.54
-      },
-      {
-        "rank": 12,
-        "stock_code": "TSLA",
-        "stock_name": "特斯拉",
-        "weight": 7.39,
-        "shares": 0.22,
-        "market_value": 619.34
-      },
-      {
-        "rank": 13,
-        "stock_code": "IFXGY",
-        "stock_name": "英飞凌科技有限公司",
-        "weight": 6.05,
-        "shares": 0.8,
-        "market_value": 507.47
-      },
-      {
-        "rank": 14,
-        "stock_code": "00981",
-        "stock_name": "中芯国际",
-        "weight": 5.28,
-        "shares": 5.7,
-        "market_value": 442.6
-      },
-      {
-        "rank": 15,
-        "stock_code": "002497",
-        "stock_name": "雅化集团",
-        "weight": 4.83,
-        "shares": 19.89,
-        "market_value": 405.16
-      },
-      {
-        "rank": 16,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 4.65,
-        "shares": 0.12,
-        "market_value": 390.32
-      },
-      {
-        "rank": 17,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 3.98,
-        "shares": 0.25,
-        "market_value": 333.88
-      },
-      {
-        "rank": 18,
-        "stock_code": "002466",
-        "stock_name": "天齐锂业",
-        "weight": 3.93,
-        "shares": 5.38,
-        "market_value": 329.9
-      },
-      {
-        "rank": 19,
-        "stock_code": "JNJ",
-        "stock_name": "强生",
-        "weight": 3.92,
-        "shares": 0.19,
-        "market_value": 328.66
-      },
-      {
-        "rank": 20,
-        "stock_code": "MRK",
-        "stock_name": "默沙东",
-        "weight": 3.76,
-        "shares": 0.36,
-        "market_value": 315.07
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:25.283209+08:00"
+  "fetched_at": "2026-08-07T11:50:51.074468+08:00"
 }

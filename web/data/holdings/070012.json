@@ -1,7 +1,7 @@
 {
   "code": "070012",
   "latest_quarter": "2026年1季度股票投资明细",
-  "holdings_count": 11,
+  "holdings_count": 10,
   "total_weight": 43.49,
   "heavy_count": 2,
   "holdings": [
@@ -84,14 +84,6 @@
       "weight": 2.49,
       "shares": 1110.0,
       "market_value": 4478.94
-    },
-    {
-      "rank": 11,
-      "stock_code": "NTES",
-      "stock_name": "网易",
-      "weight": 0.69,
-      "shares": 1.6,
-      "market_value": 1239.29
     }
   ],
   "all_quarters": {

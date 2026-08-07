@@ -1,12 +1,12 @@
 {
   "code": "457001",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 41.68,
   "heavy_count": 3,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "000660",
       "stock_name": "SK海力士",
       "weight": 7.95,
@@ -14,7 +14,7 @@
       "market_value": 27677.56
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "005930",
       "stock_name": "三星电子",
       "weight": 6.47,
@@ -22,7 +22,7 @@
       "market_value": 22533.7
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "2330",
       "stock_name": "台积电",
       "weight": 5.3,
@@ -30,7 +30,7 @@
       "market_value": 18449.95
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 3.63,
@@ -38,7 +38,7 @@
       "market_value": 12620.4
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 3.43,
@@ -46,7 +46,7 @@
       "market_value": 11923.89
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "2308",
       "stock_name": "台达电",
       "weight": 3.35,
@@ -54,7 +54,7 @@
       "market_value": 11675.83
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "2454",
       "stock_name": "联发科",
       "weight": 3.08,
@@ -62,7 +62,7 @@
       "market_value": 10711.61
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "6981",
       "stock_name": "村田制作所",
       "weight": 3.0,
@@ -70,7 +70,7 @@
       "market_value": 10444.44
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "09988",
       "stock_name": "阿里巴巴-W",
       "weight": 2.75,
@@ -78,7 +78,7 @@
       "market_value": 9580.61
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "009150",
       "stock_name": "Samsung Electro-Mechanics",
       "weight": 2.72,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "000660",
+        "stock_name": "SK海力士",
+        "weight": 7.95,
+        "shares": 2.38,
+        "market_value": 27677.56
+      },
+      {
+        "rank": 2,
+        "stock_code": "005930",
+        "stock_name": "三星电子",
+        "weight": 6.47,
+        "shares": 15.39,
+        "market_value": 22533.7
+      },
+      {
+        "rank": 3,
+        "stock_code": "2330",
+        "stock_name": "台积电",
+        "weight": 5.3,
+        "shares": 35.8,
+        "market_value": 18449.95
+      },
+      {
+        "rank": 4,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.63,
+        "shares": 3.88,
+        "market_value": 12620.4
+      },
+      {
+        "rank": 5,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 3.43,
+        "shares": 0.88,
+        "market_value": 11923.89
+      },
+      {
+        "rank": 6,
+        "stock_code": "2308",
+        "stock_name": "台达电",
+        "weight": 3.35,
+        "shares": 28.0,
+        "market_value": 11675.83
+      },
+      {
+        "rank": 7,
+        "stock_code": "2454",
+        "stock_name": "联发科",
+        "weight": 3.08,
+        "shares": 11.8,
+        "market_value": 10711.61
+      },
+      {
+        "rank": 8,
+        "stock_code": "6981",
+        "stock_name": "村田制作所",
+        "weight": 3.0,
+        "shares": 21.8,
+        "market_value": 10444.44
+      },
+      {
+        "rank": 9,
+        "stock_code": "09988",
+        "stock_name": "阿里巴巴-W",
+        "weight": 2.75,
+        "shares": 118.8,
+        "market_value": 9580.61
+      },
+      {
+        "rank": 10,
+        "stock_code": "009150",
+        "stock_name": "Samsung Electro-Mechanics",
+        "weight": 2.72,
+        "shares": 0.98,
+        "market_value": 9473.44
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "2330",
@@ -168,89 +250,7 @@
         "shares": 15.88,
         "market_value": 5068.55
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "000660",
-        "stock_name": "SK海力士",
-        "weight": 7.95,
-        "shares": 2.38,
-        "market_value": 27677.56
-      },
-      {
-        "rank": 12,
-        "stock_code": "005930",
-        "stock_name": "三星电子",
-        "weight": 6.47,
-        "shares": 15.39,
-        "market_value": 22533.7
-      },
-      {
-        "rank": 13,
-        "stock_code": "2330",
-        "stock_name": "台积电",
-        "weight": 5.3,
-        "shares": 35.8,
-        "market_value": 18449.95
-      },
-      {
-        "rank": 14,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 3.63,
-        "shares": 3.88,
-        "market_value": 12620.4
-      },
-      {
-        "rank": 15,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 3.43,
-        "shares": 0.88,
-        "market_value": 11923.89
-      },
-      {
-        "rank": 16,
-        "stock_code": "2308",
-        "stock_name": "台达电",
-        "weight": 3.35,
-        "shares": 28.0,
-        "market_value": 11675.83
-      },
-      {
-        "rank": 17,
-        "stock_code": "2454",
-        "stock_name": "联发科",
-        "weight": 3.08,
-        "shares": 11.8,
-        "market_value": 10711.61
-      },
-      {
-        "rank": 18,
-        "stock_code": "6981",
-        "stock_name": "村田制作所",
-        "weight": 3.0,
-        "shares": 21.8,
-        "market_value": 10444.44
-      },
-      {
-        "rank": 19,
-        "stock_code": "09988",
-        "stock_name": "阿里巴巴-W",
-        "weight": 2.75,
-        "shares": 118.8,
-        "market_value": 9580.61
-      },
-      {
-        "rank": 20,
-        "stock_code": "009150",
-        "stock_name": "Samsung Electro-Mechanics",
-        "weight": 2.72,
-        "shares": 0.98,
-        "market_value": 9473.44
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:49.826047+08:00"
+  "fetched_at": "2026-08-07T11:50:38.041709+08:00"
 }

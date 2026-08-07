@@ -1,12 +1,12 @@
 {
   "code": "008253",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 42.72,
   "heavy_count": 2,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 9.12,
@@ -14,7 +14,7 @@
       "market_value": 35618.14
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 8.46,
@@ -22,7 +22,7 @@
       "market_value": 33019.37
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 3.67,
@@ -30,7 +30,7 @@
       "market_value": 14314.13
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 3.65,
@@ -38,7 +38,7 @@
       "market_value": 14246.75
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "MKSI",
       "stock_name": "MKS Inc",
       "weight": 3.61,
@@ -46,7 +46,7 @@
       "market_value": 14087.12
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
       "weight": 3.53,
@@ -54,7 +54,7 @@
       "market_value": 13787.99
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 3.47,
@@ -62,7 +62,7 @@
       "market_value": 13549.88
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 2.43,
@@ -70,7 +70,7 @@
       "market_value": 9495.65
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "NBIS",
       "stock_name": "Nebius Group NV-A",
       "weight": 2.41,
@@ -78,7 +78,7 @@
       "market_value": 9404.83
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 2.37,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 9.12,
+        "shares": 2.3,
+        "market_value": 35618.14
+      },
+      {
+        "rank": 2,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 8.46,
+        "shares": 4.2,
+        "market_value": 33019.37
+      },
+      {
+        "rank": 3,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 3.67,
+        "shares": 4.85,
+        "market_value": 14314.13
+      },
+      {
+        "rank": 4,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.65,
+        "shares": 4.38,
+        "market_value": 14246.75
+      },
+      {
+        "rank": 5,
+        "stock_code": "MKSI",
+        "stock_name": "MKS Inc",
+        "weight": 3.61,
+        "shares": 4.65,
+        "market_value": 14087.12
+      },
+      {
+        "rank": 6,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 3.53,
+        "shares": 2.8,
+        "market_value": 13787.99
+      },
+      {
+        "rank": 7,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 3.47,
+        "shares": 1.0,
+        "market_value": 13549.88
+      },
+      {
+        "rank": 8,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 2.43,
+        "shares": 2.4,
+        "market_value": 9495.65
+      },
+      {
+        "rank": 9,
+        "stock_code": "NBIS",
+        "stock_name": "Nebius Group NV-A",
+        "weight": 2.41,
+        "shares": 5.0,
+        "market_value": 9404.83
+      },
+      {
+        "rank": 10,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 2.37,
+        "shares": 6.8,
+        "market_value": 9266.99
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "NVDA",
@@ -168,89 +250,7 @@
         "shares": 0.16,
         "market_value": 1462.3
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 9.12,
-        "shares": 2.3,
-        "market_value": 35618.14
-      },
-      {
-        "rank": 12,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 8.46,
-        "shares": 4.2,
-        "market_value": 33019.37
-      },
-      {
-        "rank": 13,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 3.67,
-        "shares": 4.85,
-        "market_value": 14314.13
-      },
-      {
-        "rank": 14,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 3.65,
-        "shares": 4.38,
-        "market_value": 14246.75
-      },
-      {
-        "rank": 15,
-        "stock_code": "MKSI",
-        "stock_name": "MKS Inc",
-        "weight": 3.61,
-        "shares": 4.65,
-        "market_value": 14087.12
-      },
-      {
-        "rank": 16,
-        "stock_code": "AMAT",
-        "stock_name": "应用材料",
-        "weight": 3.53,
-        "shares": 2.8,
-        "market_value": 13787.99
-      },
-      {
-        "rank": 17,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 3.47,
-        "shares": 1.0,
-        "market_value": 13549.88
-      },
-      {
-        "rank": 18,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 2.43,
-        "shares": 2.4,
-        "market_value": 9495.65
-      },
-      {
-        "rank": 19,
-        "stock_code": "NBIS",
-        "stock_name": "Nebius Group NV-A",
-        "weight": 2.41,
-        "shares": 5.0,
-        "market_value": 9404.83
-      },
-      {
-        "rank": 20,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 2.37,
-        "shares": 6.8,
-        "market_value": 9266.99
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:51.341372+08:00"
+  "fetched_at": "2026-08-07T11:50:38.530049+08:00"
 }

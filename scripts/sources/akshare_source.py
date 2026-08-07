@@ -173,7 +173,8 @@ def _fetch_holdings_page(symbol: str, year: str, page: int):
     })
     try:
         resp = urllib.request.urlopen(req, timeout=HTTP_TIMEOUT)
-        raw = resp.read().decode("gb2312", errors="ignore")
+        raw_bytes = resp.read()
+        raw = raw_bytes.decode("utf-8")
     except (urllib.error.URLError, ValueError) as e:
         print(f"  ⚠️ 持仓API请求失败 page={page}: {e}")
         return None, []
@@ -186,20 +187,6 @@ def _fetch_holdings_page(symbol: str, year: str, page: int):
     html = content_match.group(1)
     html = html.replace("\\'", "'").replace('\\"', '"').replace("\\\\", "\\")
 
-    # 提取季度标签（HTML 编码为 GB2312 乱码，如 "2025骞4瀛ｅ害"）
-    quarters = re.findall(r'(\d{4})骞(\d)瀛ｅ害', html)
-    if not quarters:
-        # 备用：按 table 数量推算（每季度2表：持仓+分类明细）
-        quarters = re.findall(r'(\d{4})[\u4e00-\u9fff](\d)[\u4e00-\u9fff]{2,3}', html)
-    quarter_labels = [f"{y}Q{q}" for y, q in quarters]
-    if not quarter_labels:
-        # 最后的兜底：按顺序分配 Q4/Q3/Q2/Q1
-        n_tables = len(dfs)
-        n_quarters = n_tables // 2  # 每季度2张表
-        for qi in range(n_quarters):
-            q_num = 4 - qi  # Q4, Q3, Q2, Q1
-            quarter_labels.extend([f"{year}Q{q_num}"] * 2)
-
     try:
         dfs = pd.read_html(io.StringIO(f"<html><body>{html}</body></html>"))
     except Exception as e:
@@ -208,6 +195,19 @@ def _fetch_holdings_page(symbol: str, year: str, page: int):
 
     if not dfs:
         return None, []
+
+    # 提取季度标签（HTML 中格式为 "2026年2季度"）
+    quarters = re.findall(r'(\d{4})年(\d)季度', html)
+    if not quarters:
+        quarters = re.findall(r'(\d{4})[\u4e00-\u9fff](\d)[\u4e00-\u9fff]{1,2}', html)
+    quarter_labels = [f"{y}Q{q}" for y, q in quarters]
+    if not quarter_labels:
+        # 兜底：按 table 数量推算（每季度2表：持仓+分类明细）
+        n_tables = len(dfs)
+        n_quarters = n_tables // 2
+        for qi in range(n_quarters):
+            q_num = 4 - qi
+            quarter_labels.extend([f"{year}Q{q_num}"] * 2)
 
     # 每张表应用位置映射
     # GB2312 编码下列名为乱码，用列数 + 位置智能检测
@@ -286,6 +286,8 @@ def fetch_holdings(code: str, year: str = None):
         quarters_sorted = sorted(all_quarters.keys(), reverse=True)
         latest_q = quarters_sorted[0] if quarters_sorted else None
         latest_holdings = all_quarters.get(latest_q, [])
+        # 东方财富 API 偶返 11-12 条（如谷歌-A/谷歌-C 分开展示），截断为 Top10
+        latest_holdings = latest_holdings[:10]
 
         total_weight = sum(h["weight"] or 0 for h in latest_holdings)
         heavy_count = sum(1 for h in latest_holdings if (h["weight"] or 0) > 5)

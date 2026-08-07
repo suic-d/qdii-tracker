@@ -1,12 +1,12 @@
 {
   "code": "016701",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 54.96,
   "heavy_count": 6,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 8.16,
@@ -14,7 +14,7 @@
       "market_value": 56955.21
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "GOOGL",
       "stock_name": "谷歌-A",
       "weight": 7.42,
@@ -22,7 +22,7 @@
       "market_value": 51794.54
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AAPL",
       "stock_name": "苹果",
       "weight": 6.27,
@@ -30,7 +30,7 @@
       "market_value": 43760.08
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 6.14,
@@ -38,7 +38,7 @@
       "market_value": 42863.85
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "AMD",
       "stock_name": "超威半导体",
       "weight": 5.43,
@@ -46,7 +46,7 @@
       "market_value": 37893.57
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "INTC",
       "stock_name": "英特尔",
       "weight": 5.41,
@@ -54,7 +54,7 @@
       "market_value": 37746.85
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "AMZN",
       "stock_name": "亚马逊",
       "weight": 4.45,
@@ -62,7 +62,7 @@
       "market_value": 31058.79
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "MSFT",
       "stock_name": "微软",
       "weight": 4.31,
@@ -70,7 +70,7 @@
       "market_value": 30096.99
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "AVGO",
       "stock_name": "博通",
       "weight": 4.06,
@@ -78,7 +78,7 @@
       "market_value": 28310.0
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 3.31,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 8.16,
+        "shares": 41.79,
+        "market_value": 56955.21
+      },
+      {
+        "rank": 2,
+        "stock_code": "GOOGL",
+        "stock_name": "谷歌-A",
+        "weight": 7.42,
+        "shares": 21.28,
+        "market_value": 51794.54
+      },
+      {
+        "rank": 3,
+        "stock_code": "AAPL",
+        "stock_name": "苹果",
+        "weight": 6.27,
+        "shares": 22.2,
+        "market_value": 43760.08
+      },
+      {
+        "rank": 4,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 6.14,
+        "shares": 5.45,
+        "market_value": 42863.85
+      },
+      {
+        "rank": 5,
+        "stock_code": "AMD",
+        "stock_name": "超威半导体",
+        "weight": 5.43,
+        "shares": 9.58,
+        "market_value": 37893.57
+      },
+      {
+        "rank": 6,
+        "stock_code": "INTC",
+        "stock_name": "英特尔",
+        "weight": 5.41,
+        "shares": 39.69,
+        "market_value": 37746.85
+      },
+      {
+        "rank": 7,
+        "stock_code": "AMZN",
+        "stock_name": "亚马逊",
+        "weight": 4.45,
+        "shares": 19.13,
+        "market_value": 31058.79
+      },
+      {
+        "rank": 8,
+        "stock_code": "MSFT",
+        "stock_name": "微软",
+        "weight": 4.31,
+        "shares": 11.85,
+        "market_value": 30096.99
+      },
+      {
+        "rank": 9,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 4.06,
+        "shares": 11.0,
+        "market_value": 28310.0
+      },
+      {
+        "rank": 10,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 3.31,
+        "shares": 7.1,
+        "market_value": 23079.08
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "NVDA",
@@ -168,89 +250,7 @@
         "shares": 4.91,
         "market_value": 12578.3
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 8.16,
-        "shares": 41.79,
-        "market_value": 56955.21
-      },
-      {
-        "rank": 12,
-        "stock_code": "GOOGL",
-        "stock_name": "谷歌-A",
-        "weight": 7.42,
-        "shares": 21.28,
-        "market_value": 51794.54
-      },
-      {
-        "rank": 13,
-        "stock_code": "AAPL",
-        "stock_name": "苹果",
-        "weight": 6.27,
-        "shares": 22.2,
-        "market_value": 43760.08
-      },
-      {
-        "rank": 14,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 6.14,
-        "shares": 5.45,
-        "market_value": 42863.85
-      },
-      {
-        "rank": 15,
-        "stock_code": "AMD",
-        "stock_name": "超威半导体",
-        "weight": 5.43,
-        "shares": 9.58,
-        "market_value": 37893.57
-      },
-      {
-        "rank": 16,
-        "stock_code": "INTC",
-        "stock_name": "英特尔",
-        "weight": 5.41,
-        "shares": 39.69,
-        "market_value": 37746.85
-      },
-      {
-        "rank": 17,
-        "stock_code": "AMZN",
-        "stock_name": "亚马逊",
-        "weight": 4.45,
-        "shares": 19.13,
-        "market_value": 31058.79
-      },
-      {
-        "rank": 18,
-        "stock_code": "MSFT",
-        "stock_name": "微软",
-        "weight": 4.31,
-        "shares": 11.85,
-        "market_value": 30096.99
-      },
-      {
-        "rank": 19,
-        "stock_code": "AVGO",
-        "stock_name": "博通",
-        "weight": 4.06,
-        "shares": 11.0,
-        "market_value": 28310.0
-      },
-      {
-        "rank": 20,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 3.31,
-        "shares": 7.1,
-        "market_value": 23079.08
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:39.497928+08:00"
+  "fetched_at": "2026-08-07T11:50:34.071186+08:00"
 }

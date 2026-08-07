@@ -1,12 +1,12 @@
 {
   "code": "501226",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 57.2,
   "heavy_count": 7,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "TSM",
       "stock_name": "台积电",
       "weight": 8.71,
@@ -14,7 +14,7 @@
       "market_value": 39032.18
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "MU",
       "stock_name": "美光科技",
       "weight": 7.55,
@@ -22,7 +22,7 @@
       "market_value": 33805.54
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AVGO",
       "stock_name": "博通",
       "weight": 6.03,
@@ -30,7 +30,7 @@
       "market_value": 27014.58
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "KLAC",
       "stock_name": "科磊",
       "weight": 5.96,
@@ -38,7 +38,7 @@
       "market_value": 26713.92
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 5.27,
@@ -46,7 +46,7 @@
       "market_value": 23610.94
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 5.19,
@@ -54,7 +54,7 @@
       "market_value": 23229.22
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "ASML",
       "stock_name": "阿斯麦",
       "weight": 5.14,
@@ -62,7 +62,7 @@
       "market_value": 23034.79
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "GOOGL",
       "stock_name": "谷歌-A",
       "weight": 4.89,
@@ -70,7 +70,7 @@
       "market_value": 21906.1
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "AMZN",
       "stock_name": "亚马逊",
       "weight": 4.35,
@@ -78,7 +78,7 @@
       "market_value": 19479.72
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "NVDA",
       "stock_name": "英伟达",
       "weight": 4.11,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "TSM",
+        "stock_name": "台积电",
+        "weight": 8.71,
+        "shares": 12.0,
+        "market_value": 39032.18
+      },
+      {
+        "rank": 2,
+        "stock_code": "MU",
+        "stock_name": "美光科技",
+        "weight": 7.55,
+        "shares": 4.3,
+        "market_value": 33805.54
+      },
+      {
+        "rank": 3,
+        "stock_code": "AVGO",
+        "stock_name": "博通",
+        "weight": 6.03,
+        "shares": 10.5,
+        "market_value": 27014.58
+      },
+      {
+        "rank": 4,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 5.96,
+        "shares": 13.0,
+        "market_value": 26713.92
+      },
+      {
+        "rank": 5,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 5.27,
+        "shares": 8.0,
+        "market_value": 23610.94
+      },
+      {
+        "rank": 6,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 5.19,
+        "shares": 1.5,
+        "market_value": 23229.22
+      },
+      {
+        "rank": 7,
+        "stock_code": "ASML",
+        "stock_name": "阿斯麦",
+        "weight": 5.14,
+        "shares": 1.7,
+        "market_value": 23034.79
+      },
+      {
+        "rank": 8,
+        "stock_code": "GOOGL",
+        "stock_name": "谷歌-A",
+        "weight": 4.89,
+        "shares": 9.0,
+        "market_value": 21906.1
+      },
+      {
+        "rank": 9,
+        "stock_code": "AMZN",
+        "stock_name": "亚马逊",
+        "weight": 4.35,
+        "shares": 12.0,
+        "market_value": 19479.72
+      },
+      {
+        "rank": 10,
+        "stock_code": "NVDA",
+        "stock_name": "英伟达",
+        "weight": 4.11,
+        "shares": 13.5,
+        "market_value": 18397.71
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "TSM",
@@ -168,89 +250,7 @@
         "shares": 1.5,
         "market_value": 6594.26
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "TSM",
-        "stock_name": "台积电",
-        "weight": 8.71,
-        "shares": 12.0,
-        "market_value": 39032.18
-      },
-      {
-        "rank": 12,
-        "stock_code": "MU",
-        "stock_name": "美光科技",
-        "weight": 7.55,
-        "shares": 4.3,
-        "market_value": 33805.54
-      },
-      {
-        "rank": 13,
-        "stock_code": "AVGO",
-        "stock_name": "博通",
-        "weight": 6.03,
-        "shares": 10.5,
-        "market_value": 27014.58
-      },
-      {
-        "rank": 14,
-        "stock_code": "KLAC",
-        "stock_name": "科磊",
-        "weight": 5.96,
-        "shares": 13.0,
-        "market_value": 26713.92
-      },
-      {
-        "rank": 15,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 5.27,
-        "shares": 8.0,
-        "market_value": 23610.94
-      },
-      {
-        "rank": 16,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 5.19,
-        "shares": 1.5,
-        "market_value": 23229.22
-      },
-      {
-        "rank": 17,
-        "stock_code": "ASML",
-        "stock_name": "阿斯麦",
-        "weight": 5.14,
-        "shares": 1.7,
-        "market_value": 23034.79
-      },
-      {
-        "rank": 18,
-        "stock_code": "GOOGL",
-        "stock_name": "谷歌-A",
-        "weight": 4.89,
-        "shares": 9.0,
-        "market_value": 21906.1
-      },
-      {
-        "rank": 19,
-        "stock_code": "AMZN",
-        "stock_name": "亚马逊",
-        "weight": 4.35,
-        "shares": 12.0,
-        "market_value": 19479.72
-      },
-      {
-        "rank": 20,
-        "stock_code": "NVDA",
-        "stock_name": "英伟达",
-        "weight": 4.11,
-        "shares": 13.5,
-        "market_value": 18397.71
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:15:48.430639+08:00"
+  "fetched_at": "2026-08-07T11:50:37.527806+08:00"
 }

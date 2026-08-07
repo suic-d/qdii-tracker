@@ -1,12 +1,12 @@
 {
   "code": "096001",
-  "latest_quarter": "2026年2季度股票投资明细",
+  "latest_quarter": "2026Q2",
   "holdings_count": 10,
   "total_weight": 2.57,
   "heavy_count": 0,
   "holdings": [
     {
-      "rank": 11,
+      "rank": 1,
       "stock_code": "MRNA",
       "stock_name": "Moderna Inc",
       "weight": 0.28,
@@ -14,7 +14,7 @@
       "market_value": 261.76
     },
     {
-      "rank": 12,
+      "rank": 2,
       "stock_code": "GLW",
       "stock_name": "康宁",
       "weight": 0.28,
@@ -22,7 +22,7 @@
       "market_value": 261.13
     },
     {
-      "rank": 13,
+      "rank": 3,
       "stock_code": "AMAT",
       "stock_name": "应用材料",
       "weight": 0.27,
@@ -30,7 +30,7 @@
       "market_value": 249.66
     },
     {
-      "rank": 14,
+      "rank": 4,
       "stock_code": "KLAC",
       "stock_name": "科磊",
       "weight": 0.26,
@@ -38,7 +38,7 @@
       "market_value": 242.69
     },
     {
-      "rank": 15,
+      "rank": 5,
       "stock_code": "TER",
       "stock_name": "泰瑞达",
       "weight": 0.25,
@@ -46,7 +46,7 @@
       "market_value": 239.25
     },
     {
-      "rank": 16,
+      "rank": 6,
       "stock_code": "SNDK",
       "stock_name": "闪迪",
       "weight": 0.25,
@@ -54,7 +54,7 @@
       "market_value": 236.94
     },
     {
-      "rank": 17,
+      "rank": 7,
       "stock_code": "LRCX",
       "stock_name": "拉姆研究",
       "weight": 0.25,
@@ -62,7 +62,7 @@
       "market_value": 231.39
     },
     {
-      "rank": 18,
+      "rank": 8,
       "stock_code": "TECH",
       "stock_name": "Bio-Techne Corp",
       "weight": 0.25,
@@ -70,7 +70,7 @@
       "market_value": 231.36
     },
     {
-      "rank": 19,
+      "rank": 9,
       "stock_code": "GEV",
       "stock_name": "GE Vernova Inc",
       "weight": 0.24,
@@ -78,7 +78,7 @@
       "market_value": 229.65
     },
     {
-      "rank": 20,
+      "rank": 10,
       "stock_code": "UAL",
       "stock_name": "联合航空",
       "weight": 0.24,
@@ -87,7 +87,89 @@
     }
   ],
   "all_quarters": {
-    "2026年1季度股票投资明细": [
+    "2026Q2": [
+      {
+        "rank": 1,
+        "stock_code": "MRNA",
+        "stock_name": "Moderna Inc",
+        "weight": 0.28,
+        "shares": 0.55,
+        "market_value": 261.76
+      },
+      {
+        "rank": 2,
+        "stock_code": "GLW",
+        "stock_name": "康宁",
+        "weight": 0.28,
+        "shares": 0.15,
+        "market_value": 261.13
+      },
+      {
+        "rank": 3,
+        "stock_code": "AMAT",
+        "stock_name": "应用材料",
+        "weight": 0.27,
+        "shares": 0.05,
+        "market_value": 249.66
+      },
+      {
+        "rank": 4,
+        "stock_code": "KLAC",
+        "stock_name": "科磊",
+        "weight": 0.26,
+        "shares": 0.12,
+        "market_value": 242.69
+      },
+      {
+        "rank": 5,
+        "stock_code": "TER",
+        "stock_name": "泰瑞达",
+        "weight": 0.25,
+        "shares": 0.07,
+        "market_value": 239.25
+      },
+      {
+        "rank": 6,
+        "stock_code": "SNDK",
+        "stock_name": "闪迪",
+        "weight": 0.25,
+        "shares": 0.02,
+        "market_value": 236.94
+      },
+      {
+        "rank": 7,
+        "stock_code": "LRCX",
+        "stock_name": "拉姆研究",
+        "weight": 0.25,
+        "shares": 0.08,
+        "market_value": 231.39
+      },
+      {
+        "rank": 8,
+        "stock_code": "TECH",
+        "stock_name": "Bio-Techne Corp",
+        "weight": 0.25,
+        "shares": 0.48,
+        "market_value": 231.36
+      },
+      {
+        "rank": 9,
+        "stock_code": "GEV",
+        "stock_name": "GE Vernova Inc",
+        "weight": 0.24,
+        "shares": 0.03,
+        "market_value": 229.65
+      },
+      {
+        "rank": 10,
+        "stock_code": "UAL",
+        "stock_name": "联合航空",
+        "weight": 0.24,
+        "shares": 0.25,
+        "market_value": 227.39
+      }
+    ],
+    "2026Q1": [
       {
         "rank": 1,
         "stock_code": "APA",
@@ -168,89 +250,7 @@
         "shares": 0.15,
         "market_value": 151.45
       }
-    ],
-    "2026年2季度股票投资明细": [
-      {
-        "rank": 11,
-        "stock_code": "MRNA",
-        "stock_name": "Moderna Inc",
-        "weight": 0.28,
-        "shares": 0.55,
-        "market_value": 261.76
-      },
-      {
-        "rank": 12,
-        "stock_code": "GLW",
-        "stock_name": "康宁",
-        "weight": 0.28,
-        "shares": 0.15,
-        "market_value": 261.13
-      },
-      {
-        "rank": 13,
-        "stock_code": "AMAT",
-        "stock_name": "应用材料",
-        "weight": 0.27,
-        "shares": 0.05,
-        "market_value": 249.66
-      },
-      {
-        "rank": 14,
-        "stock_code": "KLAC",
-        "stock_name": "科磊",
-        "weight": 0.26,
-        "shares": 0.12,
-        "market_value": 242.69
-      },
-      {
-        "rank": 15,
-        "stock_code": "TER",
-        "stock_name": "泰瑞达",
-        "weight": 0.25,
-        "shares": 0.07,
-        "market_value": 239.25
-      },
-      {
-        "rank": 16,
-        "stock_code": "SNDK",
-        "stock_name": "闪迪",
-        "weight": 0.25,
-        "shares": 0.02,
-        "market_value": 236.94
-      },
-      {
-        "rank": 17,
-        "stock_code": "LRCX",
-        "stock_name": "拉姆研究",
-        "weight": 0.25,
-        "shares": 0.08,
-        "market_value": 231.39
-      },
-      {
-        "rank": 18,
-        "stock_code": "TECH",
-        "stock_name": "Bio-Techne Corp",
-        "weight": 0.25,
-        "shares": 0.48,
-        "market_value": 231.36
-      },
-      {
-        "rank": 19,
-        "stock_code": "GEV",
-        "stock_name": "GE Vernova Inc",
-        "weight": 0.24,
-        "shares": 0.03,
-        "market_value": 229.65
-      },
-      {
-        "rank": 20,
-        "stock_code": "UAL",
-        "stock_name": "联合航空",
-        "weight": 0.24,
-        "shares": 0.25,
-        "market_value": 227.39
-      }
     ]
   },
-  "fetched_at": "2026-08-02T03:16:28.578544+08:00"
+  "fetched_at": "2026-08-07T11:50:52.449661+08:00"
 }
