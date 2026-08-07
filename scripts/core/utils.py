@@ -64,7 +64,9 @@ def to_float(v):
     if v == "" or v == "null":
         return None
     try:
-        f = float(v)
+        # 预处理：去掉 % 和千分位逗号
+        s = str(v).replace("%", "").replace(",", "").strip()
+        f = float(s)
         # NaN 是唯一不等于自身的值
         if f != f:
             return None

@@ -138,36 +138,154 @@ def fetch_fund_names():
     return df
 
 
+# 持仓表格列位置映射（东方财富 GB2312 响应中列名为乱码，按位置取）
+_HOLDINGS_COL_POS = {
+    0: "序号",
+    1: "股票代码",
+    2: "股票名称",
+    4: "占净值比例",
+    5: "持股数",
+    6: "持仓市值",
+}
+
+
+def _fetch_holdings_page(symbol: str, year: str, page: int):
+    """
+    调用东方财富持仓 API，返回 (quarters, dfs) 元组。
+    修复 AKShare v1.18.64 不带 pi 参数导致默认返回第二页 (rank 11-20) 的 bug。
+    """
+    import random
+    import re
+    import urllib.request
+    import urllib.error
+    import io
+    import pandas as pd
+    from core.constants import HTTP_TIMEOUT
+
+    url = (
+        f"http://fundf10.eastmoney.com/FundArchivesDatas.aspx"
+        f"?type=jjcc&code={symbol}&topline=10&year={year}&month=&pi={page}"
+        f"&rt={random.uniform(0.01, 0.99):.16f}"
+    )
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "Referer": f"http://fundf10.eastmoney.com/ccmx_{symbol}.html",
+    })
+    try:
+        resp = urllib.request.urlopen(req, timeout=HTTP_TIMEOUT)
+        raw = resp.read().decode("gb2312", errors="ignore")
+    except (urllib.error.URLError, ValueError) as e:
+        print(f"  ⚠️ 持仓API请求失败 page={page}: {e}")
+        return None, []
+
+    # 提取 content 中的 HTML
+    content_match = re.search(r'content:\s*"(.*?)"\s*[,}]', raw, re.DOTALL)
+    if not content_match:
+        print(f"  ⚠️ 持仓API 无法提取 content page={page}")
+        return None, []
+    html = content_match.group(1)
+    html = html.replace("\\'", "'").replace('\\"', '"').replace("\\\\", "\\")
+
+    # 提取季度标签（HTML 编码为 GB2312 乱码，如 "2025骞4瀛ｅ害"）
+    quarters = re.findall(r'(\d{4})骞(\d)瀛ｅ害', html)
+    if not quarters:
+        # 备用：按 table 数量推算（每季度2表：持仓+分类明细）
+        quarters = re.findall(r'(\d{4})[\u4e00-\u9fff](\d)[\u4e00-\u9fff]{2,3}', html)
+    quarter_labels = [f"{y}Q{q}" for y, q in quarters]
+    if not quarter_labels:
+        # 最后的兜底：按顺序分配 Q4/Q3/Q2/Q1
+        n_tables = len(dfs)
+        n_quarters = n_tables // 2  # 每季度2张表
+        for qi in range(n_quarters):
+            q_num = 4 - qi  # Q4, Q3, Q2, Q1
+            quarter_labels.extend([f"{year}Q{q_num}"] * 2)
+
+    try:
+        dfs = pd.read_html(io.StringIO(f"<html><body>{html}</body></html>"))
+    except Exception as e:
+        print(f"  ⚠️ 持仓HTML解析失败 page={page}: {e}")
+        return None, []
+
+    if not dfs:
+        return None, []
+
+    # 每张表应用位置映射
+    # GB2312 编码下列名为乱码，用列数 + 位置智能检测
+    result_dfs = []
+    for df in dfs:
+        n_cols = len(df.columns)
+        if n_cols < 5:
+            continue
+        # 6列: 序号|代码|名称|占净值比例|持股数|持仓市值
+        # 7列: 序号|代码|名称|相关资讯|占净值比例|持股数|持仓市值
+        if n_cols == 6:
+            pos_map = {0: "序号", 1: "股票代码", 2: "股票名称", 3: "占净值比例", 4: "持股数", 5: "持仓市值"}
+        elif n_cols == 7:
+            pos_map = {0: "序号", 1: "股票代码", 2: "股票名称", 4: "占净值比例", 5: "持股数", 6: "持仓市值"}
+        else:
+            pos_map = {0: "序号", 1: "股票代码", 2: "股票名称", n_cols-3: "占净值比例", n_cols-2: "持股数", n_cols-1: "持仓市值"}
+
+        mapped = {}
+        for pos, name in pos_map.items():
+            if pos < n_cols:
+                mapped[name] = df.iloc[:, pos]
+        if "序号" in mapped and "占净值比例" in mapped:
+            result_dfs.append(pd.DataFrame(mapped))
+
+    return quarter_labels, result_dfs
+
+
 def fetch_holdings(code: str, year: str = None):
     """
-    抓取单只基金的持仓数据（原 fetch_holdings.py）。
-    返回 dict 或 None。
+    抓取单只基金的持仓数据。
+    修复：原 AKShare fund_portfolio_hold_em 不带 pi 参数 → 返回第二页 (11-20)。
+    现改用直连东方财富 API &pi=1 + &pi=2 合并，确保 rank 1-10 在前。
     """
     from core.utils import beijing_now_iso, beijing_year
     if year is None:
         year = str(beijing_year())
+
     try:
-        df = _call_ak(ak.fund_portfolio_hold_em, symbol=code, date=year)
-        if len(df) == 0:
+        # 直连东方财富 API page=1（返回全年的所有季度 Top10）
+        all_quarters = {}
+        q_labels, dfs = _fetch_holdings_page(code, year, 1)
+        if dfs:
+            for qi, df in enumerate(dfs):
+                q = q_labels[qi] if qi < len(q_labels) else f"{year}Q?"
+                all_quarters[q] = []
+                for _, row in df.iterrows():
+                    rank_raw = row.get("序号")
+                    try:
+                        rank = int(float(str(rank_raw).replace(",", "")))
+                    except (ValueError, TypeError):
+                        rank = None
+                    all_quarters[q].append({
+                        "rank": rank,
+                        "stock_code": str(row.get("股票代码", "")).strip(),
+                        "stock_name": str(row.get("股票名称", "")).strip(),
+                        "weight": to_float(row.get("占净值比例")),
+                        "shares": to_float(row.get("持股数")),
+                        "market_value": to_float(row.get("持仓市值")),
+                    })
+
+        if not all_quarters:
+            # fallback 到 AKShare
+            try:
+                df_ak = _call_ak(ak.fund_portfolio_hold_em, symbol=code, date=year)
+                if df_ak is not None and len(df_ak) > 0:
+                    return _fallback_akshare_holdings(code, year, df_ak)
+            except Exception:
+                pass
             return None
-        # 按季度分组（最新季度排前面）
-        by_quarter = {}
-        for _, row in df.iterrows():
-            quarter = str(row.get("季度", ""))
-            item = {
-                "rank": int(row.get("序号", 0)) if row.get("序号") else None,
-                "stock_code": str(row.get("股票代码", "")).strip(),
-                "stock_name": str(row.get("股票名称", "")).strip(),
-                "weight": to_float(row.get("占净值比例")),  # %
-                "shares": to_float(row.get("持股数")),      # 万股
-                "market_value": to_float(row.get("持仓市值")),  # 万元
-            }
-            by_quarter.setdefault(quarter, []).append(item)
+
+        # 按 rank 排序各季度持仓
+        for q in all_quarters:
+            all_quarters[q].sort(key=lambda h: h["rank"] if h["rank"] is not None else 999)
 
         # 取最新季度
-        quarters_sorted = sorted(by_quarter.keys(), reverse=True)
+        quarters_sorted = sorted(all_quarters.keys(), reverse=True)
         latest_q = quarters_sorted[0] if quarters_sorted else None
-        latest_holdings = by_quarter.get(latest_q, [])
+        latest_holdings = all_quarters.get(latest_q, [])
 
         total_weight = sum(h["weight"] or 0 for h in latest_holdings)
         heavy_count = sum(1 for h in latest_holdings if (h["weight"] or 0) > 5)
@@ -179,8 +297,45 @@ def fetch_holdings(code: str, year: str = None):
             "total_weight": round(total_weight, 2),
             "heavy_count": heavy_count,
             "holdings": latest_holdings,
-            "all_quarters": by_quarter,
+            "all_quarters": all_quarters,
             "fetched_at": beijing_now_iso(),
         }
     except Exception as e:
         return {"error": str(e)[:200], "code": code}
+
+
+def _fallback_akshare_holdings(code: str, year: str, df):
+    """AKShare 兜底：字段名与原逻辑一致"""
+    from core.utils import beijing_now_iso
+
+    by_quarter = {}
+    for _, row in df.iterrows():
+        quarter = str(row.get("季度", ""))
+        item = {
+            "rank": int(row.get("序号", 0)) if row.get("序号") else None,
+            "stock_code": str(row.get("股票代码", "")).strip(),
+            "stock_name": str(row.get("股票名称", "")).strip(),
+            "weight": to_float(row.get("占净值比例")),
+            "shares": to_float(row.get("持股数")),
+            "market_value": to_float(row.get("持仓市值")),
+        }
+        by_quarter.setdefault(quarter, []).append(item)
+
+    quarters_sorted = sorted(by_quarter.keys(), reverse=True)
+    latest_q = quarters_sorted[0] if quarters_sorted else None
+    latest_holdings = by_quarter.get(latest_q, [])
+    latest_holdings.sort(key=lambda h: h["rank"] if h["rank"] is not None else 999)
+
+    total_weight = sum(h["weight"] or 0 for h in latest_holdings)
+    heavy_count = sum(1 for h in latest_holdings if (h["weight"] or 0) > 5)
+
+    return {
+        "code": code,
+        "latest_quarter": latest_q,
+        "holdings_count": len(latest_holdings),
+        "total_weight": round(total_weight, 2),
+        "heavy_count": heavy_count,
+        "holdings": latest_holdings,
+        "all_quarters": by_quarter,
+        "fetched_at": beijing_now_iso(),
+    }
