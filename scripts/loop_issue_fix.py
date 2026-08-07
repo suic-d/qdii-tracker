@@ -479,30 +479,62 @@ def main():
         print(f"\n📤 Phase 5: 交付")
 
         if final_passed:
-            # 提交修复
-            print(f"   📝 git add + commit ...")
-            run_command(
-                ["git", "add", "-A"],
-                cwd=str(worktree_path), timeout=30,
+            # 检查工作区是否有实际变更（不产生空分支垃圾）
+            ret_diff, diff_stdout, _ = run_command(
+                ["git", "diff", "--cached", "--name-only"],
+                cwd=str(worktree_path), timeout=10,
             )
+            # 如果没有 staged 变更，再看看 working tree
+            if not diff_stdout.strip():
+                ret_diff_wt, diff_wt, _ = run_command(
+                    ["git", "diff", "--name-only"],
+                    cwd=str(worktree_path), timeout=10,
+                )
+                diff_stdout = diff_wt
 
-            commit_msg = (
-                f"fix: #{issue_num} {issue['title'][:50]}\n\n"
-                f"Closes #{issue_num}\n\n"
-                f"Auto-fix by loop_issue_fix.py (rounds: {round_num or 1})"
-            )
-            ret, stdout, stderr = run_command(
-                ["git", "commit", "-m", commit_msg],
-                cwd=str(worktree_path), timeout=30,
-            )
+            has_diff = bool(diff_stdout.strip())
+            no_changes = False
 
-            if ret != 0:
-                # 可能没有改动
-                no_changes = "nothing to commit" in (stdout + stderr).lower()
-                if no_changes:
-                    print(f"   ⚠ 没有文件变更（issue 可能已修复）")
-                else:
-                    print(f"   ⚠ git commit 失败: {stderr[:200]}")
+            if not has_diff:
+                print(f"   ⚠ 没有文件变更（issue 可能已修复或不需要改代码）")
+                no_changes = True
+            else:
+                # 提交修复
+                print(f"   📝 git add + commit ...")
+                run_command(
+                    ["git", "add", "-A"],
+                    cwd=str(worktree_path), timeout=30,
+                )
+
+                commit_msg = (
+                    f"fix: #{issue_num} {issue['title'][:50]}\n\n"
+                    f"Closes #{issue_num}\n\n"
+                    f"Auto-fix by loop_issue_fix.py (rounds: {round_num or 1})"
+                )
+                ret, stdout, stderr = run_command(
+                    ["git", "commit", "-m", commit_msg],
+                    cwd=str(worktree_path), timeout=30,
+                )
+
+                if ret != 0:
+                    if "nothing to commit" in (stdout + stderr).lower():
+                        no_changes = True
+                    else:
+                        print(f"   ⚠ git commit 失败: {stderr[:200]}")
+                        no_changes = True  # 当作无变更处理
+
+            if no_changes:
+                # 无文件变更 → 不 push，不建 PR，记录跳过
+                print(f"   ⏭️  跳过 push/PR（无文件变更）")
+                results.append({
+                    "issue": issue_num,
+                    "title": issue["title"],
+                    "status": "NO_DIFF",
+                    "rounds": round_num or 1,
+                    "pr": None,
+                    "error": "无文件变更",
+                })
+                continue
 
             # Push
             print(f"   🚀 git push origin {branch_name} ...")
@@ -590,21 +622,30 @@ def main():
 
     pass_count = 0
     fail_count = 0
+    skip_count = 0
 
     for r in results:
-        status_icon = "✅" if r["status"] == "PASS" else "❌"
+        if r["status"] == "PASS":
+            status_icon = "✅"
+        elif r["status"] == "NO_DIFF":
+            status_icon = "⏭️"
+        else:
+            status_icon = "❌"
         pr_display = r["pr"] if r["pr"] else ("(手动审查)" if r["status"] == "FAIL" else "-")
         print(f"#{r['issue']:<7} {status_icon:<7} {r['rounds']:<6} {pr_display[:48]:<50}")
 
         if r["status"] == "PASS":
             pass_count += 1
+        elif r["status"] == "NO_DIFF":
+            skip_count += 1
         else:
             fail_count += 1
 
     print("-" * 72)
     print(f"\n总计: {len(results)} 个 issue")
-    print(f"  ✅ 通过: {pass_count}")
-    print(f"  ❌ 失败: {fail_count}")
+    print(f"  ✅ 通过 (已修复+PUSH+PR): {pass_count}")
+    print(f"  ⏭️  跳过 (check已绿无变更): {skip_count}")
+    print(f"  ❌ 失败 (超最大轮数): {fail_count}")
 
     # 如果有失败的，列出 worktree 路径
     failed_with_worktree = [r for r in results
