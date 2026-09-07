@@ -18,7 +18,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.34,
           "chg_3m": 14.48,
           "chg_6m": 13.4,
@@ -28,18 +28,25 @@
           "scale_raw": "375.26亿",
           "established": "2015-06-10",
           "manager": "刘杰",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.8,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 1.664,
-          "etf_change_pct": 1.71,
+          "etf_price": 1.668,
+          "etf_change_pct": 0.24,
           "error": "'data'"
         }
       ],
@@ -61,7 +68,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 3.81,
           "chg_3m": 6.19,
           "chg_6m": 6.6,
@@ -71,18 +78,25 @@
           "scale_raw": "277.35亿",
           "established": "2013-12-05",
           "manager": "万琼",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.6,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.698,
-          "etf_change_pct": 1.43,
+          "etf_price": 2.692,
+          "etf_change_pct": -0.22,
           "error": "'data'"
         }
       ],
@@ -105,7 +119,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.4,
           "chg_3m": 14.64,
           "chg_6m": 13.55,
@@ -130,10 +144,10 @@
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.222,
-          "etf_change_pct": 1.18,
+          "etf_price": 2.236,
+          "etf_change_pct": 0.63,
           "error": "'data'"
         }
       ],
@@ -156,7 +170,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.18,
           "chg_3m": 14.94,
           "chg_6m": 12.49,
@@ -166,18 +180,25 @@
           "scale_raw": "143.79亿",
           "established": "2020-10-22",
           "manager": "赵宗庭",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.6,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.692,
-          "etf_change_pct": 1.39,
+          "etf_price": 2.708,
+          "etf_change_pct": 0.59,
           "error": "'data'"
         }
       ],
@@ -199,7 +220,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.41,
           "chg_3m": 14.71,
           "chg_6m": 13.64,
@@ -209,18 +230,25 @@
           "scale_raw": "142.75亿",
           "established": "2023-05-31",
           "manager": "张钟玉",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.1,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.105,
-          "etf_change_pct": 0.62,
+          "etf_price": 2.11,
+          "etf_change_pct": 0.24,
           "error": "'data'"
         }
       ],
@@ -242,7 +270,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.43,
           "chg_3m": 14.65,
           "chg_6m": 13.47,
@@ -252,18 +280,25 @@
           "scale_raw": "122.63亿",
           "established": "2022-07-21",
           "manager": "倪斌",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.6,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.5,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.466,
-          "etf_change_pct": 1.61,
+          "etf_price": 2.479,
+          "etf_change_pct": 0.53,
           "error": "'data'"
         }
       ],
@@ -285,7 +320,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.44,
           "chg_3m": 14.7,
           "chg_6m": 13.58,
@@ -295,18 +330,25 @@
           "scale_raw": "107.20亿",
           "established": "2023-04-12",
           "manager": "刘重杰",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.35,
-          "etf_change_pct": 1.47,
+          "etf_price": 2.365,
+          "etf_change_pct": 0.64,
           "error": "'data'"
         }
       ],
@@ -328,7 +370,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 3.76,
           "chg_3m": 6.04,
           "chg_6m": 6.6,
@@ -338,18 +380,25 @@
           "scale_raw": "88.46亿",
           "established": "2023-03-23",
           "manager": "张其思",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.6,
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.032,
-          "etf_change_pct": 1.6,
+          "etf_price": 2.024,
+          "etf_change_pct": -0.39,
           "error": "'data'"
         }
       ],
@@ -371,7 +420,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.14,
           "chg_3m": 14.31,
           "chg_6m": 13.38,
@@ -381,18 +430,25 @@
           "scale_raw": "81.97亿",
           "established": "2023-07-12",
           "manager": "冉凌浩",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.8,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 1.813,
-          "etf_change_pct": 2.14,
+          "etf_price": 1.819,
+          "etf_change_pct": 0.33,
           "error": "'data'"
         }
       ],
@@ -414,7 +470,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.43,
           "chg_3m": 14.71,
           "chg_6m": 13.71,
@@ -424,18 +480,25 @@
           "scale_raw": "57.50亿",
           "established": "2023-08-17",
           "manager": "林伟斌",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.1,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.036,
-          "etf_change_pct": 1.34,
+          "etf_price": 2.048,
+          "etf_change_pct": 0.59,
           "error": "'data'"
         }
       ],
@@ -457,7 +520,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.36,
           "chg_3m": 14.53,
           "chg_6m": 13.24,
@@ -467,18 +530,25 @@
           "scale_raw": "54.70亿",
           "established": "2023-03-01",
           "manager": "柳军",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.8,
           "custody_fee": 0.2,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.491,
-          "etf_change_pct": 1.8,
+          "etf_price": 2.505,
+          "etf_change_pct": 0.56,
           "error": "'data'"
         }
       ],
@@ -500,7 +570,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.41,
           "chg_3m": 14.66,
           "chg_6m": 13.58,
@@ -510,18 +580,25 @@
           "scale_raw": "53.54亿",
           "established": "2023-03-30",
           "manager": "乐无穹",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.373,
-          "etf_change_pct": 1.76,
+          "etf_price": 2.385,
+          "etf_change_pct": 0.51,
           "error": "'data'"
         }
       ],
@@ -543,7 +620,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.43,
           "chg_3m": 14.7,
           "chg_6m": 13.52,
@@ -553,18 +630,25 @@
           "scale_raw": "52.15亿",
           "established": "2023-04-19",
           "manager": "万琼",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.437,
-          "etf_change_pct": 1.71,
+          "etf_price": 2.45,
+          "etf_change_pct": 0.53,
           "error": "'data'"
         }
       ],
@@ -586,7 +670,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 3.6,
           "chg_3m": 6.55,
           "chg_6m": 5.81,
@@ -596,18 +680,25 @@
           "scale_raw": "44.04亿",
           "established": "2022-10-12",
           "manager": "赵宗庭",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.6,
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.032,
-          "etf_change_pct": 1.4,
+          "etf_price": 2.021,
+          "etf_change_pct": -0.54,
           "error": "'data'"
         }
       ],
@@ -629,7 +720,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.43,
           "chg_3m": 14.67,
           "chg_6m": 13.67,
@@ -639,18 +730,25 @@
           "scale_raw": "28.41亿",
           "established": "2023-10-25",
           "manager": "葛俊阳",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.1,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.071,
-          "etf_change_pct": 1.52,
+          "etf_price": 2.08,
+          "etf_change_pct": 0.43,
           "error": "'data'"
         }
       ],
@@ -665,7 +763,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.2,
           "chg_3m": 13.79,
           "chg_6m": 7.81,
@@ -675,18 +773,25 @@
           "scale_raw": "22.73亿",
           "established": "2023-11-06",
           "manager": "林伟斌",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.1,
           "fee": "nan",
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.852,
-          "etf_change_pct": 1.7
+          "etf_price": 1.851,
+          "etf_change_pct": -0.05
         }
       ],
       "series_id": "易方达__美国50ETF易方达__etf",
@@ -707,7 +812,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 7.58,
           "chg_3m": 14.49,
           "chg_6m": 8.2,
@@ -717,18 +822,25 @@
           "scale_raw": "13.27亿",
           "established": "2024-02-05",
           "manager": "乐无穹",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
+          "buy_status_history": [
+            {
+              "date": "2026-09-08",
+              "buy_status": "暂停申购",
+              "daily_limit": 0.0
+            }
+          ],
           "buy_rules": [],
           "sell_rules": [],
           "mgmt_fee": 0.5,
           "custody_fee": 0.15,
           "fee": "nan",
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.66,
-          "etf_change_pct": 1.78
+          "etf_price": 1.661,
+          "etf_change_pct": 0.06
         }
       ],
       "series_id": "汇添富__美国50ETF汇添富__etf",
@@ -756,7 +868,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-09-03",
+          "nav_date": "2026-09-04",
           "chg_1m": 3.8,
           "chg_3m": 6.24,
           "chg_6m": 6.69,
@@ -766,7 +878,7 @@
           "scale_raw": "9.67亿",
           "established": "2022-05-09",
           "manager": "艾小军",
-          "buy_status": "场内交易",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
           "buy_status_history": [
             {
@@ -781,10 +893,10 @@
           "custody_fee": 0.15,
           "fee": "nan",
           "sale_service_fee": 0.8,
-          "sell_status": "场内交易",
+          "sell_status": "暂停赎回",
           "buy_min": 0.0,
-          "etf_price": 2.081,
-          "etf_change_pct": 1.41,
+          "etf_price": 2.079,
+          "etf_change_pct": -0.1,
           "error": "'data'"
         }
       ],
