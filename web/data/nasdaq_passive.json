@@ -280,7 +280,7 @@
           "fund_company": "广发基金管理有限公司",
           "fund_type_xq": "QDII-股票",
           "full_name": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
-          "buy_status": "限大额",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
           "buy_rules": [
             {
@@ -343,7 +343,7 @@
           "scale_raw": "64.93亿",
           "established": "2018-10-25",
           "manager": "刘杰",
-          "buy_status": "限大额",
+          "buy_status": "暂停申购",
           "daily_limit": 0.0,
           "buy_rules": [
             {
