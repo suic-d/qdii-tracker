@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-scripts/pipeline/verify_data.py — 数据侧黄金样例校验
+scripts/checks/verify_data.py — 数据侧黄金样例校验
 
-从 knowledge/golden-fixtures.md 解析内嵌的 JSON 数据块，
+从 scripts/checks/golden-fixtures.json 读取机器消费的黄金样例，
 与 web/data/*.json 逐条核对。
 
 用法：
@@ -10,21 +10,15 @@ scripts/pipeline/verify_data.py — 数据侧黄金样例校验
     from pipeline.verify_data import run_verification  # 被 fundctl.py check 调用
 """
 import json
-import re
 import sys
 
 from core.constants import ROOT_DIR, DATA_DIR
-FIXTURES_MD = ROOT_DIR / "knowledge" / "golden-fixtures.md"
+FIXTURES_JSON = ROOT_DIR / "scripts" / "checks" / "golden-fixtures.json"
 
 
 def _load_fixtures() -> list:
-    """从 knowledge/golden-fixtures.md 提取最后一个 ```json 代码块的 fixtures 数据。"""
-    text = FIXTURES_MD.read_text(encoding="utf-8")
-    blocks = re.findall(r"```json\n(.*?)\n```", text, re.DOTALL)
-    if not blocks:
-        return []
-    doc = json.loads(blocks[-1])
-    return doc.get("fixtures", [])
+    """从 scripts/checks/golden-fixtures.json 读取 fixtures 数据。"""
+    return json.loads(FIXTURES_JSON.read_text(encoding="utf-8")).get("fixtures", [])
 
 
 def _load_all_series() -> dict:

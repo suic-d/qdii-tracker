@@ -1,11 +1,11 @@
 #!/bin/sh
-# 提交前自动同步文档，防止 README 目录树 / 命令列表、knowledge/INDEX、AGENTS.md 滞后。
+# 提交前自动同步文档，防止 README 目录树 / 命令列表、docs/、AGENTS.md 滞后。
 # 只把 doc_sync 实际改动过的文档重新 add，避免 partial commit 时夹带未暂存文档。
 # 启用方式：scripts/setup_hooks.sh（git config core.hooksPath .githooks）
 set -e
 
 ROOT="$(git rev-parse --show-toplevel)"
-DOCS="README.md knowledge/INDEX.md AGENTS.md"
+DOCS="README.md docs/gotchas.md docs/architecture.md AGENTS.md"
 
 cd "$ROOT"
 before=""

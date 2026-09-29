@@ -48,7 +48,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -252,12 +252,7 @@
             {
               "date": "2026-08-29",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
-            },
-            {
-              "date": "2026-09-02",
-              "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-03",
@@ -349,12 +344,7 @@
             {
               "date": "2026-08-29",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
-            },
-            {
-              "date": "2026-09-02",
-              "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-03",
@@ -431,7 +421,7 @@
             {
               "date": "2026-09-01",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-04",
@@ -518,7 +508,7 @@
             {
               "date": "2026-07-17",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-07-20",
@@ -528,7 +518,7 @@
             {
               "date": "2026-08-10",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-08-13",
@@ -543,7 +533,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 2000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-24",
@@ -638,7 +628,7 @@
             {
               "date": "2026-07-17",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-07-20",
@@ -648,7 +638,7 @@
             {
               "date": "2026-08-10",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-08-13",
@@ -663,7 +653,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 2000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-24",
@@ -738,12 +728,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "鹏华香港美国互联网股票型证券投资基金(LOF)",
           "buy_status": "暂停申购",
-          "daily_limit": 10000.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 10000.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -812,7 +802,7 @@
           "established": "2019-04-15",
           "manager": "李悦",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -889,7 +879,7 @@
             {
               "date": "2026-09-02",
               "buy_status": "暂停申购",
-              "daily_limit": 3000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-19",
@@ -978,7 +968,7 @@
             {
               "date": "2026-09-02",
               "buy_status": "暂停申购",
-              "daily_limit": 3000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-19",
@@ -1066,7 +1056,7 @@
             {
               "date": "2026-09-12",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-15",
@@ -1152,12 +1142,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "宏利印度机会股票型证券投资基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 0.01
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -1246,7 +1236,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1332,7 +1322,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1534,7 +1524,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 600000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1624,7 +1614,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 600000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1833,7 +1823,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1928,7 +1918,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2326,7 +2316,7 @@
           "established": "2021-03-03",
           "manager": "冯剑峰",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<10万",
@@ -2389,7 +2379,7 @@
           "established": "2021-03-03",
           "manager": "冯剑峰",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -2623,7 +2613,7 @@
             {
               "date": "2026-09-08",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-09",
@@ -2693,7 +2683,7 @@
           "established": "2020-01-19",
           "manager": "范刚强",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -2752,7 +2742,7 @@
           "established": "2020-01-19",
           "manager": "范刚强",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -2839,7 +2829,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 5000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2919,7 +2909,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 5000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3028,7 +3018,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3110,7 +3100,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "嘉实全球互联网股票型证券投资基金",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<50万",
@@ -3184,7 +3174,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "嘉实全球互联网股票型证券投资基金",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<50万",
@@ -3282,7 +3272,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3357,7 +3347,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3690,7 +3680,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3782,7 +3772,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3868,7 +3858,7 @@
             {
               "date": "2026-07-17",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-07-20",
@@ -3883,7 +3873,7 @@
             {
               "date": "2026-08-10",
               "buy_status": "暂停申购",
-              "daily_limit": 20000.0
+              "daily_limit": null
             },
             {
               "date": "2026-08-13",
@@ -3908,7 +3898,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3923,7 +3913,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-24",
@@ -3933,7 +3923,7 @@
             {
               "date": "2026-09-25",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-29",
@@ -4028,7 +4018,7 @@
             {
               "date": "2026-07-17",
               "buy_status": "暂停申购",
-              "daily_limit": 500.0
+              "daily_limit": null
             },
             {
               "date": "2026-07-20",
@@ -4043,7 +4033,7 @@
             {
               "date": "2026-08-10",
               "buy_status": "暂停申购",
-              "daily_limit": 20000.0
+              "daily_limit": null
             },
             {
               "date": "2026-08-13",
@@ -4068,7 +4058,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 1000000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4083,7 +4073,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-24",
@@ -4093,7 +4083,7 @@
             {
               "date": "2026-09-25",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-29",
@@ -4188,7 +4178,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4267,7 +4257,7 @@
           "established": "2021-11-23",
           "manager": "张琴",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<50万",
@@ -4367,7 +4357,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4458,7 +4448,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100000.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4822,7 +4812,7 @@
           "established": "2023-03-14",
           "manager": "邓云龙",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -5014,7 +5004,7 @@
           "established": "2023-11-13",
           "manager": "张琴",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",

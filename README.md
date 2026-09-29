@@ -1,6 +1,6 @@
 # US Fund Tracker · 美股基金追踪看板
 
-美股 QDII 基金追踪看板。纯静态部署，零后端。**🤖 Agent 模式开箱即用**（Codex 自动读 AGENTS.md + knowledge/）。
+美股 QDII 基金追踪看板。纯静态部署，零后端。**🤖 Agent 模式开箱即用**（Codex 自动读 AGENTS.md + docs/）。
 
 🌐 **在线看板**：<https://zhouminghan.github.io/qdii-tracker/>
 📦 **源码仓库**：<https://github.com/zhouminghan/qdii-tracker>
@@ -10,7 +10,10 @@
 
 ## ✨ 核心功能
 
-- **双 Tab · 8 分组**：场外基金（标普500 / 纳指100 / 美股主动 / 全球指数 / 全球其他）+ 场内 ETF
+- **三 Tab · 8 分组**：场外基金（标普500 / 纳指100 / 美股主动 / 全球指数 / 全球其他）· 场内 ETF · 投资知识
+- **🔍 站内搜索**：按基金名/代码实时过滤当前表格（仅搜索本站收录的基金，不联网）
+- **📚 投资知识**：场内 vs 场外、A/C 类份额、LOF 套利、QDII 选基（跟踪误差 + 夏普）、纳指 ETF 溢价成因，按子分类筛选
+- **🌗 深浅双主题**：zinc 中性暗色 + 亮色，表头吸顶，主题偏好记忆
 - **📈 历史走势图**：弹窗 SVG 折线图，9 档区间，Crosshair 悬停交互
 - **📊 持仓详情 Modal**：业绩 8 维度 + 费率结构 + Top10 重仓股（实时行情）
 - **🏷️ 市场参照系**：道琼斯 / 标普500 / 纳指 / 美元汇率实时指标卡 + 历史日 K
@@ -63,17 +66,14 @@ qdii-tracker/
 │   ├── index.html
 │   ├── robots.txt
 │   └── sitemap.xml
-├── knowledge/    # 解释记忆 — Agent 知识库
-│   ├── INDEX.md
-│   ├── data-schema.md
-│   ├── data-sources.md
-│   ├── golden-fixtures.md
-│   ├── gotchas.md
-│   └── pipeline-contracts.md
+├── docs/    # 人读文档 — 踩坑 / 架构
+│   ├── architecture.md
+│   └── gotchas.md
 ├── test/    # 测试与 UI 回归（pytest + Playwright）
 │   ├── ui_scenarios/
 │   ├── run_ui_scenarios.py
 │   ├── test_classify.py
+│   ├── test_purchase_history.py
 │   └── test_utils.py
 ├── .gitignore
 ├── AGENTS.md

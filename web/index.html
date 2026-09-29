@@ -46,7 +46,7 @@
 
   <!-- 顶部导航 -->
   <header class="bg-white dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700 sticky top-0 z-10">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
+    <div class="topbar-inner flex items-center gap-2 py-3 sm:py-4">
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <div class="w-8 h-8 bg-stone-900 dark:bg-stone-100 rounded-lg flex items-center justify-center text-white dark:text-stone-900 font-bold text-sm flex-shrink-0">美</div>
         <div class="min-w-0">
@@ -54,29 +54,38 @@
           <div class="text-[11px] sm:text-xs text-stone-500 dark:text-stone-400 mt-0.5 truncate">美股基金追踪看板</div>
         </div>
       </div>
-      <nav class="flex items-center gap-1 sm:gap-2 text-sm flex-shrink-0" aria-label="页面导航">
-        <button type="button" class="theme-toggle" id="themeToggle" title="切换主题" aria-label="切换深色模式">
-          <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-        </button>
-        <div class="flex items-center gap-1 sm:gap-2" role="tablist" aria-label="基金类型切换">
-          <button type="button" id="tab-offshore" role="tab" aria-controls="panel-offshore" aria-selected="true" tabindex="0" class="tab-btn tab-active px-3 sm:px-4 py-2 rounded-lg transition text-xs sm:text-sm" data-tab="offshore">🏦 <span class="hidden sm:inline">场外基金</span><span class="sm:hidden">场外</span></button>
-          <button type="button" id="tab-etf" role="tab" aria-controls="panel-etf" aria-selected="false" tabindex="-1" class="tab-btn px-3 sm:px-4 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs sm:text-sm" data-tab="etf">📈 <span class="hidden sm:inline">场内 ETF</span><span class="sm:hidden">ETF</span></button>
-        </div>
-      </nav>
+      <div class="flex items-center gap-1 sm:gap-2 text-sm" role="tablist" aria-label="基金类型切换">
+        <button type="button" id="tab-offshore" role="tab" aria-controls="panel-offshore" aria-selected="true" tabindex="0" class="tab-btn tab-active px-3 sm:px-4 py-2 rounded-lg transition text-xs sm:text-sm" data-tab="offshore">🏦 <span class="hidden sm:inline">场外基金</span><span class="sm:hidden">场外</span></button>
+        <button type="button" id="tab-etf" role="tab" aria-controls="panel-etf" aria-selected="false" tabindex="-1" class="tab-btn px-3 sm:px-4 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs sm:text-sm" data-tab="etf">📈 <span class="hidden sm:inline">场内 ETF</span><span class="sm:hidden">ETF</span></button>
+        <button type="button" id="tab-knowledge" role="tab" aria-controls="panel-knowledge" aria-selected="false" tabindex="-1" class="tab-btn px-3 sm:px-4 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs sm:text-sm" data-tab="knowledge">📚 <span class="hidden sm:inline">投资知识</span><span class="sm:hidden">知识</span></button>
+      </div>
+      <div class="header-spacer"></div>
+      <label class="fund-search items-center gap-2 h-9 px-3 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-500 dark:text-stone-400" title="仅搜索本站收录的基金，不联网">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
+        <input id="fund-search" type="search" placeholder="搜索项目内基金 / 代码" aria-label="搜索项目内基金（仅本站，不联网）" autocomplete="off" spellcheck="false" class="w-36 lg:w-44 bg-transparent outline-none text-stone-800 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 text-xs" />
+      </label>
+      <button type="button" class="theme-toggle" id="themeToggle" title="切换主题" aria-label="切换深色模式">
+        <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
     </div>
   </header>
 
-  <!-- 主标题区 -->
-  <section class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 sm:pt-8 pb-4 sm:pb-6">
-    <div class="text-xs tracking-widest text-stone-500 dark:text-stone-400 uppercase mb-2">US EQUITY FUND TRACKER</div>
-    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">美股基金追踪看板</h1>
-    <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400" id="page-subtitle">支付宝 / 天天基金可买的场外基金，按投资标的分三组：标普500 / 纳指100 / 美股主动。</p>
-
-    <!-- 基金知识说明（可折叠，按 Tab 动态显示） -->
-    <div class="mt-4" id="knowledge-cards">
-      <!-- 卡片 1：场内 vs 场外（仅在场内 ETF Tab 显示） -->
-      <details class="bg-sky-50 dark:bg-stone-900/50 border border-sky-200 dark:border-stone-700 rounded-xl overflow-hidden" id="card-onshore-offshore" data-for-tabs="etf" open>
+  <!-- 投资知识 Tab -->
+  <section id="panel-knowledge" role="tabpanel" aria-labelledby="tab-knowledge" data-category="knowledge" class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 sm:pt-8">
+    <div class="flex items-baseline gap-2 mb-3">
+      <h2 class="text-lg font-bold">📚 投资知识</h2>
+      <span class="text-xs text-stone-400 dark:text-stone-500">· 场内/场外、A/C 类、LOF 套利、选基、溢价</span>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 mb-4" id="kb-chips" role="group" aria-label="投资知识分类">
+      <button type="button" class="chip chip-active" data-kb-filter="onshore" aria-pressed="true">场内 vs 场外</button>
+      <button type="button" class="chip" data-kb-filter="share" aria-pressed="false">A/C 类份额</button>
+      <button type="button" class="chip" data-kb-filter="lof" aria-pressed="false">LOF 套利</button>
+      <button type="button" class="chip" data-kb-filter="pick" aria-pressed="false">选基</button>
+      <button type="button" class="chip" data-kb-filter="premium" aria-pressed="false">溢价</button>
+    </div>
+      <!-- 卡片 1：场内 vs 场外 -->
+      <details class="bg-sky-50 dark:bg-stone-900/50 border border-sky-200 dark:border-stone-700 rounded-xl overflow-hidden" id="card-onshore-offshore" data-kb-filter="onshore" open>
         <summary class="cursor-pointer px-5 py-3 text-sm font-medium text-sky-900 dark:text-stone-300 hover:bg-sky-100 dark:hover:bg-stone-700 transition flex items-center gap-2 select-none">
           <span>🏛️</span>
           <span>场内 ETF vs 场外基金：有什么区别？</span>
@@ -148,8 +157,8 @@
         </div>
       </details>
 
-      <!-- 卡片 2：A/C/D/E/F/I 决策对照表（仅在场外 Tab 显示） -->
-      <details class="bg-amber-50 dark:bg-stone-900/50 border border-amber-200 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-share-class" data-for-tabs="offshore" open>
+      <!-- 卡片 2：A/C/D/E/F/I 决策对照表 -->
+      <details class="bg-amber-50 dark:bg-stone-900/50 border border-amber-200 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-share-class" data-kb-filter="share" open>
         <summary class="cursor-pointer px-5 py-3 text-sm font-medium text-amber-900 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition flex items-center gap-2 select-none">
           <span>📊</span>
           <span>A / C / D / E / F / I 份额怎么选？—— 同一只基金不同份额的对比</span>
@@ -212,8 +221,8 @@
         </div>
       </details>
 
-      <!-- 卡片 3：场外转场内（LOF）套利（在场外 / 场内 Tab 均显示） -->
-      <details class="bg-violet-50 dark:bg-stone-900/50 border border-violet-200 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-lof-transfer" data-for-tabs="offshore,etf" open>
+      <!-- 卡片 3：场外转场内（LOF）套利 -->
+      <details class="bg-violet-50 dark:bg-stone-900/50 border border-violet-200 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-lof-transfer" data-kb-filter="lof" open>
         <summary class="cursor-pointer px-5 py-3 text-sm font-medium text-violet-900 dark:text-stone-300 hover:bg-violet-100 dark:hover:bg-stone-700 transition flex items-center gap-2 select-none">
           <span>🔁</span>
           <span>场外转场内（LOF）怎么套利？—— 谁决定能不能搬进去卖</span>
@@ -288,12 +297,61 @@
           </div>
         </div>
       </details>
-    </div>
+
+      <!-- 卡片 4：QDII 选基 -->
+      <details class="bg-emerald-50 dark:bg-stone-900/50 border border-emerald-100 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-fund-pick" data-kb-filter="pick" open>
+        <summary class="cursor-pointer px-5 py-3 text-sm font-medium text-emerald-900 dark:text-stone-300 hover:bg-emerald-100 dark:hover:bg-stone-700 transition flex items-center gap-2 select-none">
+          <span>🎯</span>
+          <span>QDII 怎么选基？—— 只看两个指标</span>
+        </summary>
+        <div class="px-5 pb-4 pt-2 bg-white dark:bg-stone-800">
+          <p class="text-xs text-stone-500 dark:text-stone-400 mb-3">同类 QDII 纳指/标普基金一大堆，<b>先看准不准，再比值不值</b>，最后别忘了汇率和费率。</p>
+          <table class="w-full text-xs border border-stone-200 dark:border-stone-700 rounded-lg overflow-hidden">
+            <thead class="bg-stone-50 dark:bg-stone-900 text-stone-600 dark:text-stone-400">
+              <tr class="border-b border-stone-200 dark:border-stone-700">
+                <th class="text-left px-3 py-2 font-medium" style="width:22%">指标</th>
+                <th class="text-left px-3 py-2 font-medium" style="width:52%">看什么</th>
+                <th class="text-left px-3 py-2 font-medium" style="width:26%">优秀线</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100">
+              <tr>
+                <td class="px-3 py-2"><b>跟踪误差</b></td>
+                <td class="px-3 py-2 text-stone-700 dark:text-stone-300">基金跟指数的偏离度，越小越<b>准</b>。QDII 受汇率、申赎、跨境成本影响，误差大就「跑偏」。</td>
+                <td class="px-3 py-2 text-emerald-700 dark:text-emerald-300"><b>&lt; 1%</b></td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2"><b>夏普比率</b></td>
+                <td class="px-3 py-2 text-stone-700 dark:text-stone-300">每承担 1 份风险赚多少超额收益，越高越<b>值</b>；要同类基金横向比才有意义。</td>
+                <td class="px-3 py-2 text-emerald-700 dark:text-emerald-300"><b>&gt; 2</b></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-3">⚠️ 两个指标只在「跟踪同一指数」的基金之间横向比。汇率敞口与费率（管理费 + 申赎费）同样关键。</p>
+        </div>
+      </details>
+
+      <!-- 卡片 5：纳指科技 ETF 溢价成因 -->
+      <details class="bg-rose-50 dark:bg-stone-900/50 border border-rose-200 dark:border-stone-700 rounded-xl overflow-hidden mt-3" id="card-premium-cause" data-kb-filter="premium" open>
+        <summary class="cursor-pointer px-5 py-3 text-sm font-medium text-rose-900 dark:text-stone-300 hover:bg-rose-100 dark:hover:bg-stone-700 transition flex items-center gap-2 select-none">
+          <span>🔥</span>
+          <span>纳指科技 ETF 溢价从哪来？</span>
+        </summary>
+        <div class="px-5 pb-4 pt-2 bg-white dark:bg-stone-800">
+          <p class="text-xs text-stone-500 dark:text-stone-400 mb-3">以 159509 纳指科技 ETF 溢价一度飙到 <b>24%</b> 为例，溢价不是「无脑追」，而是两个因素共同「憋」出来的：</p>
+          <div class="bg-rose-50 dark:bg-stone-900/50 border border-rose-100 dark:border-stone-700 rounded-lg px-3 py-2 text-rose-800 dark:text-rose-300 mb-2">
+            ① <b>场外通道关闭</b>：场外关闭长达 5 个月，想按净值买都买不到，资金被逼往场内抢。
+          </div>
+          <div class="bg-rose-50 dark:bg-stone-900/50 border border-rose-100 dark:border-stone-700 rounded-lg px-3 py-2 text-rose-800 dark:text-rose-300">
+            ② <b>QDII 额度卡死套利</b>：套利通道被堵住，场内外价差无法被「搬砖」抹平，溢价越憋越高。
+          </div>
+          <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-3">⚠️ 场外「开门 3000 元/日」只是场外透气口，<b>不是</b>场内溢价的泄压阀。看到高溢价要警惕：等你搬进去卖时，溢价可能已缩水甚至变折价。</p>
+        </div>
+      </details>
 
   </section>
 
-  <!-- 2 大板块：场外基金 / 场内 ETF -->
-  <main id="main-content" class="max-w-7xl mx-auto px-3 sm:px-6 space-y-8">
+  <main id="main-content" class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 sm:pt-8 space-y-8">
     <!-- ========== 市场参照系：美股指数 + 美元汇率 ========== -->
     <section id="market-overview" aria-label="市场参照系">
       <div class="flex items-end justify-between mb-3 gap-4">

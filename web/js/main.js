@@ -18,6 +18,10 @@
       etf:      { key: 'series_scale', dir: 'desc' },
     };
 
+    // 当前激活 Tab + 站内搜索词（renderCategory 与搜索框共用）
+    let ACTIVE_TAB = 'offshore';
+    let SEARCH_QUERY = '';
+
     // 以下工具函数已抽到 web/js/utils.js（普通 script，全局作用域）：
     //   shareSort / buyStatusRank / getOffshoreDisplayValues / getSeriesDisplayNavDate / getSortValue / sortSeries
     //   pickRepresentativeDate / pickGroupHeaderDate / pickMaxDate / pickTabNavHeaderDate / shouldHideRowNavDate / syncRowNavDateVisibility / renderRowNavDateHtml
@@ -89,8 +93,8 @@
     }
 
     function renderStalenessBanner(generatedAtStr) {
-      const sub = document.getElementById('page-subtitle');
-      if (!sub) return;
+      const mainEl = document.getElementById('main-content');
+      if (!mainEl) return;
       let banner = document.getElementById('staleness-banner');
       const st = getDataFreshnessState(generatedAtStr);
       if (!st.stale) {
@@ -100,8 +104,8 @@
       if (!banner) {
         banner = document.createElement('div');
         banner.id = 'staleness-banner';
-        banner.className = 'mt-3 rounded-xl px-4 py-3 text-xs border border-amber-300 bg-amber-50 text-amber-900 dark:bg-stone-900/50 dark:border-stone-700 dark:text-amber-200';
-        sub.parentNode.insertBefore(banner, sub.nextSibling);
+        banner.className = 'rounded-xl px-4 py-3 text-xs border border-amber-300 bg-amber-50 text-amber-900 dark:bg-stone-900/50 dark:border-stone-700 dark:text-amber-200';
+        mainEl.insertBefore(banner, mainEl.firstChild);
       }
       banner.innerHTML = `⚠️ 数据可能陈旧（最后更新约 ${st.ageH} 小时前），部署可能未成功。` +
         `<button type="button" onclick="if(typeof loadData==='function'){loadData()}else{location.reload()}" class="ml-2 underline font-medium">点此重试加载</button>` +
@@ -239,8 +243,29 @@
       const container = document.getElementById(`table-${tab}`);
       const { groups, sortConf, totalSeries, totalShares, totalScale, latestNavDate, isEtf, isOffshore, showHoldings } = vm;
 
-      document.getElementById(`count-${tab}`).textContent =
-        `${totalSeries} 个系列 · ${totalShares} 只份额 · 总规模 ${totalScale.toFixed(0)} 亿`;
+      const searchQ = (SEARCH_QUERY || '').trim().toLowerCase();
+      let displayGroups = groups;
+      if (searchQ) {
+        displayGroups = groups.map(g => ({
+          ...g,
+          items: g.items.filter(s => {
+            const name = [String(s.series_name || ''), String(s.display_name || '')].join(' ').toLowerCase();
+            const code = String(s.default_share_code || '');
+            if (name.includes(searchQ) || code.includes(searchQ)) return true;
+            return (s.shares || []).some(sh =>
+              String(sh.code || '').includes(searchQ) || String(sh.name || '').toLowerCase().includes(searchQ));
+          })
+        })).filter(g => g.items.length);
+      }
+
+      if (searchQ) {
+        let mSeries = 0, mShares = 0;
+        displayGroups.forEach(g => { mSeries += g.items.length; g.items.forEach(s => { mShares += s.shares.length; }); });
+        document.getElementById(`count-${tab}`).textContent = `搜索到 ${mSeries} 个系列 · ${mShares} 只份额`;
+      } else {
+        document.getElementById(`count-${tab}`).textContent =
+          `${totalSeries} 个系列 · ${totalShares} 只份额 · 总规模 ${totalScale.toFixed(0)} 亿`;
+      }
 
       const navHeaderSub = fmtMD(latestNavDate);
       STATE._navDate = STATE._navDate || {};
@@ -252,14 +277,16 @@
       const colspan = isEtf ? 12 : 12;  // 留作未来 fallback 用，渲染逻辑不依赖此值
 
       const pieces = [];
-      for (const group of groups) {
+      for (const group of displayGroups) {
         // Chips 已承载分组标识，不再渲染组内大紫条
         // 同一组内所有 series 用该组的 isActive 判断是否显示"持仓"按钮
         pieces.push(group.items.map(s => {
           return renderSeries(s, group.isActive, isEtf, showHoldings, group.key);
         }).join(''));
       }
-      const bodyHtml = pieces.join('');
+      const bodyHtml = pieces.join('') || (searchQ
+        ? `<tr><td colspan="12" class="px-4 py-10 text-center text-stone-400 dark:text-stone-500 text-sm">未找到匹配的基金或代码</td></tr>`
+        : '');
 
       // 排序图标 helper：当前排序列 → 显示 ↓/↑；非当前列 → 显示淡色双向箭头 ⇅
       const sortIcon = (key) => {
@@ -321,7 +348,7 @@
 
       container.innerHTML = `
         <table class="w-full text-sm">
-          <thead class="bg-stone-50 dark:bg-stone-900 border-b border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-400 text-xs">
+          <thead class="bg-white dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-400 text-xs">
             <tr>
               <th class="text-left py-3 px-3 font-medium w-8"></th>
               <th class="text-left py-3 px-3 font-medium">基金系列</th>
@@ -973,34 +1000,22 @@
       }
     });
 
-    // 各板块的副标题文案
-    // SUBTITLE_BY_TAB 已移到 web/js/config.js
-
-    // 根据当前 Tab 显示 / 隐藏知识卡片
-    function updateKnowledgeCards(tab) {
-      document.querySelectorAll('#knowledge-cards details[data-for-tabs]').forEach(card => {
-        const tabs = (card.dataset.forTabs || '').split(',').map(s => s.trim());
-        card.style.display = tabs.includes(tab) ? '' : 'none';
-      });
-    }
-
     function switchTab(tab) {
-      // 只在带 data-category 的业务 section 之间切换；
-      // #market-overview（市场参照系）无该属性，始终保持可见。
-      document.querySelectorAll('main > section[data-category]').forEach(sec => {
+      ACTIVE_TAB = tab;
+      // 只在带 data-category 的 section 之间切换（场外/场内/投资知识）；
+      document.querySelectorAll('section[data-category]').forEach(sec => {
         const isCurrent = sec.dataset.category === tab;
         sec.style.display = isCurrent ? '' : 'none';
         sec.setAttribute('aria-hidden', isCurrent ? 'false' : 'true');
       });
+      // 市场参照系：投资知识页不展示，场外/场内展示
+      const market = document.getElementById('market-overview');
+      if (market) market.style.display = (tab === 'knowledge') ? 'none' : '';
       document.querySelectorAll('.tab-btn').forEach(btn => {
         const isCurrent = btn.dataset.tab === tab;
         btn.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
         btn.setAttribute('tabindex', isCurrent ? '0' : '-1');
       });
-      updateKnowledgeCards(tab);
-      // 更新副标题
-      const sub = document.getElementById('page-subtitle');
-      if (sub && SUBTITLE_BY_TAB[tab]) sub.textContent = SUBTITLE_BY_TAB[tab];
     }
 
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1021,3 +1036,43 @@
     window.renderCategory = renderCategory;
     window.fetchStocksLive = fetchStocksLive;
     window.loadData = loadData;
+
+    // 站内搜索（仅筛当前 Tab 已加载的基金/代码，不联网）
+    const searchInput = document.getElementById('fund-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        SEARCH_QUERY = searchInput.value || '';
+        if (ACTIVE_TAB === 'offshore' || ACTIVE_TAB === 'etf') renderCategory(ACTIVE_TAB);
+      });
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          SEARCH_QUERY = '';
+          if (ACTIVE_TAB === 'offshore' || ACTIVE_TAB === 'etf') renderCategory(ACTIVE_TAB);
+        }
+      });
+    }
+
+    // 表头吸顶：top 偏移 = 顶栏实际高度（桌面端表格不横向滚动，sticky 生效）
+    function updateStickyTop() {
+      const header = document.querySelector('header');
+      document.documentElement.style.setProperty('--sticky-top', (header ? header.offsetHeight : 64) + 'px');
+    }
+    window.addEventListener('resize', updateStickyTop);
+    updateStickyTop();
+
+    // 投资知识子分类筛选：一次只展示一个分类（默认「场内 vs 场外」）
+    const kbChips = document.querySelectorAll('#kb-chips .chip');
+    const kbCards = document.querySelectorAll('#panel-knowledge details[data-kb-filter]');
+    function applyKbFilter(f) {
+      kbCards.forEach(d => { d.style.display = (d.dataset.kbFilter === f) ? '' : 'none'; });
+      kbChips.forEach(c => {
+        const active = c.dataset.kbFilter === f;
+        c.classList.toggle('chip-active', active);
+        c.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+    if (kbChips.length) {
+      kbChips.forEach(ch => ch.addEventListener('click', () => applyKbFilter(ch.dataset.kbFilter)));
+      applyKbFilter('onshore');
+    }

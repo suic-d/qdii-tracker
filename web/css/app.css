@@ -10,6 +10,8 @@
     }
     .up { color: #dc2626; }
     .down { color: #16a34a; }
+    html.dark .up { color: var(--dk-up); }
+    html.dark .down { color: var(--dk-down); }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -41,12 +43,11 @@
       70%  { box-shadow: 0 0 0 6px rgba(16,185,129,0); }
       100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
     }
+    .tab-btn { color: #57534e; }
     .tab-active {
-      background: rgba(28,25,23,.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      background: rgba(91, 108, 250, .10);
+      color: #4553e8;
+      font-weight: 600;
     }
     .logo-avatar {
       width: 38px;
@@ -152,36 +153,36 @@
             /* ====== 深色模式覆盖（Slate Dark Palette） ====== */
     /*
      * Slate Dark — 蓝灰板岩色系，对齐金融仪表盘常用 dark palette
-     * 分层：#0B1220 基底 → #0F172A 容器 → #1E293B 卡片 → #334155 弹窗
-     * 文本：#F1F5F9 主 → #CBD5E1 副 → #94A3B8 三 → #64748B 四
+     * 分层：#09090b 基底 → #18181b 容器 → #27272a 卡片 → #3f3f46 弹窗
+     * 文本：#fafafa 主 → #d4d4d8 副 → #a1a1aa 三 → #71717a 四
      * 对比度：txt-1/2/3 均 ≥ 4.5:1（AA）；txt-4 仅用于装饰/弱化
      */
     :root {
-      --dk-bg-root:    #0B1220;
-      --dk-bg-base:    #0F172A;
-      --dk-bg-card:    #1E293B;
-      --dk-bg-elevated:#334155;
-      --dk-glass:      rgba(15,23,42,0.88);
-      --dk-txt-1:      #F1F5F9;
-      --dk-txt-2:      #CBD5E1;
-      --dk-txt-3:      #94A3B8;
-      --dk-txt-4:      #64748B;
-      --dk-border:     rgba(148,163,184,0.14);
-      --dk-border-2:   rgba(148,163,184,0.24);
-      --dk-accent:     #F59E0B;
-      --dk-up:         #F87171;
-      --dk-down:       #4ADE80;
+      --dk-bg-root:    #09090b;
+      --dk-bg-base:    #18181b;
+      --dk-bg-card:    #27272a;
+      --dk-bg-elevated:#3f3f46;
+      --dk-glass:      rgba(24,24,27,0.88);
+      --dk-txt-1:      #fafafa;
+      --dk-txt-2:      #d4d4d8;
+      --dk-txt-3:      #a1a1aa;
+      --dk-txt-4:      #71717a;
+      --dk-border:     rgba(255,255,255,0.08);
+      --dk-border-2:   rgba(255,255,255,0.14);
+      --dk-accent:     #fbbf24;
+      --dk-up:         #f87171;
+      --dk-down:       #34d399;
     }
     html.dark body {
-      background: linear-gradient(175deg, #0B1220 0%, #0F172A 42%, #0B1220 100%);
+      background: linear-gradient(175deg, #09090b 0%, #18181b 42%, #09090b 100%);
       color: var(--dk-txt-1);
     }
     /* 氛围光 — 顶部/底部微弱的冷色光晕，替代原暖橙光（更干净） */
     html.dark::before {
       content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background:
-        radial-gradient(ellipse 90% 60% at 50% 0%,   rgba(99,102,241,0.07)  0%, transparent 55%),
-        radial-gradient(ellipse 60% 70% at 90% 100%, rgba(56,189,248,0.05) 0%, transparent 55%);
+        radial-gradient(ellipse 90% 60% at 50% 0%,   rgba(129,140,248,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 70% at 90% 100%, rgba(129,140,248,0.03) 0%, transparent 55%);
     }
 
     /* ===== 徽章 ===== */
@@ -193,9 +194,10 @@
     html.dark .badge-cny    { background: rgba(148,163,184,.14); color: var(--dk-txt-2); border-color: var(--dk-border); }
 
     /* ===== Tabs ===== */
+    html.dark .tab-btn { color: #d6d3d1; }
     html.dark .tab-active {
-      background: var(--dk-bg-card); color: var(--dk-txt-1);
-      border-color: var(--dk-border); box-shadow: 0 4px 12px rgba(0,0,0,.4);
+      background: rgba(129, 140, 248, .16);
+      color: #a5b4fc;
     }
 
     /* ===== Chips ===== */
@@ -251,14 +253,15 @@
     html.dark .text-stone-400 { color: var(--dk-txt-3) !important; }
     html.dark .text-stone-300 { color: var(--dk-txt-4) !important; }
     html.dark .dark\:text-stone-100 { color: var(--dk-txt-1) !important; }
-    html.dark .dark\:text-stone-200 { color: #E2E8F0 !important; }
+    html.dark .dark\:text-stone-200 { color: var(--dk-txt-2) !important; }
     html.dark .dark\:text-stone-300 { color: var(--dk-txt-2) !important; }
     html.dark .dark\:text-stone-400 { color: var(--dk-txt-3) !important; }
     html.dark .dark\:text-stone-500 { color: var(--dk-txt-4) !important; }
-    html.dark .dark\:text-stone-300\/80 { color: rgba(203,213,225,.8) !important; }
+    html.dark .dark\:text-stone-300\/80 { color: rgba(212,212,216,.8) !important; }
     html.dark .dark\:bg-stone-900  { background: var(--dk-bg-card) !important; }
     html.dark .dark\:bg-stone-800  { background: var(--dk-bg-base) !important; }
     html.dark .dark\:bg-stone-950  { background: var(--dk-bg-root) !important; }
+    html.dark .dark\:bg-stone-900\/50 { background-color: rgba(24,24,27,.5) !important; }
     html.dark .dark\:border-stone-700 { border-color: var(--dk-border-2) !important; }
     html.dark .dark\:border-stone-800 { border-color: var(--dk-border) !important; }
     html.dark .dark\:border-stone-700\/50 { border-color: var(--dk-border) !important; }
@@ -268,7 +271,7 @@
     html.dark .dark\:hover\:bg-stone-700\/50:hover { background: rgba(51,65,85,.5) !important; }
     html.dark .dark\:bg-white\/10 { background: rgba(255,255,255,.06) !important; }
     html.dark .text-gray-100 { color: var(--dk-txt-1) !important; }
-    html.dark .text-gray-200 { color: #E2E8F0 !important; }
+    html.dark .text-gray-200 { color: var(--dk-txt-2) !important; }
     html.dark .text-gray-300 { color: var(--dk-txt-2) !important; }
     html.dark .text-gray-400 { color: var(--dk-txt-3) !important; }
     html.dark .text-gray-500 { color: var(--dk-txt-4) !important; }
@@ -877,4 +880,64 @@
       .ss-top-bar { padding: 10px 14px; }
       .ss-modal-title { font-size: 14px; }
       .ss-save-primary { padding: 6px 14px; font-size: 12px; }
+    }
+
+    /* ===== 主表表头吸顶（桌面端，横向滚动时关闭） ===== */
+    @media (min-width: 768px) {
+      #table-offshore,
+      #table-etf { overflow: visible; }
+
+      #table-offshore thead th,
+      #table-etf thead th {
+        position: sticky;
+        top: var(--sticky-top, 64px);
+        z-index: 20;
+        background: #ffffff;
+        box-shadow: inset 0 -1px 0 #e7e5e4;
+      }
+      html.dark #table-offshore thead th,
+      html.dark #table-etf thead th {
+        background: var(--dk-bg-base);
+        box-shadow: inset 0 -1px 0 var(--dk-border-2);
+      }
+    }
+
+    /* ===== 顶栏布局（补齐预编译 tailwind 缺失的 utility） ===== */
+    .topbar-inner {
+      padding-left: 12px;
+      padding-right: 8px;
+    }
+    @media (min-width: 640px) {
+      .topbar-inner { padding-left: 24px; padding-right: 12px; }
+    }
+    .header-spacer { flex: 1 1 0%; }
+    .fund-search { display: none; }
+    @media (min-width: 768px) {
+      .fund-search { display: flex; }
+    }
+
+    /* ===== 补齐预编译 tailwind.css 缺失的工具类（本页实际用到） ===== */
+    .bg-transparent { background-color: transparent; }
+    .shrink-0 { flex-shrink: 0; }
+    .w-36 { width: 9rem; }
+    .list-decimal { list-style-type: decimal; }
+    .py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+
+    .bg-violet-50 { background-color: #f5f3ff; }
+    .border-violet-200 { border-color: #ddd6fe; }
+    .text-violet-900 { color: #4c1d95; }
+    .hover\:bg-violet-100:hover { background-color: #ede9fe; }
+
+    .border-rose-100 { border-color: #ffe4e6; }
+    .text-rose-700 { color: #be123c; }
+    .text-rose-800 { color: #9f1239; }
+    .hover\:bg-rose-100:hover { background-color: #ffe4e6; }
+
+    .placeholder\:text-stone-400::placeholder { color: #a8a29e; }
+    html.dark .dark\:placeholder\:text-stone-500::placeholder { color: #78716c; }
+    html.dark .dark\:text-emerald-300 { color: #6ee7b7; }
+    html.dark .dark\:text-rose-300 { color: #fda4af; }
+
+    @media (min-width: 1024px) {
+      .lg\:w-44 { width: 11rem; }
     }

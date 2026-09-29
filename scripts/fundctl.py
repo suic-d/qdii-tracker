@@ -166,30 +166,19 @@ def _all_share_codes() -> set:
 
 
 def _check_module_contracts():
-    """LAYER 5: 检查 knowledge/pipeline-contracts.md 中列出的 pipeline 模块是否有 docstring。
+    """LAYER 5: 检查 pipeline/ 模块是否都有 docstring。
 
     Returns:
         (ok: bool, warnings: list[str])
         ok 始终为 True（文档检查不阻止 pass/fail）。
     """
     pipeline_dir = ROOT_DIR / "scripts" / "pipeline"
-    contracts_md = ROOT_DIR / "knowledge" / "pipeline-contracts.md"
     warnings = []
 
-    # 从 contracts.md 提取模块名列表
-    module_names = set()
-    if contracts_md.exists():
-        content = contracts_md.read_text(encoding="utf-8")
-        import re
-        # 匹配 "## N. xxx.py" 格式的标题
-        for m in re.finditer(r'^##\s+\d+\.\s+(\w+)\.py', content, re.MULTILINE):
-            module_names.add(m.group(1))
-
-    for name in sorted(module_names):
-        fp = pipeline_dir / f"{name}.py"
-        if not fp.exists():
-            warnings.append(f"{name}.py: 模块不存在")
+    for fp in sorted(pipeline_dir.glob("*.py")):
+        if fp.name == "__init__.py":
             continue
+        name = fp.stem
         # 检查文件前 20 行是否包含模块功能描述
         first_20 = fp.read_text(encoding="utf-8").split("\n")[:20]
         # 跳过 shebang / coding / 空行 / import 后，查找 docstring 或注释描述

@@ -173,7 +173,9 @@ def calc_series_scale(shares: list) -> float:
              if s.get("share_class") in ("A", "默认")
              and s.get("currency", "人民币") == "人民币"]
     if a_rmb:
-        return a_rmb[0].get("scale") or 0
+        scale = a_rmb[0].get("scale")
+        if scale:
+            return scale
     return next((s.get("scale") for s in shares if s.get("scale")), 0)
 
 

@@ -67,8 +67,8 @@
 
 | 属性 | 内容 |
 |------|------|
-| **职责** | 解析 `knowledge/golden-fixtures.md` 中的 JSON fixtures，与 `web/data/*.json` 逐条核对 |
-| **输入文件** | `knowledge/golden-fixtures.md`、`web/data/*.json` |
+| **职责** | 读取 `scripts/checks/golden-fixtures.json` 中的 JSON fixtures，与 `web/data/*.json` 逐条核对 |
+| **输入文件** | `scripts/checks/golden-fixtures.json`、`web/data/*.json` |
 | **输出文件** | 无（返回错误列表） |
 | **依赖** | 无兄弟模块依赖 |
 

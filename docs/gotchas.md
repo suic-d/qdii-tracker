@@ -22,6 +22,8 @@
 | G016 | 「开放申购」基金日限额显示为哨兵值 ¥1000 亿 | 东方财富 `fund_purchase_em` 对不限额返回 `100000000000`，未归一化直接入库并参与排序/历史追踪 | `scripts/sources/akshare_source.py:fetch_purchase_data` → `>=1e11` 归一化为 None | ✅已修复 | 2026-09-11 | 2026-09-11 |
 | G017 | 「限购 1 万」这类短暂放宽在申购变更 tooltip 里看不到 | tooltip 只展示最近 3 条，短促的额度变化被后续调整挤出，用户误判「没记录到」 | `web/js/main.js:statusBadge` → 展示最近 8 条 | ✅已修复 | 2026-09-11 | 2026-09-11 |
 | G018 | 跨源交叉验证「假绿」：数据源不可用时仍报 OK | `run_cross_validation` 网络失败逐只静默跳过，`anomalies` 为空即返回 passed=True，`check` 打印「OK ✓」 | `scripts/checks/cross_validate.py` → 返回 `compared` 计数，0 只对比时报「⚠ 未验证」 | ✅已修复 | 2026-09-11 | 2026-09-11 |
+| G019 | 新增 Tailwind 类静默失效（顶栏/序号/卡片配色不生效） | 预编译 `tailwind.css` 只含原应用用到的部分工具类；新加的 `flex-1`/`md:flex`/`list-decimal`/`w-36`/`bg-violet-50` 等不在产物里，无报错但样式不生效 | `web/index.html` + `web/css/app.css` → 在 app.css 用自定义类补齐（`.header-spacer`/`.fund-search` 等），或用已编译类 | ✅已修复 | 2026-09-29 | 2026-09-29 |
+| G020 | 申购变更 tooltip 连续两条都显示「暂停」（博时纳斯达克100ETF联接 07-11/09-08） | `_update_history` 把 `daily_limit` 也当变化信号；「暂停申购」的额度是数据源噪音（100→None），导致同一「暂停」被重复追加 | `scripts/pipeline/fill.py:_update_history` → 暂停/封闭态 `daily_limit` 归一为 None，`_normalize_purchase_state` + `_compact_history` 自愈 | ✅已修复 | 2026-09-29 | 2026-09-29 |
 
 ## Gotchas 生命周期规则
 - 已修复 → 保留条目，标记 `✅已修复`（不删——后人要知道坑存在过）

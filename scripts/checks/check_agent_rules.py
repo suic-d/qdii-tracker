@@ -1,5 +1,5 @@
 """
-Agent 规则机器验证：检查 knowledge/ ↔ AGENTS.md ↔ Skills ↔ 代码的一致性。
+Agent 规则机器验证：检查 docs/ ↔ AGENTS.md ↔ Skills ↔ 代码的一致性。
 被 fundctl.py check --agent-rules 调用。
 """
 import json
@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent.parent
-KNOWLEDGE_DIR = ROOT / "knowledge"
+DOCS_DIR = ROOT / "docs"
 # Skills 已内联到 AGENTS.md（CodeBuddy→Codex 清理），此处保留可扩展目录：
 # 若未来重新拆分出独立 skills，放在 .codex/skills/。
 SKILLS_DIR = ROOT / ".codex" / "skills"
@@ -25,40 +25,36 @@ def _files_exist(paths):
     return missing
 
 
-def _check_knowledge_files():
-    """验证 knowledge/ 下所有必需文件都存在。"""
+def _check_docs_files():
+    """验证 docs/ 下所有必需文件都存在。"""
     required = [
-        "knowledge/INDEX.md",
-        "knowledge/gotchas.md",
-        "knowledge/pipeline-contracts.md",
-        "knowledge/data-sources.md",
-        "knowledge/data-schema.md",
-        "knowledge/golden-fixtures.md",
+        "docs/gotchas.md",
+        "docs/architecture.md",
     ]
     return _files_exist(required)
 
 
-def _check_pipeline_contracts():
-    """验证 pipeline-contracts.md 中引用的模块都存在。"""
-    fp = KNOWLEDGE_DIR / "pipeline-contracts.md"
+def _check_architecture_modules():
+    """验证 docs/architecture.md 中登记的模块都存在。"""
+    fp = DOCS_DIR / "architecture.md"
     if not fp.exists():
-        return ["pipeline-contracts.md not found"]
+        return ["architecture.md not found"]
     content = fp.read_text(encoding="utf-8")
-    # 提取模块名：pipeline/xxx.py 或 checks/xxx.py
-    modules = re.findall(r'(?:pipeline|checks)/(\w+)\.py', content)
+    # 提取标题：### N. xxx.py — 说明
+    modules = re.findall(r'^###\s+\d+\.\s+(\w+)\.py', content, re.MULTILINE)
     errors = []
     for mod in set(modules):
         for prefix in ["pipeline", "checks"]:
             if (ROOT / "scripts" / prefix / f"{mod}.py").exists():
                 break
         else:
-            errors.append(f"pipeline-contracts.md 引用不存在的模块: {mod}")
+            errors.append(f"architecture.md 引用不存在的模块: {mod}.py")
     return errors
 
 
 def _check_gotchas_refs():
     """验证 gotchas.md 中涉及的源文件路径有效。"""
-    fp = KNOWLEDGE_DIR / "gotchas.md"
+    fp = DOCS_DIR / "gotchas.md"
     if not fp.exists():
         return ["gotchas.md not found"]
     content = fp.read_text(encoding="utf-8")
@@ -116,7 +112,7 @@ def _check_readme_tree():
 
     # 需要存在的一级目录（固定清单）
     must_exist = [
-        'scripts', 'config', 'web', 'knowledge', 'test',
+        'scripts', 'config', 'web', 'docs', 'test',
     ]
     errors = []
     for d in must_exist:
@@ -130,7 +126,7 @@ def _check_readme_tree():
 
 
 def _check_doc_sync():
-    """校验 README 标记块 / knowledge/INDEX / AGENTS.md 模块登记是否滞后。"""
+    """校验 README 标记块 / AGENTS.md 模块登记是否滞后。"""
     try:
         from checks.doc_sync import run_check
         return run_check()
@@ -161,7 +157,7 @@ def _check_skills_refs():
                     continue
                 # 尝试多种前缀
                 found = False
-                for prefix in ['scripts/', 'web/', 'config/', 'knowledge/', '']:
+                for prefix in ['scripts/', 'web/', 'config/', 'docs/', '']:
                     if (ROOT / prefix / p).exists():
                         found = True
                         break
@@ -183,14 +179,14 @@ def check_agent_rules():
 
     all_errors = []
 
-    errs, el, ok = _layer("Layer A: knowledge/ 文件完整性", _check_knowledge_files, "个文件缺失", "全部存在")
+    errs, el, ok = _layer("Layer A: docs/ 文件完整性", _check_docs_files, "个文件缺失", "全部存在")
     if errs:
-        all_errors.extend(f"knowledge 缺失: {e}" for e in errs)
+        all_errors.extend(f"docs 缺失: {e}" for e in errs)
         print(f"  ❌ {len(errs)} {el}")
     else:
         print(f"  ✅ {ok}")
 
-    errs, el, ok = _layer("Layer B: pipeline-contracts.md 引用有效性", _check_pipeline_contracts, "个无效引用", "全部有效")
+    errs, el, ok = _layer("Layer B: architecture.md 模块登记有效性", _check_architecture_modules, "个无效引用", "全部有效")
     if errs:
         all_errors.extend(errs)
         print(f"  ❌ {len(errs)} {el}")

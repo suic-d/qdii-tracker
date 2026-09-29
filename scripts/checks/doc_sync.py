@@ -34,7 +34,7 @@ TREE_ANNOTATIONS = {
     "scripts": "数据流水线（Python）",
     "config": "基金分类 SSOT 配置",
     "web": "前端（纯静态）",
-    "knowledge": "解释记忆 — Agent 知识库",
+    "docs": "人读文档 — 踩坑 / 架构",
     "test": "测试与 UI 回归（pytest + Playwright）",
 }
 
@@ -51,12 +51,18 @@ def tracked_files():
     """返回即将进入提交的文件相对路径列表（已追踪 + 暂存 + 未忽略的未追踪）；
     git 不可用时降级为 os.walk。"""
     try:
-        out = subprocess.run(
+        tracked = subprocess.run(
             ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
             capture_output=True, text=True, cwd=ROOT, timeout=10,
         )
-        if out.returncode == 0:
-            return [l for l in out.stdout.splitlines() if l.strip()]
+        deleted = subprocess.run(
+            ["git", "ls-files", "--deleted"],
+            capture_output=True, text=True, cwd=ROOT, timeout=10,
+        )
+        if tracked.returncode == 0 and deleted.returncode == 0:
+            deleted_set = {l for l in deleted.stdout.splitlines() if l.strip()}
+            return [l for l in tracked.stdout.splitlines()
+                    if l.strip() and l not in deleted_set]
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -125,7 +131,7 @@ def build_tree():
             entry["dirs"].add(parts[1])
 
     lines = ["qdii-tracker/"]
-    order = [".github", ".githooks", "scripts", "config", "web", "knowledge", "test"]
+    order = [".github", ".githooks", "scripts", "config", "web", "docs", "test"]
     dirs = [d for d in order if d in top]
     dirs += [d for d in sorted(top) if d not in order]
 
@@ -191,22 +197,6 @@ def fix_readme():
 # ─────────────────────────────────────────────────────────
 # 校验（只读，不写）
 # ─────────────────────────────────────────────────────────
-def check_index():
-    """校验 knowledge/INDEX.md 路由表引用的文件都存在。"""
-    fp = ROOT / "knowledge" / "INDEX.md"
-    if not fp.exists():
-        return [f"knowledge/INDEX.md 不存在"]
-    content = fp.read_text(encoding="utf-8")
-    errors = []
-    import re
-    # 路由表 / 使用顺序里 `xxx.md` 形式引用；相对 knowledge/ 或项目根解析
-    for ref in re.findall(r"`([a-zA-Z0-9_/.-]+\.md)`", content):
-        candidates = [ROOT / "knowledge" / ref, ROOT / ref]
-        if not any(c.exists() for c in candidates):
-            errors.append(f"INDEX.md 引用的文件不存在: {ref}")
-    return errors
-
-
 def check_agents_modules():
     """校验 AGENTS.md 中登记的 pipeline/checks 模块与实际代码一致（防新模块漏登记）。"""
     fp = ROOT / "AGENTS.md"
@@ -245,7 +235,6 @@ def run_check():
             expected = "```bash\n" + render_commands() + "\n```"
         if current != expected.strip():
             errors.append(f"README.md 的 {key} 标记块已滞后（请运行 doc_sync.py --fix）")
-    errors.extend(check_index())
     errors.extend(check_agents_modules())
     return errors
 

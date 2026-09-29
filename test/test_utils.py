@@ -17,12 +17,24 @@ def test_to_float_valid():
     assert to_float("1.5") == 1.5
     assert to_float("0") == 0.0
     assert to_float("-3.14") == -3.14
+    assert to_float("1,234.5") == 1234.5
+    assert to_float("12.5%") == 12.5
+
+def test_to_float_invalid():
+    assert to_float("---") is None
+    assert to_float("abc") is None
+    assert to_float("  ") is None
+    assert to_float(True) is None
+    assert to_float(float("nan")) is None
 
 def test_parse_scale():
     assert parse_scale("31.11亿") == 31.11
     assert parse_scale("5000万") == 0.5
     assert parse_scale("--") is None
     assert parse_scale(None) is None
+    assert parse_scale("31.11亿份") == 31.11
+    assert parse_scale("") is None
+    assert parse_scale("nan") is None
 
 def test_calc_series_scale():
     shares = [
@@ -30,6 +42,14 @@ def test_calc_series_scale():
         {"share_class": "C", "currency": "人民币", "scale": 3.0},
     ]
     assert calc_series_scale(shares) == 10.5
+
+def test_calc_series_scale_fallback_when_a_missing_scale():
+    # A 类人民币份额存在但无规模时，应回退到其它有规模的份额，而不是返回 0
+    shares = [
+        {"share_class": "A", "currency": "人民币", "scale": None},
+        {"share_class": "C", "currency": "人民币", "scale": 3.0},
+    ]
+    assert calc_series_scale(shares) == 3.0
 
 def test_write_read_json(tmp_path):
     data = {"key": "value", "nested": {"a": 1}}

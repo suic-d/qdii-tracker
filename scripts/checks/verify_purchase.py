@@ -66,6 +66,25 @@ def run_verification() -> list:
                     f"daily_limit={sh.get('daily_limit')!r}）"
                 )
 
+        # 4) 不可申购状态（暂停申购/封闭期）的 daily_limit 必须为 None（额度无意义，防噪音写入）
+        for holder, hlabel in ((sh, "share"), *[(h, f"history[{i}]") for i, h in enumerate(hist)]):
+            st = holder.get("buy_status") or ""
+            if ("暂停" in st or "封闭" in st) and holder.get("daily_limit") is not None:
+                errors.append(
+                    f"{label}: {hlabel} 状态为「{st}」但 daily_limit={holder.get('daily_limit')!r}，"
+                    "不可申购状态的额度应为 None"
+                )
+
+        # 5) 历史不得出现连续两条状态+额度完全相同（应被 _compact_history 压缩）
+        for i in range(1, len(hist)):
+            a, b = hist[i - 1], hist[i]
+            if (a.get("buy_status") == b.get("buy_status")
+                    and a.get("daily_limit") == b.get("daily_limit")):
+                errors.append(
+                    f"{label}: buy_status_history 连续两条重复 "
+                    f"（{a.get('date')} 与 {b.get('date')} 均为 {a.get('buy_status')!r}/{a.get('daily_limit')!r}）"
+                )
+
     return errors
 
 

@@ -21,11 +21,15 @@ def _update_history(share: dict, today: str):
     - 场内 ETF（代码 159/513/510 开头）：ETF 的「申购状态」来自 fund_purchase_em，
       会与「场内交易」标记互相覆盖，追踪无意义（历史曾误写入「暂停申购」噪音）。
     - 美元份额：限额口径与人民币不同，不参与追踪。
+
+    「暂停申购/封闭期」的 daily_limit 无意义（数据源会返回 100/None/0.01 等噪音），
+    统一归一到 None，避免「暂停→暂停」仅因额度噪音被重复记录。
     """
     code = share.get("code", "")
     status = share.get("buy_status", "")
     if not status or share.get("currency") == "美元" or "场内" in status or code.startswith(ETF_CODE_PREFIXES):
         return
+    _normalize_purchase_state(share)
     dlimit = share.get("daily_limit", None)
     history = share.get("buy_status_history")
     if not isinstance(history, list):
@@ -37,6 +41,33 @@ def _update_history(share: dict, today: str):
         pass
     else:
         history.append(entry)
+
+
+def _normalize_purchase_state(share: dict):
+    """把不可申购状态（暂停申购/封闭期）的 daily_limit 归一到 None（额度无意义）。"""
+    status = share.get("buy_status", "")
+    if "暂停" in status or "封闭" in status:
+        share["daily_limit"] = None
+    hist = share.get("buy_status_history")
+    if isinstance(hist, list):
+        for h in hist:
+            if "暂停" in h.get("buy_status", "") or "封闭" in h.get("buy_status", ""):
+                h["daily_limit"] = None
+
+
+def _compact_history(share: dict):
+    """压缩历史：连续两条状态+额度完全相同时，只保留最早一条（自愈历史遗留的重复行）。"""
+    hist = share.get("buy_status_history")
+    if not isinstance(hist, list) or len(hist) < 2:
+        return
+    compacted = []
+    for h in hist:
+        if (compacted
+                and compacted[-1].get("buy_status") == h.get("buy_status")
+                and compacted[-1].get("daily_limit") == h.get("daily_limit")):
+            continue
+        compacted.append(h)
+    share["buy_status_history"] = compacted
 
 # 并发数：4 线程平衡速度与反爬风险
 MAX_WORKERS = 4
@@ -116,6 +147,11 @@ def _fetch_ytd_wrapped(code: str):
 def _fetch_inception_wrapped(code: str):
     with _sem:
         return fetch_inception_return(code)
+
+
+def _fetch_fee_rules_wrapped(code: str):
+    with _sem:
+        return fetch_fee_rules(code)
 
 
 def _safe_print(*args, **kwargs):
@@ -252,16 +288,28 @@ def _fill_basic_info(loaded_data, only_codes):
     total2b = len(fee_targets)
     print(f"🎯 目标：{total2b} 只")
     success2b = 0
-    for i, (cat, code, sh) in enumerate(fee_targets, 1):
-        rules = fetch_fee_rules(code)
-        if rules:
-            sh["buy_rules"] = rules.get("buy_rules", []); sh["sell_rules"] = rules.get("sell_rules", [])
-            for rule in sh["sell_rules"]:
-                if rule["rate"] == 0:
-                    m = re.search(r"(\d+(?:\.\d+)?)\s*[天日]", rule["condition"])
-                    if m: sh["free_hold_days"] = int(float(m.group(1))); break
-            success2b += 1
-        if (i) % 20 == 0: print(f"  进度: {i}/{total2b}")
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_map = {executor.submit(_fetch_fee_rules_wrapped, code): (code, sh)
+                      for cat, code, sh in fee_targets}
+        for i, future in enumerate(as_completed(future_map), 1):
+            code, sh = future_map[future]
+            try:
+                rules = future.result()
+            except Exception as e:
+                _safe_print(f"  [{i}/{total2b}] ❌ {code} worker 异常: {e}")
+                continue
+            if rules:
+                sh["buy_rules"] = rules.get("buy_rules", [])
+                sh["sell_rules"] = rules.get("sell_rules", [])
+                for rule in sh["sell_rules"]:
+                    if rule["rate"] == 0:
+                        m = re.search(r"(\d+(?:\.\d+)?)\s*[天日]", rule["condition"])
+                        if m:
+                            sh["free_hold_days"] = int(float(m.group(1)))
+                            break
+                success2b += 1
+            if (i) % 20 == 0:
+                print(f"  进度: {i}/{total2b}")
     print(f"  ✅ 补上 {success2b}/{total2b} 只")
     return success2
 
@@ -364,6 +412,7 @@ def _refresh_purchase_status(data_dir, only_codes):
                             if v is not None and k not in ("nav_date","nav","nav_cum","daily_change"):
                                 share[k] = v
                 _update_history(share, today)
+                _compact_history(share)
         normalize_share_keys(data)
         write_json(fp, data)
         if updated: print(f"  💾 {cat}.json 申购 {updated} 只")

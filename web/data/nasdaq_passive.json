@@ -38,7 +38,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 2.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -53,7 +53,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 5.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -68,7 +68,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 2.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -144,7 +144,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 2.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -159,7 +159,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 5.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -174,7 +174,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 2.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -224,7 +224,7 @@
           "established": "2024-08-14",
           "manager": "刘杰",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -234,7 +234,7 @@
             {
               "date": "2026-09-08",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-09",
@@ -244,7 +244,7 @@
             {
               "date": "2026-09-22",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -296,7 +296,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -359,7 +359,7 @@
           "established": "2018-10-25",
           "manager": "刘杰",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -435,7 +435,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -518,7 +518,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -584,7 +584,7 @@
             {
               "date": "2026-09-08",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-09",
@@ -667,7 +667,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -755,7 +755,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -818,7 +818,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "华安纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<15万",
@@ -876,7 +876,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "华安纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<15万",
@@ -960,7 +960,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1055,7 +1055,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1129,12 +1129,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "天弘纳斯达克100指数型发起式证券投资基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-02",
@@ -1144,7 +1144,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1154,7 +1154,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -1222,12 +1222,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "天弘纳斯达克100指数型发起式证券投资基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-02",
@@ -1237,7 +1237,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1247,7 +1247,7 @@
             {
               "date": "2026-09-19",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -1305,7 +1305,7 @@
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-03",
@@ -1315,7 +1315,7 @@
             {
               "date": "2026-09-08",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-09",
@@ -1401,7 +1401,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1483,7 +1483,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1668,7 +1668,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1750,7 +1750,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1824,12 +1824,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "国泰纳斯达克100指数证券投资基金",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-08-18",
@@ -1844,7 +1844,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -1854,7 +1854,7 @@
             {
               "date": "2026-09-25",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -1958,7 +1958,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2054,7 +2054,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2128,7 +2128,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2314,12 +2314,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2383,12 +2383,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2437,12 +2437,12 @@
           "established": "2024-07-18",
           "manager": "张钟玉",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2491,7 +2491,7 @@
           "established": "2022-09-15",
           "manager": "张钟玉",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<10万",
@@ -2546,7 +2546,7 @@
           "established": "2022-09-15",
           "manager": "张钟玉",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -2609,12 +2609,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)",
           "buy_status": "暂停申购",
-          "daily_limit": 10.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2686,12 +2686,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)",
           "buy_status": "暂停申购",
-          "daily_limit": 10.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2743,7 +2743,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -2806,7 +2806,7 @@
           "established": "2021-07-23",
           "manager": "伍臣东",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -2872,7 +2872,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 10.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -2902,7 +2902,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -2912,7 +2912,7 @@
             {
               "date": "2026-09-24",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -2976,7 +2976,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 10.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -3006,7 +3006,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3016,7 +3016,7 @@
             {
               "date": "2026-09-24",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -3071,7 +3071,7 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 10.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
@@ -3101,7 +3101,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3111,7 +3111,7 @@
             {
               "date": "2026-09-24",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -3161,7 +3161,7 @@
           "established": "2023-08-02",
           "manager": "乐无穹",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<10万",
@@ -3212,7 +3212,7 @@
           "established": "2023-08-02",
           "manager": "乐无穹",
           "buy_status": "暂停申购",
-          "daily_limit": 0.01,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<10万",
@@ -3284,11 +3284,6 @@
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
-            },
-            {
-              "date": "2026-09-08",
-              "buy_status": "暂停申购",
               "daily_limit": null
             }
           ],
@@ -3354,11 +3349,6 @@
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
-            },
-            {
-              "date": "2026-09-08",
-              "buy_status": "暂停申购",
               "daily_limit": null
             }
           ],
@@ -3408,12 +3398,12 @@
           "established": "2025-05-12",
           "manager": "万琼",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 0.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -3462,7 +3452,7 @@
           "established": "2022-07-26",
           "manager": "万琼",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -3513,7 +3503,7 @@
           "established": "2022-07-26",
           "manager": "万琼",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -3588,7 +3578,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3675,7 +3665,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3726,7 +3716,7 @@
           "established": "2024-03-22",
           "manager": "蔡丹",
           "buy_status": "封闭期",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
@@ -3772,7 +3762,7 @@
           "established": "2024-03-22",
           "manager": "蔡丹",
           "buy_status": "封闭期",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "---",
@@ -3847,7 +3837,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -3948,7 +3938,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4046,7 +4036,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4056,7 +4046,7 @@
             {
               "date": "2026-09-22",
               "buy_status": "暂停申购",
-              "daily_limit": 5.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-23",
@@ -4138,7 +4128,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4148,7 +4138,7 @@
             {
               "date": "2026-09-22",
               "buy_status": "暂停申购",
-              "daily_limit": 5.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-23",
@@ -4217,7 +4207,7 @@
             {
               "date": "2026-09-05",
               "buy_status": "暂停申购",
-              "daily_limit": 10.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-08",
@@ -4227,7 +4217,7 @@
             {
               "date": "2026-09-22",
               "buy_status": "暂停申购",
-              "daily_limit": 5.0
+              "daily_limit": null
             },
             {
               "date": "2026-09-23",
@@ -4298,12 +4288,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "华夏纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -4367,12 +4357,12 @@
           "fund_type_xq": "QDII-股票",
           "full_name": "华夏纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)",
           "buy_status": "暂停申购",
-          "daily_limit": 100.0,
+          "daily_limit": null,
           "buy_status_history": [
             {
               "date": "2026-07-11",
               "buy_status": "暂停申购",
-              "daily_limit": 100.0
+              "daily_limit": null
             }
           ],
           "buy_rules": [
@@ -4421,7 +4411,7 @@
           "established": "2022-04-14",
           "manager": "赵宗庭",
           "buy_status": "暂停申购",
-          "daily_limit": 0.0,
+          "daily_limit": null,
           "buy_rules": [
             {
               "condition": "0.0万<买入金额<20万",
