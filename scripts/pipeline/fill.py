@@ -411,6 +411,9 @@ def _refresh_purchase_status(data_dir, only_codes):
                         for k, v in r.items():
                             if v is not None and k not in ("nav_date","nav","nav_cum","daily_change"):
                                 share[k] = v
+                # 暂停申购/封闭期的 daily_limit 无意义，须归一（含美元份额，否则 refresh/sync
+                # 会把数据源的 0.0/0.01 噪音重新写回，触发 verify_purchase 门禁）。
+                _normalize_purchase_state(share)
                 _update_history(share, today)
                 _compact_history(share)
         normalize_share_keys(data)

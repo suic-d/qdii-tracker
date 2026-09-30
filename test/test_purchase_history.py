@@ -17,6 +17,13 @@ def test_normalize_paused_share_limit_to_none():
     assert sh["daily_limit"] is None
 
 
+def test_normalize_paused_usd_share_limit_to_none():
+    # 美元份额同样要把暂停/封闭态的 0.0/0.01 噪音归一到 None，避免 verify_purchase 门禁误报
+    sh = {"code": "013425", "currency": "美元", "buy_status": "暂停申购", "daily_limit": 0.0}
+    _normalize_purchase_state(sh)
+    assert sh["daily_limit"] is None
+
+
 def test_normalize_historical_paused_limit_regardless_of_current_status():
     sh = {
         "code": "008763",
