@@ -30,7 +30,7 @@ SCRIPTS_DIR = ROOT / "scripts"
 # ─────────────────────────────────────────────────────────
 TREE_ANNOTATIONS = {
     ".github": "CI 工作流（deploy-pages / update-data / ci）",
-    ".githooks": "本地 pre-commit 钩子（提交前自动 doc_sync）",
+    ".githooks": "本地 git hooks（pre-commit doc_sync + pre-push 门禁）",
     "scripts": "数据流水线（Python）",
     "config": "基金分类 SSOT 配置",
     "web": "前端（纯静态）",

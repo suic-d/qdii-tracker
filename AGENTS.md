@@ -66,7 +66,7 @@
 - scan 后必须接 enrich + fill
 - 禁止直接改 `config/funds.json`（通过 fund-ops Skill + fundctl.py）
 - **提交/推送需确认**：任何 `git commit` / `git push` / 部署触发前，必须先向用户说明改动范围（哪些文件、为什么）并取得明确确认；未确认前只停留在工作区改动，不 `git add` / `commit` / `push`
-- **文档不滞后**：README 目录树 / 命令列表由 `doc_sync.py` 从真实状态自动生成；提交前 pre-commit 钩子自动 `--fix`，CI 用 `--check` 强制校验
+- **文档不滞后**：README 目录树 / 命令列表由 `doc_sync.py` 从真实状态自动生成；提交前 pre-commit 钩子自动 `--fix`，推送前 pre-push 钩子本地跑门禁，CI 用 `--check` 强制校验
 - 部署（确认后执行）：commit+push → `gh workflow run deploy-pages.yml --ref main`
 - 版本戳：本地 `?v=dev`（占位），部署时 `deploy-pages.yml` 自动 `stamp_asset_version.py --version ${GITHUB_SHA::12}` 替换为 commit SHA，无需手动改
 
@@ -111,6 +111,17 @@ cd scripts && python3 fundctl.py check    # Layer 0-6: nav_date→配置→lint�
 ```
 
 不绿不提交。
+
+## 本地推送前门禁
+
+`.githooks/pre-push` 会在每次 `git push` 前自动执行（启用方式同 `./scripts/setup_hooks.sh`）：
+
+```bash
+python3 -m pytest test/ -q                          # 单元测试（未装 pytest 则提示跳过）
+cd scripts && python3 fundctl.py check --offline --agent-rules  # 数据 + Agent + 文档门禁
+```
+
+与 CI 的 `ci.yml` 对齐，把「推到远端才发现」的问题前置到本地。
 
 ## 操作协议（原 fund-ops / code-change Skills，已内联）
 

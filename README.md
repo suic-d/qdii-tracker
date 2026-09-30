@@ -44,8 +44,9 @@ graph LR
 qdii-tracker/
 ├── .github/    # CI 工作流（deploy-pages / update-data / ci）
 │   └── workflows/
-├── .githooks/    # 本地 pre-commit 钩子（提交前自动 doc_sync）
-│   └── pre-commit
+├── .githooks/    # 本地 git hooks（pre-commit doc_sync + pre-push 门禁）
+│   ├── pre-commit
+│   └── pre-push
 ├── scripts/    # 数据流水线（Python）
 │   ├── checks/
 │   ├── core/
@@ -97,7 +98,7 @@ Agent 规则详见 [AGENTS.md](./AGENTS.md)。
 
 ```bash
 cd scripts && pip install -r requirements.txt
-./scripts/setup_hooks.sh                      # 启用 pre-commit 文档同步（一次性）
+./scripts/setup_hooks.sh                      # 启用本地 git hooks（pre-commit + pre-push，一次性）
 python3 fundctl.py sync                       # 全量同步
 python3 fundctl.py check --agent-rules        # 门禁 + Agent 规则 + 文档同步
 python3 fundctl.py check --offline            # 断网/CI 时跳过 Layer 6 跨源验证

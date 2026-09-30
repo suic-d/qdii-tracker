@@ -1,8 +1,9 @@
 #!/bin/sh
-# 启用本地 pre-commit 钩子：每次 commit 前自动运行 doc_sync，防止文档滞后。
+# 启用本地 git hooks：pre-commit 自动 doc_sync，pre-push 自动跑单测 + 数据门禁。
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 git config core.hooksPath .githooks
 echo "✅ core.hooksPath = .githooks"
-echo "   现在每次 git commit 前都会自动执行 .githooks/pre-commit（doc_sync）"
+echo "   pre-commit：doc_sync 自动同步文档"
+echo "   pre-push：pytest + fundctl check --offline --agent-rules"
