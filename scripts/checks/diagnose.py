@@ -8,7 +8,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-from core.constants import ROOT_DIR, DATA_DIR
+from core.constants import ROOT_DIR, DATA_DIR, ETF_CODE_PREFIXES
 SCRIPTS_DIR = ROOT_DIR / "scripts"
 
 
@@ -50,6 +50,9 @@ def _check_missing_nav():
         cat_name = data.get("meta", {}).get("name", os.path.basename(path))
         for series in data.get("series", []):
             for share in series.get("shares", []):
+                # 场内 ETF 无 nav 字段（用 etf_price），跳过净值缺失检测
+                if share.get("code", "").startswith(ETF_CODE_PREFIXES):
+                    continue
                 if not share.get("nav") or share.get("nav") == 0:
                     added_raw = share.get("added_date", "")
                     if added_raw:

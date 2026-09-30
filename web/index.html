@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)" />
   <title>US Fund Tracker · 美股基金看板</title>
   <meta name="description" content="QDII/ETF 美股基金实时净值看板，追踪标普500、纳斯达克100等跨境基金。" />
   <script type="application/ld+json">
@@ -28,6 +30,7 @@
   <link rel="dns-prefetch" href="//push2.eastmoney.com" />
   <link rel="dns-prefetch" href="//push2his.eastmoney.com" />
   <link rel="icon" href="data:,">
+  <link rel="manifest" href="./manifest.json" />
   <!-- 防闪烁：在首屏渲染前读取 sessionStorage / 系统偏好，立即应用 dark class（必须在 Tailwind CDN 之前） -->
   <script>(function(){try{var t=sessionStorage.getItem('qdii-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();</script>
   <link rel="stylesheet" href="./css/tailwind.css?v=dev" />
@@ -60,6 +63,9 @@
         <button type="button" id="tab-knowledge" role="tab" aria-controls="panel-knowledge" aria-selected="false" tabindex="-1" class="tab-btn px-3 sm:px-4 py-2 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs sm:text-sm" data-tab="knowledge">📚 <span class="hidden sm:inline">投资知识</span><span class="sm:hidden">知识</span></button>
       </div>
       <div class="header-spacer"></div>
+      <button type="button" id="holdings-perspective-btn" class="perspective-btn" title="跨基金重仓股透视">
+        🧺 重仓透视
+      </button>
       <label class="fund-search items-center gap-2 h-9 px-3 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-500 dark:text-stone-400" title="仅搜索本站收录的基金，不联网">
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
         <input id="fund-search" type="search" placeholder="搜索项目内基金 / 代码" aria-label="搜索项目内基金（仅本站，不联网）" autocomplete="off" spellcheck="false" class="w-36 lg:w-44 bg-transparent outline-none text-stone-800 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 text-xs" />
@@ -352,6 +358,9 @@
   </section>
 
   <main id="main-content" class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 sm:pt-8 space-y-8">
+    <!-- ========== 自选概览仪表盘（无自选时隐藏，由 watchlist.js 动态渲染） ========== -->
+    <section id="watchlist-dashboard" class="hidden" aria-label="自选概览"></section>
+
     <!-- ========== 市场参照系：美股指数 + 美元汇率 ========== -->
     <section id="market-overview" aria-label="市场参照系">
       <div class="flex items-end justify-between mb-3 gap-4">
@@ -392,7 +401,9 @@
       <div id="offshore-notice" class="hidden mb-3"></div>
       <!-- 分组筛选 Chips（JS 动态注入） -->
       <div id="offshore-chips" class="flex flex-wrap items-center gap-2 mb-3"></div>
-      <div class="bg-white dark:bg-stone-800 rounded-xl border border-stone-200 dark:border-stone-700 overflow-x-auto" id="table-offshore"></div>
+      <div class="bg-white dark:bg-stone-800 rounded-xl border border-stone-200 dark:border-stone-700 overflow-x-auto" id="table-offshore">
+        <div class="skeleton" role="status" aria-label="加载中">加载中…</div>
+      </div>
     </section>
 
     <section id="panel-etf" role="tabpanel" aria-labelledby="tab-etf" data-category="etf">
@@ -423,7 +434,9 @@
 
       <!-- 分组筛选 Chips（JS 动态注入） -->
       <div id="etf-chips" class="flex flex-wrap items-center gap-2 mb-3"></div>
-      <div class="bg-white dark:bg-stone-800 rounded-xl border border-stone-200 dark:border-stone-700 overflow-x-auto" id="table-etf"></div>
+      <div class="bg-white dark:bg-stone-800 rounded-xl border border-stone-200 dark:border-stone-700 overflow-x-auto" id="table-etf">
+        <div class="skeleton" role="status" aria-label="加载中">加载中…</div>
+      </div>
     </section>
   </main>
 
@@ -578,7 +591,18 @@
     </div>
   </footer>
   <script defer src="./js/main.js?v=dev"></script>
+  <script defer src="./js/watchlist.js?v=dev"></script>
+  <script defer src="./js/holdings-perspective.js?v=dev"></script>
+  <script defer src="./js/premium-history.js?v=dev"></script>
   <script defer src="./js/screenshot.js?v=dev"></script>
+  <script>
+    // PWA Service Worker：静态资源缓存，数据 JSON 网络优先。仅在 https/localhost 下注册。
+    if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
 
   <!-- 模块化的独立功能模块（ES Modules，无构建过程） -->
   <!-- why 带 ?v=：浏览器对 .js 默认强缓存（GitHub Pages 也是），

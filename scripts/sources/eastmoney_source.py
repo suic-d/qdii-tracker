@@ -110,6 +110,97 @@ def fetch_pzd(code: str):
     return result if result else None
 
 
+def fetch_pzd_history(code: str):
+    """抓 pingzhongdata 的完整历史净值序列（供 sparkline 使用）。
+
+    返回 [{"date": "YYYY-MM-DD", "nav": float}, ...]（按日期升序）。
+    数据源不可用 / 解析失败返回 None（调用方跳过该基金）。
+    """
+    url = f"https://fund.eastmoney.com/pingzhongdata/{code}.js"
+    r = requests_get(url, headers=HEADERS_FUND)
+    if r is None:
+        return None
+    r.encoding = "utf-8"
+    text = r.text
+    m = re.search(r"var\s+Data_netWorthTrend\s*=\s*(\[.*?\]);", text, re.DOTALL)
+    if not m:
+        return None
+    try:
+        arr = json.loads(m.group(1))
+    except Exception:
+        return None
+    out = []
+    for item in arr:
+        ts = item.get("x")
+        nav = to_float(item.get("y"))
+        if ts is None or nav is None:
+            continue
+        date = datetime.fromtimestamp(ts / 1000, tz=BEIJING_TZ).strftime("%Y-%m-%d")
+        out.append({"date": date, "nav": nav})
+    return out if out else None
+
+
+def fetch_lsjz_history(code: str, limit: int = 60):
+    """抓天天基金历史净值（升序返回最近 limit 条）。
+
+    返回 [{"date": "YYYY-MM-DD", "nav": float}, ...]，失败返回 None。
+    """
+    url = (
+        f"https://api.fund.eastmoney.com/f10/lsjz"
+        f"?callback=jQuery&fundCode={code}&pageIndex=1&pageSize={limit}"
+    )
+    r = requests_get(url, headers=HEADERS_EASTMONEY)
+    if r is None:
+        return None
+    m = re.search(r"jQuery\((.*)\)", r.text, re.DOTALL)
+    if not m:
+        return None
+    try:
+        data = json.loads(m.group(1))
+        data_obj = data.get("Data", {})
+        items = data_obj.get("LSJZList", []) if isinstance(data_obj, dict) else []
+    except Exception:
+        return None
+    out = []
+    for it in items:
+        d = it.get("FSRQ")
+        nav = to_float(it.get("DWJZ"))
+        if d and nav is not None:
+            out.append({"date": d, "nav": nav})
+    out.reverse()  # 接口倒序，反转为升序
+    return out if out else None
+
+
+def fetch_etf_kline_history(code: str, limit: int = 60):
+    """抓 ETF 历史日 K 收盘价（腾讯接口，升序返回最近 limit 条）。
+
+    返回 [{"date": "YYYY-MM-DD", "close": float}, ...]，失败返回 None。
+    """
+    prefix = "sh" if str(code).startswith(("5", "6")) else "sz"
+    secid = f"{prefix}{code}"
+    url = (
+        f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
+        f"?param={secid},day,,,{limit},qfq"
+    )
+    r = requests_get(url, headers=HEADERS_EASTMONEY)
+    if r is None:
+        return None
+    try:
+        data = json.loads(r.text)
+        node = data.get("data", {}).get(secid, {})
+        rows = node.get("qfqday") or node.get("day") or []
+    except Exception:
+        return None
+    out = []
+    for row in rows:
+        if len(row) < 3:
+            continue
+        d, close = row[0], to_float(row[2])
+        if d and close is not None:
+            out.append({"date": d, "close": close})
+    return out if out else None
+
+
 def fetch_f10(code: str):
     """
     抓天天基金 F10 概况页（含规模/成立日期/基金经理）+ 费率页。

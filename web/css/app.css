@@ -941,3 +941,165 @@
     @media (min-width: 1024px) {
       .lg\:w-44 { width: 11rem; }
     }
+
+    /* ===== 数据新鲜度徽章 / 骨架屏 / CSV 按钮 ===== */
+    .nav-age-badge {
+      display: inline-block;
+      margin-left: 0.375rem;
+      padding: 0 0.375rem;
+      border-radius: 9999px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #78716c;
+      background: #f5f5f4;
+      border: 1px solid #e7e5e4;
+      white-space: nowrap;
+    }
+    html.dark .nav-age-badge {
+      color: #a8a29e;
+      background: rgba(28, 25, 23, 0.6);
+      border-color: #44403c;
+    }
+
+    .csv-export-btn { margin-left: 0.25rem; }
+
+    .perspective-btn {
+      display: none;
+      align-items: center;
+      gap: 0.375rem;
+      height: 2.25rem;
+      padding: 0 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #e7e5e4;
+      background: #ffffff;
+      color: #57534e;
+      font-size: 12px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .perspective-btn:hover { background: #f5f5f4; }
+    html.dark .perspective-btn { background: #292524; border-color: #44403c; color: #d6d3d1; }
+    html.dark .perspective-btn:hover { background: #1c1917; }
+    @media (min-width: 768px) {
+      .perspective-btn { display: inline-flex; }
+    }
+
+    .skeleton {
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a8a29e;
+      font-size: 12px;
+      background: linear-gradient(90deg, #f5f5f4 25%, #e7e5e4 37%, #f5f5f4 63%);
+      background-size: 400% 100%;
+      animation: skeleton-shimmer 1.4s ease infinite;
+    }
+    html.dark .skeleton {
+      color: #78716c;
+      background: linear-gradient(90deg, #1c1917 25%, #292524 37%, #1c1917 63%);
+      background-size: 400% 100%;
+    }
+    @keyframes skeleton-shimmer {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* ===== 自选关注 + 首屏概览 ===== */
+    .fav-star {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: none;
+      background: transparent;
+      color: #d6d3d1;
+      font-size: 1.05rem;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 0.375rem;
+    }
+    .fav-star:hover { color: #f59e0b; }
+    .fav-star.fav-on { color: #f59e0b; }
+
+    .watch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem;
+    }
+    .watch-card {
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #e7e5e4;
+      border-radius: 0.75rem;
+      padding: 0.625rem 0.75rem;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .watch-card:hover { border-color: #d6d3d1; }
+    html.dark .watch-card { background: #292524; border-color: #44403c; }
+    html.dark .watch-card:hover { border-color: #57534e; }
+
+    .watch-alert {
+      font-size: 12px;
+      color: #9f1239;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-radius: 9999px;
+      padding: 0.125rem 0.5rem;
+    }
+    html.dark .watch-alert { color: #fda4af; background: rgba(63, 7, 18, 0.5); border-color: #9f1239; }
+
+    /* ===== 跨基金重仓透视 modal ===== */
+    .hp-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.45);
+    }
+    .hp-panel {
+      width: min(760px, 100%);
+      max-height: 84vh;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e7e5e4;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    html.dark .hp-panel { background: #1c1917; border-color: #44403c; }
+    .hp-scroll { overflow: auto; }
+    .hp-close {
+      border: none;
+      background: transparent;
+      color: #78716c;
+      font-size: 1rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ===== 行内 sparkline ===== */
+    .sparkline {
+      width: 72px;
+      height: 20px;
+      margin-top: 0.25rem;
+      display: block;
+      overflow: visible;
+    }
+    .spark-up { color: #16a34a; }
+    .spark-down { color: #dc2626; }
+
+    .premium-hist-btn {
+      border: none;
+      background: transparent;
+      color: #a8a29e;
+      font-size: 0.8rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    .premium-hist-btn:hover { color: #e11d48; }

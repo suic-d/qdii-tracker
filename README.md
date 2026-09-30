@@ -64,9 +64,13 @@ qdii-tracker/
 │   ├── data/
 │   ├── js/
 │   ├── .nojekyll
+│   ├── feed.rss
+│   ├── icon.svg
 │   ├── index.html
+│   ├── manifest.json
 │   ├── robots.txt
-│   └── sitemap.xml
+│   ├── sitemap.xml
+│   └── sw.js
 ├── docs/    # 人读文档 — 踩坑 / 架构
 │   ├── architecture.md
 │   └── gotchas.md
@@ -74,7 +78,9 @@ qdii-tracker/
 │   ├── ui_scenarios/
 │   ├── run_ui_scenarios.py
 │   ├── test_classify.py
+│   ├── test_premium_history.py
 │   ├── test_purchase_history.py
+│   ├── test_sparklines.py
 │   └── test_utils.py
 ├── .gitignore
 ├── AGENTS.md

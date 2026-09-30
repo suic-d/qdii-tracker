@@ -1,0 +1,19 @@
+{
+  "name": "US Fund Tracker · 美股基金看板",
+  "short_name": "美股基金",
+  "description": "QDII/ETF 美股基金净值看板，追踪标普500、纳斯达克100等跨境基金。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#fafaf9",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

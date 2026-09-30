@@ -13,6 +13,8 @@ scripts/architecture_lint.py — 目录纪律强制校验
         - index.html（唯一入口）
         - robots.txt / sitemap.xml（SEO 静态文件）
         - .nojekyll（GitHub Pages 标记文件）
+        - manifest.json / sw.js / icon.svg（PWA）
+        - feed.rss（每日快照订阅）
     web/data/  仅允许 *.json（+ holdings/ 子目录，同样仅 *.json）
     web/js/    仅允许 *.js
     web/css/   仅允许 *.css
@@ -32,7 +34,8 @@ from core.constants import ROOT_DIR
 WEB_DIR = ROOT_DIR / "web"
 
 # web/ 顶层允许的文件名（精确匹配）
-WEB_TOP_ALLOWED_FILES = {"index.html", "robots.txt", "sitemap.xml", ".nojekyll"}
+WEB_TOP_ALLOWED_FILES = {"index.html", "robots.txt", "sitemap.xml", ".nojekyll",
+                         "manifest.json", "sw.js", "icon.svg", "feed.rss"}
 # web/ 顶层允许的子目录名
 WEB_TOP_ALLOWED_DIRS = {"data", "js", "css"}
 

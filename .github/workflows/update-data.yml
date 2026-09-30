@@ -113,6 +113,11 @@ jobs:
           cd scripts
           python fundctl.py check
 
+      - name: 📸 生成 JSON / RSS 快照
+        run: |
+          cd scripts
+          python -m checks.build_snapshot
+
       - name: 🔍 诊断数据异常
         if: always()
         continue-on-error: true
@@ -127,7 +132,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add web/data/
+          git add web/data/ web/feed.rss
           if git diff --cached --quiet; then
             echo "⚠️  数据无变化，跳过提交"
           else

@@ -121,7 +121,14 @@
         const res = await fetch(`./data/${cat}.json?v=${ver}`);
         STATE.data[cat] = await res.json();
       }));
+      try {
+        const sl = await (await fetch(`./data/sparklines.json?v=${ver}`)).json();
+        STATE.sparklines = sl.sparklines || {};
+      } catch (_) {
+        STATE.sparklines = {};
+      }
       RENDER_TABS.forEach(renderCategory);
+      if (typeof renderWatchlist === 'function') renderWatchlist();
       // 纯静态模式：首屏数据全部来自 data/*.json（GitHub Actions 离线生成）
       // 陈旧兜底：loadData 同时被 offshore-live-nav.js 的 reloadData 复用，
       //           meta 刷新后会自动重算陈旧状态（清除或显示 banner），无需单独改 live-nav
@@ -248,23 +255,8 @@
       if (searchQ) {
         displayGroups = groups.map(g => ({
           ...g,
-          items: g.items.filter(s => {
-            const name = [String(s.series_name || ''), String(s.display_name || '')].join(' ').toLowerCase();
-            const code = String(s.default_share_code || '');
-            if (name.includes(searchQ) || code.includes(searchQ)) return true;
-            return (s.shares || []).some(sh =>
-              String(sh.code || '').includes(searchQ) || String(sh.name || '').toLowerCase().includes(searchQ));
-          })
+          items: g.items.filter(s => matchFundQuery(s, searchQ))
         })).filter(g => g.items.length);
-      }
-
-      if (searchQ) {
-        let mSeries = 0, mShares = 0;
-        displayGroups.forEach(g => { mSeries += g.items.length; g.items.forEach(s => { mShares += s.shares.length; }); });
-        document.getElementById(`count-${tab}`).textContent = `搜索到 ${mSeries} 个系列 · ${mShares} 只份额`;
-      } else {
-        document.getElementById(`count-${tab}`).textContent =
-          `${totalSeries} 个系列 · ${totalShares} 只份额 · 总规模 ${totalScale.toFixed(0)} 亿`;
       }
 
       const navHeaderSub = fmtMD(latestNavDate);
@@ -284,9 +276,9 @@
           return renderSeries(s, group.isActive, isEtf, showHoldings, group.key);
         }).join(''));
       }
-      const bodyHtml = pieces.join('') || (searchQ
-        ? `<tr><td colspan="12" class="px-4 py-10 text-center text-stone-400 dark:text-stone-500 text-sm">未找到匹配的基金或代码</td></tr>`
-        : '');
+      const bodyHtml = pieces.join('') || `<tr><td colspan="12" class="px-4 py-10 text-center text-stone-400 dark:text-stone-500 text-sm">${
+        searchQ ? '未找到匹配的基金或代码，试试公司名 / 指数（如“易方达”“标普”）' : '暂无数据，稍后重试'
+      }</td></tr>`;
 
       // 排序图标 helper：当前排序列 → 显示 ↓/↑；非当前列 → 显示淡色双向箭头 ⇅
       const sortIcon = (key) => {
@@ -397,10 +389,60 @@
       });
 
       // 渲染分组筛选 Chips + 分享按钮
-      renderChips(tab, groups);
-      renderShareBtn(tab, groups);
+      renderChips(tab, displayGroups);
+      renderShareBtn(tab, displayGroups);
+      renderExportBtn(tab, displayGroups);
       // 申购 tooltip 绑定（仅场外）
       if (!isEtf) initBuyTooltips(container);
+    }
+
+    function renderExportBtn(tab, groups) {
+      const bar = document.getElementById(tab + '-chips');
+      if (!bar || document.getElementById('csv-btn-' + tab)) return;
+      const btn = document.createElement('button');
+      btn.id = 'csv-btn-' + tab;
+      btn.className = 'chip csv-export-btn';
+      btn.textContent = '⬇ CSV';
+      btn.onclick = () => exportCurrentTabCsv(tab, groups);
+      bar.appendChild(btn);
+    }
+
+    function exportCurrentTabCsv(tab, groups) {
+      const isEtf = tab === 'etf';
+      const headers = isEtf
+        ? ['代码', '名称', '公司', '跟踪标的', '最新价', '涨跌幅%', '溢价率%', '近1月%', '今年来%', '近1年%', '规模(亿)', '净值日期']
+        : ['代码', '名称', '公司', '分类', '净值', '涨跌幅%', '近1月%', '今年来%', '近1年%', '成立来%', '申购状态', '规模(亿)', '净值日期'];
+      const rows = [];
+      for (const g of groups) {
+        for (const s of g.items) {
+          const def = s.shares.find(sh => sh.code === s.default_share_code) || s.shares[0];
+          const disp = isEtf ? null : getOffshoreDisplayValues(def);
+          const navDate = isEtf ? (def._live_etf_date || def.nav_date || '') : (disp.navDate || '');
+          const price = isEtf
+            ? (def.etf_price != null ? def.etf_price.toFixed(3) : (def.nav != null ? def.nav.toFixed(4) : ''))
+            : (disp.price != null ? disp.price.toFixed(4) : '');
+          const daily = isEtf ? (def.etf_change_pct != null ? def.etf_change_pct : def.daily_change) : (disp.dailyChange ?? def.daily_change);
+          const row = isEtf
+            ? [def.code, def.name, s.company, s.etf_target || '', price, num(daily), num(def.etf_premium), num(def.chg_1m), num(def.chg_ytd), num(def.chg_1y), num(s.series_scale), navDate]
+            : [def.code, s.display_name, s.company, g.key, price, num(daily), num(def.chg_1m), num(def.chg_ytd), num(def.chg_1y), num(def.chg_since_inception), def.buy_status || '', num(s.series_scale), navDate];
+          rows.push(row);
+        }
+      }
+      const csv = buildCsv(headers, rows);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `qdii-tracker-${tab}-${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function num(v) {
+      if (v == null || v === '') return '';
+      const n = Number(v);
+      return Number.isFinite(n) ? n : '';
     }
 
     function renderShareBtn(tab, groups) {
@@ -465,11 +507,12 @@
       if (!table) return;
 
       const currentGroup = groups.find(g => g.key === filter);
+      const searchQ = (SEARCH_QUERY || '').trim();
 
       // series 行：控制显隐
       // 展开行（share-rows）：不匹配时强制隐藏并重置状态；匹配时清 inline display，让 .hidden 类主宰
       table.querySelectorAll('tr.series-row').forEach(tr => {
-        const match = (tr.dataset.group === filter);
+        const match = searchQ ? true : (tr.dataset.group === filter);
         tr.style.display = match ? '' : 'none';
         const id = tr.dataset.seriesId;
         const detail = table.querySelector(`.share-rows[data-parent="${id}"]`);
@@ -484,23 +527,30 @@
         }
       });
 
-      // 更新计数：当前筛选组
-      if (!currentGroup) return;
-      let visibleSeries = currentGroup.items.length;
-      let visibleShares = 0, visibleScale = 0;
-      currentGroup.items.forEach(s => {
-        visibleShares += s.shares.length;
-        visibleScale += (s.series_scale || 0);
-      });
+      // 更新计数：搜索时汇总所有分组，否则只统计当前筛选组
+      let visibleSeries = 0, visibleShares = 0, visibleScale = 0;
+      if (searchQ) {
+        groups.forEach(g => {
+          visibleSeries += g.items.length;
+          g.items.forEach(s => { visibleShares += s.shares.length; visibleScale += (s.series_scale || 0); });
+        });
+      } else if (currentGroup) {
+        visibleSeries = currentGroup.items.length;
+        currentGroup.items.forEach(s => { visibleShares += s.shares.length; visibleScale += (s.series_scale || 0); });
+      }
       const countEl = document.getElementById(`count-${tab}`);
       if (countEl) {
-        countEl.textContent =
-          `${visibleSeries} 个系列 · ${visibleShares} ${tab === 'etf' ? '只 ETF' : '只份额'} · 总规模 ${visibleScale.toFixed(0)} 亿`;
+        countEl.textContent = searchQ
+          ? `搜索到 ${visibleSeries} 个系列 · ${visibleShares} ${tab === 'etf' ? '只 ETF' : '只份额'}`
+          : `${visibleSeries} 个系列 · ${visibleShares} ${tab === 'etf' ? '只 ETF' : '只份额'} · 总规模 ${visibleScale.toFixed(0)} 亿`;
       }
 
       // 切组时重算当前分组表头日期，并同步更新副标与行内日期显隐。
       const isEtf = tab === 'etf';
-      const headerDate = pickGroupHeaderDate(currentGroup.items, isEtf);
+      const headerItems = searchQ
+        ? groups.flatMap(g => g.items)
+        : (currentGroup ? currentGroup.items : []);
+      const headerDate = pickGroupHeaderDate(headerItems, isEtf);
       STATE._navDate = STATE._navDate || {};
       STATE._navDate[tab] = headerDate;
       const navSub = table.querySelector('.nav-date-sub');
@@ -508,15 +558,15 @@
       syncRowNavDateVisibility(table, headerDate);
 
       // 更新区域标题 & 副标题（随 Chip 动态变化）
-      const meta = (GROUP_META[tab] || {})[filter];
-      if (meta) {
+      const meta = !searchQ ? (GROUP_META[tab] || {})[filter] : null;
+      if (meta && currentGroup) {
         const titleEl = document.getElementById(`${tab}-title`);
         const subEl = document.getElementById(`${tab}-subtitle`);
         if (titleEl) titleEl.textContent = meta.title;
         if (subEl) subEl.textContent = meta.subtitle.replace('{count}', currentGroup.items.length);
       }
       // 更新分组级风险/说明横幅（无配置则自动隐藏）
-      renderGroupNotice(tab, filter);
+      renderGroupNotice(tab, searchQ ? null : filter);
     }
 
     // 每个 Tab 下各分组的「标题 + 副标题」文案（按 tab 隔离，避免同 key 在场内外撞车）
@@ -624,6 +674,17 @@
       // 展开后的子表格 colspan（ETF=10，场外=14）
       const expandColspan = isEtf ? 10 : 14;
 
+      // 数据新鲜度徽章：净值日距今 T-x 天（x=0 不显示，x>=1 淡色提示）
+      const navAge = navAgeDays(rowNavDate);
+      const navAgeBadge = (navAge != null && navAge >= 1)
+        ? `<span class="nav-age-badge" title="净值更新于 ${rowNavDate}，距今 ${navAge} 天">更新于 T-${navAge}</span>`
+        : '';
+      const fav = (typeof isFav === 'function') ? isFav(defCode) : false;
+      const spark = (STATE.sparklines && STATE.sparklines[defCode]) ? sparklinePath(STATE.sparklines[defCode]) : null;
+      const sparkHtml = spark
+        ? `<svg class="sparkline ${spark.trend >= 0 ? 'spark-up' : 'spark-down'}" viewBox="0 0 72 20" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polyline points="${spark.points}" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>`
+        : '';
+
       return `
         <tr class="series-row border-b border-stone-100 dark:border-stone-700/50 ${isEtf ? '' : 'hover:bg-stone-50 dark:hover:bg-stone-700/30 cursor-pointer'} transition" data-series-id="${series.series_id}" data-is-etf="${isEtf ? '1' : '0'}"${grpAttr}>
           <td class="py-3 px-3 text-stone-400 dark:text-stone-500">
@@ -633,13 +694,16 @@
           </td>
           <td class="py-3 px-3">
             <div class="flex items-center gap-3">
+              <button type="button" class="fav-star${fav ? ' fav-on' : ''}" data-fav="${defCode}" onclick="event.stopPropagation(); window.toggleFav('${defCode}')" title="${fav ? '取消自选' : '加入自选'}" aria-label="${fav ? '取消自选' : '加入自选'}">${fav ? '★' : '☆'}</button>
               ${getLogo(series.company)}
               <div class="min-w-0">
                 <div class="font-medium truncate">${series.starred ? '⭐ ' : ''}${isEtf ? def.name : series.display_name}</div>
                 <div class="text-xs text-stone-500 dark:text-stone-400 num mt-0.5">
                   ${def.code}${isEtf ? '' : ' · ' + def.share_class + (def.currency === '美元' ? ' · 美元' : '')}
                   <span class="badge ${isEtf ? 'badge-qdii' : 'badge-qdii'} ml-1">${isEtf ? 'ETF' : 'QDII'}</span>
+                  ${navAgeBadge}
                 </div>
+                ${sparkHtml}
                 ${isActive && def.manager ? `<div class="text-[11px] text-stone-400 dark:text-stone-500 mt-0.5 truncate">👤 ${def.manager}</div>` : ''}
               </div>
             </div>
@@ -674,7 +738,7 @@
                       : p > 1 ? '溢价'
                       : p < -1 ? '折价'
                       : '接近净值';
-            return `<td class="py-3 px-3 text-right num ${cls}" title="${tip} · (场内价 - 净值) / 净值">${sign}${p.toFixed(2)}%</td>`;
+            return `<td class="py-3 px-3 text-right num ${cls}" title="${tip} · (场内价 - 净值) / 净值">${sign}${p.toFixed(2)}% <button type="button" class="premium-hist-btn" onclick="event.stopPropagation(); window.openPremiumHistory('${defCode}')" title="查看历史溢价曲线" aria-label="查看历史溢价曲线">▾</button></td>`;
           })()}
           ${changeCell(def.chg_1m)}
           ${changeCell(def.chg_ytd)}

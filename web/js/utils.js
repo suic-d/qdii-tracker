@@ -161,6 +161,109 @@ function classifyBuyStatus(sh) {
 }
 window.classifyBuyStatus = classifyBuyStatus;
 
+// ==================== 数据新鲜度 / CSV / 搜索匹配 ====================
+//
+// 纯函数，供 main.js 的「净值更新于 T-x 天」徽章、CSV 导出、站内搜索扩展使用。
+// 不依赖 DOM，便于后续单测。
+
+/**
+ * 计算某只基金净值日距今天多少天（整数）。
+ * navDate 形如 "YYYY-MM-DD"；非法/空返回 null；未来日期视为 0（不显示负数）。
+ * todayIso 可注入便于测试，缺省用本地当前日期（取 UTC 年月日避免时区边界）。
+ */
+function navAgeDays(navDate, todayIso) {
+  if (!navDate) return null;
+  const m = String(navDate).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  const nav = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  if (isNaN(nav.getTime())) return null;
+  let today;
+  if (todayIso) {
+    const tm = String(todayIso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!tm) return null;
+    today = new Date(Date.UTC(+tm[1], +tm[2] - 1, +tm[3]));
+  } else {
+    const n = new Date();
+    today = new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth(), n.getUTCDate()));
+  }
+  const days = Math.round((today - nav) / 86400000);
+  return days < 0 ? 0 : days;
+}
+
+/**
+ * 生成带转义的 CSV 文本。headers 与 rows 均为字符串数组。
+ * 单元格含逗号/引号/换行时按 RFC4180 包裹双引号。
+ */
+function buildCsv(headers, rows) {
+  const esc = (v) => {
+    const s = v == null ? '' : String(v);
+    if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  };
+  const lines = [headers.map(esc).join(',')];
+  for (const r of rows) lines.push(r.map(esc).join(','));
+  return '\uFEFF' + lines.join('\r\n');  // BOM 让 Excel 正确识别 UTF-8 中文
+}
+
+/**
+ * 站内搜索匹配：基金名 / 代码 / 公司 / 跟踪标的 / 分类 / 份额名。
+ * q 已转小写。series 为 buildCategoryViewModel 生成的 series 条目。
+ */
+function matchFundQuery(series, q) {
+  if (!q) return true;
+  const hay = [
+    series.series_name,
+    series.display_name,
+    series.company,
+    series.company_display,
+    series.etf_target,
+    series.category,
+    String(series.default_share_code || ''),
+    ...(series.shares || []).flatMap(sh => [String(sh.code || ''), sh.name || '']),
+  ].join(' ').toLowerCase();
+  // 兼容「标普/纳指/纳斯达克/科技」等别名，便于按标的反查
+  const alias = {
+    '标普500': 'sp500',
+    '标普 500': 'sp500',
+    'sp500': '标普500',
+    '纳指100': 'nasdaq100',
+    '纳斯达克100': 'nasdaq100',
+    '纳斯达克': 'nasdaq',
+    '纳指': 'nasdaq',
+  };
+  const expanded = [hay];
+  for (const [k, v] of Object.entries(alias)) {
+    if (q.includes(k)) expanded.push(v);
+  }
+  return expanded.some(t => t.includes(q)) || hay.includes(q);
+}
+
+window.navAgeDays = navAgeDays;
+window.buildCsv = buildCsv;
+window.matchFundQuery = matchFundQuery;
+
+/**
+ * 把一维数值序列转成 SVG polyline 的 points 字符串（用于行内 sparkline）。
+ * 返回 { points, min, max, trend }；数据点不足 2 个返回 null。
+ * w/h 为视口尺寸，留 1px 内边距。
+ */
+function sparklinePath(values, w = 72, h = 20) {
+  if (!Array.isArray(values) || values.length < 2) return null;
+  const nums = values.map(Number).filter(Number.isFinite);
+  if (nums.length < 2) return null;
+  let min = nums[0], max = nums[0];
+  for (const v of nums) { if (v < min) min = v; if (v > max) max = v; }
+  const range = max - min || 1;
+  const pad = 1;
+  const pts = nums.map((v, i) => {
+    const x = pad + (i / (nums.length - 1)) * (w - 2 * pad);
+    const y = pad + (1 - (v - min) / range) * (h - 2 * pad);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  return { points: pts, min, max, trend: nums[nums.length - 1] >= nums[0] ? 1 : -1 };
+}
+window.sparklinePath = sparklinePath;
+
 // ==================== 排序：份额 / 系列 ====================
 
 function shareSort(shares) {
