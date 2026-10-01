@@ -1,7 +1,7 @@
 {
   "category": "global_other",
   "label": "板块5 · 全球/其他 QDII（场外）",
-  "series_count": 21,
+  "series_count": 20,
   "series": [
     {
       "series_id": "华夏__全球股票__global_other",
@@ -19,7 +19,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 1.4006,
-          "nav_cum": 1.3516,
+          "nav_cum": 1.4006,
           "nav_date": "2026-09-29",
           "daily_change": 0.61,
           "chg_1m": 3.53,
@@ -223,7 +223,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 1.575,
-          "nav_cum": 1.5479,
+          "nav_cum": 1.575,
           "nav_date": "2026-09-29",
           "daily_change": -0.41,
           "chg_1m": -3.9,
@@ -315,7 +315,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 1.5472,
-          "nav_cum": 1.5212,
+          "nav_cum": 1.5472,
           "nav_date": "2026-09-29",
           "daily_change": -0.41,
           "chg_1m": -3.92,
@@ -479,7 +479,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 2.2458,
-          "nav_cum": 2.2561,
+          "nav_cum": 2.2458,
           "nav_date": "2026-09-30",
           "daily_change": 1.6,
           "chg_1m": -0.15,
@@ -599,7 +599,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 2.2241,
-          "nav_cum": 2.2351,
+          "nav_cum": 2.2241,
           "nav_date": "2026-09-30",
           "daily_change": 1.59,
           "chg_1m": -0.19,
@@ -856,6 +856,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 3.7095,
+          "nav_cum": 3.7095,
           "nav_date": "2026-09-29",
           "daily_change": 0.6,
           "chg_1m": 8.51,
@@ -945,6 +946,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 3.6291,
+          "nav_cum": 3.6291,
           "nav_date": "2026-09-29",
           "daily_change": 0.6,
           "chg_1m": 8.47,
@@ -1027,7 +1029,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 1.2953,
-          "nav_cum": 1.399,
+          "nav_cum": 1.3237,
           "nav_date": "2026-09-29",
           "daily_change": -0.35,
           "chg_1m": -5.13,
@@ -1207,7 +1209,7 @@
           "currency": "人民币",
           "fund_type": "QDII-FOF",
           "nav": 1.0503,
-          "nav_cum": 1.0613,
+          "nav_cum": 1.0503,
           "nav_date": "2026-09-29",
           "daily_change": -0.03,
           "chg_1m": -1.07,
@@ -1294,7 +1296,7 @@
           "currency": "人民币",
           "fund_type": "QDII-FOF",
           "nav": 1.039,
-          "nav_cum": 1.0502,
+          "nav_cum": 1.039,
           "nav_date": "2026-09-29",
           "daily_change": -0.03,
           "chg_1m": -1.11,
@@ -1496,7 +1498,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合债",
           "nav": 1.1279,
-          "nav_cum": 1.141,
+          "nav_cum": 1.1279,
           "nav_date": "2026-09-29",
           "daily_change": 0.62,
           "chg_1m": -1.0,
@@ -1509,7 +1511,7 @@
           "scale": 8.3,
           "scale_raw": "8.30亿",
           "established": "2024-04-24",
-          "manager": "李耀柱",
+          "manager": "李耀柱 李晓博",
           "fund_company": "广发基金管理有限公司",
           "fund_type_xq": "QDII-混合",
           "full_name": "广发全球稳健配置混合型证券投资基金（QDII）",
@@ -1586,7 +1588,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合债",
           "nav": 1.1149,
-          "nav_cum": 1.1283,
+          "nav_cum": 1.1149,
           "nav_date": "2026-09-29",
           "daily_change": 0.62,
           "chg_1m": -1.05,
@@ -1599,7 +1601,7 @@
           "scale": 15.88,
           "scale_raw": "15.88亿",
           "established": "2024-04-24",
-          "manager": "李耀柱",
+          "manager": "李耀柱 李晓博",
           "fund_company": "广发基金管理有限公司",
           "fund_type_xq": "QDII-混合",
           "full_name": "广发全球稳健配置混合型证券投资基金（QDII）",
@@ -1794,7 +1796,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合平衡",
           "nav": 1.8501,
-          "nav_cum": 1.8846,
+          "nav_cum": 1.8501,
           "nav_date": "2026-09-29",
           "daily_change": -0.22,
           "chg_1m": -2.06,
@@ -1889,7 +1891,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合平衡",
           "nav": 1.8459,
-          "nav_cum": 1.8808,
+          "nav_cum": 1.8459,
           "nav_date": "2026-09-29",
           "daily_change": -0.22,
           "chg_1m": -2.1,
@@ -2430,7 +2432,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合灵活",
           "nav": 1.33,
-          "nav_cum": 1.3423,
+          "nav_cum": 1.33,
           "nav_date": "2026-09-29",
           "daily_change": 0.21,
           "chg_1m": -0.76,
@@ -2517,7 +2519,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合灵活",
           "nav": 1.3213,
-          "nav_cum": 1.334,
+          "nav_cum": 1.3213,
           "nav_date": "2026-09-29",
           "daily_change": 0.22,
           "chg_1m": -0.8,
@@ -2801,7 +2803,7 @@
           "currency": "人民币",
           "fund_type": "QDII-FOF",
           "nav": 1.1195,
-          "nav_cum": 1.118,
+          "nav_cum": 1.1195,
           "nav_date": "2026-09-29",
           "daily_change": 0.13,
           "chg_1m": 0.12,
@@ -2885,7 +2887,7 @@
           "currency": "人民币",
           "fund_type": "QDII-FOF",
           "nav": 1.1334,
-          "nav_cum": 1.1315,
+          "nav_cum": 1.1334,
           "nav_date": "2026-09-29",
           "daily_change": 0.14,
           "chg_1m": 0.15,
@@ -2999,7 +3001,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 2.219,
-          "nav_cum": 2.244,
+          "nav_cum": 2.219,
           "nav_date": "2026-09-29",
           "daily_change": -0.31,
           "chg_1m": -1.94,
@@ -3255,7 +3257,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 0.9886,
-          "nav_cum": 1.1509,
+          "nav_cum": 1.1296,
           "nav_date": "2026-09-29",
           "daily_change": -0.07,
           "chg_1m": -2.23,
@@ -3328,7 +3330,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 0.996,
-          "nav_cum": 1.1581,
+          "nav_cum": 1.137,
           "nav_date": "2026-09-29",
           "daily_change": -0.07,
           "chg_1m": -2.19,
@@ -3467,185 +3469,6 @@
       "series_scale": 3.76
     },
     {
-      "series_id": "南方__道琼斯美国精选__global_other",
-      "company": "南方",
-      "company_display": "南方",
-      "series_name": "道琼斯美国精选",
-      "display_name": "南方道琼斯美国精选",
-      "category": "global_other",
-      "etf_target": null,
-      "shares": [
-        {
-          "code": "160140",
-          "name": "南方道琼斯美国精选A",
-          "share_class": "A",
-          "currency": "人民币",
-          "fund_type": "指数型-海外股票",
-          "nav": 1.3639,
-          "nav_cum": 1.4526,
-          "nav_date": "2026-09-29",
-          "daily_change": 0.01,
-          "chg_1m": -5.4,
-          "chg_3m": -7.15,
-          "chg_6m": 5.2,
-          "chg_ytd": 5.97,
-          "chg_1y": 4.41,
-          "chg_2y": 2.62,
-          "chg_3y": 27.86,
-          "chg_since_inception": 38.7,
-          "scale": 2.99,
-          "scale_raw": "2.99亿",
-          "established": "2017-10-26",
-          "manager": "张其思",
-          "fund_company": "南方基金管理股份有限公司",
-          "fund_type_xq": "QDII-房地产信托",
-          "full_name": "南方道琼斯美国精选REIT指数证券投资基金(QDII-LOF)",
-          "buy_status": "开放申购",
-          "daily_limit": null,
-          "buy_status_history": [
-            {
-              "date": "2026-07-11",
-              "buy_status": "开放申购",
-              "daily_limit": null
-            },
-            {
-              "date": "2026-09-05",
-              "buy_status": "暂停申购",
-              "daily_limit": null
-            },
-            {
-              "date": "2026-09-08",
-              "buy_status": "开放申购",
-              "daily_limit": null
-            }
-          ],
-          "buy_rules": [
-            {
-              "condition": "0.0万<买入金额<100.0万",
-              "rate": 1.2
-            },
-            {
-              "condition": "100.0万<=买入金额<300.0万",
-              "rate": 0.8
-            },
-            {
-              "condition": "300.0万<=买入金额<500.0万",
-              "rate": 0.5
-            },
-            {
-              "condition": "500.0万<=买入金额",
-              "rate": 1000.0
-            }
-          ],
-          "sell_rules": [
-            {
-              "condition": "0.0天<持有期限<7.0天",
-              "rate": 1.5
-            },
-            {
-              "condition": "7.0天<=持有期限<365.0天",
-              "rate": 0.5
-            },
-            {
-              "condition": "365.0天<=持有期限<2.0年",
-              "rate": 0.25
-            },
-            {
-              "condition": "2.0年<=持有期限",
-              "rate": 0.0
-            }
-          ],
-          "mgmt_fee": 0.8,
-          "custody_fee": 0.2,
-          "fee": "0.12",
-          "first_buy_rate": 1.2,
-          "sale_service_fee": 0.0,
-          "sell_status": "开放赎回",
-          "buy_min": 10.0,
-          "chg_1w": -1.48,
-          "free_hold_days": null,
-          "max_sell_rate": 1.5
-        },
-        {
-          "code": "160141",
-          "name": "南方道琼斯美国精选C",
-          "share_class": "C",
-          "currency": "人民币",
-          "fund_type": "指数型-海外股票",
-          "nav": 1.3196,
-          "nav_cum": 1.4065,
-          "nav_date": "2026-09-29",
-          "daily_change": 0.01,
-          "chg_1m": -5.43,
-          "chg_3m": -7.25,
-          "chg_6m": 4.99,
-          "chg_ytd": 5.65,
-          "chg_1y": 3.98,
-          "chg_2y": 1.79,
-          "chg_3y": 26.31,
-          "chg_since_inception": 34.21,
-          "scale": 1.51,
-          "scale_raw": "1.51亿",
-          "established": "2017-10-26",
-          "manager": "张其思",
-          "fund_company": "南方基金管理股份有限公司",
-          "fund_type_xq": "QDII-房地产信托",
-          "full_name": "南方道琼斯美国精选REIT指数证券投资基金(QDII-LOF)",
-          "buy_status": "开放申购",
-          "daily_limit": null,
-          "buy_status_history": [
-            {
-              "date": "2026-07-11",
-              "buy_status": "开放申购",
-              "daily_limit": null
-            },
-            {
-              "date": "2026-09-05",
-              "buy_status": "暂停申购",
-              "daily_limit": null
-            },
-            {
-              "date": "2026-09-08",
-              "buy_status": "开放申购",
-              "daily_limit": null
-            }
-          ],
-          "buy_rules": [
-            {
-              "condition": "0.0万<买入金额",
-              "rate": 0.0
-            }
-          ],
-          "sell_rules": [
-            {
-              "condition": "0.0天<持有期限<7.0天",
-              "rate": 1.5
-            },
-            {
-              "condition": "7.0天<=持有期限<30.0天",
-              "rate": 0.5
-            },
-            {
-              "condition": "30.0天<=持有期限",
-              "rate": 0.0
-            }
-          ],
-          "mgmt_fee": 0.8,
-          "custody_fee": 0.2,
-          "fee": "",
-          "first_buy_rate": 0.0,
-          "sale_service_fee": 0.4,
-          "sell_status": "开放赎回",
-          "buy_min": 10.0,
-          "chg_1w": -1.49,
-          "free_hold_days": 30,
-          "max_sell_rate": 1.5
-        }
-      ],
-      "default_share_code": "160140",
-      "series_scale": 2.99
-    },
-    {
       "series_id": "摩根__全球天然资源混合__global_other",
       "company": "摩根",
       "company_display": "摩根",
@@ -3661,7 +3484,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合偏股",
           "nav": 1.5385,
-          "nav_cum": 1.6264,
+          "nav_cum": 1.5385,
           "nav_date": "2026-09-29",
           "daily_change": -0.36,
           "chg_1m": -5.35,
@@ -3753,7 +3576,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合偏股",
           "nav": 1.5473,
-          "nav_cum": 1.6364,
+          "nav_cum": 1.5473,
           "nav_date": "2026-09-29",
           "daily_change": -0.37,
           "chg_1m": -5.39,
@@ -3839,7 +3662,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 2.2882,
-          "nav_cum": 2.1855,
+          "nav_cum": 2.2882,
           "nav_date": "2026-09-29",
           "daily_change": 1.37,
           "chg_1m": 5.43,
@@ -3999,7 +3822,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 2.251,
-          "nav_cum": 2.1508,
+          "nav_cum": 2.251,
           "nav_date": "2026-09-29",
           "daily_change": 1.37,
           "chg_1m": 5.38,
@@ -4159,7 +3982,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 1.6141,
-          "nav_cum": 1.6078,
+          "nav_cum": 1.6141,
           "nav_date": "2026-09-29",
           "daily_change": 0.28,
           "chg_1m": 0.4,
@@ -4338,7 +4161,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合平衡",
           "nav": 1.6439,
-          "nav_cum": 1.6957,
+          "nav_cum": 1.6439,
           "nav_date": "2026-09-29",
           "daily_change": -0.02,
           "chg_1m": -3.23,
@@ -4429,7 +4252,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合平衡",
           "nav": 1.5914,
-          "nav_cum": 1.642,
+          "nav_cum": 1.5914,
           "nav_date": "2026-09-29",
           "daily_change": -0.02,
           "chg_1m": -3.26,
@@ -4643,7 +4466,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 0.9224,
-          "nav_cum": 0.9878,
+          "nav_cum": 0.9224,
           "nav_date": "2026-09-29",
           "daily_change": 0.32,
           "chg_1m": -7.36,
@@ -4734,7 +4557,7 @@
           "currency": "人民币",
           "fund_type": "QDII-普通股票",
           "nav": 0.9058,
-          "nav_cum": 0.9705,
+          "nav_cum": 0.9058,
           "nav_date": "2026-09-29",
           "daily_change": 0.32,
           "chg_1m": -7.41,
@@ -4885,7 +4708,7 @@
           "currency": "人民币",
           "fund_type": "QDII-混合偏股",
           "nav": 1.2888,
-          "nav_cum": 1.3108,
+          "nav_cum": 1.2888,
           "nav_date": "2026-09-29",
           "daily_change": 0.42,
           "chg_1m": -1.46,
@@ -5058,5 +4881,5 @@
       "series_scale": 0.35532199999999997
     }
   ],
-  "total_scale": 202.26
+  "total_scale": 199.27
 }

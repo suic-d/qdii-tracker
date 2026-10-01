@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-01T02:53:41.780889+08:00",
+  "generated_at": "2026-10-02T06:26:21.806892+08:00",
   "schema_version": 1,
-  "count": 89,
+  "count": 88,
   "funds": [
     {
       "code": "050025",
@@ -836,19 +836,6 @@
       "scale": 3.76
     },
     {
-      "code": "160140",
-      "name": "南方道琼斯美国精选",
-      "category": "global_other",
-      "company": "南方",
-      "nav": 1.3639,
-      "daily_change": 0.01,
-      "nav_date": "2026-09-29",
-      "buy_status": "开放申购",
-      "daily_limit": null,
-      "etf_premium": null,
-      "scale": 2.99
-    },
-    {
       "code": "378546",
       "name": "摩根全球天然资源混合",
       "category": "global_other",
@@ -937,7 +924,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 375.2645305
+      "scale": 346.82
     },
     {
       "code": "513500",
@@ -950,7 +937,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 277.34810242
+      "scale": 239.99
     },
     {
       "code": "513100",
@@ -963,7 +950,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 211.35591809
+      "scale": 194.68
     },
     {
       "code": "513300",
@@ -976,7 +963,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 143.79311462
+      "scale": 132.88
     },
     {
       "code": "159501",
@@ -989,7 +976,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 142.75347938
+      "scale": 124.11
     },
     {
       "code": "159632",
@@ -1002,7 +989,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 122.62589252
+      "scale": 113.0
     },
     {
       "code": "159659",
@@ -1015,7 +1002,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 107.19814189
+      "scale": 99.36
     },
     {
       "code": "513650",
@@ -1028,7 +1015,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 88.45900318
+      "scale": 76.94
     },
     {
       "code": "159513",
@@ -1041,7 +1028,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 81.96562728
+      "scale": 73.84
     },
     {
       "code": "159696",
@@ -1054,7 +1041,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 57.50092553
+      "scale": 50.11
     },
     {
       "code": "513110",
@@ -1067,7 +1054,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 54.69994865
+      "scale": 50.98
     },
     {
       "code": "159660",
@@ -1080,7 +1067,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 53.5440642
+      "scale": 49.1
     },
     {
       "code": "513390",
@@ -1093,7 +1080,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 52.14550739
+      "scale": 42.5
     },
     {
       "code": "159655",
@@ -1106,7 +1093,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 44.037688
+      "scale": 39.37
     },
     {
       "code": "513870",
@@ -1119,7 +1106,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 28.41444974
+      "scale": 24.71
     },
     {
       "code": "513850",
@@ -1132,7 +1119,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 22.72663473
+      "scale": 20.56
     },
     {
       "code": "159577",
@@ -1145,7 +1132,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 13.27020565
+      "scale": 11.26
     },
     {
       "code": "159612",
@@ -1158,7 +1145,7 @@
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 9.66524306
+      "scale": 8.44
     }
   ]
 }
