@@ -18,7 +18,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.34,
           "chg_3m": 14.48,
           "chg_6m": 13.4,
@@ -39,8 +39,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.678,
-          "etf_change_pct": 2.32,
+          "etf_price": 1.759,
+          "etf_change_pct": -0.51,
           "error": "'data'"
         }
       ],
@@ -62,7 +62,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 3.81,
           "chg_3m": 6.19,
           "chg_6m": 6.6,
@@ -83,8 +83,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.685,
-          "etf_change_pct": 1.02,
+          "etf_price": 2.754,
+          "etf_change_pct": 0.69,
           "error": "'data'"
         }
       ],
@@ -106,7 +106,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.4,
           "chg_3m": 14.64,
           "chg_6m": 13.55,
@@ -127,8 +127,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.269,
-          "etf_change_pct": 2.21,
+          "etf_price": 2.375,
+          "etf_change_pct": -1.04,
           "error": "'data'"
         }
       ],
@@ -150,7 +150,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.18,
           "chg_3m": 14.94,
           "chg_6m": 12.49,
@@ -171,8 +171,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.712,
-          "etf_change_pct": 1.8,
+          "etf_price": 2.869,
+          "etf_change_pct": -0.93,
           "error": "'data'"
         }
       ],
@@ -194,7 +194,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.41,
           "chg_3m": 14.71,
           "chg_6m": 13.64,
@@ -215,8 +215,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.129,
-          "etf_change_pct": 1.62,
+          "etf_price": 2.221,
+          "etf_change_pct": -0.76,
           "error": "'data'"
         }
       ],
@@ -238,7 +238,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.43,
           "chg_3m": 14.65,
           "chg_6m": 13.47,
@@ -259,8 +259,8 @@
           "sale_service_fee": 0.5,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.489,
-          "etf_change_pct": 1.97,
+          "etf_price": 2.595,
+          "etf_change_pct": -1.22,
           "error": "'data'"
         }
       ],
@@ -282,7 +282,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.44,
           "chg_3m": 14.7,
           "chg_6m": 13.58,
@@ -303,8 +303,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.368,
-          "etf_change_pct": 1.72,
+          "etf_price": 2.506,
+          "etf_change_pct": -0.91,
           "error": "'data'"
         }
       ],
@@ -326,7 +326,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 3.76,
           "chg_3m": 6.04,
           "chg_6m": 6.6,
@@ -347,8 +347,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.03,
-          "etf_change_pct": 1.15,
+          "etf_price": 2.036,
+          "etf_change_pct": -0.1,
           "error": "'data'"
         }
       ],
@@ -370,7 +370,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.14,
           "chg_3m": 14.31,
           "chg_6m": 13.38,
@@ -391,8 +391,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 1.821,
-          "etf_change_pct": 2.13,
+          "etf_price": 1.903,
+          "etf_change_pct": -0.89,
           "error": "'data'"
         }
       ],
@@ -414,7 +414,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.43,
           "chg_3m": 14.71,
           "chg_6m": 13.71,
@@ -435,8 +435,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.048,
-          "etf_change_pct": 1.79,
+          "etf_price": 2.19,
+          "etf_change_pct": -0.73,
           "error": "'data'"
         }
       ],
@@ -458,7 +458,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.36,
           "chg_3m": 14.53,
           "chg_6m": 13.24,
@@ -479,8 +479,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.509,
-          "etf_change_pct": 2.03,
+          "etf_price": 2.618,
+          "etf_change_pct": -1.28,
           "error": "'data'"
         }
       ],
@@ -502,7 +502,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.41,
           "chg_3m": 14.66,
           "chg_6m": 13.58,
@@ -523,8 +523,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.387,
-          "etf_change_pct": 1.92,
+          "etf_price": 2.53,
+          "etf_change_pct": -1.29,
           "error": "'data'"
         }
       ],
@@ -546,7 +546,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.43,
           "chg_3m": 14.7,
           "chg_6m": 13.52,
@@ -567,8 +567,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.448,
-          "etf_change_pct": 1.62,
+          "etf_price": 2.538,
+          "etf_change_pct": -1.63,
           "error": "'data'"
         }
       ],
@@ -590,7 +590,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 3.6,
           "chg_3m": 6.55,
           "chg_6m": 5.81,
@@ -611,8 +611,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.032,
-          "etf_change_pct": 1.5,
+          "etf_price": 2.045,
+          "etf_change_pct": -0.34,
           "error": "'data'"
         }
       ],
@@ -634,7 +634,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.43,
           "chg_3m": 14.67,
           "chg_6m": 13.67,
@@ -655,8 +655,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.083,
-          "etf_change_pct": 2.06,
+          "etf_price": 2.194,
+          "etf_change_pct": -1.08,
           "error": "'data'"
         }
       ],
@@ -671,7 +671,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.2,
           "chg_3m": 13.79,
           "chg_6m": 7.81,
@@ -692,8 +692,8 @@
           "sell_status": "场内交易",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.873,
-          "etf_change_pct": 2.35
+          "etf_price": 1.935,
+          "etf_change_pct": -1.02
         }
       ],
       "series_id": "易方达__美国50ETF易方达__etf",
@@ -714,7 +714,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 7.58,
           "chg_3m": 14.49,
           "chg_6m": 8.2,
@@ -735,8 +735,8 @@
           "sell_status": "场内交易",
           "buy_min": 0.0,
           "error": "'data'",
-          "etf_price": 1.683,
-          "etf_change_pct": 2.62
+          "etf_price": 1.735,
+          "etf_change_pct": -0.97
         }
       ],
       "series_id": "汇添富__美国50ETF汇添富__etf",
@@ -764,7 +764,7 @@
           "share_class": "默认",
           "currency": "人民币",
           "fund_type": "指数型-海外股票",
-          "nav_date": "2026-10-09",
+          "nav_date": "2026-10-12",
           "chg_1m": 3.8,
           "chg_3m": 6.24,
           "chg_6m": 6.69,
@@ -785,8 +785,8 @@
           "sale_service_fee": 0.8,
           "sell_status": "场内交易",
           "buy_min": 0.0,
-          "etf_price": 2.083,
-          "etf_change_pct": 1.41,
+          "etf_price": 2.105,
+          "etf_change_pct": -0.14,
           "error": "'data'"
         }
       ],
