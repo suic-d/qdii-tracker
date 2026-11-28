@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T06:29:42.309127+08:00",
+  "generated_at": "2026-11-28T08:12:30.703660+08:00",
   "schema_version": 1,
   "count": 91,
   "funds": [
@@ -918,273 +918,273 @@
       "name": "纳斯达克ETF广发",
       "category": "etf",
       "company": "广发",
-      "nav": 1.594,
-      "daily_change": -1.18,
+      "nav": 1.571,
+      "daily_change": 3.29,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 366.22485123
+      "scale": 361.06308785
     },
     {
       "code": "513500",
       "name": "标普500ETF博时",
       "category": "etf",
       "company": "博时",
-      "nav": 2.573,
-      "daily_change": -1.15,
+      "nav": 2.543,
+      "daily_change": 2.17,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 274.91575427
+      "scale": 271.71036265
     },
     {
       "code": "513100",
       "name": "纳斯达克ETF国泰",
       "category": "etf",
       "company": "国泰",
-      "nav": 2.166,
-      "daily_change": -1.05,
+      "nav": 2.108,
+      "daily_change": 1.69,
       "nav_date": "2026-11-26",
       "buy_status": "暂停申购",
       "daily_limit": null,
       "etf_premium": null,
-      "scale": 209.76866473
+      "scale": 204.1515906
     },
     {
       "code": "159509",
       "name": "纳斯达克科技ETF景顺",
       "category": "etf",
       "company": "景顺长城",
-      "nav": 2.812,
-      "daily_change": -2.87,
+      "nav": 2.775,
+      "daily_change": 4.01,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 194.55002238
+      "scale": 191.99015366
     },
     {
       "code": "513300",
       "name": "纳斯达克ETF华夏",
       "category": "etf",
       "company": "华夏",
-      "nav": 2.606,
-      "daily_change": -1.55,
+      "nav": 2.6,
+      "daily_change": 3.09,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 144.37685647
+      "scale": 144.18094746
     },
     {
       "code": "159501",
       "name": "纳斯达克ETF嘉实",
       "category": "etf",
       "company": "嘉实",
-      "nav": 2.047,
-      "daily_change": -1.11,
+      "nav": 2.019,
+      "daily_change": 2.8,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 146.25787619
+      "scale": 145.46867994
     },
     {
       "code": "159632",
       "name": "纳斯达克ETF华安",
       "category": "etf",
       "company": "华安",
-      "nav": 2.366,
-      "daily_change": -1.25,
+      "nav": 2.363,
+      "daily_change": 3.64,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 124.98917337
+      "scale": 125.04336024
     },
     {
       "code": "159659",
       "name": "纳斯达克100ETF招商",
       "category": "etf",
       "company": "招商",
-      "nav": 2.294,
-      "daily_change": -1.12,
+      "nav": 2.283,
+      "daily_change": 3.21,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 110.08318883
+      "scale": 109.92060698
     },
     {
       "code": "513650",
       "name": "标普500ETF南方",
       "category": "etf",
       "company": "南方",
-      "nav": 1.93,
-      "daily_change": -1.23,
+      "nav": 1.908,
+      "daily_change": 2.36,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 102.13046651
+      "scale": 102.30188258
     },
     {
       "code": "159513",
       "name": "纳斯达克100ETF大成",
       "category": "etf",
       "company": "大成",
-      "nav": 1.725,
-      "daily_change": -1.37,
+      "nav": 1.718,
+      "daily_change": 3.62,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 90.84797011
+      "scale": 92.28321498
     },
     {
       "code": "513110",
       "name": "纳斯达克ETF华泰柏瑞",
       "category": "etf",
       "company": "华泰柏瑞",
-      "nav": 2.375,
-      "daily_change": -1.33,
+      "nav": 2.364,
+      "daily_change": 3.5,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 54.01783144
+      "scale": 54.09860359
     },
     {
       "code": "159696",
       "name": "纳斯达克ETF易方达",
       "category": "etf",
       "company": "易方达",
-      "nav": 2.007,
-      "daily_change": -1.04,
+      "nav": 2.0,
+      "daily_change": 2.67,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 60.76842832
+      "scale": 60.73648064
     },
     {
       "code": "159660",
       "name": "纳斯达克ETF汇添富",
       "category": "etf",
       "company": "汇添富",
-      "nav": 2.288,
-      "daily_change": -1.29,
+      "nav": 2.301,
+      "daily_change": 3.74,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 59.23978312
+      "scale": 59.57637279
     },
     {
       "code": "513390",
       "name": "纳斯达克100ETF博时",
       "category": "etf",
       "company": "博时",
-      "nav": 2.351,
-      "daily_change": -1.22,
+      "nav": 2.344,
+      "daily_change": 3.21,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 65.97797274
+      "scale": 65.7815262
     },
     {
       "code": "159655",
       "name": "标普500ETF华夏",
       "category": "etf",
       "company": "华夏",
-      "nav": 1.937,
-      "daily_change": -1.68,
+      "nav": 1.926,
+      "daily_change": 2.83,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 44.43755068
+      "scale": 44.35853495
     },
     {
       "code": "513880",
       "name": "日经225ETF华安",
       "category": "etf",
       "company": "华安",
-      "nav": 1.903,
-      "daily_change": -1.04,
+      "nav": 1.873,
+      "daily_change": 3.25,
       "nav_date": "2026-11-27",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 25.8231391
+      "scale": 25.5471581
     },
     {
       "code": "513870",
       "name": "纳斯达克ETF富国",
       "category": "etf",
       "company": "富国",
-      "nav": 2.006,
-      "daily_change": -0.99,
+      "nav": 2.008,
+      "daily_change": 3.29,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 31.88880042
+      "scale": 32.02099384
     },
     {
       "code": "513850",
       "name": "美国50ETF易方达",
       "category": "etf",
       "company": "易方达",
-      "nav": 1.803,
-      "daily_change": -1.37,
+      "nav": 1.801,
+      "daily_change": 3.09,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 24.53689372
+      "scale": 24.63574587
     },
     {
       "code": "159577",
       "name": "美国50ETF汇添富",
       "category": "etf",
       "company": "汇添富",
-      "nav": 1.616,
-      "daily_change": -1.4,
+      "nav": 1.613,
+      "daily_change": 2.94,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 13.4881992
+      "scale": 13.46315922
     },
     {
       "code": "159612",
       "name": "标普500ETF国泰",
       "category": "etf",
       "company": "国泰",
-      "nav": 2.008,
-      "daily_change": -1.08,
+      "nav": 1.986,
+      "daily_change": 2.16,
       "nav_date": "2026-11-26",
       "buy_status": "暂停申购",
       "daily_limit": null,
       "etf_premium": null,
-      "scale": 10.25884501
+      "scale": 10.14644731
     },
     {
       "code": "513290",
       "name": "纳斯达克生物科技ETF汇添富",
       "category": "etf",
       "company": "汇添富",
-      "nav": 1.83,
-      "daily_change": -3.68,
+      "nav": 1.913,
+      "daily_change": 2.63,
       "nav_date": "2026-11-26",
       "buy_status": "场内交易",
       "daily_limit": 0.0,
       "etf_premium": null,
-      "scale": 19.85681936
+      "scale": 20.8243842
     }
   ]
 }
